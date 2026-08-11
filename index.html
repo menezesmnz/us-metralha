@@ -4,117 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>🔥 US METRALHA 🔥</title>
-
 <style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-color:white;
-background:radial-gradient(circle at top,#650000,#050505 70%);
-min-height:100vh;
-}
-main{
-max-width:750px;
-margin:auto;
-padding:20px;
-}
-header,.card{
-background:#090909ee;
-border:1px solid #600000;
-border-radius:20px;
-padding:25px;
-margin-bottom:20px;
-box-shadow:0 0 30px #ff000022;
-}
-header{text-align:center}
-.logo{font-size:60px}
-h1{font-size:36px}
-input,textarea{
-width:100%;
-padding:14px;
-margin:8px 0 18px;
-box-sizing:border-box;
-border-radius:10px;
-border:1px solid #333;
-background:#050505;
-color:white;
-}
-textarea{min-height:100px}
-button{
-width:100%;
-padding:15px;
-border:0;
-border-radius:10px;
-background:#b00000;
-color:white;
-font-weight:bold;
-cursor:pointer;
-}
-.periodos{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:8px;
-margin-bottom:18px;
-}
-.periodos input{display:none}
-.periodos label{
-display:block;
-padding:15px 5px;
-text-align:center;
-background:#111;
-border:1px solid #333;
-border-radius:10px;
-cursor:pointer;
-}
-.periodos input:checked+label{
-background:#400000;
-border-color:red;
-}
-.aviso{
-padding:15px;
-background:#250000;
-border:1px solid #700000;
-border-radius:10px;
-margin-bottom:18px;
-}
-.aceite{
-display:flex;
-gap:8px;
-align-items:center;
-}
-.aceite input{
-width:18px;
-margin:0;
-}
-.hidden{display:none}
-.sucesso{text-align:center}
-.check{
-width:80px;
-height:80px;
-margin:auto;
-border:3px solid #20e878;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:50px;
-color:#20e878;
-}
-.admin{
-width:auto;
-display:block;
-margin:20px auto;
-background:#111;
-border:1px solid #444;
-}
-.erro{color:#ff5555;text-align:center}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#650000,#050505 70%);color:#fff;font-family:Arial,sans-serif}main{max-width:760px;margin:auto;padding:18px}.card,header{background:#090909ee;border:1px solid #650000;border-radius:18px;padding:20px;margin-bottom:18px;box-shadow:0 0 25px #f0000020}header{text-align:center}.logo{font-size:55px}h1{font-size:34px}input,textarea{width:100%;padding:13px;margin:7px 0 15px;background:#050505;color:#fff;border:1px solid #444;border-radius:9px}textarea{min-height:90px}button{border:0;border-radius:9px;padding:13px;background:#a90000;color:#fff;font-weight:bold;cursor:pointer;margin:4px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.periodos{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.periodos input{display:none}.periodos label{display:block;text-align:center;padding:13px 3px;background:#111;border:1px solid #444;border-radius:9px}.periodos input:checked+label{background:#500000;border-color:red}.aviso{background:#280000;padding:14px;border-radius:10px;margin:10px 0 18px}.aceite{display:flex;align-items:center;gap:8px}.aceite input{width:auto;margin:0}.hidden{display:none}.sucesso{text-align:center}.check{margin:auto;width:75px;height:75px;border:3px solid #20e878;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#20e878;font-size:48px}.membro{background:#111;border:1px solid #444;border-radius:12px;padding:15px;margin:12px 0}.status{font-weight:bold;margin-bottom:8px}.verde{color:#20e878}.vermelho{color:#ff5555}.amarelo{color:#ffd43b}.cinza{color:#aaa}.admBtn{background:#111;border:1px solid #555;width:auto;display:block;margin:20px auto}.erro{text-align:center;color:#ff5555}.contadores{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.contador{background:#151515;border-radius:10px;padding:12px;text-align:center}.contador b{font-size:22px;display:block}
 </style>
 </head>
-
 <body>
 
 <main id="site">
-
 <header>
 <div class="logo">🔥</div>
 <h1>US METRALHA</h1>
@@ -122,7 +18,6 @@ border:1px solid #444;
 </header>
 
 <section class="card">
-
 <form id="formulario">
 
 <label>🎮 Nick</label>
@@ -135,29 +30,11 @@ border:1px solid #444;
 <input id="sms" required>
 
 <label>🕐 Qual período costuma jogar?</label>
-
 <div class="periodos">
-
-<div>
-<input id="manha" name="periodo" type="radio" value="🌞 Manhã" required>
-<label for="manha">🌞<br>Manhã</label>
-</div>
-
-<div>
-<input id="tarde" name="periodo" type="radio" value="⛅ Tarde">
-<label for="tarde">⛅<br>Tarde</label>
-</div>
-
-<div>
-<input id="noite" name="periodo" type="radio" value="🌚 Noite">
-<label for="noite">🌚<br>Noite</label>
-</div>
-
-<div>
-<input id="varia" name="periodo" type="radio" value="🫯 Varia">
-<label for="varia">🫯<br>Varia</label>
-</div>
-
+<div><input id="manha" name="periodo" type="radio" value="🌞 Manhã" required><label for="manha">🌞<br>Manhã</label></div>
+<div><input id="tarde" name="periodo" type="radio" value="⛅ Tarde"><label for="tarde">⛅<br>Tarde</label></div>
+<div><input id="noite" name="periodo" type="radio" value="🌚 Noite"><label for="noite">🌚<br>Noite</label></div>
+<div><input id="varia" name="periodo" type="radio" value="🫯 Varia"><label for="varia">🫯<br>Varia</label></div>
 </div>
 
 <label>🎯 Qual é o seu principal objetivo no jogo?</label>
@@ -167,761 +44,214 @@ border:1px solid #444;
 <textarea id="familia" required></textarea>
 
 <div class="aviso">
-
-⚠️ Está ciente de que <b>5 dias seguidos OFF,
-sem justificativa, resultam na remoção da família?</b>
-
-<label class="aceite">
-<input id="aceite" type="checkbox" required>
-<span>SIM, ESTOU CIENTE E DE ACORDO.</span>
-</label>
-
+⚠️ Está ciente de que <b>5 dias seguidos OFF, sem justificativa, resultam na remoção da família?</b>
+<label class="aceite"><input id="aceite" type="checkbox" required> SIM, ESTOU CIENTE E DE ACORDO.</label>
 </div>
 
-<button type="submit">
-🔥 ENVIAR FORMULÁRIO
-</button>
-
+<button type="submit">🔥 ENVIAR FORMULÁRIO</button>
 </form>
 
 <div id="sucesso" class="sucesso hidden">
-
 <div class="check">✓</div>
-
-<h2>Seu formulário foi enviado!</h2>
-
-<p>
-Recebemos suas informações com sucesso.<br>
-Aguarde a análise da administração.
-</p>
-
-<div style="font-size:40px;color:#20e878">
-→
+<h2>Seu formulário foi enviado com sucesso!</h2>
+<p>Recebemos suas informações. Aguarde a análise da administração.</p>
+<div style="font-size:45px;color:#20e878">↓</div>
 </div>
-
-</div>
-
 </section>
 
-<button id="abrirADM" class="admin">
-🔐 Área ADM
-</button>
-
+<button id="abrirADM" class="admBtn">🔐 ÁREA ADM</button>
 </main>
-<!-- LOGIN ADM -->
 
 <main id="login" class="hidden">
-
 <section class="card">
-
 <h2>🔐 Painel ADM</h2>
-
-<p style="color:#888">
-Acesso exclusivo da administração.
-</p>
-
 <label>📧 E-mail</label>
-
-<input
-id="emailADM"
-type="email"
-value="usmetralhaadmins@gmail.com"
->
-
+<input id="emailADM" type="email" value="usmetralhaadmins@gmail.com">
 <label>🔑 Senha</label>
-
-<input
-id="senhaADM"
-type="password"
-placeholder="Digite sua senha"
->
-
-<button id="entrarADM">
-🔐 ENTRAR
-</button>
-
+<input id="senhaADM" type="password" placeholder="Senha">
+<button id="entrarADM">ENTRAR</button>
 <div id="erroADM" class="erro"></div>
-
-<button
-id="voltarSite"
-class="admin"
-type="button"
->
-← Voltar
-</button>
-
+<button id="voltarSite" class="admBtn">← Voltar</button>
 </section>
-
 </main>
-
-
-<!-- PAINEL ADM -->
 
 <main id="painel" class="hidden">
-
 <section class="card">
-
 <h2>🔥 US METRALHA — ADM</h2>
 
-<p style="color:#888">
-Painel de Administração
-</p>
-
-<div class="card">
-
-<label>🔎 Pesquisar</label>
-
-<input
-id="pesquisa"
-placeholder="Nick, PIX ou SMS..."
->
-
+<div class="contadores">
+<div class="contador">📋 Todos<b id="cTodos">0</b></div>
+<div class="contador">⏳ Pendentes<b id="cPendentes">0</b></div>
+<div class="contador">✅ Aprovados<b id="cAprovados">0</b></div>
+<div class="contador">❌ Recusados<b id="cRecusados">0</b></div>
+<div class="contador">🗑️ Lixeira<b id="cLixeira">0</b></div>
 </div>
 
-<div
-style="
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:8px;
-"
->
+<h3>🔎 Pesquisar membro</h3>
+<input id="pesquisa" type="search" placeholder="Digite Nick, PIX ou SMS...">
 
-<button onclick="mudarFiltro('Todos')">
-📋 Todos
-</button>
-
-<button onclick="mudarFiltro('Pendente')">
-⏳ Pendentes
-</button>
-
-<button onclick="mudarFiltro('Aprovado')">
-✅ Aprovados
-</button>
-
-<button onclick="mudarFiltro('Recusado')">
-❌ Recusados
-</button>
-
-<button onclick="mudarFiltro('Lixeira')">
-🗑️ Lixeira
-</button>
-
+<h3>📂 Filtrar formulários</h3>
+<div class="grid">
+<button type="button" onclick="mudarFiltro('Todos')">📋 TODOS</button>
+<button type="button" onclick="mudarFiltro('Pendente')">⏳ PENDENTES</button>
+<button type="button" onclick="mudarFiltro('Aprovado')">✅ APROVADOS</button>
+<button type="button" onclick="mudarFiltro('Recusado')">❌ RECUSADOS</button>
+<button type="button" onclick="mudarFiltro('Lixeira')">🗑️ LIXEIRA</button>
 </div>
 
-<div
-id="lista"
-style="margin-top:20px"
-></div>
+<div id="lista"></div>
 
-<button
-id="sairADM"
-class="admin"
-type="button"
->
-🚪 Sair
-</button>
-
+<button id="sairADM" class="admBtn">🚪 SAIR</button>
 </section>
-
 </main>
+
 <script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import{getDatabase,ref,push,set,onValue,update,remove}from"https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
-import {
-    initializeApp
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
-import {
-    getDatabase,
-    ref,
-    push,
-    set,
-    onValue,
-    update,
-    remove
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
-
-
-const firebaseConfig = {
-
-    apiKey:
-    "AIzaSyDy8falIrYlTDdZlOU3C3v_gfb-pXTknIc",
-
-    authDomain:
-    "us-metralha.firebaseapp.com",
-
-    databaseURL:
-    "https://us-metralha-default-rtdb.firebaseio.com/",
-
-    projectId:
-    "us-metralha",
-
-    storageBucket:
-    "us-metralha.firebasestorage.app",
-
-    messagingSenderId:
-    "992552847534",
-
-    appId:
-    "1:992552847534:web:6be21b8924b9399959453f"
-
-};
-
-
-const app =
-    initializeApp(firebaseConfig);
-
-
-const database =
-    getDatabase(app);
-
-
-let membros = {};
-
-let filtroAtual = "Todos";
-
-
-/* FORMULÁRIO */
-
-document
-.getElementById("formulario")
-.addEventListener(
-"submit",
-async function(e){
-
-    e.preventDefault();
-
-
-    const periodo =
-    document.querySelector(
-    'input[name="periodo"]:checked'
-    );
-
-
-    const dados = {
-
-        nick:
-        document.getElementById("nick").value,
-
-        pix:
-        document.getElementById("pix").value,
-
-        sms:
-        document.getElementById("sms").value,
-
-        periodo:
-        periodo ? periodo.value : "",
-
-        objetivo:
-        document.getElementById("objetivo").value,
-
-        familia:
-        document.getElementById("familia").value,
-
-        aceitouRegra:
-        document.getElementById("aceite").checked,
-
-        status:
-        "Pendente",
-
-        lixeira:
-        false,
-
-        data:
-        new Date().toLocaleString("pt-BR")
-
-    };
-
-
-    try{
-
-        const novo =
-        push(
-        ref(database,"formularios")
-        );
-
-
-        await set(
-        novo,
-        dados
-        );
-
-
-        document
-        .getElementById("formulario")
-        .classList
-        .add("hidden");
-
-
-        document
-        .getElementById("sucesso")
-        .classList
-        .remove("hidden");
-
-
-    }catch(erro){
-
-        alert(
-        "Não foi possível enviar o formulário."
-        );
-
-        console.error(erro);
-
-    }
-
+const app=initializeApp({
+apiKey:"AIzaSyDy8falIrYlTDdZlOU3C3v_gfb-pXTknIc",
+authDomain:"us-metralha.firebaseapp.com",
+databaseURL:"https://us-metralha-default-rtdb.firebaseio.com/",
+projectId:"us-metralha",
+storageBucket:"us-metralha.firebasestorage.app",
+messagingSenderId:"992552847534",
+appId:"1:992552847534:web:6be21b8924b9399959453f"
 });
 
+const db=getDatabase(app);
+let dados={},filtro="Todos";
 
-/* ABRIR ADM */
+const $=id=>document.getElementById(id);
 
-document
-.getElementById("abrirADM")
-.onclick=function(){
-
-    document
-    .getElementById("site")
-    .classList
-    .add("hidden");
-
-    document
-    .getElementById("login")
-    .classList
-    .remove("hidden");
-
+$("formulario").onsubmit=async e=>{
+e.preventDefault();
+const p=document.querySelector('input[name="periodo"]:checked');
+try{
+await set(push(ref(db,"formularios")),{
+nick:$("nick").value,
+pix:$("pix").value,
+sms:$("sms").value,
+periodo:p?p.value:"",
+objetivo:$("objetivo").value,
+familia:$("familia").value,
+aceitouRegra:$("aceite").checked,
+status:"Pendente",
+lixeira:false,
+data:new Date().toLocaleString("pt-BR")
+});
+$("formulario").classList.add("hidden");
+$("sucesso").classList.remove("hidden");
+}catch(e){alert("Não foi possível enviar o formulário.");console.error(e)}
 };
 
-
-/* VOLTAR */
-
-document
-.getElementById("voltarSite")
-.onclick=function(){
-
-    document
-    .getElementById("login")
-    .classList
-    .add("hidden");
-
-    document
-    .getElementById("site")
-    .classList
-    .remove("hidden");
-
+$("abrirADM").onclick=()=>{
+$("site").classList.add("hidden");
+$("login").classList.remove("hidden");
 };
 
-
-/* LOGIN */
-
-document
-.getElementById("entrarADM")
-.onclick=function(){
-
-    const email =
-    document
-    .getElementById("emailADM")
-    .value;
-
-    const senha =
-    document
-    .getElementById("senhaADM")
-    .value;
-
-
-    if(
-    email ===
-    "usmetralhaadmins@gmail.com"
-    &&
-    senha ===
-    "usmetralha123"
-    ){
-
-        document
-        .getElementById("login")
-        .classList
-        .add("hidden");
-
-        document
-        .getElementById("painel")
-        .classList
-        .remove("hidden");
-
-        iniciarADM();
-
-    }else{
-
-        document
-        .getElementById("erroADM")
-        .textContent =
-        "❌ E-mail ou senha incorretos.";
-
-    }
-
+$("voltarSite").onclick=()=>{
+$("login").classList.add("hidden");
+$("site").classList.remove("hidden");
 };
 
-
-/* SAIR */
-
-document
-.getElementById("sairADM")
-.onclick=function(){
-
-    document
-    .getElementById("painel")
-    .classList
-    .add("hidden");
-
-    document
-    .getElementById("site")
-    .classList
-    .remove("hidden");
-
+$("entrarADM").onclick=()=>{
+if($("emailADM").value==="usmetralhaadmins@gmail.com"&&$("senhaADM").value==="usmetralha123"){
+$("login").classList.add("hidden");
+$("painel").classList.remove("hidden");
+iniciar();
+}else $("erroADM").textContent="❌ E-mail ou senha incorretos.";
 };
 
+$("sairADM").onclick=()=>{
+$("painel").classList.add("hidden");
+$("site").classList.remove("hidden");
+};
 
-/* FIREBASE ADM */
+$("pesquisa").oninput=mostrar;
 
-function iniciarADM(){
-
-    onValue(
-        ref(database,"formularios"),
-        function(snapshot){
-
-            membros =
-            snapshot.val() || {};
-
-            mostrarLista();
-
-        }
-    );
-
+function iniciar(){
+onValue(ref(db,"formularios"),s=>{
+dados=s.val()||{};
+mostrar();
+});
 }
 
+window.mudarFiltro=f=>{
+filtro=f;
+mostrar();
+};
 
-/* PESQUISA */
+function mostrar(){
+let arr=Object.entries(dados);
+let termo=$("pesquisa").value.toLowerCase().trim();
 
-document
-.getElementById("pesquisa")
-.addEventListener(
-"input",
-function(){
+let cont={Todos:0,Pendente:0,Aprovado:0,Recusado:0,Lixeira:0};
 
-    mostrarLista();
-
+arr.forEach(([id,m])=>{
+if(m.lixeira)cont.Lixeira++;
+else{
+cont.Todos++;
+if(cont[m.status]!==undefined)cont[m.status]++;
+}
 });
 
+$("cTodos").textContent=cont.Todos;
+$("cPendentes").textContent=cont.Pendente;
+$("cAprovados").textContent=cont.Aprovado;
+$("cRecusados").textContent=cont.Recusado;
+$("cLixeira").textContent=cont.Lixeira;
 
-/* FILTRO */
+arr=arr.filter(([id,m])=>{
+if(filtro==="Lixeira")return m.lixeira===true;
+if(m.lixeira)return false;
+if(filtro!=="Todos"&&m.status!==filtro)return false;
+if(!termo)return true;
+return(
+String(m.nick||"").toLowerCase().includes(termo)||
+String(m.pix||"").toLowerCase().includes(termo)||
+String(m.sms||"").toLowerCase().includes(termo)
+);
+});
 
-window.mudarFiltro =
-function(filtro){
-
-    filtroAtual =
-    filtro;
-
-    mostrarLista();
-
-};
-
-
-/* LISTA */
-
-function mostrarLista(){
-
-    const lista =
-    document.getElementById("lista");
-
-
-    const termo =
-    document
-    .getElementById("pesquisa")
-    .value
-    .toLowerCase();
-
-
-    let encontrados = [];
-
-
-    Object.keys(membros)
-    .forEach(function(id){
-
-        const m =
-        membros[id];
-
-
-        if(
-        filtroAtual === "Lixeira"
-        ){
-
-            if(!m.lixeira)
-            return;
-
-        }else{
-
-            if(m.lixeira)
-            return;
-
-        }
-
-
-        if(
-        filtroAtual !== "Todos"
-        &&
-        filtroAtual !== "Lixeira"
-        &&
-        m.status !== filtroAtual
-        ){
-
-            return;
-
-        }
-
-
-        const texto =
-        (
-        (m.nick||"")+
-        " "+
-        (m.pix||"")+
-        " "+
-        (m.sms||"")
-        )
-        .toLowerCase();
-
-
-        if(
-        termo &&
-        !texto.includes(termo)
-        ){
-
-            return;
-
-        }
-
-
-        encontrados.push({
-            id:id,
-            dados:m
-        });
-
-    });
-
-
-    if(!encontrados.length){
-
-        lista.innerHTML =
-        "<p style='color:#777;text-align:center'>" +
-        "Nenhum formulário encontrado." +
-        "</p>";
-
-        return;
-
-    }
-
-
-    lista.innerHTML =
-    encontrados
-    .map(function(item){
-
-        return criarMembro(
-        item.id,
-        item.dados
-        );
-
-    })
-    .join("");
-
+$("lista").innerHTML=arr.length?arr.map(([id,m])=>card(id,m)).join(""):
+"<p class='cinza' style='text-align:center'>Nenhum formulário encontrado.</p>";
 }
 
+function card(id,m){
+let regra=m.aceitouRegra
+?"<span class='verde'>✓ SIM — ACEITOU</span>"
+:"<span class='vermelho'>✕ NÃO — NÃO ACEITOU</span>";
 
-/* CARD */
+let botoes=m.lixeira
+?`<button onclick="restaurar('${id}')">♻️ Restaurar</button>
+<button onclick="apagar('${id}')">❌ Excluir definitivamente</button>`
+:`<button onclick="aprovar('${id}')">✅ Aprovar</button>
+<button onclick="recusar('${id}')">❌ Recusar</button>
+<button onclick="mandarLixeira('${id}')">🗑️ Lixeira</button>`;
 
-function criarMembro(id,m){
-
-    const regra =
-    m.aceitouRegra
-    ?
-    "<span style='color:#20e878'>✓ SIM — ACEITOU</span>"
-    :
-    "<span style='color:#ff5555'>✕ NÃO — NÃO ACEITOU</span>";
-
-
-    let botoes = "";
-
-
-    if(m.lixeira){
-
-        botoes =
-        "<button onclick=\"restaurar('"+id+"')\">" +
-        "♻️ Restaurar" +
-        "</button>";
-
-        botoes +=
-        "<button onclick=\"apagar('"+id+"')\">" +
-        "❌ Apagar definitivamente" +
-        "</button>";
-
-    }else{
-
-        botoes =
-        "<button onclick=\"aprovar('"+id+"')\">" +
-        "✅ Aprovar" +
-        "</button>";
-
-        botoes +=
-        "<button onclick=\"recusar('"+id+"')\">" +
-        "❌ Recusar" +
-        "</button>";
-
-        botoes +=
-        "<button onclick=\"lixeira('"+id+"')\">" +
-        "🗑️ Lixeira" +
-        "</button>";
-
-    }
-
-
-    return `
-
-    <div class="card">
-
-    <h3>🎮 ${esc(m.nick)}</h3>
-
-    <p>
-    ⭐ PIX: ${esc(m.pix)}
-    <br>
-    📲 SMS: ${esc(m.sms)}
-    <br>
-    🕐 ${esc(m.periodo)}
-    </p>
-
-    <p>
-    🎯 <b>Objetivo:</b><br>
-    ${esc(m.objetivo)}
-    </p>
-
-    <p>
-    💭 <b>Família:</b><br>
-    ${esc(m.familia)}
-    </p>
-
-    <p>
-    ⚠️ <b>Regra dos 5 dias OFF:</b><br>
-    ${regra}
-    </p>
-
-    <p>
-    <b>Status:</b>
-    ${esc(m.status)}
-    </p>
-
-    ${botoes}
-
-    </div>
-
-    `;
-
+return`<article class="membro">
+<h3>🎮 ${esc(m.nick)}</h3>
+<p>⭐ <b>PIX:</b> ${esc(m.pix)}<br>
+📲 <b>SMS:</b> ${esc(m.sms)}<br>
+🕐 <b>Período:</b> ${esc(m.periodo)}</p>
+<p>🎯 <b>Objetivo:</b><br>${esc(m.objetivo)}</p>
+<p>💭 <b>Família:</b><br>${esc(m.familia)}</p>
+<p>⚠️ <b>Regra dos 5 dias OFF:</b><br>${regra}</p>
+<p>📌 <b>Status:</b> ${esc(m.status)}</p>
+<p class="cinza">Enviado: ${esc(m.data)}</p>
+${botoes}</article>`;
 }
 
+window.aprovar=id=>update(ref(db,"formularios/"+id),{status:"Aprovado",lixeira:false});
+window.recusar=id=>update(ref(db,"formularios/"+id),{status:"Recusado",lixeira:false});
+window.mandarLixeira=id=>update(ref(db,"formularios/"+id),{lixeira:true});
+window.restaurar=id=>update(ref(db,"formularios/"+id),{lixeira:false});
+window.apagar=id=>{if(confirm("Excluir definitivamente?"))remove(ref(db,"formularios/"+id))};
 
-/* APROVAR */
-
-window.aprovar =
-async function(id){
-
-    await update(
-    ref(database,"formularios/"+id),
-    {
-        status:"Aprovado",
-        lixeira:false
-    }
-    );
-
-};
-
-
-/* RECUSAR */
-
-window.recusar =
-async function(id){
-
-    await update(
-    ref(database,"formularios/"+id),
-    {
-        status:"Recusado",
-        lixeira:false
-    }
-    );
-
-};
-
-
-/* LIXEIRA */
-
-window.lixeira =
-async function(id){
-
-    await update(
-    ref(database,"formularios/"+id),
-    {
-        lixeira:true
-    }
-    );
-
-};
-
-
-/* RESTAURAR */
-
-window.restaurar =
-async function(id){
-
-    await update(
-    ref(database,"formularios/"+id),
-    {
-        lixeira:false
-    }
-    );
-
-};
-
-
-/* APAGAR DEFINITIVAMENTE */
-
-window.apagar =
-async function(id){
-
-    if(
-    !confirm(
-    "Excluir definitivamente?"
-         ){
-
-        return;
-
-    }
-
-    await remove(
-        ref(
-            database,
-            "formularios/" + id
-        )
-    );
-
-};
-
-
-/* SEGURANÇA DO TEXTO */
-
-function esc(texto){
-
-    return String(texto || "")
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
-
+function esc(x){
+return String(x||"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
 }
-
 </script>
-
 </body>
 </html>
-   
