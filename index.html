@@ -6,101 +6,108 @@
 <title>🔥 US METRALHA 🔥</title>
 
 <style>
-*{box-sizing:border-box}
 body{
- margin:0;
- font-family:Arial,sans-serif;
- color:#fff;
- background:radial-gradient(circle at top,#650000,#120000 35%,#030303 75%);
- min-height:100vh
+margin:0;
+font-family:Arial,sans-serif;
+color:white;
+background:radial-gradient(circle at top,#650000,#050505 70%);
+min-height:100vh;
 }
-main{max-width:760px;margin:auto;padding:18px}
-header{
- text-align:center;padding:45px 20px;
- border:1px solid #800000;border-radius:25px;
- background:linear-gradient(#520000aa,#050505ee);
- box-shadow:0 0 45px #f0000033
+main{
+max-width:750px;
+margin:auto;
+padding:20px;
 }
+header,.card{
+background:#090909ee;
+border:1px solid #600000;
+border-radius:20px;
+padding:25px;
+margin-bottom:20px;
+box-shadow:0 0 30px #ff000022;
+}
+header{text-align:center}
 .logo{font-size:60px}
-h1{font-size:38px;letter-spacing:4px;margin:10px 0}
-header p{color:#aaa}
-.card{
- margin-top:20px;padding:25px;
- background:#090909ee;border:1px solid #292929;
- border-radius:20px
-}
-label{display:block;font-weight:bold;font-size:14px;margin-bottom:7px}
+h1{font-size:36px}
 input,textarea{
- width:100%;padding:14px;margin-bottom:18px;
- border-radius:10px;border:1px solid #333;
- background:#050505;color:white;font-size:15px
+width:100%;
+padding:14px;
+margin:8px 0 18px;
+box-sizing:border-box;
+border-radius:10px;
+border:1px solid #333;
+background:#050505;
+color:white;
 }
-textarea{min-height:100px;resize:vertical}
+textarea{min-height:100px}
+button{
+width:100%;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#b00000;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
 .periodos{
- display:grid;grid-template-columns:repeat(4,1fr);
- gap:8px;margin-bottom:20px
-}
-.periodos label{
- padding:16px 5px;text-align:center;
- background:#101010;border:1px solid #333;
- border-radius:10px;cursor:pointer
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:8px;
+margin-bottom:18px;
 }
 .periodos input{display:none}
+.periodos label{
+display:block;
+padding:15px 5px;
+text-align:center;
+background:#111;
+border:1px solid #333;
+border-radius:10px;
+cursor:pointer;
+}
 .periodos input:checked+label{
- background:#350000;border-color:red
+background:#400000;
+border-color:red;
 }
 .aviso{
- padding:16px;margin:5px 0 20px;
- border-radius:12px;background:#210000;
- border:1px solid #650000;
- color:#ddd;line-height:1.5
+padding:15px;
+background:#250000;
+border:1px solid #700000;
+border-radius:10px;
+margin-bottom:18px;
 }
-.aceite{display:flex;align-items:center;gap:8px;margin:12px 0 0}
-.aceite input{width:18px;margin:0}
-button{
- width:100%;padding:15px;border:0;border-radius:11px;
- background:linear-gradient(135deg,#850000,#ed0000);
- color:#fff;font-weight:bold;cursor:pointer
+.aceite{
+display:flex;
+gap:8px;
+align-items:center;
+}
+.aceite input{
+width:18px;
+margin:0;
+}
+.hidden{display:none}
+.sucesso{text-align:center}
+.check{
+width:80px;
+height:80px;
+margin:auto;
+border:3px solid #20e878;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:50px;
+color:#20e878;
 }
 .admin{
- display:block;width:max-content;margin:18px auto;
- padding:10px 18px;background:#080808;
- border:1px solid #333;border-radius:10px;color:#999
+width:auto;
+display:block;
+margin:20px auto;
+background:#111;
+border:1px solid #444;
 }
-.hidden{display:none!important}
-.sucesso{text-align:center;padding:30px 5px}
-.check{
- width:90px;height:90px;margin:auto;border:3px solid #20e878;
- border-radius:50%;display:flex;align-items:center;
- justify-content:center;color:#20e878;font-size:55px;
- box-shadow:0 0 35px #20e87844
-}
-.sucesso h2{margin-top:20px}
-.sucesso p{color:#999;line-height:1.5}
-.seta{font-size:45px;color:#20e878}
-.erro{color:#ff5050;text-align:center;margin-top:12px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.stat{
- padding:18px;background:#111;border:1px solid #292929;
- border-radius:12px
-}
-.numero{font-size:28px;font-weight:bold}
-.lista{margin-top:20px}
-.membro{
- padding:18px;margin-bottom:12px;
- background:#0b0b0b;border:1px solid #292929;
- border-radius:14px
-}
-.membro p{color:#bbb;line-height:1.5}
-.acoes{display:flex;gap:8px}
-.sec{background:#151515;border:1px solid #333}
-.verde{color:#20e878}
-.vermelho{color:#ff5050}
-@media(max-width:600px){
- .periodos{grid-template-columns:repeat(2,1fr)}
- .stats{grid-template-columns:1fr}
- h1{font-size:30px}
-}
+.erro{color:#ff5555;text-align:center}
 </style>
 </head>
 
@@ -116,16 +123,16 @@ button{
 
 <section class="card">
 
-<form id="form">
+<form id="formulario">
 
 <label>🎮 Nick</label>
-<input id="nick" required placeholder="Digite seu Nick">
+<input id="nick" required>
 
 <label>⭐ PIX</label>
-<input id="pix" required placeholder="Digite seu PIX">
+<input id="pix" required>
 
 <label>📲 SMS</label>
-<input id="sms" required placeholder="Digite seu SMS">
+<input id="sms" required>
 
 <label>🕐 Qual período costuma jogar?</label>
 
@@ -160,39 +167,47 @@ button{
 <textarea id="familia" required></textarea>
 
 <div class="aviso">
-⚠️ Está ciente de que <b>5 dias seguidos OFF, sem justificativa,
-resultam na remoção da família?</b>
+
+⚠️ Está ciente de que <b>5 dias seguidos OFF,
+sem justificativa, resultam na remoção da família?</b>
 
 <label class="aceite">
 <input id="aceite" type="checkbox" required>
 <span>SIM, ESTOU CIENTE E DE ACORDO.</span>
 </label>
+
 </div>
 
-<button type="submit">🔥 ENVIAR FORMULÁRIO</button>
+<button type="submit">
+🔥 ENVIAR FORMULÁRIO
+</button>
 
 </form>
 
 <div id="sucesso" class="sucesso hidden">
+
 <div class="check">✓</div>
+
 <h2>Seu formulário foi enviado!</h2>
-<p>Recebemos suas informações com sucesso.<br>
-Aguarde a análise da administração.</p>
-<div class="seta">→</div>
+
+<p>
+Recebemos suas informações com sucesso.<br>
+Aguarde a análise da administração.
+</p>
+
+<div style="font-size:40px;color:#20e878">
+→
+</div>
+
 </div>
 
 </section>
 
-<button id="abrirAdm" class="admin">🔐 Área ADM</button>
-
-<p style="text-align:center;color:#666;font-size:12px">
-🖤 US METRALHA 🖤<br>
-Atividade • União • Respeito • Lealdade
-</p>
+<button id="abrirADM" class="admin">
+🔐 Área ADM
+</button>
 
 </main>
-
-
 <!-- LOGIN ADM -->
 
 <main id="login" class="hidden">
@@ -200,295 +215,713 @@ Atividade • União • Respeito • Lealdade
 <section class="card">
 
 <h2>🔐 Painel ADM</h2>
-<p style="color:#888">Acesso exclusivo da administração.</p>
+
+<p style="color:#888">
+Acesso exclusivo da administração.
+</p>
 
 <label>📧 E-mail</label>
-<input id="email" type="email"
-value="usmetralhaadmins@gmail.com">
+
+<input
+id="emailADM"
+type="email"
+value="usmetralhaadmins@gmail.com"
+>
 
 <label>🔑 Senha</label>
-<input id="senha" type="password"
-placeholder="Digite sua senha">
 
-<button id="entrar">ENTRAR</button>
+<input
+id="senhaADM"
+type="password"
+placeholder="Digite sua senha"
+>
 
-<div id="erro" class="erro"></div>
+<button id="entrarADM">
+🔐 ENTRAR
+</button>
 
-<button id="voltar" class="admin">← Voltar</button>
+<div id="erroADM" class="erro"></div>
+
+<button
+id="voltarSite"
+class="admin"
+type="button"
+>
+← Voltar
+</button>
 
 </section>
 
 </main>
 
 
-<!-- PAINEL -->
+<!-- PAINEL ADM -->
 
 <main id="painel" class="hidden">
 
 <section class="card">
 
 <h2>🔥 US METRALHA — ADM</h2>
-<p style="color:#777">Painel de administração</p>
 
-<div class="stats">
+<p style="color:#888">
+Painel de Administração
+</p>
 
-<div class="stat">
-<div id="total" class="numero">0</div>
-<div style="color:#777">Total</div>
-</div>
+<div class="card">
 
-<div class="stat">
-<div id="pendentes" class="numero">0</div>
-<div style="color:#777">Pendentes</div>
-</div>
+<label>🔎 Pesquisar</label>
 
-<div class="stat">
-<div id="aprovados" class="numero">0</div>
-<div style="color:#777">Aprovados</div>
-</div>
+<input
+id="pesquisa"
+placeholder="Nick, PIX ou SMS..."
+>
 
 </div>
 
-<div id="lista" class="lista"></div>
+<div
+style="
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:8px;
+"
+>
 
-<button id="sair" class="sec">Sair</button>
+<button onclick="mudarFiltro('Todos')">
+📋 Todos
+</button>
+
+<button onclick="mudarFiltro('Pendente')">
+⏳ Pendentes
+</button>
+
+<button onclick="mudarFiltro('Aprovado')">
+✅ Aprovados
+</button>
+
+<button onclick="mudarFiltro('Recusado')">
+❌ Recusados
+</button>
+
+<button onclick="mudarFiltro('Lixeira')">
+🗑️ Lixeira
+</button>
+
+</div>
+
+<div
+id="lista"
+style="margin-top:20px"
+></div>
+
+<button
+id="sairADM"
+class="admin"
+type="button"
+>
+🚪 Sair
+</button>
 
 </section>
 
 </main>
+<script type="module">
+
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    push,
+    set,
+    onValue,
+    update,
+    remove
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
 
-<script>
+const firebaseConfig = {
 
-const site=document.getElementById("site");
-const login=document.getElementById("login");
-const painel=document.getElementById("painel");
-const form=document.getElementById("form");
-const sucesso=document.getElementById("sucesso");
+    apiKey:
+    "AIzaSyDy8falIrYlTDdZlOU3C3v_gfb-pXTknIc",
 
-let membros=JSON.parse(
- localStorage.getItem("us_metralha_membros")||"[]"
-);
+    authDomain:
+    "us-metralha.firebaseapp.com",
+
+    databaseURL:
+    "https://us-metralha-default-rtdb.firebaseio.com/",
+
+    projectId:
+    "us-metralha",
+
+    storageBucket:
+    "us-metralha.firebasestorage.app",
+
+    messagingSenderId:
+    "992552847534",
+
+    appId:
+    "1:992552847534:web:6be21b8924b9399959453f"
+
+};
 
 
-/* ENVIO */
+const app =
+    initializeApp(firebaseConfig);
 
-form.addEventListener("submit",function(e){
 
- e.preventDefault();
+const database =
+    getDatabase(app);
 
- const periodo=document.querySelector(
-  'input[name="periodo"]:checked'
- );
 
- const membro={
-  id:Date.now(),
-  nick:document.getElementById("nick").value,
-  pix:document.getElementById("pix").value,
-  sms:document.getElementById("sms").value,
-  periodo:periodo.value,
-  objetivo:document.getElementById("objetivo").value,
-  familia:document.getElementById("familia").value,
-  status:"Pendente"
- };
+let membros = {};
 
- membros.push(membro);
+let filtroAtual = "Todos";
 
- localStorage.setItem(
-  "us_metralha_membros",
-  JSON.stringify(membros)
- );
 
- form.classList.add("hidden");
- sucesso.classList.remove("hidden");
+/* FORMULÁRIO */
 
- window.scrollTo(0,0);
+document
+.getElementById("formulario")
+.addEventListener(
+"submit",
+async function(e){
+
+    e.preventDefault();
+
+
+    const periodo =
+    document.querySelector(
+    'input[name="periodo"]:checked'
+    );
+
+
+    const dados = {
+
+        nick:
+        document.getElementById("nick").value,
+
+        pix:
+        document.getElementById("pix").value,
+
+        sms:
+        document.getElementById("sms").value,
+
+        periodo:
+        periodo ? periodo.value : "",
+
+        objetivo:
+        document.getElementById("objetivo").value,
+
+        familia:
+        document.getElementById("familia").value,
+
+        aceitouRegra:
+        document.getElementById("aceite").checked,
+
+        status:
+        "Pendente",
+
+        lixeira:
+        false,
+
+        data:
+        new Date().toLocaleString("pt-BR")
+
+    };
+
+
+    try{
+
+        const novo =
+        push(
+        ref(database,"formularios")
+        );
+
+
+        await set(
+        novo,
+        dados
+        );
+
+
+        document
+        .getElementById("formulario")
+        .classList
+        .add("hidden");
+
+
+        document
+        .getElementById("sucesso")
+        .classList
+        .remove("hidden");
+
+
+    }catch(erro){
+
+        alert(
+        "Não foi possível enviar o formulário."
+        );
+
+        console.error(erro);
+
+    }
 
 });
 
 
 /* ABRIR ADM */
 
-document.getElementById("abrirAdm").onclick=function(){
+document
+.getElementById("abrirADM")
+.onclick=function(){
 
- site.classList.add("hidden");
- login.classList.remove("hidden");
+    document
+    .getElementById("site")
+    .classList
+    .add("hidden");
+
+    document
+    .getElementById("login")
+    .classList
+    .remove("hidden");
 
 };
 
 
 /* VOLTAR */
 
-document.getElementById("voltar").onclick=function(){
+document
+.getElementById("voltarSite")
+.onclick=function(){
 
- login.classList.add("hidden");
- site.classList.remove("hidden");
+    document
+    .getElementById("login")
+    .classList
+    .add("hidden");
+
+    document
+    .getElementById("site")
+    .classList
+    .remove("hidden");
 
 };
 
 
 /* LOGIN */
 
-document.getElementById("entrar").onclick=function(){
+document
+.getElementById("entrarADM")
+.onclick=function(){
 
- const email=document.getElementById("email").value.trim();
- const senha=document.getElementById("senha").value;
+    const email =
+    document
+    .getElementById("emailADM")
+    .value;
 
- if(
-  email==="usmetralhaadmins@gmail.com" &&
-  senha==="usmetralha123"
- ){
+    const senha =
+    document
+    .getElementById("senhaADM")
+    .value;
 
-  login.classList.add("hidden");
-  painel.classList.remove("hidden");
-  atualizar();
 
- }else{
+    if(
+    email ===
+    "usmetralhaadmins@gmail.com"
+    &&
+    senha ===
+    "usmetralha123"
+    ){
 
-  document.getElementById("erro").textContent=
-  "❌ E-mail ou senha incorretos.";
+        document
+        .getElementById("login")
+        .classList
+        .add("hidden");
 
- }
+        document
+        .getElementById("painel")
+        .classList
+        .remove("hidden");
+
+        iniciarADM();
+
+    }else{
+
+        document
+        .getElementById("erroADM")
+        .textContent =
+        "❌ E-mail ou senha incorretos.";
+
+    }
 
 };
 
 
-/* PAINEL */
+/* SAIR */
 
-function atualizar(){
+document
+.getElementById("sairADM")
+.onclick=function(){
 
- document.getElementById("total").textContent=
- membros.length;
+    document
+    .getElementById("painel")
+    .classList
+    .add("hidden");
 
- document.getElementById("pendentes").textContent=
- membros.filter(x=>x.status==="Pendente").length;
+    document
+    .getElementById("site")
+    .classList
+    .remove("hidden");
 
- document.getElementById("aprovados").textContent=
- membros.filter(x=>x.status==="Aprovado").length;
+};
 
- const lista=document.getElementById("lista");
 
- if(membros.length===0){
+/* FIREBASE ADM */
 
-  lista.innerHTML=
-  '<p style="text-align:center;color:#666">Nenhum formulário recebido.</p>';
+function iniciarADM(){
 
-  return;
- }
+    onValue(
+        ref(database,"formularios"),
+        function(snapshot){
 
- lista.innerHTML=membros.map(x=>`
+            membros =
+            snapshot.val() || {};
 
- <div class="membro">
+            mostrarLista();
 
- <h3>🎮 ${seguro(x.nick)}</h3>
+        }
+    );
 
- <p>
- <b>⭐ PIX:</b> ${seguro(x.pix)}<br>
- <b>📲 SMS:</b> ${seguro(x.sms)}<br>
- <b>🕐 Período:</b> ${seguro(x.periodo)}
- </p>
+}
 
- <p>
- <b>🎯 Objetivo:</b><br>
- ${seguro(x.objetivo)}
- </p>
 
- <p>
- <b>💭 Família:</b><br>
- ${seguro(x.familia)}
- </p>
+/* PESQUISA */
 
- <p>
- Status:
- <b class="${x.status==="Aprovado"?"verde":"vermelho"}">
- ${x.status}
- </b>
- </p>
+document
+.getElementById("pesquisa")
+.addEventListener(
+"input",
+function(){
 
- <div class="acoes">
+    mostrarLista();
 
- <button class="sec" onclick="aprovar(${x.id})">
- ✓ Aprovar
- </button>
+});
 
- <button class="sec" onclick="excluir(${x.id})">
- 🗑 Excluir
- </button>
 
- </div>
+/* FILTRO */
 
- </div>
+window.mudarFiltro =
+function(filtro){
 
- `).join("");
+    filtroAtual =
+    filtro;
+
+    mostrarLista();
+
+};
+
+
+/* LISTA */
+
+function mostrarLista(){
+
+    const lista =
+    document.getElementById("lista");
+
+
+    const termo =
+    document
+    .getElementById("pesquisa")
+    .value
+    .toLowerCase();
+
+
+    let encontrados = [];
+
+
+    Object.keys(membros)
+    .forEach(function(id){
+
+        const m =
+        membros[id];
+
+
+        if(
+        filtroAtual === "Lixeira"
+        ){
+
+            if(!m.lixeira)
+            return;
+
+        }else{
+
+            if(m.lixeira)
+            return;
+
+        }
+
+
+        if(
+        filtroAtual !== "Todos"
+        &&
+        filtroAtual !== "Lixeira"
+        &&
+        m.status !== filtroAtual
+        ){
+
+            return;
+
+        }
+
+
+        const texto =
+        (
+        (m.nick||"")+
+        " "+
+        (m.pix||"")+
+        " "+
+        (m.sms||"")
+        )
+        .toLowerCase();
+
+
+        if(
+        termo &&
+        !texto.includes(termo)
+        ){
+
+            return;
+
+        }
+
+
+        encontrados.push({
+            id:id,
+            dados:m
+        });
+
+    });
+
+
+    if(!encontrados.length){
+
+        lista.innerHTML =
+        "<p style='color:#777;text-align:center'>" +
+        "Nenhum formulário encontrado." +
+        "</p>";
+
+        return;
+
+    }
+
+
+    lista.innerHTML =
+    encontrados
+    .map(function(item){
+
+        return criarMembro(
+        item.id,
+        item.dados
+        );
+
+    })
+    .join("");
+
+}
+
+
+/* CARD */
+
+function criarMembro(id,m){
+
+    const regra =
+    m.aceitouRegra
+    ?
+    "<span style='color:#20e878'>✓ SIM — ACEITOU</span>"
+    :
+    "<span style='color:#ff5555'>✕ NÃO — NÃO ACEITOU</span>";
+
+
+    let botoes = "";
+
+
+    if(m.lixeira){
+
+        botoes =
+        "<button onclick=\"restaurar('"+id+"')\">" +
+        "♻️ Restaurar" +
+        "</button>";
+
+        botoes +=
+        "<button onclick=\"apagar('"+id+"')\">" +
+        "❌ Apagar definitivamente" +
+        "</button>";
+
+    }else{
+
+        botoes =
+        "<button onclick=\"aprovar('"+id+"')\">" +
+        "✅ Aprovar" +
+        "</button>";
+
+        botoes +=
+        "<button onclick=\"recusar('"+id+"')\">" +
+        "❌ Recusar" +
+        "</button>";
+
+        botoes +=
+        "<button onclick=\"lixeira('"+id+"')\">" +
+        "🗑️ Lixeira" +
+        "</button>";
+
+    }
+
+
+    return `
+
+    <div class="card">
+
+    <h3>🎮 ${esc(m.nick)}</h3>
+
+    <p>
+    ⭐ PIX: ${esc(m.pix)}
+    <br>
+    📲 SMS: ${esc(m.sms)}
+    <br>
+    🕐 ${esc(m.periodo)}
+    </p>
+
+    <p>
+    🎯 <b>Objetivo:</b><br>
+    ${esc(m.objetivo)}
+    </p>
+
+    <p>
+    💭 <b>Família:</b><br>
+    ${esc(m.familia)}
+    </p>
+
+    <p>
+    ⚠️ <b>Regra dos 5 dias OFF:</b><br>
+    ${regra}
+    </p>
+
+    <p>
+    <b>Status:</b>
+    ${esc(m.status)}
+    </p>
+
+    ${botoes}
+
+    </div>
+
+    `;
 
 }
 
 
 /* APROVAR */
 
-function aprovar(id){
+window.aprovar =
+async function(id){
 
- const x=membros.find(m=>m.id===id);
-
- if(x){
-  x.status="Aprovado";
-  salvar();
-  atualizar();
- }
-
-}
-
-
-/* EXCLUIR */
-
-function excluir(id){
-
- if(!confirm("Excluir este formulário?"))return;
-
- membros=membros.filter(x=>x.id!==id);
-
- salvar();
- atualizar();
-
-}
-
-
-/* SALVAR */
-
-function salvar(){
-
- localStorage.setItem(
-  "us_metralha_membros",
-  JSON.stringify(membros)
- );
-
-}
-
-
-/* SEGURANÇA */
-
-function seguro(t){
-
- return String(t||"")
- .replaceAll("&","&amp;")
- .replaceAll("<","&lt;")
- .replaceAll(">","&gt;")
- .replaceAll('"',"&quot;")
- .replaceAll("'","&#039;");
-
-}
-
-
-/* SAIR */
-
-document.getElementById("sair").onclick=function(){
-
- painel.classList.add("hidden");
- site.classList.remove("hidden");
+    await update(
+    ref(database,"formularios/"+id),
+    {
+        status:"Aprovado",
+        lixeira:false
+    }
+    );
 
 };
+
+
+/* RECUSAR */
+
+window.recusar =
+async function(id){
+
+    await update(
+    ref(database,"formularios/"+id),
+    {
+        status:"Recusado",
+        lixeira:false
+    }
+    );
+
+};
+
+
+/* LIXEIRA */
+
+window.lixeira =
+async function(id){
+
+    await update(
+    ref(database,"formularios/"+id),
+    {
+        lixeira:true
+    }
+    );
+
+};
+
+
+/* RESTAURAR */
+
+window.restaurar =
+async function(id){
+
+    await update(
+    ref(database,"formularios/"+id),
+    {
+        lixeira:false
+    }
+    );
+
+};
+
+
+/* APAGAR DEFINITIVAMENTE */
+
+window.apagar =
+async function(id){
+
+    if(
+    !confirm(
+    "Excluir definitivamente?"
+         ){
+
+        return;
+
+    }
+
+    await remove(
+        ref(
+            database,
+            "formularios/" + id
+        )
+    );
+
+};
+
+
+/* SEGURANÇA DO TEXTO */
+
+function esc(texto){
+
+    return String(texto || "")
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+
+}
 
 </script>
 
 </body>
-    </html>
+</html>
+   
