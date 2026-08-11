@@ -7,179 +7,41 @@
 
 <style>
 *{box-sizing:border-box}
-
-body{
-margin:0;
-background:radial-gradient(circle at top,#650000,#050505 70%);
-color:#fff;
-font-family:Arial,sans-serif
-}
-
-main{
-max-width:760px;
-margin:auto;
-padding:18px
-}
-
-.card,header{
-background:#090909ee;
-border:1px solid #650000;
-border-radius:18px;
-padding:20px;
-margin-bottom:18px;
-box-shadow:0 0 25px #f0000020
-}
-
+body{margin:0;background:radial-gradient(circle at top,#650000,#050505 70%);color:#fff;font-family:Arial,sans-serif}
+main{max-width:760px;margin:auto;padding:18px}
+.card,header{background:#090909ee;border:1px solid #650000;border-radius:18px;padding:20px;margin-bottom:18px;box-shadow:0 0 25px #f0000020}
 header{text-align:center}
 .logo{font-size:55px}
 h1{font-size:34px}
-
-input,textarea{
-width:100%;
-padding:13px;
-margin:7px 0 15px;
-background:#050505;
-color:#fff;
-border:1px solid #444;
-border-radius:9px
-}
-
+input,textarea{width:100%;padding:13px;margin:7px 0 15px;background:#050505;color:#fff;border:1px solid #444;border-radius:9px}
 textarea{min-height:90px}
-
-button{
-border:0;
-border-radius:9px;
-padding:13px;
-background:#a90000;
-color:#fff;
-font-weight:bold;
-cursor:pointer;
-margin:4px
-}
-
-button:disabled{
-opacity:.5;
-cursor:not-allowed
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:7px
-}
-
-.periodos{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:7px
-}
-
+button{border:0;border-radius:9px;padding:13px;background:#a90000;color:#fff;font-weight:bold;cursor:pointer;margin:4px}
+button:disabled{opacity:.5;cursor:not-allowed}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+.periodos{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
 .periodos input{display:none}
-
-.periodos label{
-display:block;
-text-align:center;
-padding:13px 3px;
-background:#111;
-border:1px solid #444;
-border-radius:9px
-}
-
-.periodos input:checked+label{
-background:#500000;
-border-color:red
-}
-
-.aviso{
-background:#280000;
-padding:14px;
-border-radius:10px;
-margin:10px 0 18px
-}
-
-.aceite{
-display:flex;
-align-items:center;
-gap:8px
-}
-
-.aceite input{
-width:auto;
-margin:0
-}
-
+.periodos label{display:block;text-align:center;padding:13px 3px;background:#111;border:1px solid #444;border-radius:9px}
+.periodos input:checked+label{background:#500000;border-color:red}
+.aviso{background:#280000;padding:14px;border-radius:10px;margin:10px 0 18px}
+.aceite{display:flex;align-items:center;gap:8px}
+.aceite input{width:auto;margin:0}
 .hidden{display:none!important}
-
-.sucesso{
-text-align:center;
-padding:35px 20px
-}
-
-.check{
-margin:auto;
-width:85px;
-height:85px;
-border:4px solid #20e878;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#20e878;
-font-size:55px
-}
-
-.membro{
-background:#111;
-border:1px solid #444;
-border-radius:12px;
-padding:15px;
-margin:12px 0
-}
-
+.sucesso{text-align:center;padding:35px 20px}
+.check{margin:auto;width:85px;height:85px;border:4px solid #20e878;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#20e878;font-size:55px}
+.membro{background:#111;border:1px solid #444;border-radius:12px;padding:15px;margin:12px 0}
 .verde{color:#20e878}
 .vermelho{color:#ff5555}
 .cinza{color:#aaa}
-
-.admBtn{
-background:#111;
-border:1px solid #555;
-width:auto;
-display:block;
-margin:20px auto
-}
-
-.erro{
-text-align:center;
-color:#ff5555
-}
-
-.contadores{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:8px
-}
-
-.contador{
-background:#151515;
-border-radius:10px;
-padding:12px;
-text-align:center
-}
-
-.contador b{
-font-size:22px;
-display:block
-}
-
-.ativo{
-border:2px solid #20e878!important
-}
+.admBtn{background:#111;border:1px solid #555;width:auto;display:block;margin:20px auto}
+.erro{text-align:center;color:#ff5555}
+.contadores{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.contador{background:#151515;border-radius:10px;padding:12px;text-align:center}
+.contador b{font-size:22px;display:block}
+.ativo{border:2px solid #20e878!important}
 </style>
 </head>
 
 <body>
-
-<!-- ================= SITE ================= -->
 
 <main id="site">
 
@@ -189,13 +51,7 @@ border:2px solid #20e878!important
 <p>ATIVIDADE • UNIÃO • RESPEITO • LEALDADE</p>
 </header>
 
-
-<!-- ÁREA DO FORMULÁRIO -->
-
-<section
-id="areaFormulario"
-class="card"
->
+<section id="areaFormulario" class="card">
 
 <form id="formulario">
 
@@ -213,206 +69,106 @@ class="card"
 <div class="periodos">
 
 <div>
-<input
-id="manha"
-name="periodo"
-type="radio"
-value="🌞 Manhã"
-required
->
-<label for="manha">
-🌞<br>Manhã
-</label>
+<input id="manha" name="periodo" type="radio" value="🌞 Manhã" required>
+<label for="manha">🌞<br>Manhã</label>
 </div>
 
 <div>
-<input
-id="tarde"
-name="periodo"
-type="radio"
-value="⛅ Tarde"
->
-<label for="tarde">
-⛅<br>Tarde
-</label>
+<input id="tarde" name="periodo" type="radio" value="⛅ Tarde">
+<label for="tarde">⛅<br>Tarde</label>
 </div>
 
 <div>
-<input
-id="noite"
-name="periodo"
-type="radio"
-value="🌚 Noite"
->
-<label for="noite">
-🌚<br>Noite
-</label>
+<input id="noite" name="periodo" type="radio" value="🌚 Noite">
+<label for="noite">🌚<br>Noite</label>
 </div>
 
 <div>
-<input
-id="varia"
-name="periodo"
-type="radio"
-value="🫯 Varia"
->
-<label for="varia">
-🫯<br>Varia
-</label>
+<input id="varia" name="periodo" type="radio" value="🫯 Varia">
+<label for="varia">🫯<br>Varia</label>
 </div>
 
 </div>
 
+<label>🎯 Qual é o seu principal objetivo no jogo?</label>
+<textarea id="objetivo" required></textarea>
 
-<label>
-🎯 Qual é o seu principal objetivo no jogo?
-</label>
-
-<textarea
-id="objetivo"
-required
-></textarea>
-
-
-<label>
-💭 O que faz uma família ser boa para você?
-</label>
-
-<textarea
-id="familia"
-required
-></textarea>
-
+<label>💭 O que faz uma família ser boa para você?</label>
+<textarea id="familia" required></textarea>
 
 <div class="aviso">
-
 ⚠️ Está ciente de que
-<b>
-5 dias seguidos OFF,
-sem justificativa,
-resultam na remoção da família?
-</b>
+<b>5 dias seguidos OFF, sem justificativa, resultam na remoção da família?</b>
 
 <label class="aceite">
-
-<input
-id="aceite"
-type="checkbox"
-required
->
-
+<input id="aceite" type="checkbox" required>
 SIM, ESTOU CIENTE E DE ACORDO.
-
 </label>
-
 </div>
 
-
-<button
-id="enviar"
-type="submit"
->
-
+<button id="enviar" type="submit">
 🔥 ENVIAR FORMULÁRIO
-
 </button>
 
 </form>
-
 </section>
 
+<section id="sucesso" class="card sucesso hidden">
 
-<!-- ================= SUCESSO ================= -->
+<div class="check">✓</div>
 
-<section
-id="sucesso"
-class="card sucesso hidden"
->
-
-<div class="check">
-✓
-</div>
-
-<h2>
-Seu formulário foi enviado com sucesso!
-</h2>
+<h2>Seu formulário foi enviado com sucesso!</h2>
 
 <p>
 Recebemos suas informações.<br>
 Aguarde a análise da administração.
 </p>
 
-<div
-style="
-font-size:45px;
-color:#20e878;
-margin-top:20px
-"
->
+<div style="font-size:45px;color:#20e878;margin-top:20px">
 ✓
 </div>
 
 </section>
 
-
-<button
-id="abrirADM"
-class="admBtn"
->
-
+<button id="abrirADM" class="admBtn">
 🔐 ÁREA ADM
-
 </button>
 
 </main>
 
 
-<!-- ================= LOGIN ADM ================= -->
+<!-- LOGIN ADM -->
 
-<main
-id="login"
-class="hidden"
->
+<main id="login" class="hidden">
 
 <section class="card">
 
-<h2>
-🔐 Painel ADM
-</h2>
+<h2>🔐 Painel ADM</h2>
 
-<label>
-📧 E-mail
-</label>
+<label>📧 E-mail</label>
 
 <input
 id="emailADM"
 type="email"
 value="usmetralhaadmins@gmail.com"
+readonly
 >
 
-<label>
-🔑 Senha
-</label>
+<label>🔑 Senha</label>
 
 <input
 id="senhaADM"
 type="password"
-placeholder="Senha"
+placeholder="Digite sua senha do Firebase"
 >
 
 <button id="entrarADM">
 ENTRAR
 </button>
 
-<div
-id="erroADM"
-class="erro"
-></div>
+<div id="erroADM" class="erro"></div>
 
-<button
-id="voltarSite"
-class="admBtn"
->
+<button id="voltarSite" class="admBtn">
 ← Voltar
 </button>
 
@@ -421,19 +177,13 @@ class="admBtn"
 </main>
 
 
-<!-- ================= PAINEL ADM ================= -->
+<!-- PAINEL ADM -->
 
-<main
-id="painel"
-class="hidden"
->
+<main id="painel" class="hidden">
 
 <section class="card">
 
-<h2>
-🔥 US METRALHA — ADM
-</h2>
-
+<h2>🔥 US METRALHA — ADM</h2>
 
 <div class="contadores">
 
@@ -464,10 +214,7 @@ class="hidden"
 
 </div>
 
-
-<h3>
-🔎 Pesquisar membro
-</h3>
+<h3>🔎 Pesquisar membro</h3>
 
 <input
 id="pesquisa"
@@ -475,58 +222,35 @@ type="search"
 placeholder="Digite Nick, PIX ou SMS..."
 >
 
-
-<h3>
-📂 Formulários
-</h3>
+<h3>📂 Formulários</h3>
 
 <div class="grid">
 
-<button
-id="btnTodos"
-onclick="mudarFiltro('Todos')"
->
+<button id="btnTodos" onclick="mudarFiltro('Todos')">
 📋 TODOS
 </button>
 
-<button
-id="btnPendente"
-onclick="mudarFiltro('Pendente')"
->
+<button id="btnPendente" onclick="mudarFiltro('Pendente')">
 ⏳ PENDENTES
 </button>
 
-<button
-id="btnAprovado"
-onclick="mudarFiltro('Aprovado')"
->
+<button id="btnAprovado" onclick="mudarFiltro('Aprovado')">
 ✅ APROVADOS
 </button>
 
-<button
-id="btnRecusado"
-onclick="mudarFiltro('Recusado')"
->
+<button id="btnRecusado" onclick="mudarFiltro('Recusado')">
 ❌ RECUSADOS
 </button>
 
-<button
-id="btnLixeira"
-onclick="mudarFiltro('Lixeira')"
->
+<button id="btnLixeira" onclick="mudarFiltro('Lixeira')">
 🗑️ LIXEIRA
 </button>
 
 </div>
 
-
 <div id="lista"></div>
 
-
-<button
-id="sairADM"
-class="admBtn"
->
+<button id="sairADM" class="admBtn">
 🚪 SAIR
 </button>
 
@@ -535,14 +259,15 @@ class="admBtn"
 </main>
 
 
-<!-- ================= FIREBASE + JAVASCRIPT ================= -->
-
 <script type="module">
+
+/* =========================
+FIREBASE
+========================= */
 
 import{
 initializeApp
-}
-from
+}from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
@@ -554,50 +279,53 @@ set,
 onValue,
 update,
 remove
-}
-from
+}from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
 
-const app=
-initializeApp({
+/*
+NOVO:
+FIREBASE AUTHENTICATION
+*/
 
-apiKey:
-"AIzaSyDy8falIrYlTDdZlOU3C3v_gfb-pXTknIc",
-
-authDomain:
-"us-metralha.firebaseapp.com",
-
-databaseURL:
-"https://us-metralha-default-rtdb.firebaseio.com/",
-
-projectId:
-"us-metralha",
-
-storageBucket:
-"us-metralha.firebasestorage.app",
-
-messagingSenderId:
-"992552847534",
-
-appId:
-"1:992552847534:web:6be21b8924b9399959453f"
-
-});
+import{
+getAuth,
+signInWithEmailAndPassword,
+signOut
+}from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-const db=
-getDatabase(app);
+const firebaseConfig={
 
+apiKey:"AIzaSyDy8falIrYlTDdZlOU3C3v_gfb-pXTknIc",
+
+authDomain:"us-metralha.firebaseapp.com",
+
+databaseURL:"https://us-metralha-default-rtdb.firebaseio.com/",
+
+projectId:"us-metralha",
+
+storageBucket:"us-metralha.firebasestorage.app",
+
+messagingSenderId:"992552847534",
+
+appId:"1:992552847534:web:6be21b8924b9399959453f"
+
+};
+
+
+const app=initializeApp(firebaseConfig);
+
+const db=getDatabase(app);
+
+const auth=getAuth(app);
 
 let dados={};
 
 let filtro="Todos";
 
-
-const $=
-id=>
-document.getElementById(id);
+const $=id=>document.getElementById(id);
 
 
 /* =========================
@@ -610,132 +338,70 @@ async function(event){
 
 event.preventDefault();
 
+const botao=$("enviar");
 
-const botao=
-$("enviar");
-
-
-/*
-IMPede dois cliques
-*/
-
-if(botao.disabled){
-return;
-}
-
+if(botao.disabled)return;
 
 botao.disabled=true;
 
-botao.textContent=
-"⏳ ENVIANDO...";
-
+botao.textContent="⏳ ENVIANDO...";
 
 const periodo=
 document.querySelector(
 'input[name="periodo"]:checked'
 );
 
-
 const formulario={
 
-nick:
-$("nick").value.trim(),
+nick:$("nick").value.trim(),
 
-pix:
-$("pix").value.trim(),
+pix:$("pix").value.trim(),
 
-sms:
-$("sms").value.trim(),
+sms:$("sms").value.trim(),
 
-periodo:
-periodo?
-periodo.value:
-"",
+periodo:periodo?periodo.value:"",
 
-objetivo:
-$("objetivo").value.trim(),
+objetivo:$("objetivo").value.trim(),
 
-familia:
-$("familia").value.trim(),
+familia:$("familia").value.trim(),
 
-aceitouRegra:
-$("aceite").checked,
+aceitouRegra:$("aceite").checked,
 
-status:
-"Pendente",
+status:"Pendente",
 
-lixeira:
-false,
+lixeira:false,
 
-data:
-new Date()
-.toLocaleString("pt-BR")
+data:new Date().toLocaleString("pt-BR")
 
 };
 
-
 try{
 
-/*
-SALVA NO FIREBASE
-*/
-
-const novo=
-push(
-ref(
-db,
-"formularios"
-)
+const novo=push(
+ref(db,"formularios")
 );
 
-
-await set(
-novo,
-formulario
-);
-
-
-/*
-AQUI ESTÁ A CORREÇÃO:
-
-ESCONDE A ÁREA INTEIRA
-DO FORMULÁRIO.
-*/
+await set(novo,formulario);
 
 $("areaFormulario")
-.classList
-.add("hidden");
-
-
-/*
-MOSTRA A TELA DE SUCESSO.
-*/
+.classList.add("hidden");
 
 $("sucesso")
-.classList
-.remove("hidden");
-
-
-/*
-VOLTA PARA O TOPO
-*/
+.classList.remove("hidden");
 
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
 
-
 }catch(erro){
 
 console.error(erro);
-
 
 botao.disabled=false;
 
 botao.textContent=
 "🔥 ENVIAR FORMULÁRIO";
-
 
 alert(
 "Não foi possível enviar o formulário."
@@ -750,16 +416,15 @@ alert(
 ABRIR ADM
 ========================= */
 
-$("abrirADM").onclick=
-function(){
+$("abrirADM").onclick=function(){
 
-$("site")
-.classList
-.add("hidden");
+$("site").classList.add("hidden");
 
-$("login")
-.classList
-.remove("hidden");
+$("login").classList.remove("hidden");
+
+$("senhaADM").value="";
+
+$("erroADM").textContent="";
 
 };
 
@@ -768,44 +433,51 @@ $("login")
 VOLTAR
 ========================= */
 
-$("voltarSite").onclick=
-function(){
+$("voltarSite").onclick=function(){
 
-$("login")
-.classList
-.add("hidden");
+$("login").classList.add("hidden");
 
-$("site")
-.classList
-.remove("hidden");
+$("site").classList.remove("hidden");
 
 };
 
 
 /* =========================
-LOGIN
+LOGIN SEGURO
 ========================= */
 
-$("entrarADM").onclick=
-function(){
+$("entrarADM").onclick=async function(){
 
 const email=
-$("emailADM")
-.value
-.trim();
+$("emailADM").value.trim();
 
 const senha=
-$("senhaADM")
-.value;
+$("senhaADM").value;
 
+const botao=$("entrarADM");
 
-if(
-email===
-"usmetralhaadmins@gmail.com"
-&&
-senha===
-"usmetralha123"
-){
+if(!email||!senha){
+
+$("erroADM").textContent=
+"❌ Digite o e-mail e a senha.";
+
+return;
+
+}
+
+botao.disabled=true;
+
+botao.textContent="⏳ ENTRANDO...";
+
+$("erroADM").textContent="";
+
+try{
+
+await signInWithEmailAndPassword(
+auth,
+email,
+senha
+);
 
 $("login")
 .classList
@@ -817,11 +489,16 @@ $("painel")
 
 iniciarADM();
 
-}else{
+}catch(erro){
 
-$("erroADM")
-.textContent=
+console.error(erro);
+
+$("erroADM").textContent=
 "❌ E-mail ou senha incorretos.";
+
+botao.disabled=false;
+
+botao.textContent="ENTRAR";
 
 }
 
@@ -829,11 +506,20 @@ $("erroADM")
 
 
 /* =========================
-SAIR
+SAIR ADM
 ========================= */
 
-$("sairADM").onclick=
-function(){
+$("sairADM").onclick=async function(){
+
+try{
+
+await signOut(auth);
+
+}catch(erro){
+
+console.error(erro);
+
+}
 
 $("painel")
 .classList
@@ -853,14 +539,10 @@ FIREBASE ADM
 function iniciarADM(){
 
 onValue(
-ref(
-db,
-"formularios"
-),
+ref(db,"formularios"),
 function(snapshot){
 
-dados=
-snapshot.val()||{};
+dados=snapshot.val()||{};
 
 mostrar();
 
@@ -888,11 +570,9 @@ mostrar();
 FILTRO
 ========================= */
 
-window.mudarFiltro=
-function(novo){
+window.mudarFiltro=function(novo){
 
-filtro=
-novo;
+filtro=novo;
 
 mostrar();
 
@@ -900,7 +580,7 @@ mostrar();
 
 
 /* =========================
-MOSTRAR LISTA
+MOSTRAR
 ========================= */
 
 function mostrar(){
@@ -908,13 +588,8 @@ function mostrar(){
 let lista=
 Object.entries(dados);
 
-
 const termo=
-$("pesquisa")
-.value
-.toLowerCase()
-.trim();
-
+$("pesquisa").value.toLowerCase().trim();
 
 let todos=0;
 let pendentes=0;
@@ -922,9 +597,7 @@ let aprovados=0;
 let recusados=0;
 let lixeira=0;
 
-
-lista.forEach(
-function([id,m]){
+lista.forEach(function([id,m]){
 
 if(m.lixeira===true){
 
@@ -934,70 +607,38 @@ return;
 
 }
 
-
 todos++;
 
+if(m.status==="Pendente")pendentes++;
 
-if(m.status===
-"Pendente")
-pendentes++;
+if(m.status==="Aprovado")aprovados++;
 
+if(m.status==="Recusado")recusados++;
 
-if(m.status===
-"Aprovado")
-aprovados++;
+});
 
-
-if(m.status===
-"Recusado")
-recusados++;
-
-}
-);
+$("cTodos").textContent=todos;
+$("cPendentes").textContent=pendentes;
+$("cAprovados").textContent=aprovados;
+$("cRecusados").textContent=recusados;
+$("cLixeira").textContent=lixeira;
 
 
-$("cTodos").textContent=
-todos;
+lista=lista.filter(function([id,m]){
 
-$("cPendentes").textContent=
-pendentes;
+if(filtro==="Lixeira"){
 
-$("cAprovados").textContent=
-aprovados;
-
-$("cRecusados").textContent=
-recusados;
-
-$("cLixeira").textContent=
-lixeira;
-
-
-/* FILTRO */
-
-lista=
-lista.filter(
-function([id,m]){
-
-
-if(filtro===
-"Lixeira"){
-
-if(m.lixeira!==true)
-return false;
+if(m.lixeira!==true)return false;
 
 }else{
 
-if(m.lixeira===true)
-return false;
+if(m.lixeira===true)return false;
 
 }
 
-
 if(
-filtro!=="Todos"
-&&
-filtro!=="Lixeira"
-&&
+filtro!=="Todos"&&
+filtro!=="Lixeira"&&
 m.status!==filtro
 ){
 
@@ -1005,64 +646,40 @@ return false;
 
 }
 
-
-if(termo===""){
-return true;
-}
-
+if(termo==="")return true;
 
 const texto=
-
-String(m.nick||"")
-.toLowerCase()
-+
+String(m.nick||"").toLowerCase()+
 " "+
-String(m.pix||"")
-.toLowerCase()
-+
+String(m.pix||"").toLowerCase()+
 " "+
-String(m.sms||"")
-.toLowerCase();
-
+String(m.sms||"").toLowerCase();
 
 return texto.includes(termo);
 
-}
-);
+});
 
-
-/* BOTÃO ATIVO */
 
 document
 .querySelectorAll(".grid button")
-.forEach(
-function(b){
+.forEach(function(b){
 
-b.classList
-.remove("ativo");
+b.classList.remove("ativo");
 
-}
-);
+});
 
 
 const botoes={
 
 Todos:"btnTodos",
-
 Pendente:"btnPendente",
-
 Aprovado:"btnAprovado",
-
 Recusado:"btnRecusado",
-
 Lixeira:"btnLixeira"
 
 };
 
-
-if(
-$(botoes[filtro])
-){
+if($(botoes[filtro])){
 
 $(botoes[filtro])
 .classList
@@ -1070,8 +687,6 @@ $(botoes[filtro])
 
 }
 
-
-/* RESULTADO */
 
 if(!lista.length){
 
@@ -1084,17 +699,12 @@ return;
 
 }
 
-
 $("lista").innerHTML=
-lista
-.map(
-function([id,m]){
+lista.map(function([id,m]){
 
 return card(id,m);
 
-}
-)
-.join("");
+}).join("");
 
 }
 
@@ -1110,78 +720,54 @@ m.aceitouRegra===true
 
 ?
 
-"<span class='verde'>"+
-"✓ SIM — ACEITOU"+
-"</span>"
+"<span class='verde'>✓ SIM — ACEITOU</span>"
 
 :
 
-"<span class='vermelho'>"+
-"✕ NÃO — NÃO ACEITOU"+
-"</span>";
-
+"<span class='vermelho'>✕ NÃO — NÃO ACEITOU</span>";
 
 let botoes="";
-
 
 if(m.lixeira===true){
 
 botoes=
-
-"<button onclick=\"restaurar('"+
-id+
-"')\">"+
+"<button onclick=\"restaurar('"+id+"')\">"+
 "♻️ RESTAURAR"+
 "</button>"+
 
-"<button onclick=\"apagar('"+
-id+
-"')\">"+
+"<button onclick=\"apagar('"+id+"')\">"+
 "❌ EXCLUIR DEFINITIVAMENTE"+
 "</button>";
 
 }else{
 
 botoes=
-
-"<button onclick=\"aprovar('"+
-id+
-"')\">"+
+"<button onclick=\"aprovar('"+id+"')\">"+
 "✅ APROVAR"+
 "</button>"+
 
-"<button onclick=\"recusar('"+
-id+
-"')\">"+
+"<button onclick=\"recusar('"+id+"')\">"+
 "❌ RECUSAR"+
 "</button>"+
 
-"<button onclick=\"mandarLixeira('"+
-id+
-"')\">"+
+"<button onclick=\"mandarLixeira('"+id+"')\">"+
 "🗑️ LIXEIRA"+
 "</button>";
 
 }
 
-
 return`
 
 <article class="membro">
 
-<h3>
-🎮 ${esc(m.nick)}
-</h3>
+<h3>🎮 ${esc(m.nick)}</h3>
 
 <p>
-⭐ <b>PIX:</b>
-${esc(m.pix)}
+⭐ <b>PIX:</b> ${esc(m.pix)}
 <br>
-📲 <b>SMS:</b>
-${esc(m.sms)}
+📲 <b>SMS:</b> ${esc(m.sms)}
 <br>
-🕐 <b>Período:</b>
-${esc(m.periodo)}
+🕐 <b>Período:</b> ${esc(m.periodo)}
 </p>
 
 <p>
@@ -1200,13 +786,11 @@ ${regra}
 </p>
 
 <p>
-📌 <b>Status:</b>
-${esc(m.status)}
+📌 <b>Status:</b> ${esc(m.status)}
 </p>
 
 <p class="cinza">
-Enviado:
-${esc(m.data)}
+Enviado: ${esc(m.data)}
 </p>
 
 ${botoes}
@@ -1222,14 +806,10 @@ ${botoes}
 APROVAR
 ========================= */
 
-window.aprovar=
-async function(id){
+window.aprovar=async function(id){
 
 await update(
-ref(
-db,
-"formularios/"+id
-),
+ref(db,"formularios/"+id),
 {
 status:"Aprovado",
 lixeira:false
@@ -1247,14 +827,10 @@ mostrar();
 RECUSAR
 ========================= */
 
-window.recusar=
-async function(id){
+window.recusar=async function(id){
 
 await update(
-ref(
-db,
-"formularios/"+id
-),
+ref(db,"formularios/"+id),
 {
 status:"Recusado",
 lixeira:false
@@ -1272,14 +848,10 @@ mostrar();
 LIXEIRA
 ========================= */
 
-window.mandarLixeira=
-async function(id){
+window.mandarLixeira=async function(id){
 
 await update(
-ref(
-db,
-"formularios/"+id
-),
+ref(db,"formularios/"+id),
 {
 lixeira:true
 }
@@ -1296,14 +868,10 @@ mostrar();
 RESTAURAR
 ========================= */
 
-window.restaurar=
-async function(id){
+window.restaurar=async function(id){
 
 await update(
-ref(
-db,
-"formularios/"+id
-),
+ref(db,"formularios/"+id),
 {
 lixeira:false,
 status:"Pendente"
@@ -1321,25 +889,12 @@ mostrar();
 APAGAR
 ========================= */
 
-window.apagar=
-async function(id){
+window.apagar=async function(id){
 
-if(
-!confirm(
-"Excluir definitivamente?"
-)
-){
-
-return;
-
-}
-
+if(!confirm("Excluir definitivamente?"))return;
 
 await remove(
-ref(
-db,
-"formularios/"+id
-)
+ref(db,"formularios/"+id)
 );
 
 filtro="Lixeira";
@@ -1350,37 +905,18 @@ mostrar();
 
 
 /* =========================
-ESCAPAR TEXTO
+SEGURANÇA DE TEXTO
 ========================= */
 
 function esc(x){
 
 return String(x||"")
 
-.replaceAll(
-"&",
-"&amp;"
-)
-
-.replaceAll(
-"<",
-"&lt;"
-)
-
-.replaceAll(
-">",
-"&gt;"
-)
-
-.replaceAll(
-'"',
-"&quot;"
-)
-
-.replaceAll(
-"'",
-"&#039;"
-);
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;")
+.replaceAll('"',"&quot;")
+.replaceAll("'","&#039;");
 
 }
 
