@@ -2,1223 +2,493 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-
-<title>US METRALHA</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔥 US METRALHA 🔥</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box}
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:
-        radial-gradient(circle at 50% 0%,#4b0000 0%,#170000 25%,#070707 55%,#020202 100%);
-    color:#fff;
-    min-height:100vh;
+ margin:0;
+ font-family:Arial,sans-serif;
+ color:#fff;
+ background:radial-gradient(circle at top,#650000,#120000 35%,#030303 75%);
+ min-height:100vh
 }
-
-.hidden{
-    display:none!important;
+main{max-width:760px;margin:auto;padding:18px}
+header{
+ text-align:center;padding:45px 20px;
+ border:1px solid #800000;border-radius:25px;
+ background:linear-gradient(#520000aa,#050505ee);
+ box-shadow:0 0 45px #f0000033
 }
-
-.container{
-    width:100%;
-    max-width:760px;
-    margin:auto;
-    padding:18px;
-}
-
-/* CAPA */
-
-.capa{
-    min-height:270px;
-    border:1px solid #650000;
-    border-radius:26px;
-    background:
-        linear-gradient(
-            rgba(0,0,0,.15),
-            rgba(0,0,0,.75)
-        ),
-        radial-gradient(
-            circle,
-            #bd0000 0%,
-            #520000 35%,
-            #110000 70%,
-            #030303 100%
-        );
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-
-    box-shadow:
-        0 0 60px rgba(255,0,0,.18),
-        inset 0 0 50px rgba(0,0,0,.35);
-}
-
-.logo{
-    width:100px;
-    height:100px;
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:48px;
-
-    background:#050505;
-    border:2px solid #e00000;
-
-    box-shadow:
-        0 0 35px rgba(255,0,0,.5),
-        inset 0 0 20px rgba(255,0,0,.1);
-}
-
-.capa h1{
-    margin-top:18px;
-    font-size:40px;
-    letter-spacing:4px;
-    text-shadow:0 0 25px #ff0000;
-}
-
-.capa p{
-    margin-top:9px;
-    color:#c5c5c5;
-    font-size:12px;
-    letter-spacing:1px;
-}
-
-/* CARD */
-
+.logo{font-size:60px}
+h1{font-size:38px;letter-spacing:4px;margin:10px 0}
+header p{color:#aaa}
 .card{
-    margin-top:20px;
-    padding:25px;
-
-    background:rgba(10,10,10,.97);
-
-    border:1px solid #292929;
-    border-radius:22px;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.5);
+ margin-top:20px;padding:25px;
+ background:#090909ee;border:1px solid #292929;
+ border-radius:20px
 }
-
-.titulo{
-    display:block;
-    margin-bottom:8px;
-
-    font-size:14px;
-    font-weight:bold;
+label{display:block;font-weight:bold;font-size:14px;margin-bottom:7px}
+input,textarea{
+ width:100%;padding:14px;margin-bottom:18px;
+ border-radius:10px;border:1px solid #333;
+ background:#050505;color:white;font-size:15px
 }
-
-.campo{
-    margin-bottom:20px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea{
-    width:100%;
-    padding:14px;
-
-    border-radius:12px;
-    border:1px solid #333;
-
-    background:#070707;
-    color:white;
-
-    font-size:15px;
-    outline:none;
-}
-
-textarea{
-    min-height:110px;
-    resize:vertical;
-}
-
-input:focus,
-textarea:focus{
-    border-color:#e00000;
-    box-shadow:0 0 0 3px rgba(255,0,0,.08);
-}
-
-/* PERÍODOS */
-
+textarea{min-height:100px;resize:vertical}
 .periodos{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:9px;
+ display:grid;grid-template-columns:repeat(4,1fr);
+ gap:8px;margin-bottom:20px
 }
-
-.periodo input{
-    display:none;
+.periodos label{
+ padding:16px 5px;text-align:center;
+ background:#101010;border:1px solid #333;
+ border-radius:10px;cursor:pointer
 }
-
-.periodo label{
-    min-height:80px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    border:1px solid #303030;
-    border-radius:12px;
-
-    background:#080808;
-    cursor:pointer;
-
-    transition:.2s;
+.periodos input{display:none}
+.periodos input:checked+label{
+ background:#350000;border-color:red
 }
-
-.periodo label:hover{
-    border-color:#760000;
-}
-
-.periodo label span:first-child{
-    font-size:28px;
-}
-
-.periodo small{
-    color:#777;
-    margin-top:5px;
-}
-
-.periodo input:checked + label{
-    background:#270000;
-    border-color:#e00000;
-    box-shadow:0 0 20px rgba(255,0,0,.18);
-}
-
-/* AVISO */
-
 .aviso{
-    padding:18px;
-    margin-bottom:20px;
-
-    background:#170000;
-    border:1px solid #5d0000;
-    border-radius:15px;
-
-    color:#ddd;
-    line-height:1.5;
+ padding:16px;margin:5px 0 20px;
+ border-radius:12px;background:#210000;
+ border:1px solid #650000;
+ color:#ddd;line-height:1.5
 }
-
-.aceite{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-top:13px;
-
-    cursor:pointer;
-    font-size:13px;
+.aceite{display:flex;align-items:center;gap:8px;margin:12px 0 0}
+.aceite input{width:18px;margin:0}
+button{
+ width:100%;padding:15px;border:0;border-radius:11px;
+ background:linear-gradient(135deg,#850000,#ed0000);
+ color:#fff;font-weight:bold;cursor:pointer
 }
-
-.aceite input{
-    width:18px;
-    height:18px;
-    accent-color:#e00000;
+.admin{
+ display:block;width:max-content;margin:18px auto;
+ padding:10px 18px;background:#080808;
+ border:1px solid #333;border-radius:10px;color:#999
 }
-
-/* BOTÕES */
-
-.botao{
-    width:100%;
-    padding:16px;
-
-    border:0;
-    border-radius:13px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #850000,
-            #f00000
-        );
-
-    color:white;
-    font-size:14px;
-    font-weight:bold;
-
-    cursor:pointer;
-
-    box-shadow:0 10px 25px rgba(255,0,0,.18);
-    transition:.15s;
-}
-
-.botao:hover{
-    filter:brightness(1.12);
-}
-
-.botao:active{
-    transform:scale(.98);
-}
-
-/* SUCESSO */
-
-.sucesso{
-    text-align:center;
-    padding:35px 10px 20px;
-}
-
+.hidden{display:none!important}
+.sucesso{text-align:center;padding:30px 5px}
 .check{
-    width:92px;
-    height:92px;
-
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    border:3px solid #20e878;
-    color:#20e878;
-
-    font-size:52px;
-
-    box-shadow:0 0 40px rgba(32,232,120,.25);
+ width:90px;height:90px;margin:auto;border:3px solid #20e878;
+ border-radius:50%;display:flex;align-items:center;
+ justify-content:center;color:#20e878;font-size:55px;
+ box-shadow:0 0 35px #20e87844
 }
-
-.sucesso h2{
-    margin-top:20px;
-    font-size:25px;
+.sucesso h2{margin-top:20px}
+.sucesso p{color:#999;line-height:1.5}
+.seta{font-size:45px;color:#20e878}
+.erro{color:#ff5050;text-align:center;margin-top:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{
+ padding:18px;background:#111;border:1px solid #292929;
+ border-radius:12px
 }
-
-.sucesso p{
-    margin-top:10px;
-    color:#999;
-    line-height:1.6;
-}
-
-.seta{
-    margin-top:20px;
-    color:#20e878;
-    font-size:42px;
-    animation:mover 1s infinite alternate;
-}
-
-@keyframes mover{
-    from{transform:translateX(-5px);}
-    to{transform:translateX(5px);}
-}
-
-/* ÁREA ADM */
-
-.admin-link{
-    display:block;
-    margin:20px auto 0;
-
-    padding:11px 18px;
-
-    background:#080808;
-    color:#777;
-
-    border:1px solid #292929;
-    border-radius:10px;
-
-    cursor:pointer;
-}
-
-.admin-link:hover{
-    color:#fff;
-    border-color:#8c0000;
-}
-
-/* LOGIN */
-
-.login{
-    max-width:470px;
-    margin:55px auto;
-}
-
-.login h2{
-    font-size:27px;
-    margin-bottom:8px;
-}
-
-.login .descricao{
-    color:#888;
-    font-size:13px;
-    margin-bottom:25px;
-}
-
-.erro{
-    margin-top:13px;
-    color:#ff4c4c;
-    text-align:center;
-    font-size:13px;
-    font-weight:bold;
-}
-
-/* PAINEL */
-
-.painel{
-    width:100%;
-    max-width:1100px;
-    margin:auto;
-    padding:18px;
-}
-
-.topo{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-    margin:20px 0;
-}
-
-.topo h2{
-    font-size:28px;
-}
-
-.topo p{
-    margin-top:5px;
-    color:#777;
-    font-size:13px;
-}
-
-.botao-sair{
-    width:auto;
-    padding:11px 22px;
-    background:#101010;
-    border:1px solid #333;
-    box-shadow:none;
-}
-
-.estatisticas{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-}
-
-.estatistica{
-    padding:18px;
-
-    background:#0c0c0c;
-    border:1px solid #292929;
-    border-radius:15px;
-}
-
-.estatistica .numero{
-    font-size:30px;
-    font-weight:bold;
-}
-
-.estatistica .legenda{
-    margin-top:5px;
-    color:#777;
-    font-size:12px;
-}
-
-/* BUSCA */
-
-.busca{
-    display:flex;
-    gap:10px;
-}
-
-.busca button{
-    width:auto;
-    min-width:130px;
-}
-
-/* MEMBROS */
-
-.lista{
-    display:grid;
-    gap:14px;
-}
-
+.numero{font-size:28px;font-weight:bold}
+.lista{margin-top:20px}
 .membro{
-    padding:18px;
-
-    background:#090909;
-    border:1px solid #292929;
-    border-radius:16px;
+ padding:18px;margin-bottom:12px;
+ background:#0b0b0b;border:1px solid #292929;
+ border-radius:14px
 }
-
-.membro h3{
-    margin-bottom:13px;
-}
-
-.dados{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:8px;
-}
-
-.dado{
-    padding:11px;
-    background:#111;
-    border-radius:9px;
-}
-
-.dado small{
-    display:block;
-    margin-bottom:4px;
-
-    color:#666;
-    font-size:10px;
-    text-transform:uppercase;
-}
-
-.dado span{
-    color:#ddd;
-    font-size:13px;
-    word-break:break-word;
-}
-
-.status{
-    display:inline-block;
-    margin-top:12px;
-    padding:6px 9px;
-
-    border-radius:8px;
-    background:#211600;
-    color:#ffc247;
-
-    font-size:11px;
-    font-weight:bold;
-}
-
-.status.aprovado{
-    background:#002b18;
-    color:#20e878;
-}
-
-.acoes{
-    display:flex;
-    gap:8px;
-    margin-top:12px;
-}
-
-.acao{
-    width:auto;
-    padding:9px 13px;
-
-    background:#151515;
-    color:white;
-
-    border:1px solid #303030;
-    border-radius:8px;
-
-    cursor:pointer;
-}
-
-.acao.aprovar{
-    color:#20e878;
-}
-
-.acao.excluir{
-    color:#ff5050;
-}
-
-.vazio{
-    text-align:center;
-    padding:30px;
-    color:#666;
-}
-
-footer{
-    padding:28px 5px 15px;
-    text-align:center;
-    color:#666;
-    font-size:12px;
-}
-
-/* MOBILE */
-
-@media(max-width:650px){
-
-    .container,
-    .painel{
-        padding:12px;
-    }
-
-    .capa{
-        min-height:230px;
-    }
-
-    .capa h1{
-        font-size:30px;
-    }
-
-    .logo{
-        width:82px;
-        height:82px;
-        font-size:38px;
-    }
-
-    .card{
-        padding:20px;
-    }
-
-    .periodos{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .estatisticas{
-        grid-template-columns:1fr;
-    }
-
-    .topo{
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .botao-sair{
-        width:100%;
-    }
-
-    .busca{
-        flex-direction:column;
-    }
-
-    .busca button{
-        width:100%;
-    }
-
-    .dados{
-        grid-template-columns:1fr;
-    }
-
-    .acoes{
-        flex-direction:column;
-    }
-
-    .acao{
-        width:100%;
-    }
+.membro p{color:#bbb;line-height:1.5}
+.acoes{display:flex;gap:8px}
+.sec{background:#151515;border:1px solid #333}
+.verde{color:#20e878}
+.vermelho{color:#ff5050}
+@media(max-width:600px){
+ .periodos{grid-template-columns:repeat(2,1fr)}
+ .stats{grid-template-columns:1fr}
+ h1{font-size:30px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ==================================================
-     PÁGINA PRINCIPAL
-================================================== -->
+<main id="site">
 
-<div id="paginaPrincipal" class="container">
+<header>
+<div class="logo">🔥</div>
+<h1>US METRALHA</h1>
+<p>ATIVIDADE • UNIÃO • RESPEITO • LEALDADE</p>
+</header>
 
-    <section class="capa">
+<section class="card">
 
-        <div class="logo">🔥</div>
+<form id="form">
 
-        <h1>US METRALHA</h1>
+<label>🎮 Nick</label>
+<input id="nick" required placeholder="Digite seu Nick">
 
-        <p>
-            ATIVIDADE • UNIÃO • RESPEITO • LEALDADE
-        </p>
+<label>⭐ PIX</label>
+<input id="pix" required placeholder="Digite seu PIX">
 
-    </section>
+<label>📲 SMS</label>
+<input id="sms" required placeholder="Digite seu SMS">
 
+<label>🕐 Qual período costuma jogar?</label>
 
-    <section class="card">
+<div class="periodos">
 
-        <form id="formulario">
+<div>
+<input id="manha" name="periodo" type="radio" value="🌞 Manhã" required>
+<label for="manha">🌞<br>Manhã</label>
+</div>
 
-            <div class="campo">
+<div>
+<input id="tarde" name="periodo" type="radio" value="⛅ Tarde">
+<label for="tarde">⛅<br>Tarde</label>
+</div>
 
-                <label class="titulo">
-                    👤 Nome
-                </label>
+<div>
+<input id="noite" name="periodo" type="radio" value="🌚 Noite">
+<label for="noite">🌚<br>Noite</label>
+</div>
 
-                <input
-                    id="nome"
-                    type="text"
-                    placeholder="Digite seu nome"
-                    required
-                >
-
-            </div>
-
-
-            <div class="campo">
-
-                <label class="titulo">
-                    🎮 Nick
-                </label>
-
-                <input
-                    id="nick"
-                    type="text"
-                    placeholder="Digite seu Nick"
-                    required
-                >
-
-            </div>
-
-
-            <div class="campo">
-
-                <label class="titulo">
-                    ⭐ PIX
-                </label>
-
-                <input
-                    id="pix"
-                    type="text"
-                    placeholder="Digite seu PIX"
-                    required
-                >
-
-            </div>
-
-
-            <div class="campo">
-
-                <label class="titulo">
-                    📲 SMS
-                </label>
-
-                <input
-                    id="sms"
-                    type="text"
-                    placeholder="Digite seu SMS"
-                    required
-                >
-
-            </div>
-
-
-            <div class="campo">
-
-                <label class="titulo">
-                    🕐 Qual período costuma jogar?
-                </label>
-
-                <div class="periodos">
-
-                    <div class="periodo">
-
-                        <input
-                            id="manha"
-                            type="radio"
-                            name="periodo"
-                            value="Manhã"
-                            required
-                        >
-
-                        <label for="manha">
-                            <span>🌞</span>
-                            <small>Manhã</small>
-                        </label>
-
-                    </div>
-
-
-                    <div class="periodo">
-
-                        <input
-                            id="tarde"
-                            type="radio"
-                            name="periodo"
-                            value="Tarde"
-                        >
-
-                        <label for="tarde">
-                            <span>⛅</span>
-                            <small>Tarde</small>
-                        </label>
-
-                    </div>
-
-
-                    <div class="periodo">
-
-                        <input
-                            id="noite"
-                            type="radio"
-                            name="periodo"
-                            value="Noite"
-                        >
-
-                        <label for="noite">
-                            <span>🌚</span>
-                            <small>Noite</small>
-                        </label>
-
-                    </div>
-
-
-                    <div class="periodo">
-
-                        <input
-                            id="varia"
-                            type="radio"
-                            name="periodo"
-                            value="Varia"
-                        >
-
-                        <label for="varia">
-                            <span>🫯</span>
-                            <small>Varia</small>
-                        </label>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="campo">
-
-                <label class="titulo">
-                    🎯 Qual é o seu principal objetivo no jogo?
-                </label>
-
-                <textarea
-                    id="objetivo"
-                    placeholder="Digite sua resposta..."
-                    required
-                ></textarea>
-
-            </div>
-
-
-            <div class="campo">
-
-                <label class="titulo">
-                    💭 O que faz uma família ser boa para você?
-                </label>
-
-                <textarea
-                    id="familia"
-                    placeholder="Digite sua resposta..."
-                    required
-                ></textarea>
-
-            </div>
-
-
-            <div class="aviso">
-
-                ⚠️ Está ciente de que
-                <strong>
-                    5 dias seguidos OFF, sem justificativa,
-                    resultam na remoção da família?
-                </strong>
-
-
-                <label class="aceite">
-
-                    <input
-                        id="aceite"
-                        type="checkbox"
-                        required
-                    >
-
-                    <span>
-                        SIM, ESTOU CIENTE E DE ACORDO.
-                    </span>
-
-                </label>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="botao"
-            >
-                🔥 ENVIAR FORMULÁRIO
-            </button>
-
-        </form>
-
-
-        <!-- SUCESSO -->
-
-        <div
-            id="sucesso"
-            class="sucesso hidden"
-        >
-
-            <div class="check">
-                ✓
-            </div>
-
-            <h2>
-                Seu formulário foi enviado!
-            </h2>
-
-            <p>
-                Recebemos suas informações com sucesso.
-                <br>
-                Aguarde a análise da administração.
-            </p>
-
-            <div class="seta">
-                →
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <button
-        id="abrirAdmin"
-        class="admin-link"
-        type="button"
-    >
-        🔐 Área ADM
-    </button>
-
-
-    <footer>
-        🖤 <strong>US METRALHA</strong> 🖤
-        <br>
-        Atividade • União • Respeito • Lealdade
-    </footer>
+<div>
+<input id="varia" name="periodo" type="radio" value="🫯 Varia">
+<label for="varia">🫯<br>Varia</label>
+</div>
 
 </div>
 
+<label>🎯 Qual é o seu principal objetivo no jogo?</label>
+<textarea id="objetivo" required></textarea>
 
-<!-- ==================================================
-     LOGIN ADM
-================================================== -->
+<label>💭 O que faz uma família ser boa para você?</label>
+<textarea id="familia" required></textarea>
 
-<div
-    id="paginaLogin"
-    class="container hidden"
->
+<div class="aviso">
+⚠️ Está ciente de que <b>5 dias seguidos OFF, sem justificativa,
+resultam na remoção da família?</b>
 
-    <section class="card login">
+<label class="aceite">
+<input id="aceite" type="checkbox" required>
+<span>SIM, ESTOU CIENTE E DE ACORDO.</span>
+</label>
+</div>
 
-        <h2>
-            🔐 Painel ADM
-        </h2>
+<button type="submit">🔥 ENVIAR FORMULÁRIO</button>
 
-        <p class="descricao">
-            Acesso exclusivo da administração.
-        </p>
+</form>
 
+<div id="sucesso" class="sucesso hidden">
+<div class="check">✓</div>
+<h2>Seu formulário foi enviado!</h2>
+<p>Recebemos suas informações com sucesso.<br>
+Aguarde a análise da administração.</p>
+<div class="seta">→</div>
+</div>
 
-        <form id="formLogin">
+</section>
 
-            <div class="campo">
+<button id="abrirAdm" class="admin">🔐 Área ADM</button>
 
-                <label class="titulo">
-                    📧 E-mail
-                </label>
+<p style="text-align:center;color:#666;font-size:12px">
+🖤 US METRALHA 🖤<br>
+Atividade • União • Respeito • Lealdade
+</p>
 
-                <input
-                    id="email"
-                    type="email"
-                    value="usmetralhaadmins@gmail.com"
-                    required
-                >
-
-            </div>
-
-
-            <div class="campo">
-
-                <label class="titulo">
-                    🔑 Senha
-                </label>
-
-                <input
-                    id="senha"
-                    type="password"
-                    placeholder="Digite sua senha"
-                    required
-                >
-
-            </div>
+</main>
 
 
-            <button
-                type="submit"
-                class="botao"
-            >
-                🔐 ENTRAR
-            </button>
+<!-- LOGIN ADM -->
+
+<main id="login" class="hidden">
+
+<section class="card">
+
+<h2>🔐 Painel ADM</h2>
+<p style="color:#888">Acesso exclusivo da administração.</p>
+
+<label>📧 E-mail</label>
+<input id="email" type="email"
+value="usmetralhaadmins@gmail.com">
+
+<label>🔑 Senha</label>
+<input id="senha" type="password"
+placeholder="Digite sua senha">
+
+<button id="entrar">ENTRAR</button>
+
+<div id="erro" class="erro"></div>
+
+<button id="voltar" class="admin">← Voltar</button>
+
+</section>
+
+</main>
 
 
-            <div
-                id="erroLogin"
-                class="erro"
-            ></div>
+<!-- PAINEL -->
 
-        </form>
+<main id="painel" class="hidden">
 
+<section class="card">
 
-        <button
-            id="voltarPrincipal"
-            class="admin-link"
-            type="button"
-        >
-            ← Voltar para o formulário
-        </button>
+<h2>🔥 US METRALHA — ADM</h2>
+<p style="color:#777">Painel de administração</p>
 
-    </section>
+<div class="stats">
+
+<div class="stat">
+<div id="total" class="numero">0</div>
+<div style="color:#777">Total</div>
+</div>
+
+<div class="stat">
+<div id="pendentes" class="numero">0</div>
+<div style="color:#777">Pendentes</div>
+</div>
+
+<div class="stat">
+<div id="aprovados" class="numero">0</div>
+<div style="color:#777">Aprovados</div>
+</div>
 
 </div>
 
+<div id="lista" class="lista"></div>
 
-<!-- ==================================================
-     PAINEL ADM
-================================================== -->
+<button id="sair" class="sec">Sair</button>
 
-<div
-    id="paginaPainel"
-    class="painel hidden"
->
+</section>
 
-    <div class="topo">
-
-        <div>
-
-            <h2>
-                🔥 US METRALHA
-            </h2>
-
-            <p>
-                Painel de Administração
-            </p>
-
-        </div>
-
-
-        <button
-            id="sair"
-            class="botao botao-sair"
-            type="button"
-        >
-            Sair
-        </button>
-
-    </div>
-
-
-    <section class="estatisticas">
-
-        <div class="estatistica">
-
-            <div
-                id="total"
-                class="numero"
-            >
-                0
-            </div>
-
-            <div class="legenda">
-                Total de membros
-            </div>
-
-        </div>
-
-
-        <div class="estatistica">
-
-            <div
-                id="pendentes"
-                class="numero"
-            >
-                0
-            </div>
-
-            <div class="legenda">
-                Pendentes
-            </div>
-
-        </div>
-
-
-        <div class="estatistica">
-
-            <div
-                id="aprovados"
-                class="numero"
-            >
-                0
-            </div>
-
-            <div class="legenda">
-                Aprovados
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="card">
-
-        <label class="titulo">
-            🔎 Pesquisar membro
-        </label>
-
-        <div class="busca">
-
-            <input
-                id="pesquisa"
-                type="text"
-                placeholder="Nome, Nick, PIX ou SMS..."
-            >
-
-            <button
-                id="botaoPesquisa"
-                class="botao"
-                type="button"
-            >
-                🔎 Pesquisar
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <section class="card">
-
-        <div
-            id="listaMembros"
-            class="lista"
-        ></div>
-
-    </section>
-
-</div>
+</main>
 
 
 <script>
 
-/* ==================================================
-   US METRALHA
-   SISTEMA LOCAL DE TESTE
-================================================== */
+const site=document.getElementById("site");
+const login=document.getElementById("login");
+const painel=document.getElementById("painel");
+const form=document.getElementById("form");
+const sucesso=document.getElementById("sucesso");
+
+let membros=JSON.parse(
+ localStorage.getItem("us_metralha_membros")||"[]"
+);
 
 
-/* ---------- ELEMENTOS ---------- */
+/* ENVIO */
 
-const paginaPrincipal =
-    document.getElementById("paginaPrincipal");
+form.addEventListener("submit",function(e){
 
-const paginaLogin =
-    document.getElementById("paginaLogin");
+ e.preventDefault();
 
-const paginaPainel =
-    document.getElementById("paginaPainel");
+ const periodo=document.querySelector(
+  'input[name="periodo"]:checked'
+ );
 
-const formulario =
-    document.getElementById("formulario");
+ const membro={
+  id:Date.now(),
+  nick:document.getElementById("nick").value,
+  pix:document.getElementById("pix").value,
+  sms:document.getElementById("sms").value,
+  periodo:periodo.value,
+  objetivo:document.getElementById("objetivo").value,
+  familia:document.getElementById("familia").value,
+  status:"Pendente"
+ };
 
-const sucesso =
-    document.getElementById("sucesso");
+ membros.push(membro);
 
-const formLogin =
-    document.getElementById("formLogin");
+ localStorage.setItem(
+  "us_metralha_membros",
+  JSON.stringify(membros)
+ );
 
-const erroLogin =
-    document.getElementById("erroLogin");
+ form.classList.add("hidden");
+ sucesso.classList.remove("hidden");
+
+ window.scrollTo(0,0);
+
+});
 
 
-/* ---------- BANCO LOCAL ---------- */
+/* ABRIR ADM */
 
-let membros = [];
+document.getElementById("abrirAdm").onclick=function(){
 
-try{
+ site.classList.add("hidden");
+ login.classList.remove("hidden");
 
-    membros =
-        JSON.parse(
-            localStorage.getItem(
-                "US_METRALHA_MEMBROS"
-            ) || "[]"
-        );
+};
 
-    if(!Array.isArray(membros)){
-        membros = [];
-    }
 
-}catch(e){
+/* VOLTAR */
 
-    membros = [];
+document.getElementById("voltar").onclick=function(){
+
+ login.classList.add("hidden");
+ site.classList.remove("hidden");
+
+};
+
+
+/* LOGIN */
+
+document.getElementById("entrar").onclick=function(){
+
+ const email=document.getElementById("email").value.trim();
+ const senha=document.getElementById("senha").value;
+
+ if(
+  email==="usmetralhaadmins@gmail.com" &&
+  senha==="usmetralha123"
+ ){
+
+  login.classList.add("hidden");
+  painel.classList.remove("hidden");
+  atualizar();
+
+ }else{
+
+  document.getElementById("erro").textContent=
+  "❌ E-mail ou senha incorretos.";
+
+ }
+
+};
+
+
+/* PAINEL */
+
+function atualizar(){
+
+ document.getElementById("total").textContent=
+ membros.length;
+
+ document.getElementById("pendentes").textContent=
+ membros.filter(x=>x.status==="Pendente").length;
+
+ document.getElementById("aprovados").textContent=
+ membros.filter(x=>x.status==="Aprovado").length;
+
+ const lista=document.getElementById("lista");
+
+ if(membros.length===0){
+
+  lista.innerHTML=
+  '<p style="text-align:center;color:#666">Nenhum formulário recebido.</p>';
+
+  return;
+ }
+
+ lista.innerHTML=membros.map(x=>`
+
+ <div class="membro">
+
+ <h3>🎮 ${seguro(x.nick)}</h3>
+
+ <p>
+ <b>⭐ PIX:</b> ${seguro(x.pix)}<br>
+ <b>📲 SMS:</b> ${seguro(x.sms)}<br>
+ <b>🕐 Período:</b> ${seguro(x.periodo)}
+ </p>
+
+ <p>
+ <b>🎯 Objetivo:</b><br>
+ ${seguro(x.objetivo)}
+ </p>
+
+ <p>
+ <b>💭 Família:</b><br>
+ ${seguro(x.familia)}
+ </p>
+
+ <p>
+ Status:
+ <b class="${x.status==="Aprovado"?"verde":"vermelho"}">
+ ${x.status}
+ </b>
+ </p>
+
+ <div class="acoes">
+
+ <button class="sec" onclick="aprovar(${x.id})">
+ ✓ Aprovar
+ </button>
+
+ <button class="sec" onclick="excluir(${x.id})">
+ 🗑 Excluir
+ </button>
+
+ </div>
+
+ </div>
+
+ `).join("");
 
 }
 
 
-/* ==================================================
-   NAVEGAÇÃO ADM
-================================================== */
+/* APROVAR */
 
-document
-.getElementById("abrirAdmin")
-.addEventListener(
-    "click",
-    function(){
+function aprovar(id){
 
-        paginaPrincipal
-        .classList
-        .add("hidden");
+ const x=membros.find(m=>m.id===id);
 
-        paginaPainel
-        .classList
-        .add("hidden");
+ if(x){
+  x.status="Aprovado";
+  salvar();
+  atualizar();
+ }
 
-        paginaLogin
-        .classList
-        .remove("hidden");
-
-        erroLogin.textContent = "";
-
-        window.scrollTo(0,0);
-
-    }
-);
+}
 
 
-/* ---------- VOLTAR ---------- */
+/* EXCLUIR */
 
-document
-.getElementById("voltarPrincipal")
-.addEventListener(
-    "click",
-    function(){
+function excluir(id){
 
-        paginaLogin
-        .classList
-        .add("hidden");
+ if(!confirm("Excluir este formulário?"))return;
 
-        paginaPrincipal
-        .classList
-        .remove("hidden");
+ membros=membros.filter(x=>x.id!==id);
 
-        window.scrollTo(0,0);
+ salvar();
+ atualizar();
 
-    }
-);
+}
 
 
-/* ==================================================
-   FORMULÁRIO
-================================================== */
+/* SALVAR */
 
-formulario
-.addEventListener(
-    "submit",
-    function(event){
+function salvar(){
 
-        event.preventDefault();
+ localStorage.setItem(
+  "us_metralha_membros",
+  JSON.stringify(membros)
+ );
+
+}
 
 
-      
+/* SEGURANÇA */
+
+function seguro(t){
+
+ return String(t||"")
+ .replaceAll("&","&amp;")
+ .replaceAll("<","&lt;")
+ .replaceAll(">","&gt;")
+ .replaceAll('"',"&quot;")
+ .replaceAll("'","&#039;");
+
+}
+
+
+/* SAIR */
+
+document.getElementById("sair").onclick=function(){
+
+ painel.classList.add("hidden");
+ site.classList.remove("hidden");
+
+};
+
+</script>
+
+</body>
+    </html>
