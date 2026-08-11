@@ -31,9 +31,7 @@ box-shadow:0 0 25px #f0000020
 }
 
 header{text-align:center}
-
 .logo{font-size:55px}
-
 h1{font-size:34px}
 
 input,textarea{
@@ -110,21 +108,24 @@ width:auto;
 margin:0
 }
 
-.hidden{display:none}
+.hidden{display:none!important}
 
-.sucesso{text-align:center}
+.sucesso{
+text-align:center;
+padding:35px 20px
+}
 
 .check{
 margin:auto;
-width:75px;
-height:75px;
-border:3px solid #20e878;
+width:85px;
+height:85px;
+border:4px solid #20e878;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
 color:#20e878;
-font-size:48px
+font-size:55px
 }
 
 .membro{
@@ -137,7 +138,6 @@ margin:12px 0
 
 .verde{color:#20e878}
 .vermelho{color:#ff5555}
-.amarelo{color:#ffd43b}
 .cinza{color:#aaa}
 
 .admBtn{
@@ -179,7 +179,7 @@ border:2px solid #20e878!important
 
 <body>
 
-<!-- SITE -->
+<!-- ================= SITE ================= -->
 
 <main id="site">
 
@@ -189,7 +189,13 @@ border:2px solid #20e878!important
 <p>ATIVIDADE • UNIÃO • RESPEITO • LEALDADE</p>
 </header>
 
-<section class="card">
+
+<!-- ÁREA DO FORMULÁRIO -->
+
+<section
+id="areaFormulario"
+class="card"
+>
 
 <form id="formulario">
 
@@ -207,89 +213,176 @@ border:2px solid #20e878!important
 <div class="periodos">
 
 <div>
-<input id="manha" name="periodo" type="radio" value="🌞 Manhã" required>
-<label for="manha">🌞<br>Manhã</label>
+<input
+id="manha"
+name="periodo"
+type="radio"
+value="🌞 Manhã"
+required
+>
+<label for="manha">
+🌞<br>Manhã
+</label>
 </div>
 
 <div>
-<input id="tarde" name="periodo" type="radio" value="⛅ Tarde">
-<label for="tarde">⛅<br>Tarde</label>
+<input
+id="tarde"
+name="periodo"
+type="radio"
+value="⛅ Tarde"
+>
+<label for="tarde">
+⛅<br>Tarde
+</label>
 </div>
 
 <div>
-<input id="noite" name="periodo" type="radio" value="🌚 Noite">
-<label for="noite">🌚<br>Noite</label>
+<input
+id="noite"
+name="periodo"
+type="radio"
+value="🌚 Noite"
+>
+<label for="noite">
+🌚<br>Noite
+</label>
 </div>
 
 <div>
-<input id="varia" name="periodo" type="radio" value="🫯 Varia">
-<label for="varia">🫯<br>Varia</label>
+<input
+id="varia"
+name="periodo"
+type="radio"
+value="🫯 Varia"
+>
+<label for="varia">
+🫯<br>Varia
+</label>
 </div>
 
 </div>
 
-<label>🎯 Qual é o seu principal objetivo no jogo?</label>
-<textarea id="objetivo" required></textarea>
 
-<label>💭 O que faz uma família ser boa para você?</label>
-<textarea id="familia" required></textarea>
+<label>
+🎯 Qual é o seu principal objetivo no jogo?
+</label>
+
+<textarea
+id="objetivo"
+required
+></textarea>
+
+
+<label>
+💭 O que faz uma família ser boa para você?
+</label>
+
+<textarea
+id="familia"
+required
+></textarea>
+
 
 <div class="aviso">
 
 ⚠️ Está ciente de que
-<b>5 dias seguidos OFF, sem justificativa,
-resultam na remoção da família?</b>
+<b>
+5 dias seguidos OFF,
+sem justificativa,
+resultam na remoção da família?
+</b>
 
 <label class="aceite">
-<input id="aceite" type="checkbox" required>
+
+<input
+id="aceite"
+type="checkbox"
+required
+>
+
 SIM, ESTOU CIENTE E DE ACORDO.
+
 </label>
 
 </div>
 
-<button id="enviar" type="submit">
+
+<button
+id="enviar"
+type="submit"
+>
+
 🔥 ENVIAR FORMULÁRIO
+
 </button>
 
 </form>
 
+</section>
 
-<div id="sucesso" class="sucesso hidden">
 
-<div class="check">✓</div>
+<!-- ================= SUCESSO ================= -->
 
-<h2>Seu formulário foi enviado com sucesso!</h2>
+<section
+id="sucesso"
+class="card sucesso hidden"
+>
+
+<div class="check">
+✓
+</div>
+
+<h2>
+Seu formulário foi enviado com sucesso!
+</h2>
 
 <p>
 Recebemos suas informações.<br>
 Aguarde a análise da administração.
 </p>
 
-<div style="font-size:45px;color:#20e878">
-↓
-</div>
-
+<div
+style="
+font-size:45px;
+color:#20e878;
+margin-top:20px
+"
+>
+✓
 </div>
 
 </section>
 
 
-<button id="abrirADM" class="admBtn">
+<button
+id="abrirADM"
+class="admBtn"
+>
+
 🔐 ÁREA ADM
+
 </button>
 
 </main>
 
 
-<!-- LOGIN -->
+<!-- ================= LOGIN ADM ================= -->
 
-<main id="login" class="hidden">
+<main
+id="login"
+class="hidden"
+>
 
 <section class="card">
 
-<h2>🔐 Painel ADM</h2>
+<h2>
+🔐 Painel ADM
+</h2>
 
-<label>📧 E-mail</label>
+<label>
+📧 E-mail
+</label>
 
 <input
 id="emailADM"
@@ -297,7 +390,9 @@ type="email"
 value="usmetralhaadmins@gmail.com"
 >
 
-<label>🔑 Senha</label>
+<label>
+🔑 Senha
+</label>
 
 <input
 id="senhaADM"
@@ -309,9 +404,15 @@ placeholder="Senha"
 ENTRAR
 </button>
 
-<div id="erroADM" class="erro"></div>
+<div
+id="erroADM"
+class="erro"
+></div>
 
-<button id="voltarSite" class="admBtn">
+<button
+id="voltarSite"
+class="admBtn"
+>
 ← Voltar
 </button>
 
@@ -320,13 +421,19 @@ ENTRAR
 </main>
 
 
-<!-- PAINEL ADM -->
+<!-- ================= PAINEL ADM ================= -->
 
-<main id="painel" class="hidden">
+<main
+id="painel"
+class="hidden"
+>
 
 <section class="card">
 
-<h2>🔥 US METRALHA — ADM</h2>
+<h2>
+🔥 US METRALHA — ADM
+</h2>
+
 
 <div class="contadores">
 
@@ -358,7 +465,9 @@ ENTRAR
 </div>
 
 
-<h3>🔎 Pesquisar membro</h3>
+<h3>
+🔎 Pesquisar membro
+</h3>
 
 <input
 id="pesquisa"
@@ -367,32 +476,44 @@ placeholder="Digite Nick, PIX ou SMS..."
 >
 
 
-<h3>📂 Formulários</h3>
+<h3>
+📂 Formulários
+</h3>
 
 <div class="grid">
 
-<button id="btnTodos"
-onclick="mudarFiltro('Todos')">
+<button
+id="btnTodos"
+onclick="mudarFiltro('Todos')"
+>
 📋 TODOS
 </button>
 
-<button id="btnPendente"
-onclick="mudarFiltro('Pendente')">
+<button
+id="btnPendente"
+onclick="mudarFiltro('Pendente')"
+>
 ⏳ PENDENTES
 </button>
 
-<button id="btnAprovado"
-onclick="mudarFiltro('Aprovado')">
+<button
+id="btnAprovado"
+onclick="mudarFiltro('Aprovado')"
+>
 ✅ APROVADOS
 </button>
 
-<button id="btnRecusado"
-onclick="mudarFiltro('Recusado')">
+<button
+id="btnRecusado"
+onclick="mudarFiltro('Recusado')"
+>
 ❌ RECUSADOS
 </button>
 
-<button id="btnLixeira"
-onclick="mudarFiltro('Lixeira')">
+<button
+id="btnLixeira"
+onclick="mudarFiltro('Lixeira')"
+>
 🗑️ LIXEIRA
 </button>
 
@@ -402,7 +523,10 @@ onclick="mudarFiltro('Lixeira')">
 <div id="lista"></div>
 
 
-<button id="sairADM" class="admBtn">
+<button
+id="sairADM"
+class="admBtn"
+>
 🚪 SAIR
 </button>
 
@@ -411,11 +535,14 @@ onclick="mudarFiltro('Lixeira')">
 </main>
 
 
+<!-- ================= FIREBASE + JAVASCRIPT ================= -->
+
 <script type="module">
 
 import{
 initializeApp
-}from
+}
+from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
@@ -427,13 +554,13 @@ set,
 onValue,
 update,
 remove
-}from
+}
+from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
 
-/* FIREBASE */
-
-const app=initializeApp({
+const app=
+initializeApp({
 
 apiKey:
 "AIzaSyDy8falIrYlTDdZlOU3C3v_gfb-pXTknIc",
@@ -459,7 +586,8 @@ appId:
 });
 
 
-const db=getDatabase(app);
+const db=
+getDatabase(app);
 
 
 let dados={};
@@ -467,23 +595,29 @@ let dados={};
 let filtro="Todos";
 
 
-const $=id=>
+const $=
+id=>
 document.getElementById(id);
 
 
-/* ==================================================
+/* =========================
 FORMULÁRIO
-================================================== */
+========================= */
 
 $("formulario").addEventListener(
 "submit",
-async function(e){
+async function(event){
 
-e.preventDefault();
+event.preventDefault();
 
 
-const botao=$("enviar");
+const botao=
+$("enviar");
 
+
+/*
+IMPede dois cliques
+*/
 
 if(botao.disabled){
 return;
@@ -492,7 +626,8 @@ return;
 
 botao.disabled=true;
 
-botao.textContent="⏳ ENVIANDO...";
+botao.textContent=
+"⏳ ENVIANDO...";
 
 
 const periodo=
@@ -501,16 +636,21 @@ document.querySelector(
 );
 
 
-const dadosFormulario={
+const formulario={
 
-nick:$("nick").value.trim(),
+nick:
+$("nick").value.trim(),
 
-pix:$("pix").value.trim(),
+pix:
+$("pix").value.trim(),
 
-sms:$("sms").value.trim(),
+sms:
+$("sms").value.trim(),
 
 periodo:
-periodo ? periodo.value : "",
+periodo?
+periodo.value:
+"",
 
 objetivo:
 $("objetivo").value.trim(),
@@ -521,53 +661,81 @@ $("familia").value.trim(),
 aceitouRegra:
 $("aceite").checked,
 
-status:"Pendente",
+status:
+"Pendente",
 
-lixeira:false,
+lixeira:
+false,
 
 data:
-new Date().toLocaleString("pt-BR")
+new Date()
+.toLocaleString("pt-BR")
 
 };
 
 
 try{
 
+/*
+SALVA NO FIREBASE
+*/
+
 const novo=
 push(
-ref(db,"formularios")
+ref(
+db,
+"formularios"
+)
 );
 
 
 await set(
 novo,
-dadosFormulario
+formulario
 );
 
 
 /*
-ESCONDE O FORMULÁRIO
-IMEDIATAMENTE APÓS O ENVIO
+AQUI ESTÁ A CORREÇÃO:
+
+ESCONDE A ÁREA INTEIRA
+DO FORMULÁRIO.
 */
 
-$("formulario")
+$("areaFormulario")
 .classList
 .add("hidden");
 
+
+/*
+MOSTRA A TELA DE SUCESSO.
+*/
 
 $("sucesso")
 .classList
 .remove("hidden");
 
 
+/*
+VOLTA PARA O TOPO
+*/
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+
 }catch(erro){
 
 console.error(erro);
+
 
 botao.disabled=false;
 
 botao.textContent=
 "🔥 ENVIAR FORMULÁRIO";
+
 
 alert(
 "Não foi possível enviar o formulário."
@@ -578,11 +746,12 @@ alert(
 });
 
 
-/* ==================================================
+/* =========================
 ABRIR ADM
-================================================== */
+========================= */
 
-$("abrirADM").onclick=function(){
+$("abrirADM").onclick=
+function(){
 
 $("site")
 .classList
@@ -595,9 +764,12 @@ $("login")
 };
 
 
-/* VOLTAR */
+/* =========================
+VOLTAR
+========================= */
 
-$("voltarSite").onclick=function(){
+$("voltarSite").onclick=
+function(){
 
 $("login")
 .classList
@@ -610,23 +782,29 @@ $("site")
 };
 
 
-/* ==================================================
-LOGIN ADM
-================================================== */
+/* =========================
+LOGIN
+========================= */
 
-$("entrarADM").onclick=function(){
+$("entrarADM").onclick=
+function(){
 
 const email=
-$("emailADM").value.trim();
+$("emailADM")
+.value
+.trim();
 
 const senha=
-$("senhaADM").value;
+$("senhaADM")
+.value;
 
 
 if(
-email==="usmetralhaadmins@gmail.com"
+email===
+"usmetralhaadmins@gmail.com"
 &&
-senha==="usmetralha123"
+senha===
+"usmetralha123"
 ){
 
 $("login")
@@ -650,11 +828,12 @@ $("erroADM")
 };
 
 
-/* ==================================================
+/* =========================
 SAIR
-================================================== */
+========================= */
 
-$("sairADM").onclick=function(){
+$("sairADM").onclick=
+function(){
 
 $("painel")
 .classList
@@ -667,29 +846,33 @@ $("site")
 };
 
 
-/* ==================================================
+/* =========================
 FIREBASE ADM
-================================================== */
+========================= */
 
 function iniciarADM(){
 
 onValue(
-ref(db,"formularios"),
+ref(
+db,
+"formularios"
+),
 function(snapshot){
 
 dados=
-snapshot.val() || {};
+snapshot.val()||{};
 
 mostrar();
 
-});
+}
+);
 
 }
 
 
-/* ==================================================
+/* =========================
 PESQUISA
-================================================== */
+========================= */
 
 $("pesquisa").addEventListener(
 "input",
@@ -697,30 +880,34 @@ function(){
 
 mostrar();
 
-});
+}
+);
 
 
-/* ==================================================
-FILTROS
-================================================== */
+/* =========================
+FILTRO
+========================= */
 
-window.mudarFiltro=function(novoFiltro){
+window.mudarFiltro=
+function(novo){
 
-filtro=novoFiltro;
+filtro=
+novo;
 
 mostrar();
 
 };
 
 
-/* ==================================================
-MOSTRAR
-================================================== */
+/* =========================
+MOSTRAR LISTA
+========================= */
 
 function mostrar(){
 
-let arr=
+let lista=
 Object.entries(dados);
+
 
 const termo=
 $("pesquisa")
@@ -729,8 +916,6 @@ $("pesquisa")
 .trim();
 
 
-/* CONTADORES */
-
 let todos=0;
 let pendentes=0;
 let aprovados=0;
@@ -738,7 +923,8 @@ let recusados=0;
 let lixeira=0;
 
 
-arr.forEach(function([id,m]){
+lista.forEach(
+function([id,m]){
 
 if(m.lixeira===true){
 
@@ -752,56 +938,60 @@ return;
 todos++;
 
 
-if(m.status==="Pendente"){
+if(m.status===
+"Pendente")
 pendentes++;
-}
 
 
-if(m.status==="Aprovado"){
+if(m.status===
+"Aprovado")
 aprovados++;
-}
 
 
-if(m.status==="Recusado"){
+if(m.status===
+"Recusado")
 recusados++;
+
 }
+);
 
-});
 
+$("cTodos").textContent=
+todos;
 
-$("cTodos").textContent=todos;
-$("cPendentes").textContent=pendentes;
-$("cAprovados").textContent=aprovados;
-$("cRecusados").textContent=recusados;
-$("cLixeira").textContent=lixeira;
+$("cPendentes").textContent=
+pendentes;
+
+$("cAprovados").textContent=
+aprovados;
+
+$("cRecusados").textContent=
+recusados;
+
+$("cLixeira").textContent=
+lixeira;
 
 
 /* FILTRO */
 
-arr=
-arr.filter(function([id,m]){
+lista=
+lista.filter(
+function([id,m]){
 
 
-if(filtro==="Lixeira"){
+if(filtro===
+"Lixeira"){
 
-if(m.lixeira!==true){
+if(m.lixeira!==true)
 return false;
-}
 
 }else{
 
-if(m.lixeira===true){
+if(m.lixeira===true)
 return false;
-}
 
 }
 
-
-/*
-AQUI ESTÁ A CORREÇÃO:
-TODOS MOSTRA TODOS OS STATUS.
-APROVADO MOSTRA SOMENTE APROVADOS.
-*/
 
 if(
 filtro!=="Todos"
@@ -816,8 +1006,6 @@ return false;
 }
 
 
-/* PESQUISA */
-
 if(termo===""){
 return true;
 }
@@ -827,31 +1015,37 @@ const texto=
 
 String(m.nick||"")
 .toLowerCase()
-+" "+
++
+" "+
 String(m.pix||"")
 .toLowerCase()
-+" "+
++
+" "+
 String(m.sms||"")
 .toLowerCase();
 
 
 return texto.includes(termo);
 
-});
+}
+);
 
 
-/* BOTÕES */
+/* BOTÃO ATIVO */
 
 document
 .querySelectorAll(".grid button")
-.forEach(function(botao){
+.forEach(
+function(b){
 
-botao.classList.remove("ativo");
+b.classList
+.remove("ativo");
 
-});
+}
+);
 
 
-const mapa={
+const botoes={
 
 Todos:"btnTodos",
 
@@ -866,9 +1060,11 @@ Lixeira:"btnLixeira"
 };
 
 
-if($(mapa[filtro])){
+if(
+$(botoes[filtro])
+){
 
-$(mapa[filtro])
+$(botoes[filtro])
 .classList
 .add("ativo");
 
@@ -877,7 +1073,7 @@ $(mapa[filtro])
 
 /* RESULTADO */
 
-if(arr.length===0){
+if(!lista.length){
 
 $("lista").innerHTML=
 "<p class='cinza' style='text-align:center'>"+
@@ -890,23 +1086,26 @@ return;
 
 
 $("lista").innerHTML=
-arr.map(function([id,m]){
+lista
+.map(
+function([id,m]){
 
 return card(id,m);
 
-}).join("");
+}
+)
+.join("");
 
 }
 
 
-/* ==================================================
+/* =========================
 CARD
-================================================== */
+========================= */
 
 function card(id,m){
 
 const regra=
-
 m.aceitouRegra===true
 
 ?
@@ -931,11 +1130,15 @@ botoes=
 
 "<button onclick=\"restaurar('"+
 id+
-"')\">♻️ RESTAURAR</button>"+
+"')\">"+
+"♻️ RESTAURAR"+
+"</button>"+
 
 "<button onclick=\"apagar('"+
 id+
-"')\">❌ EXCLUIR DEFINITIVAMENTE</button>";
+"')\">"+
+"❌ EXCLUIR DEFINITIVAMENTE"+
+"</button>";
 
 }else{
 
@@ -973,14 +1176,10 @@ return`
 <p>
 ⭐ <b>PIX:</b>
 ${esc(m.pix)}
-
 <br>
-
 📲 <b>SMS:</b>
 ${esc(m.sms)}
-
 <br>
-
 🕐 <b>Período:</b>
 ${esc(m.periodo)}
 </p>
@@ -1019,26 +1218,23 @@ ${botoes}
 }
 
 
-/* ==================================================
+/* =========================
 APROVAR
-================================================== */
+========================= */
 
-window.aprovar=async function(id){
+window.aprovar=
+async function(id){
 
 await update(
-ref(db,"formularios/"+id),
+ref(
+db,
+"formularios/"+id
+),
 {
 status:"Aprovado",
 lixeira:false
 }
 );
-
-
-/*
-DEPOIS DE APROVAR,
-O PAINEL VOLTA AUTOMATICAMENTE
-PARA O FILTRO APROVADO.
-*/
 
 filtro="Aprovado";
 
@@ -1047,20 +1243,23 @@ mostrar();
 };
 
 
-/* ==================================================
+/* =========================
 RECUSAR
-================================================== */
+========================= */
 
-window.recusar=async function(id){
+window.recusar=
+async function(id){
 
 await update(
-ref(db,"formularios/"+id),
+ref(
+db,
+"formularios/"+id
+),
 {
 status:"Recusado",
 lixeira:false
 }
 );
-
 
 filtro="Recusado";
 
@@ -1069,20 +1268,22 @@ mostrar();
 };
 
 
-/* ==================================================
+/* =========================
 LIXEIRA
-================================================== */
+========================= */
 
 window.mandarLixeira=
 async function(id){
 
 await update(
-ref(db,"formularios/"+id),
+ref(
+db,
+"formularios/"+id
+),
 {
 lixeira:true
 }
 );
-
 
 filtro="Lixeira";
 
@@ -1091,21 +1292,23 @@ mostrar();
 };
 
 
-/* ==================================================
+/* =========================
 RESTAURAR
-================================================== */
+========================= */
 
 window.restaurar=
 async function(id){
 
 await update(
-ref(db,"formularios/"+id),
+ref(
+db,
+"formularios/"+id
+),
 {
 lixeira:false,
 status:"Pendente"
 }
 );
-
 
 filtro="Pendente";
 
@@ -1114,9 +1317,9 @@ mostrar();
 };
 
 
-/* ==================================================
-EXCLUIR DEFINITIVAMENTE
-================================================== */
+/* =========================
+APAGAR
+========================= */
 
 window.apagar=
 async function(id){
@@ -1133,9 +1336,11 @@ return;
 
 
 await remove(
-ref(db,"formularios/"+id)
+ref(
+db,
+"formularios/"+id
+)
 );
-
 
 filtro="Lixeira";
 
@@ -1144,19 +1349,28 @@ mostrar();
 };
 
 
-/* ==================================================
-SEGURANÇA
-================================================== */
+/* =========================
+ESCAPAR TEXTO
+========================= */
 
 function esc(x){
 
 return String(x||"")
 
-.replaceAll("&","&amp;")
+.replaceAll(
+"&",
+"&amp;"
+)
 
-.replaceAll("<","&lt;")
+.replaceAll(
+"<",
+"&lt;"
+)
 
-.replaceAll(">","&gt;")
+.replaceAll(
+">",
+"&gt;"
+)
 
 .replaceAll(
 '"',
