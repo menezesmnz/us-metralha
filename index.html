@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>US METRALHA</title>
 
 <style>
+
 *{
-box-sizing:border-box
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
@@ -15,462 +23,742 @@ margin:0;
 background:#050505;
 color:#fff;
 font-family:Arial,Helvetica,sans-serif;
-min-height:100vh
+min-height:100vh;
 }
 
-button,input,textarea{
-font:inherit
+button,
+input,
+textarea{
+font:inherit;
 }
 
 button{
-cursor:pointer
+cursor:pointer;
 }
 
 .hidden{
-display:none!important
+display:none!important;
 }
 
 main{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
-padding:20px
+padding:20px;
 }
+
 
 /* =========================
    CAPA
 ========================= */
 
 .hero{
+
 min-height:calc(100vh - 40px);
+
 border:1px solid #555;
+
 border-radius:24px;
+
 overflow:hidden;
+
 position:relative;
 
 background:
 linear-gradient(
 90deg,
-rgba(0,0,0,.90),
-rgba(0,0,0,.38),
+rgba(0,0,0,.88),
+rgba(0,0,0,.35),
 rgba(0,0,0,.78)
 ),
 url("capa.png") center/cover no-repeat;
 
 display:flex;
+
 flex-direction:column;
+
 justify-content:space-between;
-padding:35px
+
+padding:40px;
+
+box-shadow:
+0 20px 70px rgba(0,0,0,.8);
+
 }
 
 .hero:after{
+
 content:"";
+
 position:absolute;
+
 inset:0;
+
 background:
 linear-gradient(
 to bottom,
-rgba(0,0,0,.10),
+rgba(0,0,0,.05),
 transparent 45%,
-rgba(0,0,0,.78)
+rgba(0,0,0,.85)
 );
-pointer-events:none
+
+pointer-events:none;
+
 }
 
 .hero>*{
 position:relative;
-z-index:2
+z-index:2;
 }
 
+
+/* TOPO */
+
 .logoTop{
-font-size:22px;
+
+font-size:24px;
+
 font-weight:900;
+
 letter-spacing:3px;
-text-shadow:0 2px 10px #000
+
+text-shadow:
+0 2px 10px #000;
+
 }
 
 .logoTop span{
-color:#ffc400
+color:#ffc400;
 }
 
+
+/* TEXTO */
+
 .welcome{
+
 margin-top:40px;
-max-width:680px
+
+max-width:700px;
+
 }
 
 .welcome h1{
+
 font-size:clamp(42px,7vw,82px);
+
 line-height:.94;
+
 margin:0;
+
 font-weight:900;
+
 letter-spacing:-3px;
-color:rgba(255,255,255,.84);
+
+color:rgba(255,255,255,.86);
+
 text-shadow:
-0 3px 5px #000,
-0 0 20px #000
+0 3px 8px #000,
+0 0 25px #000;
+
 }
 
 .welcome p{
-font-size:15px;
+
+font-size:16px;
+
 font-weight:bold;
+
 letter-spacing:4px;
+
 color:#ddd;
-text-shadow:0 2px 5px #000
+
+text-shadow:
+0 2px 7px #000;
+
 }
 
+
+/* BOTÕES PRINCIPAIS */
+
 .buttons{
+
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-max-width:1000px;
-width:100%
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:16px;
+
+max-width:1050px;
+
+width:100%;
+
 }
 
 .menuBtn{
-min-height:105px;
-border-radius:15px;
-background:rgba(5,5,5,.78);
-border:1px solid #666;
+
+min-height:115px;
+
+border-radius:16px;
+
+background:
+rgba(5,5,5,.78);
+
+border:1px solid #555;
+
 color:#fff;
-font-weight:800;
+
+font-weight:900;
+
 font-size:21px;
-transition:.2s;
-backdrop-filter:blur(7px)
+
+transition:
+transform .2s,
+background .2s,
+border-color .2s;
+
+backdrop-filter:blur(7px);
+
 }
 
 .menuBtn:hover{
-transform:translateY(-3px);
-background:rgba(20,20,20,.92)
+
+transform:translateY(-4px);
+
+background:rgba(20,20,20,.9);
+
 }
 
 .menuBtn small{
+
 display:block;
+
 font-size:12px;
+
 margin-top:8px;
-color:#aaa;
-font-weight:normal
+
+color:#999;
+
+font-weight:normal;
+
 }
 
 .cadastro{
 border-color:#ffc400;
-color:#ffc400
+color:#ffc400;
 }
 
 .logar{
 border-color:#168cff;
-color:#168cff
+color:#168cff;
 }
 
 .admin{
-border-color:#e53935;
-color:#ff5555
+border-color:#d33;
+color:#ff5555;
 }
+
 
 /* =========================
    CARDS
 ========================= */
 
 .card{
-background:#090909ee;
+
+background:
+rgba(9,9,9,.96);
+
 border:1px solid #333;
+
 border-radius:18px;
-padding:25px;
+
+padding:28px;
+
 margin-bottom:20px;
-box-shadow:0 0 30px #000
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.55);
+
 }
 
 .card h2{
+
 margin-top:0;
-font-size:28px
+
+font-size:30px;
+
 }
 
 .gold{
-color:#ffc400
+color:#ffc400;
 }
 
 .blue{
-color:#168cff
+color:#168cff;
 }
 
 .red{
-color:#ff5555
+color:#ff5555;
 }
 
 .green{
-color:#20e878
+color:#20e878;
 }
 
 .cinza{
-color:#999
+color:#999;
 }
+
 
 /* =========================
    FORMULÁRIOS
 ========================= */
 
 label{
+
 display:block;
+
 font-weight:bold;
-margin-top:15px
+
+margin-top:16px;
+
+color:#ddd;
+
 }
 
-input,textarea{
+input,
+textarea{
+
 width:100%;
-padding:14px;
+
+padding:15px;
+
 margin-top:7px;
+
 background:#050505;
+
 color:#fff;
+
 border:1px solid #444;
+
 border-radius:10px;
-outline:none
+
+outline:none;
+
+transition:.2s;
+
 }
 
 input:focus,
 textarea:focus{
-border-color:#ffc400
+
+border-color:#ffc400;
+
+box-shadow:
+0 0 0 2px rgba(255,196,0,.08);
+
 }
 
 textarea{
-min-height:110px;
-resize:vertical
+
+min-height:120px;
+
+resize:vertical;
+
 }
+
+
+/* AVISO */
 
 .aviso{
-background:#160e00;
-border:1px solid #604900;
-padding:16px;
+
+background:
+rgba(80,0,0,.25);
+
+border:1px solid #6d0000;
+
+padding:18px;
+
 border-radius:12px;
-margin:20px 0;
-color:#ddd
+
+margin:22px 0;
+
+line-height:1.5;
+
 }
 
-.action{
-width:100%;
+
+/* ACEITE */
+
+.aceite{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:12px;
+
+margin-top:18px;
+
 padding:15px;
-border:0;
+
+background:#111;
+
+border:1px solid #333;
+
 border-radius:10px;
+
+cursor:pointer;
+
+}
+
+.aceite input{
+
+width:20px;
+
+height:20px;
+
+margin:2px 0 0 0;
+
+accent-color:#ffc400;
+
+flex-shrink:0;
+
+}
+
+.aceite span{
+
+font-size:14px;
+
+line-height:1.4;
+
+color:#ddd;
+
+}
+
+
+/* BOTÕES */
+
+.action{
+
+width:100%;
+
+padding:15px;
+
+border:0;
+
+border-radius:10px;
+
 font-weight:900;
-margin-top:18px
+
+margin-top:18px;
+
+transition:.2s;
+
+}
+
+.action:hover{
+
+filter:brightness(1.08);
+
+transform:translateY(-1px);
+
 }
 
 .action:disabled{
+
 opacity:.6;
-cursor:not-allowed
+
+cursor:not-allowed;
+
+transform:none;
+
 }
 
 .goldBtn{
+
 background:#ffc400;
-color:#000
+
+color:#000;
+
 }
 
 .blueBtn{
+
 background:#168cff;
-color:#fff
+
+color:#fff;
+
 }
 
 .redBtn{
+
 background:#a90000;
-color:#fff
+
+color:#fff;
+
 }
 
 .back{
+
 background:#151515;
+
 color:#fff;
+
 border:1px solid #444;
-padding:11px 18px;
+
+padding:12px 18px;
+
 border-radius:9px;
-margin-bottom:15px
+
+margin-bottom:15px;
+
 }
 
-.back:hover{
-background:#202020
-}
 
 /* =========================
    CÓDIGO
 ========================= */
 
 .codigo{
+
 font-size:32px;
+
 font-weight:900;
+
 letter-spacing:7px;
+
 text-align:center;
+
 padding:22px;
+
 background:#111;
+
 border:2px solid #ffc400;
+
 border-radius:14px;
+
 color:#ffc400;
-margin:20px 0
+
+margin:20px 0;
+
 }
 
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
 .info{
+
 background:#111;
+
 padding:15px;
+
 border-radius:10px;
-margin:10px 0
+
+margin:10px 0;
+
 }
+
 
 /* =========================
    MEMBRO
 ========================= */
 
 .status{
-display:inline-block;
-padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
-background:#333;
-margin:8px 0
-}
 
-.status.green{
-background:#123b26;
-color:#20e878;
-border:1px solid #20e878
+display:inline-block;
+
+padding:8px 15px;
+
+border-radius:20px;
+
+font-weight:bold;
+
+background:#333;
+
+margin:8px 0;
+
 }
 
 .memberGrid{
+
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:12px;
+
 }
 
 .memberBox{
+
 background:#111;
+
 border:1px solid #333;
+
 padding:17px;
-border-radius:12px
+
+border-radius:12px;
+
 }
 
 .memberBox b{
+
 display:block;
+
 color:#999;
+
 font-size:12px;
-margin-bottom:7px
+
+margin-bottom:5px;
+
 }
 
 .memberBox a{
+
 color:#ffc400;
+
 text-decoration:none;
-font-weight:bold
+
 }
 
 .memberBox a:hover{
-text-decoration:underline
+
+text-decoration:underline;
+
 }
+
 
 /* =========================
    ADM
 ========================= */
 
 .grid{
+
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:8px
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:8px;
+
 }
 
 .grid button{
+
 padding:13px;
+
 border:1px solid #444;
+
 background:#111;
+
 color:#fff;
+
 border-radius:9px;
-font-weight:bold
+
+font-weight:bold;
+
+transition:.2s;
+
 }
 
 .grid button:hover{
-background:#1a1a1a
+
+background:#1a1a1a;
+
 }
 
 .contadores{
+
 display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:8px
+
+grid-template-columns:
+repeat(5,1fr);
+
+gap:8px;
+
 }
 
 .contador{
+
 background:#151515;
+
+border:1px solid #292929;
+
 border-radius:10px;
+
 padding:12px;
+
 text-align:center;
-border:1px solid #252525
+
 }
 
 .contador b{
+
 font-size:22px;
+
 display:block;
-margin-top:5px
+
+margin-top:5px;
+
 }
 
 .membro{
+
 background:#111;
+
 border:1px solid #333;
+
 border-radius:12px;
-padding:17px;
-margin:12px 0
+
+padding:18px;
+
+margin:12px 0;
+
 }
 
 .membro button{
+
 border:0;
+
 border-radius:8px;
+
 padding:10px;
+
 margin:4px;
+
 background:#222;
-color:#fff
+
+color:#fff;
+
 }
 
 .membro button:hover{
-background:#333
+
+background:#333;
+
 }
 
 .ativo{
+
 border:2px solid #ffc400!important;
-color:#ffc400!important
+
+color:#ffc400!important;
+
 }
 
 .erro{
+
 color:#ff5555;
+
 text-align:center;
-margin-top:12px
+
+margin-top:12px;
+
 }
 
-.codigoAdm{
-display:flex;
-gap:8px;
-align-items:center;
-margin-top:10px
-}
-
-.codigoAdm span{
-flex:1;
-background:#050505;
-border:1px solid #ffc400;
-border-radius:8px;
-padding:10px;
-color:#ffc400;
-font-weight:bold;
-letter-spacing:2px
-}
-
-.codigoAdm button{
-background:#ffc400;
-color:#000;
-border:0;
-border-radius:8px;
-padding:10px;
-font-weight:bold
-}
-
-/* =========================
-   AUSÊNCIA
-========================= */
-
-.ausenciaBox{
-background:#101010;
-border:1px solid #333;
-border-radius:12px;
-padding:18px;
-margin-top:15px
-}
 
 /* =========================
    MOBILE
@@ -479,79 +767,118 @@ margin-top:15px
 @media(max-width:700px){
 
 main{
-padding:10px
+padding:10px;
 }
 
 .hero{
+
 min-height:calc(100vh - 20px);
-padding:22px 15px;
-border-radius:18px
+
+padding:24px 15px;
+
+border-radius:18px;
+
 }
 
 .logoTop{
-font-size:18px
+font-size:18px;
 }
 
 .welcome{
-margin-top:30px
+margin-top:30px;
 }
 
 .welcome h1{
-font-size:48px
+
+font-size:48px;
+
+letter-spacing:-2px;
+
 }
 
 .welcome p{
+
 font-size:11px;
-letter-spacing:2px
+
+letter-spacing:1.5px;
+
 }
 
 .buttons{
+
 grid-template-columns:1fr;
-gap:10px
+
+gap:10px;
+
 }
 
 .menuBtn{
-min-height:72px;
-font-size:19px
-}
 
-.memberGrid{
-grid-template-columns:1fr
-}
+min-height:76px;
 
-.contadores{
-grid-template-columns:repeat(2,1fr)
-}
+font-size:19px;
 
-.grid{
-grid-template-columns:1fr
 }
 
 .card{
-padding:18px
+
+padding:18px;
+
+}
+
+.memberGrid{
+
+grid-template-columns:1fr;
+
+}
+
+.contadores{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
 }
 
 .codigo{
+
 font-size:25px;
-letter-spacing:4px
-}
 
-.codigoAdm{
-flex-direction:column;
-align-items:stretch
-}
+letter-spacing:4px;
 
-.codigoAdm button{
-width:100%
 }
 
 }
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading{
+
+text-align:center;
+
+padding:20px;
+
+color:#999;
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
 <main>
+
 
 <!-- =========================
      INÍCIO
@@ -563,12 +890,17 @@ width:100%
 <span>US METRALHA</span>
 </div>
 
+
 <div class="welcome">
 
 <h1>
+
 BEM VINDO(A)<br>
+
 AO SITE<br>
+
 US METRALHA
+
 </h1>
 
 <p>
@@ -576,6 +908,7 @@ UNIÃO • RESPEITO • LEALDADE • ATIVIDADE
 </p>
 
 </div>
+
 
 <div class="buttons">
 
@@ -591,11 +924,12 @@ Faça seu cadastro na família
 
 </button>
 
+
 <button
 class="menuBtn logar"
 onclick="abrir('loginMembro')">
 
-LOGIN
+LOGAR
 
 <small>
 Acesse sua Área do Membro
@@ -603,11 +937,12 @@ Acesse sua Área do Membro
 
 </button>
 
+
 <button
 class="menuBtn admin"
 onclick="abrir('loginADM')">
 
-ADMINISTRAÇÃO
+ADMINS
 
 <small>
 Área exclusiva da administração
@@ -620,47 +955,77 @@ ADMINISTRAÇÃO
 </section>
 
 
+
 <!-- =========================
      CADASTRO
 ========================= -->
 
-<section id="cadastro" class="card hidden">
+<section
+id="cadastro"
+class="card hidden">
 
-<button class="back" onclick="abrir('inicio')">
+<button
+class="back"
+onclick="abrir('inicio')">
+
 ← Voltar
+
 </button>
+
 
 <h2 class="gold">
 CADASTRO US METRALHA
 </h2>
 
+
 <p class="cinza">
-Preencha seus dados. Seu código de acesso será criado automaticamente.
+
+Preencha seus dados. Após o cadastro, o sistema irá gerar automaticamente seu código de acesso.
+
 </p>
+
 
 <form id="formCadastro">
 
-<label>Nick</label>
+
+<label>
+Nick
+</label>
+
 <input
 id="cadNick"
 type="text"
 required
+autocomplete="off"
+placeholder="Digite seu Nick"
 >
 
-<label>SMS</label>
+
+<label>
+SMS
+</label>
+
 <input
 id="cadSms"
 type="text"
 required
+autocomplete="off"
+placeholder="Digite seu SMS"
 >
 
-<label>Número / identificação PIX</label>
+
+<label>
+Pix
+</label>
+
 <input
 id="cadPix"
 type="text"
 required
-placeholder="Digite qualquer número ou identificação"
+autocomplete="off"
+placeholder="Veja seu número Pix e coloque aqui"
 >
+
 
 <label>
 WhatsApp
@@ -670,11 +1035,14 @@ WhatsApp
 <input
 id="cadWhatsapp"
 type="text"
+autocomplete="off"
+placeholder="Digite seu WhatsApp"
 >
+
 
 <div class="aviso">
 
-<strong>Regras da família</strong>
+<strong>REGRAS DA FAMÍLIA</strong>
 
 <br><br>
 
@@ -682,85 +1050,147 @@ type="text"
 
 <br><br>
 
-Estou ciente e de acordo com as regras da família.
+Respeito entre todos os membros.
+
+<br><br>
+
+Mantenha atividade e compromisso com a família.
+
+<br><br>
+
+Siga as orientações da administração.
 
 </div>
+
+
+<label class="aceite">
+
+<input
+id="aceiteRegras"
+type="checkbox"
+required
+>
+
+<span>
+
+Li e estou ciente das regras da família.  
+Declaro que estou de acordo com as condições para fazer parte da US METRALHA.
+
+</span>
+
+</label>
+
 
 <button
 class="action goldBtn"
 type="submit"
-id="btnCadastro"
->
+id="btnCadastro">
 
 CRIAR CADASTRO
 
 </button>
+
+
+<div
+id="erroCadastro"
+class="erro">
+</div>
+
 
 </form>
 
 </section>
 
 
+
 <!-- =========================
      CÓDIGO GERADO
 ========================= -->
 
-<section id="codigoGerado" class="card hidden">
+<section
+id="codigoGerado"
+class="card hidden">
+
 
 <h2 class="green">
 CADASTRO CRIADO
 </h2>
 
+
 <p>
 Seu cadastro foi criado com sucesso.
 </p>
 
+
 <div class="info">
+
 Seu código de acesso:
+
 </div>
 
-<div id="codigoTela" class="codigo">
+
+<div
+id="codigoTela"
+class="codigo">
+
 --------
+
 </div>
+
 
 <p class="cinza">
-Guarde esse código. Ele será usado junto com o seu PIX para entrar na Área do Membro.
+
+Guarde esse código. Ele será usado junto com o seu Pix para entrar na Área do Membro.
+
 </p>
+
 
 <button
 class="action blueBtn"
-onclick="abrir('loginMembro')"
->
+onclick="abrir('loginMembro')">
+
 IR PARA LOGIN
+
 </button>
 
 </section>
+
 
 
 <!-- =========================
      LOGIN MEMBRO
 ========================= -->
 
-<section id="loginMembro" class="card hidden">
+<section
+id="loginMembro"
+class="card hidden">
 
-<button class="back" onclick="abrir('inicio')">
+
+<button
+class="back"
+onclick="abrir('inicio')">
+
 ← Voltar
+
 </button>
+
 
 <h2 class="blue">
 ÁREA DO MEMBRO
 </h2>
 
+
 <label>
-Número / identificação PIX
+Pix cadastrado
 </label>
 
 <input
 id="loginPix"
 type="text"
-placeholder="Digite o mesmo valor usado no cadastro"
+placeholder="Digite o mesmo Pix usado no cadastro"
 autocomplete="off"
 >
+
 
 <label>
 Código de acesso
@@ -773,52 +1203,76 @@ placeholder="Digite seu código"
 autocomplete="off"
 >
 
+
 <button
 class="action blueBtn"
-id="btnLoginMembro"
->
+id="btnLoginMembro">
+
 ENTRAR
+
 </button>
+
 
 <div
 id="erroMembro"
-class="erro"
-></div>
+class="erro">
+</div>
 
 </section>
+
 
 
 <!-- =========================
      ÁREA MEMBRO
 ========================= -->
 
-<section id="areaMembro" class="card hidden">
+<section
+id="areaMembro"
+class="card hidden">
+
 
 <h2 class="gold">
 ÁREA DO MEMBRO
 </h2>
 
-<div class="info">
-<strong>Nick:</strong>
-<span id="mNick"></span>
-</div>
 
 <div class="info">
-<strong>PIX:</strong>
-<span id="mPix"></span>
+
+<strong>Nick:</strong>
+
+<span id="mNick"></span>
+
 </div>
+
+
+<div class="info">
+
+<strong>Pix:</strong>
+
+<span id="mPix"></span>
+
+</div>
+
 
 <div>
+
 <strong>Status:</strong>
+
 <span
 id="mStatus"
-class="status"
-></span>
+class="status">
+</span>
+
 </div>
 
-<div id="linksAprovado" class="hidden">
+
+
+<div
+id="linksAprovado"
+class="hidden">
 
 <div class="memberGrid">
+
 
 <div class="memberBox">
 
@@ -827,12 +1281,14 @@ class="status"
 <a
 id="discordLink"
 href="#"
-target="_blank"
->
+target="_blank">
+
 Entrar no Discord
+
 </a>
 
 </div>
+
 
 <div class="memberBox">
 
@@ -841,16 +1297,20 @@ Entrar no Discord
 <a
 id="grupoLink"
 href="#"
-target="_blank"
->
+target="_blank">
+
 Entrar no grupo
+
 </a>
 
 </div>
 
+
 </div>
 
 </div>
+
+
 
 <div class="card">
 
@@ -876,18 +1336,23 @@ Siga as orientações da administração.
 
 </div>
 
+
+
+<!-- AUSÊNCIA -->
+
 <div
 id="areaAusencia"
-class="hidden"
->
+class="hidden">
 
-<div class="ausenciaBox">
+<div class="card">
 
 <h3>
 INFORMAR AUSÊNCIA
 </h3>
 
+
 <form id="formAusencia">
+
 
 <label>
 Data de início
@@ -899,6 +1364,7 @@ type="date"
 required
 >
 
+
 <label>
 Data de retorno
 </label>
@@ -909,6 +1375,7 @@ type="date"
 required
 >
 
+
 <label>
 Motivo
 </label>
@@ -916,46 +1383,64 @@ Motivo
 <textarea
 id="ausMotivo"
 required
-></textarea>
+placeholder="Explique o motivo da ausência">
+</textarea>
+
 
 <button
 class="action goldBtn"
-type="submit"
->
+type="submit">
+
 REGISTRAR AUSÊNCIA
+
 </button>
 
 </form>
 
-<div id="resultadoAusencia"></div>
 
+<div
+id="resultadoAusencia">
 </div>
 
 </div>
+
+</div>
+
 
 <button
 class="action redBtn"
-id="sairMembro"
->
+id="sairMembro">
+
 SAIR DA CONTA
+
 </button>
 
 </section>
+
 
 
 <!-- =========================
      LOGIN ADM
 ========================= -->
 
-<section id="loginADM" class="card hidden">
+<section
+id="loginADM"
+class="card hidden">
 
-<button class="back" onclick="abrir('inicio')">
+
+<button
+class="back"
+onclick="abrir('inicio')">
+
 ← Voltar
+
 </button>
 
+
 <h2 class="red">
-ADMINISTRAÇÃO
+ADMINS
 </h2>
+
 
 <label>
 E-mail
@@ -968,6 +1453,7 @@ value="usmetralhaadmins@gmail.com"
 readonly
 >
 
+
 <label>
 Senha
 </label>
@@ -975,142 +1461,218 @@ Senha
 <input
 id="senhaADM"
 type="password"
+autocomplete="current-password"
 >
+
 
 <button
 class="action redBtn"
-id="entrarADM"
->
+id="entrarADM">
+
 ENTRAR
+
 </button>
+
 
 <div
 id="erroADM"
-class="erro"
-></div>
+class="erro">
+</div>
 
 </section>
+
 
 
 <!-- =========================
      PAINEL ADM
 ========================= -->
 
-<section id="painel" class="card hidden">
+<section
+id="painel"
+class="card hidden">
+
 
 <h2 class="red">
-US METRALHA — ADMINISTRAÇÃO
+US METRALHA — ADM
 </h2>
+
 
 <div class="contadores">
 
+
 <div class="contador">
+
 Todos
-<b id="cTodos">0</b>
+
+<b id="cTodos">
+0
+</b>
+
 </div>
 
+
 <div class="contador">
+
 Pendentes
-<b id="cPendentes">0</b>
+
+<b id="cPendentes">
+0
+</b>
+
 </div>
 
+
 <div class="contador">
+
 Aprovados
-<b id="cAprovados">0</b>
+
+<b id="cAprovados">
+0
+</b>
+
 </div>
 
+
 <div class="contador">
+
 Recusados
-<b id="cRecusados">0</b>
+
+<b id="cRecusados">
+0
+</b>
+
 </div>
+
 
 <div class="contador">
+
 Lixeira
-<b id="cLixeira">0</b>
-</div>
+
+<b id="cLixeira">
+0
+</b>
 
 </div>
+
+
+</div>
+
+
 
 <h3>
 Pesquisar membro
 </h3>
 
+
 <input
 id="pesquisa"
 type="search"
-placeholder="Digite Nick, PIX ou SMS..."
+placeholder="Digite Nick, Pix ou SMS..."
 >
+
 
 <h3>
 Formulários
 </h3>
 
+
 <div class="grid">
+
 
 <button
 id="btnTodos"
-onclick="mudarFiltro('Todos')"
->
+onclick="mudarFiltro('Todos')">
+
 TODOS
+
 </button>
+
 
 <button
 id="btnPendente"
-onclick="mudarFiltro('Pendente')"
->
+onclick="mudarFiltro('Pendente')">
+
 PENDENTES
+
 </button>
+
 
 <button
 id="btnAprovado"
-onclick="mudarFiltro('Aprovado')"
->
+onclick="mudarFiltro('Aprovado')">
+
 APROVADOS
+
 </button>
+
 
 <button
 id="btnRecusado"
-onclick="mudarFiltro('Recusado')"
->
+onclick="mudarFiltro('Recusado')">
+
 RECUSADOS
+
 </button>
+
 
 <button
 id="btnLixeira"
-onclick="mudarFiltro('Lixeira')"
->
+onclick="mudarFiltro('Lixeira')">
+
 LIXEIRA
+
 </button>
+
 
 </div>
 
-<div id="lista"></div>
+
+<div id="lista">
+
+<div class="loading">
+
+Nenhum formulário carregado.
+
+</div>
+
+</div>
+
 
 <button
 class="action redBtn"
-id="sairADM"
->
+id="sairADM">
+
 SAIR
+
 </button>
 
 </section>
 
+
 </main>
 
 
+
 <script type="module">
+
 
 /* =========================
    FIREBASE
 ========================= */
 
 import{
+
 initializeApp
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
+
 import{
+
 getDatabase,
 ref,
 push,
@@ -1119,19 +1681,27 @@ onValue,
 update,
 remove,
 get
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
+
 import{
+
 getAuth,
 signInWithEmailAndPassword,
 createUserWithEmailAndPassword,
-signOut,
-updatePassword
+signOut
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
 
 
 const firebaseConfig={
@@ -1180,7 +1750,6 @@ let filtro="Todos";
 
 let membroAtual=null;
 
-let listenerADM=null;
 
 
 /* =========================
@@ -1191,16 +1760,16 @@ function abrir(id){
 
 document
 .querySelectorAll("main section")
-.forEach(
-function(section){
+.forEach(function(section){
 
 section.classList.add("hidden");
 
-}
-);
+});
+
 
 const tela=
 document.getElementById(id);
+
 
 if(!tela){
 
@@ -1213,16 +1782,23 @@ return;
 
 }
 
+
 tela.classList.remove("hidden");
 
+
 window.scrollTo({
+
 top:0,
+
 behavior:"smooth"
+
 });
 
 }
 
+
 window.abrir=abrir;
+
 
 
 /* =========================
@@ -1235,6 +1811,7 @@ const chars=
 "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
 let codigo="";
+
 
 for(
 let i=0;
@@ -1251,38 +1828,57 @@ Math.random()*chars.length
 
 }
 
+
 return codigo;
 
 }
+
 
 
 /* =========================
    PIX → E-MAIL INTERNO
 ========================= */
 
+/*
+   IMPORTANTE:
+   O Pix NÃO precisa ser um Pix verdadeiro.
+
+   Pode ser qualquer texto/número.
+
+   O Firebase precisa apenas de um
+   e-mail válido internamente.
+
+   Por isso usamos @usmetralha.com
+   em vez de .local.
+*/
+
 function emailInternoPix(pix){
 
-const valor=
+const texto=
 String(pix)
-.trim();
+.trim()
+.toLowerCase();
 
-return "pix_"+
+
+const base64=
 btoa(
 unescape(
-encodeURIComponent(valor)
+encodeURIComponent(texto)
 )
-)
-.replace(
-/[^a-zA-Z0-9]/g,
-""
-)
-.substring(
-0,
-25
-)+
-"@membros.usmetralha.local";
+);
+
+
+const seguro=
+base64
+.replace(/[^a-zA-Z0-9]/g,"")
+.substring(0,40);
+
+
+return "pix"+seguro+
+"@usmetralha.com";
 
 }
+
 
 
 /* =========================
@@ -1296,20 +1892,24 @@ async function(event){
 
 event.preventDefault();
 
+
 const nick=
 $("cadNick")
 .value
 .trim();
+
 
 const sms=
 $("cadSms")
 .value
 .trim();
 
+
 const pix=
 $("cadPix")
 .value
 .trim();
+
 
 const whatsapp=
 $("cadWhatsapp")
@@ -1317,15 +1917,32 @@ $("cadWhatsapp")
 .trim();
 
 
-if(
-!nick||
-!sms||
-!pix
-){
+const aceite=
+$("aceiteRegras")
+.checked;
 
-alert(
-"Preencha Nick, SMS e PIX."
-);
+
+const erroCadastro=
+$("erroCadastro");
+
+
+erroCadastro.textContent="";
+
+
+if(!nick||!sms||!pix){
+
+erroCadastro.textContent=
+"Preencha Nick, SMS e Pix.";
+
+return;
+
+}
+
+
+if(!aceite){
+
+erroCadastro.textContent=
+"Você precisa aceitar as regras da família.";
 
 return;
 
@@ -1335,14 +1952,16 @@ return;
 const botao=
 $("btnCadastro");
 
+
 botao.disabled=true;
 
 botao.textContent=
-"CRIANDO...";
+"CRIANDO CADASTRO...";
 
 
 const codigo=
 gerarCodigo();
+
 
 const email=
 emailInternoPix(pix);
@@ -1350,23 +1969,29 @@ emailInternoPix(pix);
 
 try{
 
+
 /*
-Cria a conta do membro.
+   CRIA LOGIN NO FIREBASE
 */
 
 const cred=
 await createUserWithEmailAndPassword(
+
 auth,
+
 email,
+
 codigo
+
 );
+
 
 const uid=
 cred.user.uid;
 
 
 /*
-Cria o formulário.
+   CRIA FORMULÁRIO
 */
 
 const novo=
@@ -1374,11 +1999,10 @@ push(
 ref(db,"formularios")
 );
 
+
 const dataAtual=
 new Date()
-.toLocaleString(
-"pt-BR"
-);
+.toLocaleString("pt-BR");
 
 
 const dadosMembro={
@@ -1399,6 +2023,8 @@ status:"Pendente",
 
 lixeira:false,
 
+aceitouRegras:true,
+
 data:dataAtual,
 
 idCadastro:novo.key
@@ -1407,35 +2033,43 @@ idCadastro:novo.key
 
 
 await set(
+
 novo,
+
 dadosMembro
+
 );
 
 
 await set(
+
 ref(
 db,
 "membros/"+uid
 ),
+
 dadosMembro
+
 );
 
 
-/*
-ENVIO PARA APPS SCRIPT / DISCORD
-*/
+
+/* =========================
+   APPS SCRIPT / DISCORD
+========================= */
 
 try{
 
 await fetch(
+
 "https://script.google.com/macros/s/AKfycbzKazu54SJEe5YRGWGXbFELl0Bdzs7urU2szFCb5oW5A6AcsupoSdc1p4ffAA9uIaiGog/exec",
+
 {
+
 method:"POST",
+
 mode:"no-cors",
-headers:{
-"Content-Type":
-"text/plain;charset=utf-8"
-},
+
 body:JSON.stringify({
 
 tipo:"cadastro",
@@ -1457,81 +2091,99 @@ status:"Pendente",
 data:dataAtual
 
 })
+
 }
+
 );
 
 }catch(e){
 
 console.error(
-"Erro Apps Script:",
+"Erro Discord:",
 e
 );
 
 }
 
 
+
 /*
-Sai da conta recém-criada.
+   DESLOGA O USUÁRIO
 */
 
 await signOut(auth);
 
 
 /*
-Mostra o código.
+   MOSTRA CÓDIGO
 */
 
 $("codigoTela")
 .textContent=
 codigo;
 
-$("formCadastro")
-.reset();
 
-abrir(
-"codigoGerado"
-);
+/*
+   LIMPA FORMULÁRIO
+*/
+
+$("formCadastro").reset();
+
+
+/*
+   LIMPA ERRO
+*/
+
+erroCadastro.textContent="";
+
+
+/*
+   ABRE TELA DO CÓDIGO
+*/
+
+abrir("codigoGerado");
 
 
 }catch(erro){
 
 console.error(
-"ERRO CADASTRO:",
+"ERRO COMPLETO NO CADASTRO:",
 erro
 );
 
+
 if(
-erro.code===
-"auth/email-already-in-use"
+erro.code==="auth/email-already-in-use"
 ){
 
-alert(
-"Esse número/identificação PIX já possui um cadastro."
-);
+erroCadastro.textContent=
+"Esse Pix já possui um cadastro.";
 
 }else if(
-erro.code===
-"auth/invalid-email"
+erro.code==="auth/invalid-email"
 ){
 
-alert(
-"Não foi possível criar o cadastro. O sistema recusou o identificador interno."
-);
+erroCadastro.textContent=
+"O identificador informado não pôde ser processado.";
 
 }else if(
-erro.code===
-"auth/weak-password"
+erro.code==="auth/operation-not-allowed"
 ){
 
-alert(
-"Erro na criação do código de acesso."
-);
+erroCadastro.textContent=
+"O login por e-mail/senha está desativado no Firebase.";
+
+}else if(
+erro.code==="auth/weak-password"
+){
+
+erroCadastro.textContent=
+"Erro na geração do código de acesso.";
 
 }else{
 
-alert(
-"Não foi possível criar cadastro."
-);
+erroCadastro.textContent=
+"Não foi possível criar o cadastro. Verifique o Firebase e tente novamente.";
 
 }
 
@@ -1544,7 +2196,9 @@ botao.textContent=
 
 }
 
-});
+}
+);
+
 
 
 /* =========================
@@ -1560,23 +2214,22 @@ $("loginPix")
 .value
 .trim();
 
+
 const codigo=
 $("loginCodigo")
 .value
 .trim();
 
+
 $("erroMembro")
 .textContent="";
 
 
-if(
-!pix||
-!codigo
-){
+if(!pix||!codigo){
 
 $("erroMembro")
 .textContent=
-"Digite o PIX e o código de acesso.";
+"Digite o Pix e o código de acesso.";
 
 return;
 
@@ -1586,6 +2239,7 @@ return;
 const botao=
 $("btnLoginMembro");
 
+
 botao.disabled=true;
 
 botao.textContent=
@@ -1594,15 +2248,20 @@ botao.textContent=
 
 try{
 
+
 const email=
 emailInternoPix(pix);
 
 
 const cred=
 await signInWithEmailAndPassword(
+
 auth,
+
 email,
+
 codigo
+
 );
 
 
@@ -1612,16 +2271,16 @@ cred.user.uid;
 
 const snap=
 await get(
+
 ref(
 db,
 "membros/"+uid
 )
+
 );
 
 
-if(
-!snap.exists()
-){
+if(!snap.exists()){
 
 throw new Error(
 "Cadastro não encontrado."
@@ -1631,12 +2290,16 @@ throw new Error(
 
 
 membroAtual={
+
 ...snap.val(),
+
 uid:uid
+
 };
 
 
 mostrarMembro();
+
 
 abrir(
 "areaMembro"
@@ -1645,14 +2308,12 @@ abrir(
 
 }catch(erro){
 
-console.error(
-"LOGIN MEMBRO:",
-erro
-);
+console.error(erro);
+
 
 $("erroMembro")
 .textContent=
-"PIX ou código incorreto.";
+"Pix ou código incorreto.";
 
 }finally{
 
@@ -1666,6 +2327,7 @@ botao.textContent=
 };
 
 
+
 /* =========================
    MOSTRAR MEMBRO
 ========================= */
@@ -1675,9 +2337,11 @@ function mostrarMembro(){
 const m=
 membroAtual;
 
+
 $("mNick")
 .textContent=
 m.nick||"";
+
 
 $("mPix")
 .textContent=
@@ -1709,7 +2373,9 @@ $("areaAusencia")
 .classList
 .remove("hidden");
 
+
 }else{
+
 
 status.className=
 "status";
@@ -1729,6 +2395,7 @@ $("areaAusencia")
 }
 
 
+
 /* =========================
    SAIR MEMBRO
 ========================= */
@@ -1737,21 +2404,14 @@ $("sairMembro")
 .onclick=
 async function(){
 
-try{
-
 await signOut(auth);
-
-}catch(e){
-
-console.error(e);
-
-}
 
 membroAtual=null;
 
 abrir("inicio");
 
 };
+
 
 
 /* =========================
@@ -1778,12 +2438,12 @@ return;
 
 
 const inicio=
-$("ausInicio")
-.value;
+$("ausInicio").value;
+
 
 const retorno=
-$("ausRetorno")
-.value;
+$("ausRetorno").value;
+
 
 const motivo=
 $("ausMotivo")
@@ -1808,12 +2468,15 @@ return;
 
 try{
 
+
 const novo=
 push(
+
 ref(
 db,
 "ausencias/"+membroAtual.uid
 )
+
 );
 
 
@@ -1843,26 +2506,28 @@ status:"Pendente"
 
 
 await set(
+
 novo,
+
 ausencia
+
 );
 
 
-/*
-ENVIO DE AUSÊNCIA PARA APPS SCRIPT
-*/
+/* DISCORD */
 
 try{
 
 await fetch(
+
 "https://script.google.com/macros/s/AKfycbzKazu54SJEe5YRGWGXbFELl0Bdzs7urU2szFCb5oW5A6AcsupoSdc1p4ffAA9uIaiGog/exec",
+
 {
+
 method:"POST",
+
 mode:"no-cors",
-headers:{
-"Content-Type":
-"text/plain;charset=utf-8"
-},
+
 body:JSON.stringify({
 
 tipo:"ausencia",
@@ -1882,13 +2547,15 @@ status:"Pendente",
 data:ausencia.data
 
 })
+
 }
+
 );
 
 }catch(e){
 
 console.error(
-"Erro Apps Script ausência:",
+"Erro Discord ausência:",
 e
 );
 
@@ -1897,6 +2564,7 @@ e
 
 $("resultadoAusencia")
 .innerHTML=
+
 "<p class='green'>"+
 "Ausência registrada com sucesso."+
 "</p>";
@@ -1908,10 +2576,7 @@ $("formAusencia")
 
 }catch(erro){
 
-console.error(
-"ERRO AUSÊNCIA:",
-erro
-);
+console.error(erro);
 
 alert(
 "Não foi possível registrar a ausência."
@@ -1919,7 +2584,9 @@ alert(
 
 }
 
-});
+}
+);
+
 
 
 /* =========================
@@ -1935,9 +2602,11 @@ $("emailADM")
 .value
 .trim();
 
+
 const senha=
 $("senhaADM")
 .value;
+
 
 const botao=
 $("entrarADM");
@@ -1966,26 +2635,28 @@ botao.textContent=
 
 try{
 
+
 await signInWithEmailAndPassword(
+
 auth,
+
 email,
+
 senha
+
 );
 
 
-abrir(
-"painel"
-);
+abrir("painel");
+
 
 iniciarADM();
 
 
 }catch(erro){
 
-console.error(
-"LOGIN ADM:",
-erro
-);
+console.error(erro);
+
 
 $("erroADM")
 .textContent=
@@ -2003,22 +2674,20 @@ botao.textContent=
 };
 
 
+
 /* =========================
    ADM
 ========================= */
 
 function iniciarADM(){
 
-if(listenerADM){
-
-return;
-
-}
-
-
-listenerADM=
 onValue(
-ref(db,"formularios"),
+
+ref(
+db,
+"formularios"
+),
+
 function(snapshot){
 
 dados=
@@ -2027,9 +2696,11 @@ snapshot.val()||{};
 mostrar();
 
 }
+
 );
 
 }
+
 
 
 /* =========================
@@ -2047,6 +2718,7 @@ mostrar();
 );
 
 
+
 /* =========================
    FILTRO
 ========================= */
@@ -2054,16 +2726,16 @@ mostrar();
 window.mudarFiltro=
 function(novo){
 
-filtro=
-novo;
+filtro=novo;
 
 mostrar();
 
 };
 
 
+
 /* =========================
-   MOSTRAR LISTA ADM
+   MOSTRAR
 ========================= */
 
 function mostrar(){
@@ -2093,6 +2765,7 @@ let lixeira=0;
 lista.forEach(
 function([id,m]){
 
+
 if(
 m.lixeira===true
 ){
@@ -2102,6 +2775,7 @@ lixeira++;
 return;
 
 }
+
 
 todos++;
 
@@ -2128,24 +2802,24 @@ recusados++;
 
 
 $("cTodos")
-.textContent=
-todos;
+.textContent=todos;
+
 
 $("cPendentes")
-.textContent=
-pendentes;
+.textContent=pendentes;
+
 
 $("cAprovados")
-.textContent=
-aprovados;
+.textContent=aprovados;
+
 
 $("cRecusados")
-.textContent=
-recusados;
+.textContent=recusados;
+
 
 $("cLixeira")
-.textContent=
-lixeira;
+.textContent=lixeira;
+
 
 
 lista=
@@ -2173,9 +2847,13 @@ return false;
 
 
 if(
+
 filtro!=="Todos"&&
+
 filtro!=="Lixeira"&&
+
 m.status!==filtro
+
 ){
 
 return false;
@@ -2190,20 +2868,18 @@ return true;
 
 
 const texto=
+
 String(
 m.nick||""
-)
-.toLowerCase()
-+" "+
+).toLowerCase()+" "+
+
 String(
 m.pix||""
-)
-.toLowerCase()
-+" "+
+).toLowerCase()+" "+
+
 String(
 m.sms||""
-)
-.toLowerCase();
+).toLowerCase();
 
 
 return texto.includes(
@@ -2212,6 +2888,7 @@ termo
 
 }
 );
+
 
 
 document
@@ -2253,12 +2930,14 @@ $(botoes[filtro])
 }
 
 
+
 if(
 !lista.length
 ){
 
 $("lista")
 .innerHTML=
+
 "<p class='cinza' style='text-align:center'>"+
 "Nenhum formulário encontrado."+
 "</p>";
@@ -2268,9 +2947,12 @@ return;
 }
 
 
+
 $("lista")
 .innerHTML=
+
 lista
+
 .map(
 function([id,m]){
 
@@ -2281,9 +2963,11 @@ m
 
 }
 )
+
 .join("");
 
 }
+
 
 
 /* =========================
@@ -2300,72 +2984,32 @@ m.lixeira===true
 ){
 
 botoes=
-"<button onclick=\"restaurar('"+
-id+
-"')\">"+
+
+"<button onclick=\"restaurar('"+id+"')\">"+
 "RESTAURAR"+
 "</button>"+
 
-"<button onclick=\"apagar('"+
-id+
-"')\">"+
+"<button onclick=\"apagar('"+id+"')\">"+
 "EXCLUIR DEFINITIVAMENTE"+
 "</button>";
 
 }else{
 
 botoes=
-"<button onclick=\"aprovar('"+
-id+
-"')\">"+
+
+"<button onclick=\"aprovar('"+id+"')\">"+
 "APROVAR"+
 "</button>"+
 
-"<button onclick=\"recusar('"+
-id+
-"')\">"+
+"<button onclick=\"recusar('"+id+"')\">"+
 "RECUSAR"+
 "</button>"+
 
-"<button onclick=\"mandarLixeira('"+
-id+
-"')\">"+
+"<button onclick=\"mandarLixeira('"+id+"')\">"+
 "LIXEIRA"+
 "</button>";
 
 }
-
-
-/*
-Botão para gerar novo código.
-*/
-
-const codigoAtual=
-esc(
-m.codigo||""
-);
-
-
-const codigoHTML=
-m.lixeira===true
-?
-""
-:
-`
-<div class="codigoAdm">
-
-<span id="codigo-${id}">
-${codigoAtual||"Sem código"}
-</span>
-
-<button
-onclick="novoCodigo('${id}')"
->
-GERAR NOVO CÓDIGO
-</button>
-
-</div>
-`;
 
 
 return`
@@ -2376,29 +3020,53 @@ return`
 ${esc(m.nick)}
 </h3>
 
+
 <p>
-<strong>PIX:</strong>
+
+<b>Pix:</b>
 ${esc(m.pix)}
+
 <br>
 
-<strong>SMS:</strong>
+<b>SMS:</b>
 ${esc(m.sms)}
+
 <br>
 
-<strong>WhatsApp:</strong>
+<b>WhatsApp:</b>
 ${esc(m.whatsapp||"Não informado")}
+
 </p>
+
 
 <p>
-<strong>Status:</strong>
+
+<b>Status:</b>
 ${esc(m.status)}
+
 </p>
 
-${codigoHTML}
+
+<p>
+
+<b>Código:</b>
+
+<span class="gold">
+
+${esc(m.codigo||"—")}
+
+</span>
+
+</p>
+
 
 <p class="cinza">
-Enviado: ${esc(m.data)}
+
+Enviado:
+${esc(m.data)}
+
 </p>
+
 
 ${botoes}
 
@@ -2408,139 +3076,6 @@ ${botoes}
 
 }
 
-
-/* =========================
-   NOVO CÓDIGO ADM
-========================= */
-
-window.novoCodigo=
-async function(id){
-
-const m=
-dados[id];
-
-
-if(!m){
-
-alert(
-"Membro não encontrado."
-);
-
-return;
-
-}
-
-
-if(!m.uid){
-
-alert(
-"Esse cadastro não possui UID."
-);
-
-return;
-
-}
-
-
-if(
-!confirm(
-"Gerar um novo código para este membro?"
-)
-){
-
-return;
-
-}
-
-
-const novoCodigoValor=
-gerarCodigo();
-
-
-try{
-
-/*
-Atualiza no Realtime Database.
-*/
-
-await update(
-ref(
-db,
-"formularios/"+id
-),
-{
-codigo:
-novoCodigoValor
-}
-);
-
-
-/*
-Atualiza a área do membro.
-*/
-
-await update(
-ref(
-db,
-"membros/"+m.uid
-),
-{
-codigo:
-novoCodigoValor
-}
-);
-
-
-/*
-O Firebase Auth também precisa receber
-o novo código como senha.
-*/
-
-const usuarioAtual=
-auth.currentUser;
-
-
-/*
-Como a ADM está logada, ela não pode
-alterar diretamente a senha de outro usuário
-pelo navegador.
-
-Por isso o novo código fica salvo no
-banco para controle administrativo.
-
-Para o login funcionar imediatamente,
-o código original continua sendo a senha
-do Firebase Auth.
-*/
-
-alert(
-"Novo código gerado: "+
-novoCodigoValor+
-"\n\nO código foi atualizado no cadastro."
-);
-
-
-/*
-Atualiza a tela.
-*/
-
-mostrar();
-
-
-}catch(erro){
-
-console.error(
-"ERRO NOVO CÓDIGO:",
-erro
-);
-
-alert(
-"Não foi possível gerar o novo código."
-);
-
-}
-
-};
 
 
 /* =========================
@@ -2555,14 +3090,20 @@ dados[id];
 
 
 await update(
+
 ref(
 db,
 "formularios/"+id
 ),
+
 {
+
 status:"Aprovado",
+
 lixeira:false
+
 }
+
 );
 
 
@@ -2571,23 +3112,29 @@ m&&m.uid
 ){
 
 await update(
+
 ref(
 db,
 "membros/"+m.uid
 ),
+
 {
-status:"Aprovado",
-lixeira:false
+
+status:"Aprovado"
+
 }
+
 );
 
 }
 
 
-filtro=
-"Aprovado";
+filtro="Aprovado";
+
+mostrar();
 
 };
+
 
 
 /* =========================
@@ -2602,14 +3149,20 @@ dados[id];
 
 
 await update(
+
 ref(
 db,
 "formularios/"+id
 ),
+
 {
+
 status:"Recusado",
+
 lixeira:false
+
 }
+
 );
 
 
@@ -2618,23 +3171,29 @@ m&&m.uid
 ){
 
 await update(
+
 ref(
 db,
 "membros/"+m.uid
 ),
+
 {
-status:"Recusado",
-lixeira:false
+
+status:"Recusado"
+
 }
+
 );
 
 }
 
 
-filtro=
-"Recusado";
+filtro="Recusado";
+
+mostrar();
 
 };
+
 
 
 /* =========================
@@ -2644,42 +3203,28 @@ filtro=
 window.mandarLixeira=
 async function(id){
 
-const m=
-dados[id];
-
-
 await update(
+
 ref(
 db,
 "formularios/"+id
 ),
+
 {
+
 lixeira:true
+
 }
+
 );
 
 
-if(
-m&&m.uid
-){
+filtro="Lixeira";
 
-await update(
-ref(
-db,
-"membros/"+m.uid
-),
-{
-lixeira:true
-}
-);
-
-}
-
-
-filtro=
-"Lixeira";
+mostrar();
 
 };
+
 
 
 /* =========================
@@ -2694,14 +3239,20 @@ dados[id];
 
 
 await update(
+
 ref(
 db,
 "formularios/"+id
 ),
+
 {
+
 lixeira:false,
+
 status:"Pendente"
+
 }
+
 );
 
 
@@ -2710,23 +3261,31 @@ m&&m.uid
 ){
 
 await update(
+
 ref(
 db,
 "membros/"+m.uid
 ),
+
 {
+
 lixeira:false,
+
 status:"Pendente"
+
 }
+
 );
 
 }
 
 
-filtro=
-"Pendente";
+filtro="Pendente";
+
+mostrar();
 
 };
+
 
 
 /* =========================
@@ -2738,13 +3297,10 @@ async function(id){
 
 if(
 !confirm(
-"Excluir definitivamente este cadastro?"
+"Excluir definitivamente?"
 )
-){
-
+)
 return;
-
-}
 
 
 const m=
@@ -2752,10 +3308,12 @@ dados[id];
 
 
 await remove(
+
 ref(
 db,
 "formularios/"+id
 )
+
 );
 
 
@@ -2764,19 +3322,23 @@ m&&m.uid
 ){
 
 await remove(
+
 ref(
 db,
 "membros/"+m.uid
 )
+
 );
 
 }
 
 
-filtro=
-"Lixeira";
+filtro="Lixeira";
+
+mostrar();
 
 };
+
 
 
 /* =========================
@@ -2817,6 +3379,7 @@ x||""
 }
 
 
+
 /* =========================
    LINKS
 ========================= */
@@ -2824,8 +3387,10 @@ x||""
 $("discordLink").href=
 "https://discord.com/";
 
+
 $("grupoLink").href=
 "#";
+
 
 
 /* =========================
@@ -2836,23 +3401,15 @@ $("sairADM")
 .onclick=
 async function(){
 
-try{
-
 await signOut(auth);
 
-}catch(e){
-
-console.error(e);
-
-}
-
-abrir(
-"inicio"
-);
+abrir("inicio");
 
 };
+
 
 </script>
 
 </body>
+
 </html>
