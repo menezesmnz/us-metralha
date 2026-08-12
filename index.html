@@ -415,18 +415,14 @@ behavior:"smooth"
 });
 
 }catch(erro){
-  alert("ERRO: " + erro);
 
 console.error(erro);
 
 botao.disabled=false;
 
-botao.textContent=
-"🔥 ENVIAR FORMULÁRIO";
+botao.textContent="🔥 ENVIAR FORMULÁRIO";
 
-alert(
-"Não foi possível enviar o formulário."
-);
+alert("ERRO REAL: " + erro.message);
 
 }
 
