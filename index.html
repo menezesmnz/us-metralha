@@ -383,15 +383,11 @@ ref(db,"formularios")
 
 await set(novo,formulario);
 
-// ENVIA PARA O GOOGLE APPS SCRIPT
 await fetch(
   "https://script.google.com/macros/s/AKfycbxfACwkp9uzpz-CeMMD82u7DGTBEV7wLsUEeVN88T9UobpVrn_NX7--SY2d66n4yt3RTg/exec",
   {
     method:"POST",
     mode:"no-cors",
-    headers:{
-      "Content-Type":"text/plain"
-    },
     body:JSON.stringify({
       id:novo.key,
       nick:formulario.nick,
