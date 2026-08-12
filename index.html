@@ -3172,31 +3172,32 @@ function(snapshot){
 ========================= */
 
 $("btnCriarAviso")
-.onclick=
+.onclick =
 async function(){
 
-const titulo=
+const titulo =
 $("avisoTitulo")
 .value
 .trim();
 
 
-const mensagem=
+const mensagem =
 $("avisoMensagem")
 .value
 .trim();
 
 
-const resultado=
+const resultado =
 $("resultadoAvisoADM");
 
 
-resultado.textContent="";
+resultado.textContent = "";
+resultado.className = "erro";
 
 
-if(!titulo||!mensagem){
+if(!titulo || !mensagem){
 
-resultado.textContent=
+resultado.textContent =
 "⚠️ Preencha o título e a mensagem.";
 
 return;
@@ -3204,38 +3205,41 @@ return;
 }
 
 
-const botao=
+const botao =
 $("btnCriarAviso");
 
 
-botao.disabled=true;
+botao.disabled = true;
 
-botao.textContent=
+botao.textContent =
 "📢 PUBLICANDO...";
 
 
 try{
 
+/* =========================
+   SALVAR AVISO NO FIREBASE
+========================= */
 
-const novo=
+const novo =
 push(
 ref(db,"avisos")
 );
 
 
-const aviso={
+const aviso = {
 
-id:novo.key,
+id: novo.key,
 
-titulo:titulo,
+titulo: titulo,
 
-mensagem:mensagem,
+mensagem: mensagem,
 
 data:
 new Date()
 .toLocaleString("pt-BR"),
 
-autor:"Admin"
+autor: "Admin"
 
 };
 
@@ -3246,35 +3250,40 @@ aviso
 );
 
 
-resultado.className=
-"green";
+/* =========================
+   SUCESSO
+========================= */
 
+$("avisoTitulo").value = "";
 
-resultado.textContent=
+$("avisoMensagem").value = "";
+
+resultado.className = "green";
+
+resultado.textContent =
 "✅ Aviso publicado com sucesso!";
-
-
-$("avisoTitulo").value="";
-$("avisoMensagem").value="";
 
 
 }catch(erro){
 
-console.error(erro);
+console.error(
+"ERRO AO PUBLICAR AVISO:",
+erro
+);
 
 
-resultado.className=
+resultado.className =
 "erro";
 
 
-resultado.textContent=
+resultado.textContent =
 "❌ Não foi possível publicar o aviso.";
 
 }finally{
 
-botao.disabled=false;
+botao.disabled = false;
 
-botao.textContent=
+botao.textContent =
 "📢 PUBLICAR AVISO";
 
 }
