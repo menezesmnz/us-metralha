@@ -383,6 +383,29 @@ ref(db,"formularios")
 
 await set(novo,formulario);
 
+// ENVIA PARA O GOOGLE APPS SCRIPT
+await fetch(
+  "https://script.google.com/macros/s/AKfycbxfACwkp9uzpz-CeMMD82u7DGTBEV7wLsUEeVN88T9UobpVrn_NX7--SY2d66n4yt3RTg/exec",
+  {
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+      id:novo.key,
+      nick:formulario.nick,
+      pix:formulario.pix,
+      sms:formulario.sms,
+      periodo:formulario.periodo,
+      objetivo:formulario.objetivo,
+      familia:formulario.familia,
+      aceitouRegra:formulario.aceitouRegra,
+      status:formulario.status,
+      data:formulario.data
+    })
+  }
+);
+
 $("areaFormulario")
 .classList.add("hidden");
 
