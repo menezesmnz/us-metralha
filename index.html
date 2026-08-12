@@ -3,147 +3,692 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🔥 US METRALHA 🔥</title>
+<title>US METRALHA</title>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(circle at top,#650000,#050505 70%);color:#fff;font-family:Arial,sans-serif}
-main{max-width:760px;margin:auto;padding:18px}
-.card,header{background:#090909ee;border:1px solid #650000;border-radius:18px;padding:20px;margin-bottom:18px;box-shadow:0 0 25px #f0000020}
-header{text-align:center}
-.logo{font-size:55px}
-h1{font-size:34px}
-input,textarea{width:100%;padding:13px;margin:7px 0 15px;background:#050505;color:#fff;border:1px solid #444;border-radius:9px}
-textarea{min-height:90px}
-button{border:0;border-radius:9px;padding:13px;background:#a90000;color:#fff;font-weight:bold;cursor:pointer;margin:4px}
-button:disabled{opacity:.5;cursor:not-allowed}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
-.periodos{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
-.periodos input{display:none}
-.periodos label{display:block;text-align:center;padding:13px 3px;background:#111;border:1px solid #444;border-radius:9px}
-.periodos input:checked+label{background:#500000;border-color:red}
-.aviso{background:#280000;padding:14px;border-radius:10px;margin:10px 0 18px}
-.aceite{display:flex;align-items:center;gap:8px}
-.aceite input{width:auto;margin:0}
+
+body{
+margin:0;
+background:#050505;
+color:#fff;
+font-family:Arial,sans-serif;
+min-height:100vh
+}
+
+button,input,textarea{font:inherit}
+
+button{cursor:pointer}
+
 .hidden{display:none!important}
-.sucesso{text-align:center;padding:35px 20px}
-.check{margin:auto;width:85px;height:85px;border:4px solid #20e878;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#20e878;font-size:55px}
-.membro{background:#111;border:1px solid #444;border-radius:12px;padding:15px;margin:12px 0}
-.verde{color:#20e878}
-.vermelho{color:#ff5555}
+
+main{
+max-width:1100px;
+margin:auto;
+padding:20px
+}
+
+/* CAPA */
+
+.hero{
+min-height:calc(100vh - 40px);
+border:1px solid #777;
+border-radius:24px;
+overflow:hidden;
+position:relative;
+background:
+linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.38),rgba(0,0,0,.75)),
+url("capa.png") center/cover no-repeat;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+padding:35px
+}
+
+.hero:after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+to bottom,
+rgba(0,0,0,.15),
+transparent 45%,
+rgba(0,0,0,.75)
+);
+pointer-events:none
+}
+
+.hero>*{
+position:relative;
+z-index:2
+}
+
+.logoTop{
+font-size:24px;
+font-weight:900;
+letter-spacing:2px;
+text-shadow:0 2px 8px #000
+}
+
+.logoTop span{color:#ffc400}
+
+.welcome{
+margin-top:40px;
+max-width:650px
+}
+
+.welcome h1{
+font-size:clamp(42px,7vw,82px);
+line-height:.95;
+margin:0;
+font-weight:900;
+letter-spacing:-2px;
+color:rgba(255,255,255,.78);
+text-shadow:0 3px 5px #000,0 0 20px #000
+}
+
+.welcome p{
+font-size:18px;
+font-weight:bold;
+letter-spacing:3px;
+color:#ddd;
+text-shadow:0 2px 5px #000
+}
+
+.buttons{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+max-width:1000px;
+width:100%
+}
+
+.menuBtn{
+min-height:115px;
+border-radius:16px;
+background:rgba(5,5,5,.78);
+border:2px solid #777;
+color:#fff;
+font-weight:900;
+font-size:23px;
+transition:.2s;
+backdrop-filter:blur(5px)
+}
+
+.menuBtn:hover{
+transform:translateY(-4px);
+background:#111
+}
+
+.menuBtn small{
+display:block;
+font-size:12px;
+margin-top:8px;
+color:#bbb;
+font-weight:normal
+}
+
+.cadastro{border-color:#ffc400;color:#ffc400}
+.logar{border-color:#168cff;color:#168cff}
+.admin{border-color:#ff3b3b;color:#ff5555}
+
+/* CARDS */
+
+.card{
+background:#090909ee;
+border:1px solid #444;
+border-radius:18px;
+padding:25px;
+margin-bottom:20px;
+box-shadow:0 0 30px #000
+}
+
+.card h2{
+margin-top:0;
+font-size:30px
+}
+
+.gold{color:#ffc400}
+.blue{color:#168cff}
+.red{color:#ff5555}
+.green{color:#20e878}
 .cinza{color:#aaa}
-.admBtn{background:#111;border:1px solid #555;width:auto;display:block;margin:20px auto}
-.erro{text-align:center;color:#ff5555}
-.contadores{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.contador{background:#151515;border-radius:10px;padding:12px;text-align:center}
-.contador b{font-size:22px;display:block}
-.ativo{border:2px solid #20e878!important}
+
+/* FORMULÁRIOS */
+
+label{
+display:block;
+font-weight:bold;
+margin-top:14px
+}
+
+input,textarea{
+width:100%;
+padding:14px;
+margin-top:7px;
+background:#050505;
+color:#fff;
+border:1px solid #555;
+border-radius:10px;
+outline:none
+}
+
+input:focus,textarea:focus{
+border-color:#ffc400
+}
+
+textarea{
+min-height:110px;
+resize:vertical
+}
+
+.periodos{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:8px;
+margin-top:10px
+}
+
+.periodos input{display:none}
+
+.periodos label{
+margin:0;
+padding:15px 5px;
+text-align:center;
+background:#111;
+border:1px solid #444;
+border-radius:10px;
+cursor:pointer
+}
+
+.periodos input:checked+label{
+background:#3d3000;
+border-color:#ffc400;
+color:#ffc400
+}
+
+.aviso{
+background:#260000;
+border:1px solid #7d0000;
+padding:16px;
+border-radius:12px;
+margin:20px 0
+}
+
+.aceite{
+display:flex;
+align-items:center;
+gap:8px
+}
+
+.aceite input{width:auto}
+
+.action{
+width:100%;
+padding:15px;
+border:0;
+border-radius:10px;
+font-weight:900;
+margin-top:18px
+}
+
+.goldBtn{background:#ffc400;color:#000}
+.blueBtn{background:#168cff;color:#fff}
+.redBtn{background:#a90000;color:#fff}
+
+.back{
+background:#151515;
+color:#fff;
+border:1px solid #555;
+padding:12px 18px;
+border-radius:9px;
+margin-bottom:15px
+}
+
+/* CÓDIGO */
+
+.codigo{
+font-size:32px;
+font-weight:900;
+letter-spacing:7px;
+text-align:center;
+padding:22px;
+background:#111;
+border:2px solid #ffc400;
+border-radius:14px;
+color:#ffc400;
+margin:20px 0
+}
+
+.info{
+background:#111;
+padding:15px;
+border-radius:10px;
+margin:10px 0
+}
+
+/* MEMBRO */
+
+.status{
+display:inline-block;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+background:#333;
+margin:8px 0
+}
+
+.memberGrid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px
+}
+
+.memberBox{
+background:#111;
+border:1px solid #333;
+padding:17px;
+border-radius:12px
+}
+
+.memberBox b{
+display:block;
+color:#aaa;
+font-size:12px;
+margin-bottom:5px
+}
+
+.memberBox a{
+color:#ffc400
+}
+
+/* ADM */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:8px
+}
+
+.grid button{
+padding:13px;
+border:1px solid #555;
+background:#111;
+color:#fff;
+border-radius:9px;
+font-weight:bold
+}
+
+.contadores{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:8px
+}
+
+.contador{
+background:#151515;
+border-radius:10px;
+padding:12px;
+text-align:center
+}
+
+.contador b{
+font-size:22px;
+display:block;
+margin-top:5px
+}
+
+.membro{
+background:#111;
+border:1px solid #444;
+border-radius:12px;
+padding:17px;
+margin:12px 0
+}
+
+.membro button{
+border:0;
+border-radius:8px;
+padding:10px;
+margin:4px;
+background:#222;
+color:#fff
+}
+
+.ativo{
+border:2px solid #ffc400!important;
+color:#ffc400!important
+}
+
+.erro{
+color:#ff5555;
+text-align:center;
+margin-top:12px
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+main{padding:10px}
+
+.hero{
+min-height:calc(100vh - 20px);
+padding:22px 15px;
+border-radius:18px
+}
+
+.logoTop{font-size:18px}
+
+.welcome{margin-top:30px}
+
+.welcome h1{font-size:48px}
+
+.welcome p{
+font-size:12px;
+letter-spacing:1.5px
+}
+
+.buttons{
+grid-template-columns:1fr;
+gap:10px
+}
+
+.menuBtn{
+min-height:75px;
+font-size:20px
+}
+
+.periodos{
+grid-template-columns:repeat(2,1fr)
+}
+
+.memberGrid{
+grid-template-columns:1fr
+}
+
+.contadores{
+grid-template-columns:repeat(2,1fr)
+}
+
+.grid{
+grid-template-columns:1fr
+}
+
+.card{padding:18px}
+
+.codigo{
+font-size:25px;
+letter-spacing:4px
+}
+
+}
 </style>
 </head>
 
 <body>
 
-<main id="site">
+<main>
 
-<header>
-<div class="logo">🔥</div>
-<h1>US METRALHA</h1>
-<p>ATIVIDADE • UNIÃO • RESPEITO • LEALDADE</p>
-</header>
+<!-- INÍCIO -->
 
-<section id="areaFormulario" class="card">
+<section id="inicio" class="hero">
 
-<form id="formulario">
+<div class="logoTop">
+🔥 <span>USMETRALHA</span>
+</div>
+
+<div class="welcome">
+
+<h1>
+BEM VINDO(A)<br>
+AO SITE<br>
+US METRALHA
+</h1>
+
+<p>
+UNIÃO • RESPEITO • LEALDADE • ATIVIDADE
+</p>
+
+</div>
+
+<div class="buttons">
+
+<button class="menuBtn cadastro" onclick="abrir('cadastro')">
+📝 CADASTRO
+<small>Faça seu cadastro na família</small>
+</button>
+
+<button class="menuBtn logar" onclick="abrir('loginMembro')">
+🔐 LOGAR
+<small>Acesse sua Área do Membro</small>
+</button>
+
+<button class="menuBtn admin" onclick="abrir('loginADM')">
+🛡️ ADMINS
+<small>Área exclusiva da administração</small>
+</button>
+
+</div>
+
+</section>
+
+
+<!-- CADASTRO -->
+
+<section id="cadastro" class="card hidden">
+
+<button class="back" onclick="abrir('inicio')">
+← Voltar
+</button>
+
+<h2 class="gold">🔥 CADASTRO US METRALHA</h2>
+
+<p class="cinza">
+Preencha seus dados. O sistema irá gerar automaticamente seu código de acesso.
+</p>
+
+<form id="formCadastro">
 
 <label>🎮 Nick</label>
-<input id="nick" required>
+<input id="cadNick" required>
 
-<label>⭐ PIX</label>
-<input id="pix" required>
+<label>📱 SMS</label>
+<input id="cadSms" required>
 
-<label>📲 SMS</label>
-<input id="sms" required>
+<label>💰 PIX</label>
+<input id="cadPix" required>
 
-<label>🕐 Qual período costuma jogar?</label>
-
-<div class="periodos">
-
-<div>
-<input id="manha" name="periodo" type="radio" value="🌞 Manhã" required>
-<label for="manha">🌞<br>Manhã</label>
-</div>
-
-<div>
-<input id="tarde" name="periodo" type="radio" value="⛅ Tarde">
-<label for="tarde">⛅<br>Tarde</label>
-</div>
-
-<div>
-<input id="noite" name="periodo" type="radio" value="🌚 Noite">
-<label for="noite">🌚<br>Noite</label>
-</div>
-
-<div>
-<input id="varia" name="periodo" type="radio" value="🫯 Varia">
-<label for="varia">🫯<br>Varia</label>
-</div>
-
-</div>
-
-<label>🎯 Qual é o seu principal objetivo no jogo?</label>
-<textarea id="objetivo" required></textarea>
-
-<label>💭 O que faz uma família ser boa para você?</label>
-<textarea id="familia" required></textarea>
+<label>📲 WhatsApp <span class="cinza">(opcional)</span></label>
+<input id="cadWhatsapp">
 
 <div class="aviso">
-⚠️ Está ciente de que
-<b>5 dias seguidos OFF, sem justificativa, resultam na remoção da família?</b>
 
-<label class="aceite">
-<input id="aceite" type="checkbox" required>
-SIM, ESTOU CIENTE E DE ACORDO.
-</label>
+⚠️ 5 dias seguidos OFF, sem justificativa, resultam na remoção da família.
+
+<br><br>
+
+☑️ Estou ciente e de acordo com as regras da família.
+
 </div>
 
-<button id="enviar" type="submit">
-🔥 ENVIAR FORMULÁRIO
+<button class="action goldBtn" type="submit">
+🔥 CRIAR CADASTRO
 </button>
 
 </form>
+
 </section>
 
-<section id="sucesso" class="card sucesso hidden">
 
-<div class="check">✓</div>
+<!-- CÓDIGO -->
 
-<h2>Seu formulário foi enviado com sucesso!</h2>
+<section id="codigoGerado" class="card hidden">
+
+<h2 class="green">✅ CADASTRO CRIADO</h2>
 
 <p>
-Recebemos suas informações.<br>
-Aguarde a análise da administração.
+Seu cadastro foi criado com sucesso.
 </p>
 
-<div style="font-size:45px;color:#20e878;margin-top:20px">
-✓
+<div class="info">
+🔐 Seu código de acesso:
 </div>
+
+<div id="codigoTela" class="codigo">
+--------
+</div>
+
+<p class="cinza">
+⚠️ Guarde esse código. Ele será usado junto com o seu PIX para entrar na Área do Membro.
+</p>
+
+<button class="action blueBtn" onclick="abrir('loginMembro')">
+🔐 IR PARA LOGIN
+</button>
 
 </section>
 
-<button id="abrirADM" class="admBtn">
-🔐 ÁREA ADM
+
+<!-- LOGIN MEMBRO -->
+
+<section id="loginMembro" class="card hidden">
+
+<button class="back" onclick="abrir('inicio')">
+← Voltar
 </button>
 
-</main>
+<h2 class="blue">🔐 ÁREA DO MEMBRO</h2>
+
+<label>💰 PIX cadastrado</label>
+
+<input
+id="loginPix"
+type="text"
+placeholder="Digite o mesmo PIX usado no cadastro"
+autocomplete="off"
+>
+
+<label>🔑 Código de acesso</label>
+
+<input
+id="loginCodigo"
+type="text"
+placeholder="Digite seu código"
+autocomplete="off"
+>
+
+<button class="action blueBtn" id="btnLoginMembro">
+ENTRAR
+</button>
+
+<div id="erroMembro" class="erro"></div>
+
+</section>
+
+
+<!-- ÁREA MEMBRO -->
+
+<section id="areaMembro" class="card hidden">
+
+<h2 class="gold">👤 ÁREA DO MEMBRO</h2>
+
+<div class="info">
+🎮 <b>Nick:</b>
+<span id="mNick"></span>
+</div>
+
+<div class="info">
+💰 <b>PIX:</b>
+<span id="mPix"></span>
+</div>
+
+<div>
+<b>Status:</b>
+<span id="mStatus" class="status"></span>
+</div>
+
+<div id="linksAprovado" class="hidden">
+
+<div class="memberGrid">
+
+<div class="memberBox">
+<b>💬 DISCORD</b>
+<a id="discordLink" href="#" target="_blank">
+Entrar no Discord
+</a>
+</div>
+
+<div class="memberBox">
+<b>👥 GRUPO DA FAMÍLIA</b>
+<a id="grupoLink" href="#" target="_blank">
+Entrar no grupo
+</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>📜 REGRAS DA FAMÍLIA</h3>
+
+<p>⚠️ 5 dias seguidos OFF, sem justificativa, resultam na remoção da família.</p>
+
+<p>🤝 Respeito entre todos os membros.</p>
+
+<p>🔥 Mantenha atividade e compromisso com a família.</p>
+
+<p>🛡️ Siga as orientações da administração.</p>
+
+</div>
+
+<div id="areaAusencia" class="hidden">
+
+<div class="card">
+
+<h3>💤 INFORMAR AUSÊNCIA</h3>
+
+<form id="formAusencia">
+
+<label>📅 Data de início</label>
+<input id="ausInicio" type="date" required>
+
+<label>📅 Data de retorno</label>
+<input id="ausRetorno" type="date" required>
+
+<label>📝 Motivo</label>
+<textarea id="ausMotivo" required></textarea>
+
+<button class="action goldBtn" type="submit">
+💤 REGISTRAR AUSÊNCIA
+</button>
+
+</form>
+
+<div id="resultadoAusencia"></div>
+
+</div>
+
+</div>
+
+<button class="action redBtn" id="sairMembro">
+🚪 SAIR DA CONTA
+</button>
+
+</section>
 
 
 <!-- LOGIN ADM -->
 
-<main id="login" class="hidden">
+<section id="loginADM" class="card hidden">
 
-<section class="card">
+<button class="back" onclick="abrir('inicio')">
+← Voltar
+</button>
 
-<h2>🔐 Painel ADM</h2>
+<h2 class="red">🛡️ ADMINS</h2>
 
 <label>📧 E-mail</label>
 
@@ -159,31 +704,22 @@ readonly
 <input
 id="senhaADM"
 type="password"
-placeholder="Digite sua senha do Firebase"
 >
 
-<button id="entrarADM">
+<button class="action redBtn" id="entrarADM">
 ENTRAR
 </button>
 
 <div id="erroADM" class="erro"></div>
 
-<button id="voltarSite" class="admBtn">
-← Voltar
-</button>
-
 </section>
-
-</main>
 
 
 <!-- PAINEL ADM -->
 
-<main id="painel" class="hidden">
+<section id="painel" class="card hidden">
 
-<section class="card">
-
-<h2>🔥 US METRALHA — ADM</h2>
+<h2 class="red">🔥 US METRALHA — ADM</h2>
 
 <div class="contadores">
 
@@ -250,7 +786,7 @@ placeholder="Digite Nick, PIX ou SMS..."
 
 <div id="lista"></div>
 
-<button id="sairADM" class="admBtn">
+<button class="action redBtn" id="sairADM">
 🚪 SAIR
 </button>
 
@@ -261,15 +797,10 @@ placeholder="Digite Nick, PIX ou SMS..."
 
 <script type="module">
 
-/* =========================
-FIREBASE
-========================= */
-
 import{
 initializeApp
 }from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
 
 import{
 getDatabase,
@@ -278,19 +809,15 @@ push,
 set,
 onValue,
 update,
-remove
+remove,
+get
 }from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
-
-
-/*
-NOVO:
-FIREBASE AUTHENTICATION
-*/
 
 import{
 getAuth,
 signInWithEmailAndPassword,
+createUserWithEmailAndPassword,
 signOut
 }from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
@@ -314,204 +841,311 @@ appId:"1:992552847534:web:6be21b8924b9399959453f"
 
 };
 
-
 const app=initializeApp(firebaseConfig);
 
 const db=getDatabase(app);
 
 const auth=getAuth(app);
 
+const $=id=>document.getElementById(id);
+
 let dados={};
 
 let filtro="Todos";
 
-const $=id=>document.getElementById(id);
+let membroAtual=null;
 
 
-/* =========================
-FORMULÁRIO
-========================= */
+/* MENU */
 
-$("formulario").addEventListener(
-"submit",
-async function(event){
+window.abrir=function(id){
 
-event.preventDefault();
+document
+.querySelectorAll("main section")
+.forEach(s=>s.classList.add("hidden"));
 
-const botao=$("enviar");
-
-if(botao.disabled)return;
-
-botao.disabled=true;
-
-botao.textContent="⏳ ENVIANDO...";
-
-const periodo=
-document.querySelector(
-'input[name="periodo"]:checked'
-);
-
-const formulario={
-
-nick:$("nick").value.trim(),
-
-pix:$("pix").value.trim(),
-
-sms:$("sms").value.trim(),
-
-periodo:periodo?periodo.value:"",
-
-objetivo:$("objetivo").value.trim(),
-
-familia:$("familia").value.trim(),
-
-aceitouRegra:$("aceite").checked,
-
-status:"Pendente",
-
-lixeira:false,
-
-data:new Date().toLocaleString("pt-BR")
-
-};
-
-try{
-
-const novo=push(
-ref(db,"formularios")
-);
-
-await set(novo,formulario);
-
-await fetch(
-  "https://script.google.com/macros/s/AKfycbxfACwkp9uzpz-CeMMD82u7DGTBEV7wLsUEeVN88T9UobpVrn_NX7--SY2d66n4yt3RTg/exec",
-  {
-    method:"POST",
-    mode:"no-cors",
-    body:JSON.stringify({
-      id:novo.key,
-      nick:formulario.nick,
-      pix:formulario.pix,
-      sms:formulario.sms,
-      periodo:formulario.periodo,
-      objetivo:formulario.objetivo,
-      familia:formulario.familia,
-      aceitouRegra:formulario.aceitouRegra,
-      status:formulario.status,
-      data:formulario.data
-    })
-  }
-);
-
-$("areaFormulario")
-.classList.add("hidden");
-
-$("sucesso")
-.classList.remove("hidden");
+$(id).classList.remove("hidden");
 
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
 
+};
+
+
+/* CÓDIGO */
+
+function gerarCodigo(){
+
+const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+let codigo="";
+
+for(let i=0;i<8;i++){
+
+codigo+=chars[
+Math.floor(Math.random()*chars.length)
+];
+
+}
+
+return codigo;
+
+}
+
+
+/*
+IMPORTANTE:
+
+O PIX será transformado internamente
+em um identificador de autenticação.
+
+O membro nunca vê esse e-mail interno.
+*/
+
+function emailInternoPix(pix){
+
+return "pix_"+
+
+btoa(
+unescape(
+encodeURIComponent(
+pix.trim()
+)
+)
+)
+.replace(/[^a-zA-Z0-9]/g,"")
+.substring(0,25)
+
++"@membros.usmetralha.local";
+
+}
+
+
+/* CADASTRO */
+
+$("formCadastro").addEventListener(
+"submit",
+async function(event){
+
+event.preventDefault();
+
+const nick=$("cadNick").value.trim();
+const sms=$("cadSms").value.trim();
+const pix=$("cadPix").value.trim();
+const whatsapp=$("cadWhatsapp").value.trim();
+
+if(!nick||!sms||!pix){
+
+alert("Preencha Nick, SMS e PIX.");
+
+return;
+
+}
+
+const codigo=gerarCodigo();
+
+const email=emailInternoPix(pix);
+
+try{
+
+const cred=
+await createUserWithEmailAndPassword(
+auth,
+email,
+codigo
+);
+
+const uid=cred.user.uid;
+
+const novo=
+push(ref(db,"formularios"));
+
+const dataAtual=
+new Date().toLocaleString("pt-BR");
+
+const dadosMembro={
+
+uid:uid,
+
+nick:nick,
+
+sms:sms,
+
+pix:pix,
+
+whatsapp:whatsapp,
+
+codigo:codigo,
+
+status:"Pendente",
+
+lixeira:false,
+
+data:dataAtual,
+
+idCadastro:novo.key
+
+};
+
+await set(
+novo,
+dadosMembro
+);
+
+await set(
+ref(db,"membros/"+uid),
+dadosMembro
+);
+
+
+/* DISCORD / APPS SCRIPT */
+
+try{
+
+await fetch(
+"https://script.google.com/macros/s/AKfycbzKazu54SJEe5YRGWGXbFELl0Bdzs7urU2szFCb5oW5A6AcsupoSdc1p4ffAA9uIaiGog/exec",
+{
+method:"POST",
+mode:"no-cors",
+body:JSON.stringify({
+
+tipo:"cadastro",
+
+id:novo.key,
+
+nick:nick,
+
+pix:pix,
+
+sms:sms,
+
+whatsapp:whatsapp,
+
+codigo:codigo,
+
+status:"Pendente",
+
+data:dataAtual
+
+})
+}
+);
+
+}catch(e){
+
+console.error(
+"Erro Discord/Apps Script:",
+e
+);
+
+}
+
+await signOut(auth);
+
+$("codigoTela").textContent=codigo;
+
+$("formCadastro").reset();
+
+abrir("codigoGerado");
+
 }catch(erro){
 
 console.error(erro);
 
-botao.disabled=false;
+if(
+erro.code==="auth/email-already-in-use"
+){
 
-botao.textContent="🔥 ENVIAR FORMULÁRIO";
+alert(
+"Esse PIX já possui um cadastro."
+);
 
-alert("ERRO REAL: " + erro.message);
+}else{
+
+alert(
+"Não foi possível criar o cadastro."
+);
+
+}
 
 }
 
 });
 
 
-/* =========================
-ABRIR ADM
-========================= */
+/* LOGIN POR PIX + CÓDIGO */
 
-$("abrirADM").onclick=function(){
+$("btnLoginMembro").onclick=async function(){
 
-$("site").classList.add("hidden");
+const pix=
+$("loginPix").value.trim();
 
-$("login").classList.remove("hidden");
+const codigo=
+$("loginCodigo").value.trim();
 
-$("senhaADM").value="";
+$("erroMembro").textContent="";
 
-$("erroADM").textContent="";
+if(!pix||!codigo){
 
-};
-
-
-/* =========================
-VOLTAR
-========================= */
-
-$("voltarSite").onclick=function(){
-
-$("login").classList.add("hidden");
-
-$("site").classList.remove("hidden");
-
-};
-
-
-/* =========================
-LOGIN SEGURO
-========================= */
-
-$("entrarADM").onclick=async function(){
-
-const email=
-$("emailADM").value.trim();
-
-const senha=
-$("senhaADM").value;
-
-const botao=$("entrarADM");
-
-if(!email||!senha){
-
-$("erroADM").textContent=
-"❌ Digite o e-mail e a senha.";
+$("erroMembro").textContent=
+"Digite o PIX e o código de acesso.";
 
 return;
 
 }
 
+const botao=$("btnLoginMembro");
+
 botao.disabled=true;
 
 botao.textContent="⏳ ENTRANDO...";
 
-$("erroADM").textContent="";
-
 try{
 
+const email=
+emailInternoPix(pix);
+
+const cred=
 await signInWithEmailAndPassword(
 auth,
 email,
-senha
+codigo
 );
 
-$("login")
-.classList
-.add("hidden");
+const uid=cred.user.uid;
 
-$("painel")
-.classList
-.remove("hidden");
+const snap=
+await get(
+ref(db,"membros/"+uid)
+);
 
-iniciarADM();
+if(!snap.exists()){
+
+throw new Error(
+"Cadastro não encontrado."
+);
+
+}
+
+membroAtual={
+...snap.val(),
+uid:uid
+};
+
+mostrarMembro();
+
+abrir("areaMembro");
 
 }catch(erro){
 
 console.error(erro);
 
-$("erroADM").textContent=
-"❌ E-mail ou senha incorretos.";
+$("erroMembro").textContent=
+"❌ PIX ou código incorreto.";
+
+}finally{
 
 botao.disabled=false;
 
@@ -522,36 +1156,256 @@ botao.textContent="ENTRAR";
 };
 
 
-/* =========================
-SAIR ADM
-========================= */
+/* MOSTRAR MEMBRO */
 
-$("sairADM").onclick=async function(){
+function mostrarMembro(){
+
+const m=membroAtual;
+
+$("mNick").textContent=
+m.nick||"";
+
+$("mPix").textContent=
+m.pix||"";
+
+const status=
+$("mStatus");
+
+status.textContent=
+m.status||"Pendente";
+
+if(m.status==="Aprovado"){
+
+status.className=
+"status green";
+
+$("linksAprovado")
+.classList
+.remove("hidden");
+
+$("areaAusencia")
+.classList
+.remove("hidden");
+
+}else{
+
+status.className=
+"status";
+
+$("linksAprovado")
+.classList
+.add("hidden");
+
+$("areaAusencia")
+.classList
+.add("hidden");
+
+}
+
+}
+
+
+/* SAIR MEMBRO */
+
+$("sairMembro").onclick=async function(){
+
+await signOut(auth);
+
+membroAtual=null;
+
+abrir("inicio");
+
+};
+
+
+/* AUSÊNCIA */
+
+$("formAusencia").addEventListener(
+"submit",
+async function(event){
+
+event.preventDefault();
+
+if(!membroAtual){
+
+alert("Faça login novamente.");
+
+return;
+
+}
+
+const inicio=
+$("ausInicio").value;
+
+const retorno=
+$("ausRetorno").value;
+
+const motivo=
+$("ausMotivo").value.trim();
+
+if(!inicio||!retorno||!motivo){
+
+alert("Preencha todos os campos.");
+
+return;
+
+}
 
 try{
 
-await signOut(auth);
+const novo=
+push(
+ref(
+db,
+"ausencias/"+membroAtual.uid
+)
+);
+
+const ausencia={
+
+id:novo.key,
+
+uid:membroAtual.uid,
+
+nick:membroAtual.nick,
+
+pix:membroAtual.pix,
+
+inicio:inicio,
+
+retorno:retorno,
+
+motivo:motivo,
+
+data:
+new Date().toLocaleString("pt-BR"),
+
+status:"Pendente"
+
+};
+
+await set(
+novo,
+ausencia
+);
+
+
+/* DISCORD */
+
+try{
+
+await fetch(
+"https://script.google.com/macros/s/AKfycbzKazu54SJEe5YRGWGXbFELl0Bdzs7urU2szFCb5oW5A6AcsupoSdc1p4ffAA9uIaiGog/exec",
+method:"POST",
+mode:"no-cors",
+body:JSON.stringify({
+
+tipo:"ausencia",
+
+nick:membroAtual.nick,
+
+pix:membroAtual.pix,
+
+inicio:inicio,
+
+retorno:retorno,
+
+motivo:motivo,
+
+status:"Pendente",
+
+data:ausencia.data
+
+})
+}
+);
+
+}catch(e){
+
+console.error(e);
+
+}
+
+$("resultadoAusencia").innerHTML=
+"<p class='green'>"+
+"✅ Ausência registrada com sucesso!"+
+"</p>";
+
+$("formAusencia").reset();
 
 }catch(erro){
 
 console.error(erro);
 
+alert(
+"Não foi possível registrar a ausência."
+);
+
 }
 
-$("painel")
-.classList
-.add("hidden");
+});
 
-$("site")
-.classList
-.remove("hidden");
+
+/* LOGIN ADM */
+
+$("entrarADM").onclick=async function(){
+
+const email=
+$("emailADM").value.trim();
+
+const senha=
+$("senhaADM").value;
+
+const botao=
+$("entrarADM");
+
+$("erroADM").textContent="";
+
+if(!senha){
+
+$("erroADM").textContent=
+"Digite a senha.";
+
+return;
+
+}
+
+botao.disabled=true;
+
+botao.textContent=
+"⏳ ENTRANDO...";
+
+try{
+
+await signInWithEmailAndPassword(
+auth,
+email,
+senha
+);
+
+abrir("painel");
+
+iniciarADM();
+
+}catch(erro){
+
+console.error(erro);
+
+$("erroADM").textContent=
+"❌ E-mail ou senha incorretos.";
+
+}finally{
+
+botao.disabled=false;
+
+botao.textContent="ENTRAR";
+
+}
 
 };
 
 
-/* =========================
-FIREBASE ADM
-========================= */
+/* ADM */
 
 function iniciarADM(){
 
@@ -559,7 +1413,8 @@ onValue(
 ref(db,"formularios"),
 function(snapshot){
 
-dados=snapshot.val()||{};
+dados=
+snapshot.val()||{};
 
 mostrar();
 
@@ -569,9 +1424,7 @@ mostrar();
 }
 
 
-/* =========================
-PESQUISA
-========================= */
+/* PESQUISA */
 
 $("pesquisa").addEventListener(
 "input",
@@ -583,9 +1436,7 @@ mostrar();
 );
 
 
-/* =========================
-FILTRO
-========================= */
+/* FILTRO */
 
 window.mudarFiltro=function(novo){
 
@@ -596,9 +1447,7 @@ mostrar();
 };
 
 
-/* =========================
-MOSTRAR
-========================= */
+/* MOSTRAR */
 
 function mostrar(){
 
@@ -606,7 +1455,9 @@ let lista=
 Object.entries(dados);
 
 const termo=
-$("pesquisa").value.toLowerCase().trim();
+$("pesquisa").value
+.toLowerCase()
+.trim();
 
 let todos=0;
 let pendentes=0;
@@ -614,7 +1465,8 @@ let aprovados=0;
 let recusados=0;
 let lixeira=0;
 
-lista.forEach(function([id,m]){
+lista.forEach(
+function([id,m]){
 
 if(m.lixeira===true){
 
@@ -626,13 +1478,17 @@ return;
 
 todos++;
 
-if(m.status==="Pendente")pendentes++;
+if(m.status==="Pendente")
+pendentes++;
 
-if(m.status==="Aprovado")aprovados++;
+if(m.status==="Aprovado")
+aprovados++;
 
-if(m.status==="Recusado")recusados++;
+if(m.status==="Recusado")
+recusados++;
 
-});
+}
+);
 
 $("cTodos").textContent=todos;
 $("cPendentes").textContent=pendentes;
@@ -641,15 +1497,19 @@ $("cRecusados").textContent=recusados;
 $("cLixeira").textContent=lixeira;
 
 
-lista=lista.filter(function([id,m]){
+lista=
+lista.filter(
+function([id,m]){
 
 if(filtro==="Lixeira"){
 
-if(m.lixeira!==true)return false;
+if(m.lixeira!==true)
+return false;
 
 }else{
 
-if(m.lixeira===true)return false;
+if(m.lixeira===true)
+return false;
 
 }
 
@@ -663,7 +1523,8 @@ return false;
 
 }
 
-if(termo==="")return true;
+if(termo==="")
+return true;
 
 const texto=
 String(m.nick||"").toLowerCase()+
@@ -674,17 +1535,19 @@ String(m.sms||"").toLowerCase();
 
 return texto.includes(termo);
 
-});
+}
+);
 
 
 document
 .querySelectorAll(".grid button")
-.forEach(function(b){
+.forEach(
+function(b){
 
 b.classList.remove("ativo");
 
-});
-
+}
+);
 
 const botoes={
 
@@ -717,31 +1580,20 @@ return;
 }
 
 $("lista").innerHTML=
-lista.map(function([id,m]){
+lista
+.map(function([id,m]){
 
 return card(id,m);
 
-}).join("");
+})
+.join("");
 
 }
 
 
-/* =========================
-CARD
-========================= */
+/* CARD */
 
 function card(id,m){
-
-const regra=
-m.aceitouRegra===true
-
-?
-
-"<span class='verde'>✓ SIM — ACEITOU</span>"
-
-:
-
-"<span class='vermelho'>✕ NÃO — NÃO ACEITOU</span>";
 
 let botoes="";
 
@@ -780,30 +1632,23 @@ return`
 <h3>🎮 ${esc(m.nick)}</h3>
 
 <p>
-⭐ <b>PIX:</b> ${esc(m.pix)}
+💰 <b>PIX:</b> ${esc(m.pix)}
 <br>
-📲 <b>SMS:</b> ${esc(m.sms)}
+📱 <b>SMS:</b> ${esc(m.sms)}
 <br>
-🕐 <b>Período:</b> ${esc(m.periodo)}
+📲 <b>WhatsApp:</b> ${esc(m.whatsapp||"Não informado")}
 </p>
 
 <p>
-🎯 <b>Objetivo:</b><br>
-${esc(m.objetivo)}
+📌 <b>Status:</b>
+${esc(m.status)}
 </p>
 
 <p>
-💭 <b>Família:</b><br>
-${esc(m.familia)}
-</p>
-
-<p>
-⚠️ <b>Regra dos 5 dias OFF:</b><br>
-${regra}
-</p>
-
-<p>
-📌 <b>Status:</b> ${esc(m.status)}
+🔐 <b>Código:</b>
+<span class="gold">
+${esc(m.codigo||"—")}
+</span>
 </p>
 
 <p class="cinza">
@@ -819,11 +1664,11 @@ ${botoes}
 }
 
 
-/* =========================
-APROVAR
-========================= */
+/* APROVAR */
 
 window.aprovar=async function(id){
+
+const m=dados[id];
 
 await update(
 ref(db,"formularios/"+id),
@@ -833,6 +1678,17 @@ lixeira:false
 }
 );
 
+if(m&&m.uid){
+
+await update(
+ref(db,"membros/"+m.uid),
+{
+status:"Aprovado"
+}
+);
+
+}
+
 filtro="Aprovado";
 
 mostrar();
@@ -840,11 +1696,11 @@ mostrar();
 };
 
 
-/* =========================
-RECUSAR
-========================= */
+/* RECUSAR */
 
 window.recusar=async function(id){
+
+const m=dados[id];
 
 await update(
 ref(db,"formularios/"+id),
@@ -854,6 +1710,17 @@ lixeira:false
 }
 );
 
+if(m&&m.uid){
+
+await update(
+ref(db,"membros/"+m.uid),
+{
+status:"Recusado"
+}
+);
+
+}
+
 filtro="Recusado";
 
 mostrar();
@@ -861,11 +1728,10 @@ mostrar();
 };
 
 
-/* =========================
-LIXEIRA
-========================= */
+/* LIXEIRA */
 
-window.mandarLixeira=async function(id){
+window.mandarLixeira=
+async function(id){
 
 await update(
 ref(db,"formularios/"+id),
@@ -881,11 +1747,12 @@ mostrar();
 };
 
 
-/* =========================
-RESTAURAR
-========================= */
+/* RESTAURAR */
 
-window.restaurar=async function(id){
+window.restaurar=
+async function(id){
+
+const m=dados[id];
 
 await update(
 ref(db,"formularios/"+id),
@@ -895,6 +1762,18 @@ status:"Pendente"
 }
 );
 
+if(m&&m.uid){
+
+await update(
+ref(db,"membros/"+m.uid),
+{
+lixeira:false,
+status:"Pendente"
+}
+);
+
+}
+
 filtro="Pendente";
 
 mostrar();
@@ -902,17 +1781,29 @@ mostrar();
 };
 
 
-/* =========================
-APAGAR
-========================= */
+/* APAGAR */
 
-window.apagar=async function(id){
+window.apagar=
+async function(id){
 
-if(!confirm("Excluir definitivamente?"))return;
+if(!confirm(
+"Excluir definitivamente?"
+))
+return;
+
+const m=dados[id];
 
 await remove(
 ref(db,"formularios/"+id)
 );
+
+if(m&&m.uid){
+
+await remove(
+ref(db,"membros/"+m.uid)
+);
+
+}
 
 filtro="Lixeira";
 
@@ -921,9 +1812,7 @@ mostrar();
 };
 
 
-/* =========================
-SEGURANÇA DE TEXTO
-========================= */
+/* SEGURANÇA */
 
 function esc(x){
 
@@ -937,7 +1826,27 @@ return String(x||"")
 
 }
 
+
+/* LINKS */
+
+$("discordLink").href=
+"https://discord.com/";
+
+$("grupoLink").href=
+"#";
+
+/* SAIR ADM */
+
+$("sairADM").onclick=
+async function(){
+
+await signOut(auth);
+
+abrir("inicio");
+
+};
+
 </script>
 
 </body>
-  </html>
+</html>
