@@ -28,7 +28,8 @@ min-height:100vh;
 
 button,
 input,
-textarea{
+textarea,
+select{
 font:inherit;
 }
 
@@ -326,7 +327,8 @@ color:#ddd;
 }
 
 input,
-textarea{
+textarea,
+select{
 
 width:100%;
 
@@ -349,7 +351,8 @@ transition:.2s;
 }
 
 input:focus,
-textarea:focus{
+textarea:focus,
+select:focus{
 
 border-color:#ffc400;
 
@@ -364,6 +367,10 @@ min-height:120px;
 
 resize:vertical;
 
+}
+
+select{
+appearance:auto;
 }
 
 
@@ -558,6 +565,8 @@ border-radius:10px;
 
 margin:10px 0;
 
+line-height:1.5;
+
 }
 
 
@@ -612,7 +621,7 @@ color:#999;
 
 font-size:12px;
 
-margin-bottom:5px;
+margin-bottom:8px;
 
 }
 
@@ -622,11 +631,29 @@ color:#ffc400;
 
 text-decoration:none;
 
+font-weight:bold;
+
 }
 
 .memberBox a:hover{
 
 text-decoration:underline;
+
+}
+
+.memberBox span{
+
+line-height:1.5;
+
+}
+
+.perfilTitulo{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
 
 }
 
@@ -761,6 +788,21 @@ margin-top:12px;
 
 
 /* =========================
+   LOADING
+========================= */
+
+.loading{
+
+text-align:center;
+
+padding:20px;
+
+color:#999;
+
+}
+
+
+/* =========================
    MOBILE
 ========================= */
 
@@ -855,21 +897,6 @@ letter-spacing:4px;
 
 }
 
-
-/* =========================
-   LOADING
-========================= */
-
-.loading{
-
-text-align:center;
-
-padding:20px;
-
-color:#999;
-
-}
-
 </style>
 
 </head>
@@ -904,7 +931,7 @@ US METRALHA
 </h1>
 
 <p>
-UNIÃO • RESPEITO • LEALDADE • ATIVIDADE
+🤝 UNIÃO • RESPEITO • LEALDADE • ATIVIDADE
 </p>
 
 </div>
@@ -916,7 +943,7 @@ UNIÃO • RESPEITO • LEALDADE • ATIVIDADE
 class="menuBtn cadastro"
 onclick="abrir('cadastro')">
 
-CADASTRO
+📝 CADASTRO
 
 <small>
 Faça seu cadastro na família
@@ -929,7 +956,7 @@ Faça seu cadastro na família
 class="menuBtn logar"
 onclick="abrir('loginMembro')">
 
-LOGAR
+🔐 LOGAR
 
 <small>
 Acesse sua Área do Membro
@@ -942,7 +969,7 @@ Acesse sua Área do Membro
 class="menuBtn admin"
 onclick="abrir('loginADM')">
 
-ADMINS
+🛡️ ADMINS
 
 <small>
 Área exclusiva da administração
@@ -974,13 +1001,13 @@ onclick="abrir('inicio')">
 
 
 <h2 class="gold">
-CADASTRO US METRALHA
+📝 CADASTRO US METRALHA
 </h2>
 
 
 <p class="cinza">
 
-Preencha seus dados. Após o cadastro, o sistema irá gerar automaticamente seu código de acesso.
+Preencha seus dados com atenção. Após o cadastro, o sistema irá gerar automaticamente seu código de acesso.
 
 </p>
 
@@ -989,7 +1016,7 @@ Preencha seus dados. Após o cadastro, o sistema irá gerar automaticamente seu 
 
 
 <label>
-Nick
+🎮 Nick
 </label>
 
 <input
@@ -1002,7 +1029,7 @@ placeholder="Digite seu Nick"
 
 
 <label>
-SMS
+📱 SMS
 </label>
 
 <input
@@ -1015,7 +1042,7 @@ placeholder="Digite seu SMS"
 
 
 <label>
-Pix
+💰 Pix
 </label>
 
 <input
@@ -1023,12 +1050,12 @@ id="cadPix"
 type="text"
 required
 autocomplete="off"
-placeholder="Veja seu número Pix e coloque aqui"
+placeholder="Digite seu número Pix"
 >
 
 
 <label>
-WhatsApp
+📲 WhatsApp
 <span class="cinza">(opcional)</span>
 </label>
 
@@ -1040,25 +1067,83 @@ placeholder="Digite seu WhatsApp"
 >
 
 
+<label>
+🎮 Qual período costuma jogar?
+</label>
+
+<select
+id="cadPeriodo"
+required
+>
+
+<option value="">
+Selecione uma opção
+</option>
+
+<option value="Manhã">
+🌅 Manhã
+</option>
+
+<option value="Tarde">
+☀️ Tarde
+</option>
+
+<option value="Noite">
+🌙 Noite
+</option>
+
+<option value="Varia">
+🔄 Varia
+</option>
+
+</select>
+
+
+<label>
+🎯 Qual é o seu principal objetivo no jogo?
+</label>
+
+<textarea
+id="cadObjetivo"
+required
+placeholder="Conte um pouco sobre o que você busca no jogo..."
+></textarea>
+
+
+<label>
+👥 O que faz uma família ser boa para você?
+</label>
+
+<textarea
+id="cadFamiliaBoa"
+required
+placeholder="Conte o que você valoriza em uma família..."
+></textarea>
+
+
 <div class="aviso">
 
-<strong>REGRAS DA FAMÍLIA</strong>
+<strong>📜 REGRAS DA FAMÍLIA</strong>
 
 <br><br>
 
-5 dias seguidos OFF, sem justificativa, resultam na remoção da família.
+🚫 5 dias seguidos OFF, sem justificativa, resultam na remoção da família.
 
 <br><br>
 
-Respeito entre todos os membros.
+🤝 Respeito entre todos os membros.
 
 <br><br>
 
-Mantenha atividade e compromisso com a família.
+🔥 Mantenha atividade e compromisso com a família.
 
 <br><br>
 
-Siga as orientações da administração.
+🛡️ Siga as orientações da administração.
+
+<br><br>
+
+💛 Faça parte da família com respeito, lealdade e vontade de evoluir.
 
 </div>
 
@@ -1073,7 +1158,7 @@ required
 
 <span>
 
-Li e estou ciente das regras da família.  
+Li e estou ciente das regras da família.
 Declaro que estou de acordo com as condições para fazer parte da US METRALHA.
 
 </span>
@@ -1086,7 +1171,7 @@ class="action goldBtn"
 type="submit"
 id="btnCadastro">
 
-CRIAR CADASTRO
+🚀 CRIAR CADASTRO
 
 </button>
 
@@ -1113,18 +1198,18 @@ class="card hidden">
 
 
 <h2 class="green">
-CADASTRO CRIADO
+✅ CADASTRO CRIADO
 </h2>
 
 
 <p>
-Seu cadastro foi criado com sucesso.
+Seu cadastro foi criado com sucesso!
 </p>
 
 
 <div class="info">
 
-Seu código de acesso:
+🔐 Seu código de acesso:
 
 </div>
 
@@ -1140,7 +1225,8 @@ class="codigo">
 
 <p class="cinza">
 
-Guarde esse código. Ele será usado junto com o seu Pix para entrar na Área do Membro.
+⚠️ Guarde esse código.
+Ele será usado junto com o seu Pix para entrar na Área do Membro.
 
 </p>
 
@@ -1149,7 +1235,7 @@ Guarde esse código. Ele será usado junto com o seu Pix para entrar na Área do
 class="action blueBtn"
 onclick="abrir('loginMembro')">
 
-IR PARA LOGIN
+🔐 IR PARA LOGIN
 
 </button>
 
@@ -1176,12 +1262,19 @@ onclick="abrir('inicio')">
 
 
 <h2 class="blue">
-ÁREA DO MEMBRO
+🔐 ÁREA DO MEMBRO
 </h2>
 
 
+<p class="cinza">
+
+Entre utilizando o mesmo Pix informado no cadastro e o código recebido.
+
+</p>
+
+
 <label>
-Pix cadastrado
+💰 Pix cadastrado
 </label>
 
 <input
@@ -1193,7 +1286,7 @@ autocomplete="off"
 
 
 <label>
-Código de acesso
+🔑 Código de acesso
 </label>
 
 <input
@@ -1208,7 +1301,7 @@ autocomplete="off"
 class="action blueBtn"
 id="btnLoginMembro">
 
-ENTRAR
+🚀 ENTRAR
 
 </button>
 
@@ -1232,13 +1325,13 @@ class="card hidden">
 
 
 <h2 class="gold">
-ÁREA DO MEMBRO
+👤 ÁREA DO MEMBRO
 </h2>
 
 
 <div class="info">
 
-<strong>Nick:</strong>
+<strong>🎮 Nick:</strong>
 
 <span id="mNick"></span>
 
@@ -1247,7 +1340,7 @@ class="card hidden">
 
 <div class="info">
 
-<strong>Pix:</strong>
+<strong>💰 Pix:</strong>
 
 <span id="mPix"></span>
 
@@ -1256,7 +1349,7 @@ class="card hidden">
 
 <div>
 
-<strong>Status:</strong>
+<strong>📊 Status:</strong>
 
 <span
 id="mStatus"
@@ -1267,23 +1360,91 @@ class="status">
 
 
 
-<div
-id="linksAprovado"
-class="hidden">
+<!-- =========================
+     PERFIL
+========================= -->
+
+<div class="card">
+
+<h3 class="gold">
+🎮 PERFIL DO MEMBRO
+</h3>
+
 
 <div class="memberGrid">
 
 
 <div class="memberBox">
 
-<b>DISCORD</b>
+<b>🎮 PERÍODO DE JOGO</b>
+
+<span id="mPeriodo">
+—
+</span>
+
+</div>
+
+
+<div class="memberBox">
+
+<b>🎯 OBJETIVO NO JOGO</b>
+
+<span id="mObjetivo">
+—
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="info">
+
+<strong>
+👥 O que faz uma família ser boa para você?
+</strong>
+
+<p id="mFamiliaBoa">
+—
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+     LINKS
+========================= -->
+
+<div
+id="linksAprovado"
+class="hidden">
+
+<div class="card">
+
+<h3 class="gold">
+🔗 LINKS DA US METRALHA
+</h3>
+
+
+<div class="memberGrid">
+
+
+<div class="memberBox">
+
+<b>
+💬 DISCORD DA FAMÍLIA
+</b>
 
 <a
 id="discordLink"
-href="#"
+href="https://discord.gg/ZVPvStnpzQ"
 target="_blank">
 
-Entrar no Discord
+🚀 Entrar no Discord
 
 </a>
 
@@ -1292,14 +1453,33 @@ Entrar no Discord
 
 <div class="memberBox">
 
-<b>GRUPO DA FAMÍLIA</b>
+<b>
+📱 GRUPO WHATSAPP
+</b>
 
 <a
 id="grupoLink"
-href="#"
+href="https://chat.whatsapp.com/Lu67rpkKyAo2zA0WoN4pMa"
 target="_blank">
 
-Entrar no grupo
+📲 Entrar no Grupo
+
+</a>
+
+</div>
+
+
+<div class="memberBox">
+
+<b>
+🏆 MEMORIAL DA FAMÍLIA
+</b>
+
+<a
+href="https://discord.com/channels/1099040187251699785/1443982745373249638"
+target="_blank">
+
+🏆 Ver Memorial
 
 </a>
 
@@ -1310,35 +1490,43 @@ Entrar no grupo
 
 </div>
 
+</div>
 
+
+
+<!-- =========================
+     REGRAS
+========================= -->
 
 <div class="card">
 
-<h3>
-REGRAS DA FAMÍLIA
+<h3 class="gold">
+📜 REGRAS DA FAMÍLIA
 </h3>
 
 <p>
-5 dias seguidos OFF, sem justificativa, resultam na remoção da família.
+🚫 5 dias seguidos OFF, sem justificativa, resultam na remoção da família.
 </p>
 
 <p>
-Respeito entre todos os membros.
+🤝 Respeito entre todos os membros.
 </p>
 
 <p>
-Mantenha atividade e compromisso com a família.
+🔥 Mantenha atividade e compromisso com a família.
 </p>
 
 <p>
-Siga as orientações da administração.
+🛡️ Siga as orientações da administração.
 </p>
 
 </div>
 
 
 
-<!-- AUSÊNCIA -->
+<!-- =========================
+     AUSÊNCIA
+========================= -->
 
 <div
 id="areaAusencia"
@@ -1346,16 +1534,23 @@ class="hidden">
 
 <div class="card">
 
-<h3>
-INFORMAR AUSÊNCIA
+<h3 class="gold">
+💤 INFORMAR AUSÊNCIA
 </h3>
+
+<p class="cinza">
+
+Vai ficar alguns dias sem jogar?
+Avise a administração através deste formulário.
+
+</p>
 
 
 <form id="formAusencia">
 
 
 <label>
-Data de início
+📅 Data de início
 </label>
 
 <input
@@ -1366,7 +1561,7 @@ required
 
 
 <label>
-Data de retorno
+📅 Data de retorno
 </label>
 
 <input
@@ -1377,21 +1572,21 @@ required
 
 
 <label>
-Motivo
+📝 Motivo
 </label>
 
 <textarea
 id="ausMotivo"
 required
-placeholder="Explique o motivo da ausência">
-</textarea>
+placeholder="Explique o motivo da ausência..."
+></textarea>
 
 
 <button
 class="action goldBtn"
 type="submit">
 
-REGISTRAR AUSÊNCIA
+📤 REGISTRAR AUSÊNCIA
 
 </button>
 
@@ -1407,11 +1602,12 @@ id="resultadoAusencia">
 </div>
 
 
+
 <button
 class="action redBtn"
 id="sairMembro">
 
-SAIR DA CONTA
+🚪 SAIR DA CONTA
 
 </button>
 
@@ -1438,12 +1634,12 @@ onclick="abrir('inicio')">
 
 
 <h2 class="red">
-ADMINS
+🛡️ ÁREA DOS ADMINS
 </h2>
 
 
 <label>
-E-mail
+📧 E-mail
 </label>
 
 <input
@@ -1455,7 +1651,7 @@ readonly
 
 
 <label>
-Senha
+🔑 Senha
 </label>
 
 <input
@@ -1469,7 +1665,7 @@ autocomplete="current-password"
 class="action redBtn"
 id="entrarADM">
 
-ENTRAR
+🔐 ENTRAR
 
 </button>
 
@@ -1493,7 +1689,7 @@ class="card hidden">
 
 
 <h2 class="red">
-US METRALHA — ADM
+🛡️ US METRALHA — ADM
 </h2>
 
 
@@ -1502,7 +1698,7 @@ US METRALHA — ADM
 
 <div class="contador">
 
-Todos
+👥 Todos
 
 <b id="cTodos">
 0
@@ -1513,7 +1709,7 @@ Todos
 
 <div class="contador">
 
-Pendentes
+⏳ Pendentes
 
 <b id="cPendentes">
 0
@@ -1524,7 +1720,7 @@ Pendentes
 
 <div class="contador">
 
-Aprovados
+✅ Aprovados
 
 <b id="cAprovados">
 0
@@ -1535,7 +1731,7 @@ Aprovados
 
 <div class="contador">
 
-Recusados
+❌ Recusados
 
 <b id="cRecusados">
 0
@@ -1546,7 +1742,7 @@ Recusados
 
 <div class="contador">
 
-Lixeira
+🗑️ Lixeira
 
 <b id="cLixeira">
 0
@@ -1560,7 +1756,7 @@ Lixeira
 
 
 <h3>
-Pesquisar membro
+🔎 Pesquisar membro
 </h3>
 
 
@@ -1572,7 +1768,7 @@ placeholder="Digite Nick, Pix ou SMS..."
 
 
 <h3>
-Formulários
+📋 Formulários
 </h3>
 
 
@@ -1583,7 +1779,7 @@ Formulários
 id="btnTodos"
 onclick="mudarFiltro('Todos')">
 
-TODOS
+👥 TODOS
 
 </button>
 
@@ -1592,7 +1788,7 @@ TODOS
 id="btnPendente"
 onclick="mudarFiltro('Pendente')">
 
-PENDENTES
+⏳ PENDENTES
 
 </button>
 
@@ -1601,7 +1797,7 @@ PENDENTES
 id="btnAprovado"
 onclick="mudarFiltro('Aprovado')">
 
-APROVADOS
+✅ APROVADOS
 
 </button>
 
@@ -1610,7 +1806,7 @@ APROVADOS
 id="btnRecusado"
 onclick="mudarFiltro('Recusado')">
 
-RECUSADOS
+❌ RECUSADOS
 
 </button>
 
@@ -1619,7 +1815,7 @@ RECUSADOS
 id="btnLixeira"
 onclick="mudarFiltro('Lixeira')">
 
-LIXEIRA
+🗑️ LIXEIRA
 
 </button>
 
@@ -1631,7 +1827,7 @@ LIXEIRA
 
 <div class="loading">
 
-Nenhum formulário carregado.
+⏳ Nenhum formulário carregado.
 
 </div>
 
@@ -1642,7 +1838,7 @@ Nenhum formulário carregado.
 class="action redBtn"
 id="sairADM">
 
-SAIR
+🚪 SAIR
 
 </button>
 
@@ -1839,19 +2035,6 @@ return codigo;
    PIX → E-MAIL INTERNO
 ========================= */
 
-/*
-   IMPORTANTE:
-   O Pix NÃO precisa ser um Pix verdadeiro.
-
-   Pode ser qualquer texto/número.
-
-   O Firebase precisa apenas de um
-   e-mail válido internamente.
-
-   Por isso usamos @usmetralha.com
-   em vez de .local.
-*/
-
 function emailInternoPix(pix){
 
 const texto=
@@ -1917,6 +2100,24 @@ $("cadWhatsapp")
 .trim();
 
 
+const periodo=
+$("cadPeriodo")
+.value
+.trim();
+
+
+const objetivo=
+$("cadObjetivo")
+.value
+.trim();
+
+
+const familiaBoa=
+$("cadFamiliaBoa")
+.value
+.trim();
+
+
 const aceite=
 $("aceiteRegras")
 .checked;
@@ -1929,10 +2130,17 @@ $("erroCadastro");
 erroCadastro.textContent="";
 
 
-if(!nick||!sms||!pix){
+if(
+!nick||
+!sms||
+!pix||
+!periodo||
+!objetivo||
+!familiaBoa
+){
 
 erroCadastro.textContent=
-"Preencha Nick, SMS e Pix.";
+"⚠️ Preencha todos os campos obrigatórios.";
 
 return;
 
@@ -1942,7 +2150,7 @@ return;
 if(!aceite){
 
 erroCadastro.textContent=
-"Você precisa aceitar as regras da família.";
+"⚠️ Você precisa aceitar as regras da família.";
 
 return;
 
@@ -1956,7 +2164,7 @@ $("btnCadastro");
 botao.disabled=true;
 
 botao.textContent=
-"CRIANDO CADASTRO...";
+"🚀 CRIANDO CADASTRO...";
 
 
 const codigo=
@@ -2016,6 +2224,12 @@ sms:sms,
 pix:pix,
 
 whatsapp:whatsapp,
+
+periodo:periodo,
+
+objetivo:objetivo,
+
+familiaBoa:familiaBoa,
 
 codigo:codigo,
 
@@ -2083,6 +2297,12 @@ pix:pix,
 sms:sms,
 
 whatsapp:whatsapp,
+
+periodo:periodo,
+
+objetivo:objetivo,
+
+familiaBoa:familiaBoa,
 
 codigo:codigo,
 
@@ -2157,33 +2377,34 @@ erro.code==="auth/email-already-in-use"
 ){
 
 erroCadastro.textContent=
-"Esse Pix já possui um cadastro.";
+"⚠️ Esse Pix já possui um cadastro.";
 
 }else if(
 erro.code==="auth/invalid-email"
 ){
 
 erroCadastro.textContent=
-"O identificador informado não pôde ser processado.";
+"⚠️ O identificador informado não pôde ser processado.";
 
 }else if(
 erro.code==="auth/operation-not-allowed"
 ){
 
 erroCadastro.textContent=
-"O login por e-mail/senha está desativado no Firebase.";
+"⚠️ O login por e-mail/senha está desativado no Firebase.";
 
 }else if(
 erro.code==="auth/weak-password"
 ){
 
 erroCadastro.textContent=
-"Erro na geração do código de acesso.";
+"⚠️ Erro na geração do código de acesso.";
 
 }else{
 
 erroCadastro.textContent=
-"Erro Firebase: " + (erro.code || erro.message || "erro desconhecido");
+"⚠️ Erro Firebase: "+
+(erro.code||erro.message||"erro desconhecido");
 
 }
 
@@ -2192,7 +2413,7 @@ erroCadastro.textContent=
 botao.disabled=false;
 
 botao.textContent=
-"CRIAR CADASTRO";
+"🚀 CRIAR CADASTRO";
 
 }
 
@@ -2229,7 +2450,7 @@ if(!pix||!codigo){
 
 $("erroMembro")
 .textContent=
-"Digite o Pix e o código de acesso.";
+"⚠️ Digite o Pix e o código de acesso.";
 
 return;
 
@@ -2243,7 +2464,7 @@ $("btnLoginMembro");
 botao.disabled=true;
 
 botao.textContent=
-"ENTRANDO...";
+"🔐 ENTRANDO...";
 
 
 try{
@@ -2313,14 +2534,14 @@ console.error(erro);
 
 $("erroMembro")
 .textContent=
-"Pix ou código incorreto.";
+"❌ Pix ou código incorreto.";
 
 }finally{
 
 botao.disabled=false;
 
 botao.textContent=
-"ENTRAR";
+"🚀 ENTRAR";
 
 }
 
@@ -2346,6 +2567,21 @@ m.nick||"";
 $("mPix")
 .textContent=
 m.pix||"";
+
+
+$("mPeriodo")
+.textContent=
+m.periodo||"Não informado";
+
+
+$("mObjetivo")
+.textContent=
+m.objetivo||"Não informado";
+
+
+$("mFamiliaBoa")
+.textContent=
+m.familiaBoa||"Não informado";
 
 
 const status=
@@ -2466,6 +2702,17 @@ return;
 }
 
 
+if(retorno<inicio){
+
+alert(
+"⚠️ A data de retorno não pode ser anterior à data de início."
+);
+
+return;
+
+}
+
+
 try{
 
 
@@ -2514,7 +2761,10 @@ ausencia
 );
 
 
-/* DISCORD */
+/* =========================
+   APPS SCRIPT
+   AUSÊNCIA
+========================= */
 
 try{
 
@@ -2531,6 +2781,10 @@ mode:"no-cors",
 body:JSON.stringify({
 
 tipo:"ausencia",
+
+id:novo.key,
+
+uid:membroAtual.uid,
 
 nick:membroAtual.nick,
 
@@ -2566,7 +2820,7 @@ $("resultadoAusencia")
 .innerHTML=
 
 "<p class='green'>"+
-"Ausência registrada com sucesso."+
+"✅ Ausência registrada com sucesso!"+
 "</p>";
 
 
@@ -2579,7 +2833,7 @@ $("formAusencia")
 console.error(erro);
 
 alert(
-"Não foi possível registrar a ausência."
+"❌ Não foi possível registrar a ausência."
 );
 
 }
@@ -2620,7 +2874,7 @@ if(!senha){
 
 $("erroADM")
 .textContent=
-"Digite a senha.";
+"⚠️ Digite a senha.";
 
 return;
 
@@ -2630,7 +2884,7 @@ return;
 botao.disabled=true;
 
 botao.textContent=
-"ENTRANDO...";
+"🔐 ENTRANDO...";
 
 
 try{
@@ -2660,14 +2914,14 @@ console.error(erro);
 
 $("erroADM")
 .textContent=
-"E-mail ou senha incorretos.";
+"❌ E-mail ou senha incorretos.";
 
 }finally{
 
 botao.disabled=false;
 
 botao.textContent=
-"ENTRAR";
+"🔐 ENTRAR";
 
 }
 
@@ -2879,6 +3133,18 @@ m.pix||""
 
 String(
 m.sms||""
+).toLowerCase()+" "+
+
+String(
+m.periodo||""
+).toLowerCase()+" "+
+
+String(
+m.objetivo||""
+).toLowerCase()+" "+
+
+String(
+m.familiaBoa||""
 ).toLowerCase();
 
 
@@ -2939,7 +3205,7 @@ $("lista")
 .innerHTML=
 
 "<p class='cinza' style='text-align:center'>"+
-"Nenhum formulário encontrado."+
+"📭 Nenhum formulário encontrado."+
 "</p>";
 
 return;
@@ -2986,11 +3252,11 @@ m.lixeira===true
 botoes=
 
 "<button onclick=\"restaurar('"+id+"')\">"+
-"RESTAURAR"+
+"♻️ RESTAURAR"+
 "</button>"+
 
 "<button onclick=\"apagar('"+id+"')\">"+
-"EXCLUIR DEFINITIVAMENTE"+
+"🗑️ EXCLUIR DEFINITIVAMENTE"+
 "</button>";
 
 }else{
@@ -2998,15 +3264,15 @@ botoes=
 botoes=
 
 "<button onclick=\"aprovar('"+id+"')\">"+
-"APROVAR"+
+"✅ APROVAR"+
 "</button>"+
 
 "<button onclick=\"recusar('"+id+"')\">"+
-"RECUSAR"+
+"❌ RECUSAR"+
 "</button>"+
 
 "<button onclick=\"mandarLixeira('"+id+"')\">"+
-"LIXEIRA"+
+"🗑️ LIXEIRA"+
 "</button>";
 
 }
@@ -3016,32 +3282,65 @@ return`
 
 <article class="membro">
 
-<h3>
-${esc(m.nick)}
+<h3 class="gold">
+🎮 ${esc(m.nick)}
 </h3>
 
 
 <p>
 
-<b>Pix:</b>
+<b>💰 Pix:</b>
 ${esc(m.pix)}
 
-<br>
+<br><br>
 
-<b>SMS:</b>
+<b>📱 SMS:</b>
 ${esc(m.sms)}
 
-<br>
+<br><br>
 
-<b>WhatsApp:</b>
+<b>📲 WhatsApp:</b>
 ${esc(m.whatsapp||"Não informado")}
 
 </p>
 
 
+<div class="info">
+
+<b>🎮 Período que costuma jogar:</b>
+
+<br>
+
+${esc(m.periodo||"Não informado")}
+
+</div>
+
+
+<div class="info">
+
+<b>🎯 Principal objetivo no jogo:</b>
+
+<br><br>
+
+${esc(m.objetivo||"Não informado")}
+
+</div>
+
+
+<div class="info">
+
+<b>👥 O que faz uma família ser boa para você:</b>
+
+<br><br>
+
+${esc(m.familiaBoa||"Não informado")}
+
+</div>
+
+
 <p>
 
-<b>Status:</b>
+<b>📊 Status:</b>
 ${esc(m.status)}
 
 </p>
@@ -3049,7 +3348,7 @@ ${esc(m.status)}
 
 <p>
 
-<b>Código:</b>
+<b>🔑 Código:</b>
 
 <span class="gold">
 
@@ -3062,7 +3361,7 @@ ${esc(m.codigo||"—")}
 
 <p class="cinza">
 
-Enviado:
+📅 Enviado:
 ${esc(m.data)}
 
 </p>
@@ -3297,7 +3596,7 @@ async function(id){
 
 if(
 !confirm(
-"Excluir definitivamente?"
+"⚠️ Excluir definitivamente?"
 )
 )
 return;
@@ -3385,11 +3684,11 @@ x||""
 ========================= */
 
 $("discordLink").href=
-"https://discord.com/";
+"https://discord.gg/ZVPvStnpzQ";
 
 
 $("grupoLink").href=
-"#";
+"https://chat.whatsapp.com/Lu67rpkKyAo2zA0WoN4pMa";
 
 
 
@@ -3413,3 +3712,4 @@ abrir("inicio");
 </body>
 
 </html>
+   
