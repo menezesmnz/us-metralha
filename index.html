@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -53,15 +52,10 @@ padding:20px;
 ========================= */
 
 .hero{
-
 min-height:calc(100vh - 40px);
-
 border:1px solid #555;
-
 border-radius:24px;
-
 overflow:hidden;
-
 position:relative;
 
 background:
@@ -74,24 +68,17 @@ rgba(0,0,0,.78)
 url("capa.png") center/cover no-repeat;
 
 display:flex;
-
 flex-direction:column;
-
 justify-content:space-between;
-
 padding:40px;
 
 box-shadow:
 0 20px 70px rgba(0,0,0,.8);
-
 }
 
 .hero:after{
-
 content:"";
-
 position:absolute;
-
 inset:0;
 
 background:
@@ -103,7 +90,6 @@ rgba(0,0,0,.85)
 );
 
 pointer-events:none;
-
 }
 
 .hero>*{
@@ -111,105 +97,62 @@ position:relative;
 z-index:2;
 }
 
-
-/* TOPO */
-
 .logoTop{
-
 font-size:24px;
-
 font-weight:900;
-
 letter-spacing:3px;
-
-text-shadow:
-0 2px 10px #000;
-
+text-shadow:0 2px 10px #000;
 }
 
 .logoTop span{
 color:#ffc400;
 }
 
-
-/* TEXTO */
-
 .welcome{
-
 margin-top:40px;
-
 max-width:700px;
-
 }
 
 .welcome h1{
-
 font-size:clamp(42px,7vw,82px);
-
 line-height:.94;
-
 margin:0;
-
 font-weight:900;
-
 letter-spacing:-3px;
-
 color:rgba(255,255,255,.86);
 
 text-shadow:
 0 3px 8px #000,
 0 0 25px #000;
-
 }
 
 .welcome p{
-
 font-size:16px;
-
 font-weight:bold;
-
 letter-spacing:4px;
-
 color:#ddd;
 
 text-shadow:
 0 2px 7px #000;
-
 }
 
-
-/* BOTÕES PRINCIPAIS */
-
 .buttons{
-
 display:grid;
-
-grid-template-columns:
-repeat(3,1fr);
-
+grid-template-columns:repeat(3,1fr);
 gap:16px;
-
 max-width:1050px;
-
 width:100%;
-
 }
 
 .menuBtn{
-
 min-height:115px;
-
 border-radius:16px;
 
-background:
-rgba(5,5,5,.78);
+background:rgba(5,5,5,.78);
 
 border:1px solid #555;
-
 color:#fff;
-
 font-weight:900;
-
 font-size:21px;
 
 transition:
@@ -218,29 +161,19 @@ background .2s,
 border-color .2s;
 
 backdrop-filter:blur(7px);
-
 }
 
 .menuBtn:hover{
-
 transform:translateY(-4px);
-
 background:rgba(20,20,20,.9);
-
 }
 
 .menuBtn small{
-
 display:block;
-
 font-size:12px;
-
 margin-top:8px;
-
 color:#999;
-
 font-weight:normal;
-
 }
 
 .cadastro{
@@ -264,29 +197,19 @@ color:#ff5555;
 ========================= */
 
 .card{
-
-background:
-rgba(9,9,9,.96);
-
+background:rgba(9,9,9,.96);
 border:1px solid #333;
-
 border-radius:18px;
-
 padding:28px;
-
 margin-bottom:20px;
 
 box-shadow:
 0 15px 45px rgba(0,0,0,.55);
-
 }
 
 .card h2{
-
 margin-top:0;
-
 font-size:30px;
-
 }
 
 .gold{
@@ -315,58 +238,41 @@ color:#999;
 ========================= */
 
 label{
-
 display:block;
-
 font-weight:bold;
-
 margin-top:16px;
-
 color:#ddd;
-
 }
 
 input,
 textarea,
 select{
-
 width:100%;
-
 padding:15px;
-
 margin-top:7px;
 
 background:#050505;
-
 color:#fff;
 
 border:1px solid #444;
-
 border-radius:10px;
-
 outline:none;
 
 transition:.2s;
-
 }
 
 input:focus,
 textarea:focus,
 select:focus{
-
 border-color:#ffc400;
 
 box-shadow:
 0 0 0 2px rgba(255,196,0,.08);
-
 }
 
 textarea{
-
 min-height:120px;
-
 resize:vertical;
-
 }
 
 select{
@@ -374,151 +280,110 @@ appearance:auto;
 }
 
 
-/* AVISO */
+/* =========================
+   AVISO
+========================= */
 
 .aviso{
-
-background:
-rgba(80,0,0,.25);
-
+background:rgba(80,0,0,.25);
 border:1px solid #6d0000;
 
 padding:18px;
-
 border-radius:12px;
 
 margin:22px 0;
-
 line-height:1.5;
-
 }
 
 
-/* ACEITE */
+/* =========================
+   ACEITE
+========================= */
 
 .aceite{
-
 display:flex;
-
 align-items:flex-start;
-
 gap:12px;
 
 margin-top:18px;
-
 padding:15px;
 
 background:#111;
-
 border:1px solid #333;
-
 border-radius:10px;
 
 cursor:pointer;
-
 }
 
 .aceite input{
-
 width:20px;
-
 height:20px;
-
 margin:2px 0 0 0;
 
 accent-color:#ffc400;
-
 flex-shrink:0;
-
 }
 
 .aceite span{
-
 font-size:14px;
-
 line-height:1.4;
-
 color:#ddd;
-
 }
 
 
-/* BOTÕES */
+/* =========================
+   BOTÕES
+========================= */
 
 .action{
-
 width:100%;
-
 padding:15px;
 
 border:0;
-
 border-radius:10px;
 
 font-weight:900;
-
 margin-top:18px;
 
 transition:.2s;
-
 }
 
 .action:hover{
-
 filter:brightness(1.08);
-
 transform:translateY(-1px);
-
 }
 
 .action:disabled{
-
 opacity:.6;
-
 cursor:not-allowed;
-
 transform:none;
-
 }
 
 .goldBtn{
-
 background:#ffc400;
-
 color:#000;
-
 }
 
 .blueBtn{
-
 background:#168cff;
-
 color:#fff;
-
 }
 
 .redBtn{
-
 background:#a90000;
-
 color:#fff;
-
 }
 
 .back{
-
 background:#151515;
-
 color:#fff;
 
 border:1px solid #444;
 
 padding:12px 18px;
-
 border-radius:9px;
 
 margin-bottom:15px;
-
 }
 
 
@@ -527,27 +392,20 @@ margin-bottom:15px;
 ========================= */
 
 .codigo{
-
 font-size:32px;
-
 font-weight:900;
 
 letter-spacing:7px;
-
 text-align:center;
 
 padding:22px;
 
 background:#111;
-
 border:2px solid #ffc400;
-
 border-radius:14px;
 
 color:#ffc400;
-
 margin:20px 0;
-
 }
 
 
@@ -556,26 +414,147 @@ margin:20px 0;
 ========================= */
 
 .info{
-
 background:#111;
-
 padding:15px;
 
 border-radius:10px;
-
 margin:10px 0;
 
 line-height:1.5;
-
 }
 
 
 /* =========================
-   MEMBRO
+   ÁREA MEMBRO
 ========================= */
 
-.status{
+.memberHeader{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+margin-bottom:15px;
+}
 
+.memberHeader h2{
+margin:0;
+}
+
+.memberMenuWrap{
+position:relative;
+}
+
+.memberMenuBtn{
+width:46px;
+height:46px;
+
+border-radius:12px;
+
+border:1px solid #444;
+background:#111;
+
+color:#fff;
+
+font-size:26px;
+font-weight:bold;
+
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.memberMenuBtn:hover{
+background:#1b1b1b;
+border-color:#ffc400;
+}
+
+.memberMenu{
+position:absolute;
+right:0;
+top:55px;
+
+width:210px;
+
+background:#111;
+border:1px solid #444;
+
+border-radius:13px;
+
+padding:8px;
+
+z-index:100;
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.75);
+}
+
+.memberMenu button{
+width:100%;
+
+padding:12px;
+
+border:0;
+
+border-radius:9px;
+
+background:transparent;
+color:#fff;
+
+text-align:left;
+
+font-weight:bold;
+}
+
+.memberMenu button:hover{
+background:#222;
+}
+
+.memberMenu .menuDanger{
+color:#ff5555;
+}
+
+.memberGrid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.memberBox{
+background:#111;
+border:1px solid #333;
+
+padding:17px;
+border-radius:12px;
+}
+
+.memberBox b{
+display:block;
+color:#999;
+font-size:12px;
+margin-bottom:8px;
+}
+
+.memberBox a{
+color:#ffc400;
+text-decoration:none;
+font-weight:bold;
+}
+
+.memberBox a:hover{
+text-decoration:underline;
+}
+
+.memberBox span{
+line-height:1.5;
+}
+
+.perfilTitulo{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.status{
 display:inline-block;
 
 padding:8px 15px;
@@ -587,74 +566,83 @@ font-weight:bold;
 background:#333;
 
 margin:8px 0;
-
 }
 
-.memberGrid{
 
+/* =========================
+   ABAS MEMBRO
+========================= */
+
+.memberFrontTabs{
 display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
 
-grid-template-columns:
-repeat(2,1fr);
-
-gap:12px;
-
+margin:20px 0;
 }
 
-.memberBox{
-
-background:#111;
-
-border:1px solid #333;
-
-padding:17px;
+.memberTab{
+padding:15px 10px;
 
 border-radius:12px;
 
+border:1px solid #444;
+
+background:#111;
+color:#fff;
+
+font-weight:900;
+
+transition:.2s;
 }
 
-.memberBox b{
-
-display:block;
-
-color:#999;
-
-font-size:12px;
-
-margin-bottom:8px;
-
+.memberTab:hover{
+transform:translateY(-2px);
+border-color:#ffc400;
 }
 
-.memberBox a{
-
+.memberTab.active{
+border-color:#ffc400;
 color:#ffc400;
-
-text-decoration:none;
-
-font-weight:bold;
-
+background:#151515;
 }
 
-.memberBox a:hover{
-
-text-decoration:underline;
-
+.memberContent{
+margin-top:10px;
 }
 
-.memberBox span{
 
+/* =========================
+   AVISOS
+========================= */
+
+.avisoAdmin{
+background:#111;
+
+border:1px solid #444;
+
+border-left:4px solid #ffc400;
+
+border-radius:12px;
+
+padding:18px;
+
+margin:12px 0;
+}
+
+.avisoAdmin h4{
+margin:0 0 8px 0;
+color:#ffc400;
+}
+
+.avisoAdmin p{
 line-height:1.5;
-
+margin:8px 0;
 }
 
-.perfilTitulo{
-
-display:flex;
-
-align-items:center;
-
-gap:8px;
-
+.avisoData{
+font-size:12px;
+color:#777;
 }
 
 
@@ -663,142 +651,89 @@ gap:8px;
 ========================= */
 
 .grid{
-
 display:grid;
-
-grid-template-columns:
-repeat(2,1fr);
-
+grid-template-columns:repeat(2,1fr);
 gap:8px;
-
 }
 
 .grid button{
-
 padding:13px;
 
 border:1px solid #444;
-
 background:#111;
-
 color:#fff;
 
 border-radius:9px;
-
 font-weight:bold;
 
 transition:.2s;
-
 }
 
 .grid button:hover{
-
 background:#1a1a1a;
-
-}
-
-.contadores{
-
-display:grid;
-
-grid-template-columns:
-repeat(5,1fr);
-
-gap:8px;
-
-}
-
-.contador{
-
-background:#151515;
-
-border:1px solid #292929;
-
-border-radius:10px;
-
-padding:12px;
-
-text-align:center;
-
-}
-
-.contador b{
-
-font-size:22px;
-
-display:block;
-
-margin-top:5px;
-
 }
 
 .membro{
-
 background:#111;
 
 border:1px solid #333;
-
 border-radius:12px;
 
 padding:18px;
-
 margin:12px 0;
-
 }
 
 .membro button{
-
 border:0;
-
 border-radius:8px;
 
 padding:10px;
-
 margin:4px;
 
 background:#222;
-
 color:#fff;
-
 }
 
 .membro button:hover{
-
 background:#333;
-
 }
 
 .ativo{
-
 border:2px solid #ffc400!important;
-
 color:#ffc400!important;
-
 }
 
 .erro{
-
 color:#ff5555;
-
 text-align:center;
-
 margin-top:12px;
+}
 
+.loading{
+text-align:center;
+padding:20px;
+color:#999;
 }
 
 
 /* =========================
-   LOADING
+   AVISO ADM CARD
 ========================= */
 
-.loading{
-
-text-align:center;
+.adminAvisoCard{
+border:1px solid #333;
+background:#111;
 
 padding:20px;
 
-color:#999;
+border-radius:14px;
 
+margin-top:20px;
+}
+
+.adminAvisoCard h3{
+margin-top:0;
+color:#ffc400;
 }
 
 
@@ -813,13 +748,9 @@ padding:10px;
 }
 
 .hero{
-
 min-height:calc(100vh - 20px);
-
 padding:24px 15px;
-
 border-radius:18px;
-
 }
 
 .logoTop{
@@ -831,68 +762,73 @@ margin-top:30px;
 }
 
 .welcome h1{
-
 font-size:48px;
-
 letter-spacing:-2px;
-
 }
 
 .welcome p{
-
 font-size:11px;
-
 letter-spacing:1.5px;
-
 }
 
 .buttons{
-
 grid-template-columns:1fr;
-
 gap:10px;
-
 }
 
 .menuBtn{
-
 min-height:76px;
-
 font-size:19px;
-
 }
 
 .card{
-
 padding:18px;
-
 }
 
 .memberGrid{
-
 grid-template-columns:1fr;
-
-}
-
-.contadores{
-
-grid-template-columns:
-repeat(2,1fr);
-
 }
 
 .grid{
-
 grid-template-columns:1fr;
-
 }
 
 .codigo{
-
 font-size:25px;
-
 letter-spacing:4px;
+}
 
+.memberFrontTabs{
+grid-template-columns:1fr;
+}
+
+.memberHeader{
+align-items:flex-start;
+}
+
+.memberMenu{
+right:0;
+}
+
+}
+
+
+/* =========================
+   PEQUENO AJUSTE MOBILE
+========================= */
+
+@media(max-width:420px){
+
+.memberFrontTabs{
+grid-template-columns:1fr;
+}
+
+.memberTab{
+padding:12px;
+}
+
+.memberHeader h2{
+font-size:24px;
 }
 
 }
@@ -917,17 +853,12 @@ letter-spacing:4px;
 <span>US METRALHA</span>
 </div>
 
-
 <div class="welcome">
 
 <h1>
-
 BEM VINDO(A)<br>
-
 AO SITE<br>
-
 US METRALHA
-
 </h1>
 
 <p>
@@ -935,7 +866,6 @@ US METRALHA
 </p>
 
 </div>
-
 
 <div class="buttons">
 
@@ -982,14 +912,11 @@ onclick="abrir('loginADM')">
 </section>
 
 
-
 <!-- =========================
      CADASTRO
 ========================= -->
 
-<section
-id="cadastro"
-class="card hidden">
+<section id="cadastro" class="card hidden">
 
 <button
 class="back"
@@ -999,21 +926,15 @@ onclick="abrir('inicio')">
 
 </button>
 
-
 <h2 class="gold">
 📝 CADASTRO US METRALHA
 </h2>
 
-
 <p class="cinza">
-
 Preencha seus dados com atenção. Após o cadastro, o sistema irá gerar automaticamente seu código de acesso.
-
 </p>
 
-
 <form id="formCadastro">
-
 
 <label>
 🎮 Nick
@@ -1157,10 +1078,8 @@ required
 >
 
 <span>
-
 Li e estou ciente das regras da família.
 Declaro que estou de acordo com as condições para fazer parte da US METRALHA.
-
 </span>
 
 </label>
@@ -1181,38 +1100,28 @@ id="erroCadastro"
 class="erro">
 </div>
 
-
 </form>
 
 </section>
-
 
 
 <!-- =========================
      CÓDIGO GERADO
 ========================= -->
 
-<section
-id="codigoGerado"
-class="card hidden">
-
+<section id="codigoGerado" class="card hidden">
 
 <h2 class="green">
 ✅ CADASTRO CRIADO
 </h2>
 
-
 <p>
 Seu cadastro foi criado com sucesso!
 </p>
 
-
 <div class="info">
-
 🔐 Seu código de acesso:
-
 </div>
-
 
 <div
 id="codigoTela"
@@ -1222,14 +1131,10 @@ class="codigo">
 
 </div>
 
-
 <p class="cinza">
-
 ⚠️ Guarde esse código.
 Ele será usado junto com o seu Pix para entrar na Área do Membro.
-
 </p>
-
 
 <button
 class="action blueBtn"
@@ -1242,15 +1147,11 @@ onclick="abrir('loginMembro')">
 </section>
 
 
-
 <!-- =========================
      LOGIN MEMBRO
 ========================= -->
 
-<section
-id="loginMembro"
-class="card hidden">
-
+<section id="loginMembro" class="card hidden">
 
 <button
 class="back"
@@ -1260,18 +1161,13 @@ onclick="abrir('inicio')">
 
 </button>
 
-
 <h2 class="blue">
 🔐 ÁREA DO MEMBRO
 </h2>
 
-
 <p class="cinza">
-
 Entre utilizando o mesmo Pix informado no cadastro e o código recebido.
-
 </p>
-
 
 <label>
 💰 Pix cadastrado
@@ -1284,7 +1180,6 @@ placeholder="Digite o mesmo Pix usado no cadastro"
 autocomplete="off"
 >
 
-
 <label>
 🔑 Código de acesso
 </label>
@@ -1296,7 +1191,6 @@ placeholder="Digite seu código"
 autocomplete="off"
 >
 
-
 <button
 class="action blueBtn"
 id="btnLoginMembro">
@@ -1304,7 +1198,6 @@ id="btnLoginMembro">
 🚀 ENTRAR
 
 </button>
-
 
 <div
 id="erroMembro"
@@ -1314,25 +1207,73 @@ class="erro">
 </section>
 
 
-
 <!-- =========================
      ÁREA MEMBRO
 ========================= -->
 
-<section
-id="areaMembro"
-class="card hidden">
+<section id="areaMembro" class="card hidden">
 
+
+<!-- CABEÇALHO -->
+
+<div class="memberHeader">
 
 <h2 class="gold">
 👤 ÁREA DO MEMBRO
 </h2>
 
+<div class="memberMenuWrap">
+
+<button
+class="memberMenuBtn"
+onclick="toggleMemberMenu()"
+aria-label="Menu">
+
+⋮
+
+</button>
+
+
+<div
+id="memberMenu"
+class="memberMenu hidden">
+
+<button
+onclick="abrirMembroAba('perfil');fecharMemberMenu()">
+
+👤 Meu Perfil
+
+</button>
+
+
+<button
+onclick="abrirMembroAba('ausencia');fecharMemberMenu()">
+
+💤 Modo Ausência
+
+</button>
+
+
+<button
+class="menuDanger"
+onclick="sairMembro();fecharMemberMenu()">
+
+🚪 Sair da conta
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- STATUS RESUMIDO -->
 
 <div class="info">
 
 <strong>🎮 Nick:</strong>
-
 <span id="mNick"></span>
 
 </div>
@@ -1341,7 +1282,6 @@ class="card hidden">
 <div class="info">
 
 <strong>💰 Pix:</strong>
-
 <span id="mPix"></span>
 
 </div>
@@ -1359,10 +1299,52 @@ class="status">
 </div>
 
 
+<!-- =========================
+     ABAS PRINCIPAIS
+========================= -->
+
+<div class="memberFrontTabs">
+
+
+<button
+id="tabLinks"
+class="memberTab active"
+onclick="abrirMembroAba('links')">
+
+🔗 Links da US Metralha
+
+</button>
+
+
+<button
+id="tabRegras"
+class="memberTab"
+onclick="abrirMembroAba('regras')">
+
+📜 Regras
+
+</button>
+
+
+<button
+id="tabAvisos"
+class="memberTab"
+onclick="abrirMembroAba('avisos')">
+
+📢 Avisos Admin
+
+</button>
+
+</div>
+
 
 <!-- =========================
-     PERFIL
+     CONTEÚDO: PERFIL
 ========================= -->
+
+<div
+id="membroPerfil"
+class="memberContent hidden">
 
 <div class="card">
 
@@ -1370,9 +1352,7 @@ class="status">
 🎮 PERFIL DO MEMBRO
 </h3>
 
-
 <div class="memberGrid">
-
 
 <div class="memberBox">
 
@@ -1395,7 +1375,6 @@ class="status">
 
 </div>
 
-
 </div>
 
 
@@ -1413,11 +1392,16 @@ class="status">
 
 </div>
 
+</div>
 
 
 <!-- =========================
-     LINKS
+     CONTEÚDO: LINKS
 ========================= -->
+
+<div
+id="membroLinks"
+class="memberContent">
 
 <div
 id="linksAprovado"
@@ -1428,7 +1412,6 @@ class="hidden">
 <h3 class="gold">
 🔗 LINKS DA US METRALHA
 </h3>
-
 
 <div class="memberGrid">
 
@@ -1485,18 +1468,39 @@ target="_blank">
 
 </div>
 
-
 </div>
 
 </div>
 
 </div>
 
+
+<div
+id="linksNaoAprovado"
+class="card">
+
+<h3 class="gold">
+🔒 LINKS DA FAMÍLIA
+</h3>
+
+<p class="cinza">
+
+Os links da US METRALHA estarão disponíveis após a aprovação do seu cadastro pela administração.
+
+</p>
+
+</div>
+
+</div>
 
 
 <!-- =========================
-     REGRAS
+     CONTEÚDO: REGRAS
 ========================= -->
+
+<div
+id="membroRegras"
+class="memberContent hidden">
 
 <div class="card">
 
@@ -1520,17 +1524,53 @@ target="_blank">
 🛡️ Siga as orientações da administração.
 </p>
 
+<p>
+💛 Faça parte da família com respeito, lealdade e vontade de evoluir.
+</p>
+
+</div>
+
 </div>
 
 
-
 <!-- =========================
-     AUSÊNCIA
+     CONTEÚDO: AVISOS
 ========================= -->
 
 <div
-id="areaAusencia"
-class="hidden">
+id="membroAvisos"
+class="memberContent hidden">
+
+<div class="card">
+
+<h3 class="gold">
+📢 AVISOS DA ADMINISTRAÇÃO
+</h3>
+
+<div
+id="listaAvisosMembro">
+
+<div class="loading">
+⏳ Carregando avisos...
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     CONTEÚDO: AUSÊNCIA
+========================= -->
+
+<div
+id="membroAusencia"
+class="memberContent hidden">
+
+<div
+id="areaAusencia">
 
 <div class="card">
 
@@ -1547,7 +1587,6 @@ Avise a administração através deste formulário.
 
 
 <form id="formAusencia">
-
 
 <label>
 📅 Data de início
@@ -1601,28 +1640,17 @@ id="resultadoAusencia">
 
 </div>
 
+</div>
 
-
-<button
-class="action redBtn"
-id="sairMembro">
-
-🚪 SAIR DA CONTA
-
-</button>
 
 </section>
-
 
 
 <!-- =========================
      LOGIN ADM
 ========================= -->
 
-<section
-id="loginADM"
-class="card hidden">
-
+<section id="loginADM" class="card hidden">
 
 <button
 class="back"
@@ -1632,11 +1660,9 @@ onclick="abrir('inicio')">
 
 </button>
 
-
 <h2 class="red">
 🛡️ ÁREA DOS ADMINS
 </h2>
-
 
 <label>
 📧 E-mail
@@ -1649,7 +1675,6 @@ value="usmetralhaadmins@gmail.com"
 readonly
 >
 
-
 <label>
 🔑 Senha
 </label>
@@ -1660,7 +1685,6 @@ type="password"
 autocomplete="current-password"
 >
 
-
 <button
 class="action redBtn"
 id="entrarADM">
@@ -1668,7 +1692,6 @@ id="entrarADM">
 🔐 ENTRAR
 
 </button>
-
 
 <div
 id="erroADM"
@@ -1678,87 +1701,73 @@ class="erro">
 </section>
 
 
-
 <!-- =========================
      PAINEL ADM
 ========================= -->
 
-<section
-id="painel"
-class="card hidden">
-
+<section id="painel" class="card hidden">
 
 <h2 class="red">
 🛡️ US METRALHA — ADM
 </h2>
 
 
-<div class="contadores">
+<!-- =========================
+     CRIAR AVISOS
+========================= -->
+
+<div class="adminAvisoCard">
+
+<h3>
+📢 CRIAR AVISO
+</h3>
+
+<p class="cinza">
+Publique um aviso para aparecer na Área do Membro.
+</p>
 
 
-<div class="contador">
+<label>
+📌 Título do aviso
+</label>
 
-👥 Todos
+<input
+id="avisoTitulo"
+type="text"
+placeholder="Ex: Aviso importante"
+>
 
-<b id="cTodos">
-0
-</b>
 
+<label>
+📝 Mensagem
+</label>
+
+<textarea
+id="avisoMensagem"
+placeholder="Digite o aviso que será mostrado aos membros..."
+></textarea>
+
+
+<button
+class="action goldBtn"
+id="btnCriarAviso">
+
+📢 PUBLICAR AVISO
+
+</button>
+
+
+<div
+id="resultadoAvisoADM"
+class="erro">
 </div>
 
-
-<div class="contador">
-
-⏳ Pendentes
-
-<b id="cPendentes">
-0
-</b>
-
 </div>
-
-
-<div class="contador">
-
-✅ Aprovados
-
-<b id="cAprovados">
-0
-</b>
-
-</div>
-
-
-<div class="contador">
-
-❌ Recusados
-
-<b id="cRecusados">
-0
-</b>
-
-</div>
-
-
-<div class="contador">
-
-🗑️ Lixeira
-
-<b id="cLixeira">
-0
-</b>
-
-</div>
-
-
-</div>
-
 
 
 <h3>
 🔎 Pesquisar membro
 </h3>
-
 
 <input
 id="pesquisa"
@@ -1771,9 +1780,7 @@ placeholder="Digite Nick, Pix ou SMS..."
 📋 Formulários
 </h3>
 
-
 <div class="grid">
-
 
 <button
 id="btnTodos"
@@ -1819,16 +1826,13 @@ onclick="mudarFiltro('Lixeira')">
 
 </button>
 
-
 </div>
 
 
 <div id="lista">
 
 <div class="loading">
-
 ⏳ Nenhum formulário carregado.
-
 </div>
 
 </div>
@@ -1848,7 +1852,6 @@ id="sairADM">
 </main>
 
 
-
 <script type="module">
 
 
@@ -1857,18 +1860,13 @@ id="sairADM">
 ========================= */
 
 import{
-
 initializeApp
-
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
 import{
-
 getDatabase,
 ref,
 push,
@@ -1877,27 +1875,19 @@ onValue,
 update,
 remove,
 get
-
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
 
 import{
-
 getAuth,
 signInWithEmailAndPassword,
 createUserWithEmailAndPassword,
 signOut
-
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-
 
 
 const firebaseConfig={
@@ -1946,10 +1936,21 @@ let filtro="Todos";
 
 let membroAtual=null;
 
+let avisosListenerIniciado=false;
+
+let admListenerIniciado=false;
 
 
 /* =========================
-   MENU
+   URL APPS SCRIPT
+========================= */
+
+const APPS_SCRIPT_URL=
+"https://script.google.com/macros/s/AKfycbzKazu54SJEe5YRGWGXbFELl0Bdzs7urU2szFCb5oW5A6AcsupoSdc1p4ffAA9uIaiGog/exec";
+
+
+/* =========================
+   MENU PRINCIPAL
 ========================= */
 
 function abrir(id){
@@ -1996,6 +1997,101 @@ behavior:"smooth"
 window.abrir=abrir;
 
 
+/* =========================
+   MENU MEMBRO
+========================= */
+
+window.toggleMemberMenu=
+function(){
+
+$("memberMenu")
+.classList
+.toggle("hidden");
+
+};
+
+
+window.fecharMemberMenu=
+function(){
+
+$("memberMenu")
+.classList
+.add("hidden");
+
+};
+
+
+/* =========================
+   ABAS MEMBRO
+========================= */
+
+window.abrirMembroAba=
+function(aba){
+
+const conteudos={
+
+perfil:"membroPerfil",
+
+links:"membroLinks",
+
+regras:"membroRegras",
+
+avisos:"membroAvisos",
+
+ausencia:"membroAusencia"
+
+};
+
+
+Object.values(conteudos)
+.forEach(function(id){
+
+$(id)
+.classList
+.add("hidden");
+
+});
+
+
+if(conteudos[aba]){
+
+$(conteudos[aba])
+.classList
+.remove("hidden");
+
+}
+
+
+document
+.querySelectorAll(".memberTab")
+.forEach(function(btn){
+
+btn.classList.remove("active");
+
+});
+
+
+const botoes={
+
+links:"tabLinks",
+
+regras:"tabRegras",
+
+avisos:"tabAvisos"
+
+};
+
+
+if(botoes[aba]&&$(botoes[aba])){
+
+$(botoes[aba])
+.classList
+.add("active");
+
+}
+
+};
+
 
 /* =========================
    GERAR CÓDIGO
@@ -2030,7 +2126,6 @@ return codigo;
 }
 
 
-
 /* =========================
    PIX → E-MAIL INTERNO
 ========================= */
@@ -2061,7 +2156,6 @@ return "pix"+seguro+
 "@usmetralha.com";
 
 }
-
 
 
 /* =========================
@@ -2178,10 +2272,6 @@ emailInternoPix(pix);
 try{
 
 
-/*
-   CRIA LOGIN NO FIREBASE
-*/
-
 const cred=
 await createUserWithEmailAndPassword(
 
@@ -2197,10 +2287,6 @@ codigo
 const uid=
 cred.user.uid;
 
-
-/*
-   CRIA FORMULÁRIO
-*/
 
 const novo=
 push(
@@ -2267,16 +2353,15 @@ dadosMembro
 );
 
 
-
 /* =========================
-   APPS SCRIPT / DISCORD
+   APPS SCRIPT / CADASTRO
 ========================= */
 
 try{
 
 await fetch(
 
-"https://script.google.com/macros/s/AKfycbzKazu54SJEe5YRGWGXbFELl0Bdzs7urU2szFCb5oW5A6AcsupoSdc1p4ffAA9uIaiGog/exec",
+APPS_SCRIPT_URL,
 
 {
 
@@ -2319,47 +2404,26 @@ data:dataAtual
 }catch(e){
 
 console.error(
-"Erro Discord:",
+"Erro Discord cadastro:",
 e
 );
 
 }
 
 
-
-/*
-   DESLOGA O USUÁRIO
-*/
-
 await signOut(auth);
 
-
-/*
-   MOSTRA CÓDIGO
-*/
 
 $("codigoTela")
 .textContent=
 codigo;
 
 
-/*
-   LIMPA FORMULÁRIO
-*/
-
 $("formCadastro").reset();
 
 
-/*
-   LIMPA ERRO
-*/
-
 erroCadastro.textContent="";
 
-
-/*
-   ABRE TELA DO CÓDIGO
-*/
 
 abrir("codigoGerado");
 
@@ -2419,7 +2483,6 @@ botao.textContent=
 
 }
 );
-
 
 
 /* =========================
@@ -2521,6 +2584,7 @@ uid:uid
 
 mostrarMembro();
 
+iniciarAvisosMembro();
 
 abrir(
 "areaMembro"
@@ -2546,7 +2610,6 @@ botao.textContent=
 }
 
 };
-
 
 
 /* =========================
@@ -2605,13 +2668,12 @@ $("linksAprovado")
 .remove("hidden");
 
 
-$("areaAusencia")
+$("linksNaoAprovado")
 .classList
-.remove("hidden");
+.add("hidden");
 
 
 }else{
-
 
 status.className=
 "status";
@@ -2622,32 +2684,47 @@ $("linksAprovado")
 .add("hidden");
 
 
-$("areaAusencia")
+$("linksNaoAprovado")
 .classList
-.add("hidden");
+.remove("hidden");
 
 }
 
-}
 
+/* Abre links inicialmente */
+
+abrirMembroAba("links");
+
+}
 
 
 /* =========================
    SAIR MEMBRO
 ========================= */
 
-$("sairMembro")
-.onclick=
-async function(){
+async function sairMembro(){
+
+try{
 
 await signOut(auth);
 
+}catch(e){
+
+console.error(e);
+
+}
+
 membroAtual=null;
+
+fecharMemberMenu();
 
 abrir("inicio");
 
-};
+}
 
+
+window.sairMembro=
+sairMembro;
 
 
 /* =========================
@@ -2713,6 +2790,19 @@ return;
 }
 
 
+const botao=
+event.submitter;
+
+if(botao){
+
+botao.disabled=true;
+
+botao.textContent=
+"📤 REGISTRANDO...";
+
+}
+
+
 try{
 
 
@@ -2762,15 +2852,14 @@ ausencia
 
 
 /* =========================
-   APPS SCRIPT
-   AUSÊNCIA
+   APPS SCRIPT / AUSÊNCIA
 ========================= */
 
 try{
 
 await fetch(
 
-"https://script.google.com/macros/s/AKfycbzKazu54SJEe5YRGWGXbFELl0Bdzs7urU2szFCb5oW5A6AcsupoSdc1p4ffAA9uIaiGog/exec",
+APPS_SCRIPT_URL,
 
 {
 
@@ -2817,7 +2906,7 @@ e
 
 
 $("resultadoAusencia")
-.innerHTML=
+innerHTML=
 
 "<p class='green'>"+
 "✅ Ausência registrada com sucesso!"+
@@ -2836,11 +2925,102 @@ alert(
 "❌ Não foi possível registrar a ausência."
 );
 
+}finally{
+
+if(botao){
+
+botao.disabled=false;
+
+botao.textContent=
+"📤 REGISTRAR AUSÊNCIA";
+
+}
+
 }
 
 }
 );
 
+
+/* =========================
+   AVISOS — MEMBRO
+========================= */
+
+function iniciarAvisosMembro(){
+
+if(avisosListenerIniciado)
+return;
+
+avisosListenerIniciado=true;
+
+
+onValue(
+
+ref(
+db,
+"avisos"
+),
+
+function(snapshot){
+
+const dadosAvisos=
+snapshot.val()||{};
+
+
+const lista=
+Object.entries(dadosAvisos)
+.reverse();
+
+
+if(!lista.length){
+
+$("listaAvisosMembro")
+.innerHTML=
+
+"<p class='cinza'>"+
+"📭 Nenhum aviso da administração no momento."+
+"</p>";
+
+return;
+
+}
+
+
+$("listaAvisosMembro")
+.innerHTML=
+lista
+.map(function([id,aviso]){
+
+return `
+
+<article class="avisoAdmin">
+
+<h4>
+📢 ${esc(aviso.titulo||"Aviso da Administração")}
+</h4>
+
+<p>
+${esc(aviso.mensagem||"")}
+</p>
+
+<div class="avisoData">
+
+📅 ${esc(aviso.data||"")}
+
+</div>
+
+</article>
+
+`;
+
+})
+.join("");
+
+}
+
+);
+
+}
 
 
 /* =========================
@@ -2906,6 +3086,8 @@ abrir("painel");
 
 iniciarADM();
 
+iniciarAvisosADM();
+
 
 }catch(erro){
 
@@ -2928,12 +3110,17 @@ botao.textContent=
 };
 
 
-
 /* =========================
    ADM
 ========================= */
 
 function iniciarADM(){
+
+if(admListenerIniciado)
+return;
+
+admListenerIniciado=true;
+
 
 onValue(
 
@@ -2956,6 +3143,142 @@ mostrar();
 }
 
 
+/* =========================
+   AVISOS — ADM
+========================= */
+
+function iniciarAvisosADM(){
+
+onValue(
+
+ref(
+db,
+"avisos"
+),
+
+function(snapshot){
+
+}
+
+);
+
+}
+
+
+/* =========================
+   CRIAR AVISO
+========================= */
+
+$("btnCriarAviso")
+.onclick=
+async function(){
+
+const titulo=
+$("avisoTitulo")
+.value
+.trim();
+
+
+const mensagem=
+$("avisoMensagem")
+.value
+.trim();
+
+
+const resultado=
+$("resultadoAvisoADM");
+
+
+resultado.textContent="";
+
+
+if(!titulo||!mensagem){
+
+resultado.textContent=
+"⚠️ Preencha o título e a mensagem.";
+
+return;
+
+}
+
+
+const botao=
+$("btnCriarAviso");
+
+
+botao.disabled=true;
+
+botao.textContent=
+"📢 PUBLICANDO...";
+
+
+try{
+
+
+const novo=
+push(
+ref(db,"avisos")
+);
+
+
+const aviso={
+
+id:novo.key,
+
+titulo:titulo,
+
+mensagem:mensagem,
+
+data:
+new Date()
+.toLocaleString("pt-BR"),
+
+autor:"Admin"
+
+};
+
+
+await set(
+novo,
+aviso
+);
+
+
+resultado.className=
+"green";
+
+
+resultado.textContent=
+"✅ Aviso publicado com sucesso!";
+
+
+$("avisoTitulo").value="";
+$("avisoMensagem").value="";
+
+
+}catch(erro){
+
+console.error(erro);
+
+
+resultado.className=
+"erro";
+
+
+resultado.textContent=
+"❌ Não foi possível publicar o aviso.";
+
+}finally{
+
+botao.disabled=false;
+
+botao.textContent=
+"📢 PUBLICAR AVISO";
+
+}
+
+};
+
 
 /* =========================
    PESQUISA
@@ -2972,7 +3295,6 @@ mostrar();
 );
 
 
-
 /* =========================
    FILTRO
 ========================= */
@@ -2985,7 +3307,6 @@ filtro=novo;
 mostrar();
 
 };
-
 
 
 /* =========================
@@ -3003,77 +3324,6 @@ $("pesquisa")
 .value
 .toLowerCase()
 .trim();
-
-
-let todos=0;
-
-let pendentes=0;
-
-let aprovados=0;
-
-let recusados=0;
-
-let lixeira=0;
-
-
-lista.forEach(
-function([id,m]){
-
-
-if(
-m.lixeira===true
-){
-
-lixeira++;
-
-return;
-
-}
-
-
-todos++;
-
-
-if(
-m.status==="Pendente"
-)
-pendentes++;
-
-
-if(
-m.status==="Aprovado"
-)
-aprovados++;
-
-
-if(
-m.status==="Recusado"
-)
-recusados++;
-
-}
-);
-
-
-$("cTodos")
-.textContent=todos;
-
-
-$("cPendentes")
-.textContent=pendentes;
-
-
-$("cAprovados")
-.textContent=aprovados;
-
-
-$("cRecusados")
-.textContent=recusados;
-
-
-$("cLixeira")
-.textContent=lixeira;
-
 
 
 lista=
@@ -3156,7 +3406,6 @@ termo
 );
 
 
-
 document
 .querySelectorAll(".grid button")
 .forEach(
@@ -3196,7 +3445,6 @@ $(botoes[filtro])
 }
 
 
-
 if(
 !lista.length
 ){
@@ -3211,7 +3459,6 @@ $("lista")
 return;
 
 }
-
 
 
 $("lista")
@@ -3233,7 +3480,6 @@ m
 .join("");
 
 }
-
 
 
 /* =========================
@@ -3376,7 +3622,6 @@ ${botoes}
 }
 
 
-
 /* =========================
    APROVAR
 ========================= */
@@ -3419,7 +3664,9 @@ db,
 
 {
 
-status:"Aprovado"
+status:"Aprovado",
+
+lixeira:false
 
 }
 
@@ -3433,7 +3680,6 @@ filtro="Aprovado";
 mostrar();
 
 };
-
 
 
 /* =========================
@@ -3478,7 +3724,9 @@ db,
 
 {
 
-status:"Recusado"
+status:"Recusado",
+
+lixeira:false
 
 }
 
@@ -3492,7 +3740,6 @@ filtro="Recusado";
 mostrar();
 
 };
-
 
 
 /* =========================
@@ -3523,7 +3770,6 @@ filtro="Lixeira";
 mostrar();
 
 };
-
 
 
 /* =========================
@@ -3586,7 +3832,6 @@ mostrar();
 };
 
 
-
 /* =========================
    APAGAR
 ========================= */
@@ -3639,7 +3884,6 @@ mostrar();
 };
 
 
-
 /* =========================
    SEGURANÇA
 ========================= */
@@ -3678,7 +3922,6 @@ x||""
 }
 
 
-
 /* =========================
    LINKS
 ========================= */
@@ -3691,7 +3934,6 @@ $("grupoLink").href=
 "https://chat.whatsapp.com/Lu67rpkKyAo2zA0WoN4pMa";
 
 
-
 /* =========================
    SAIR ADM
 ========================= */
@@ -3702,14 +3944,50 @@ async function(){
 
 await signOut(auth);
 
+admListenerIniciado=false;
+
 abrir("inicio");
 
 };
 
 
+/* =========================
+   FECHAR MENU AO CLICAR FORA
+========================= */
+
+document.addEventListener(
+"click",
+function(event){
+
+const menu=
+$("memberMenu");
+
+const botao=
+document.querySelector(".memberMenuBtn");
+
+
+if(
+menu&&
+!menu.classList.contains("hidden")&&
+!menu.contains(event.target)&&
+!botao.contains(event.target)
+){
+
+menu.classList.add("hidden");
+
+}
+
+}
+);
+
+
+/* =========================
+   ESTADO INICIAL
+========================= */
+
+abrir("inicio");
+
 </script>
 
 </body>
-
-</html>
-   
+   </html>
