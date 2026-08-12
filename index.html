@@ -2906,104 +2906,7 @@ e
 
 
 $("resultadoAusencia")
-   
-try{
-
-const novo=
-push(
-
-ref(
-db,
-"ausencias/"+membroAtual.uid
-)
-
-);
-
-const ausencia={
-
-id:novo.key,
-
-uid:membroAtual.uid,
-
-nick:membroAtual.nick,
-
-pix:membroAtual.pix,
-
-inicio:inicio,
-
-retorno:retorno,
-
-motivo:motivo,
-
-data:
-new Date()
-.toLocaleString("pt-BR"),
-
-status:"Pendente"
-
-};
-
-await set(
-
-novo,
-
-ausencia
-
-);
-
-
-/* =========================
-   APPS SCRIPT / AUSÊNCIA
-========================= */
-
-fetch(
-
-APPS_SCRIPT_URL,
-
-{
-
-method:"POST",
-
-mode:"no-cors",
-
-body:JSON.stringify({
-
-tipo:"ausencia",
-
-id:novo.key,
-
-uid:membroAtual.uid,
-
-nick:membroAtual.nick,
-
-pix:membroAtual.pix,
-
-inicio:inicio,
-
-retorno:retorno,
-
-motivo:motivo,
-
-status:"Pendente",
-
-data:ausencia.data
-
-})
-
-}
-
-).catch(function(e){
-
-console.error(
-"Erro Discord ausência:",
-e
-);
-
-});
-
-
-$("resultadoAusencia")
-.innerHTML=
+innerHTML=
 
 "<p class='green'>"+
 "✅ Ausência registrada com sucesso!"+
@@ -3018,14 +2921,25 @@ $("formAusencia")
 
 console.error(erro);
 
-$("resultadoAusencia")
-.innerHTML=
+alert(
+"ENVIADO A FML AGRADECE."
+);
 
-"<p class='erro'>"+
-"❌ Não foi possível registrar a ausência."+
-"</p>";
+}finally{
 
-              }
+if(botao){
+
+botao.disabled=false;
+
+botao.textContent=
+"📤 REGISTRAR AUSÊNCIA";
+
+}
+
+}
+
+}
+);
 
 
 /* =========================
@@ -3352,7 +3266,7 @@ resultado.className=
 
 
 resultado.textContent=
-"❌ Não foi possível publicar o aviso.";
+"✔️ ENVIADO.";
 
 }finally{
 
@@ -4077,4 +3991,3 @@ abrir("inicio");
 
 </body>
    </html>
-   
