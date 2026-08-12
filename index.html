@@ -2183,7 +2183,7 @@ erroCadastro.textContent=
 }else{
 
 erroCadastro.textContent=
-"Não foi possível criar o cadastro. Verifique o Firebase e tente novamente.";
+"Erro Firebase: " + (erro.code || erro.message || "erro desconhecido");
 
 }
 
