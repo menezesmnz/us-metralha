@@ -717,6 +717,71 @@ color:#999;
 
 
 /* =========================
+   RESULTADO AUSÊNCIA
+========================= */
+
+.resultadoSucesso{
+display:flex;
+align-items:center;
+gap:12px;
+
+margin-top:18px;
+padding:16px 18px;
+
+background:rgba(32,232,120,.10);
+
+border:1px solid rgba(32,232,120,.55);
+
+border-left:5px solid #20e878;
+
+border-radius:12px;
+
+color:#20e878;
+
+font-weight:900;
+
+font-size:16px;
+
+line-height:1.4;
+
+animation:
+entradaSucesso .25s ease-out;
+}
+
+.resultadoSucesso .setaSucesso{
+font-size:25px;
+font-weight:900;
+flex-shrink:0;
+}
+
+.resultadoSucesso .textoSucesso{
+display:flex;
+flex-direction:column;
+gap:3px;
+}
+
+.resultadoSucesso small{
+font-size:12px;
+font-weight:normal;
+color:#9af5bd;
+}
+
+@keyframes entradaSucesso{
+
+from{
+opacity:0;
+transform:translateY(-5px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+
+/* =========================
    AVISO ADM CARD
 ========================= */
 
@@ -1214,8 +1279,6 @@ class="erro">
 <section id="areaMembro" class="card hidden">
 
 
-<!-- CABEÇALHO -->
-
 <div class="memberHeader">
 
 <h2 class="gold">
@@ -1269,8 +1332,6 @@ onclick="sairMembro();fecharMemberMenu()">
 </div>
 
 
-<!-- STATUS RESUMIDO -->
-
 <div class="info">
 
 <strong>🎮 Nick:</strong>
@@ -1298,10 +1359,6 @@ class="status">
 
 </div>
 
-
-<!-- =========================
-     ABAS PRINCIPAIS
-========================= -->
 
 <div class="memberFrontTabs">
 
@@ -1337,10 +1394,6 @@ onclick="abrirMembroAba('avisos')">
 
 </div>
 
-
-<!-- =========================
-     CONTEÚDO: PERFIL
-========================= -->
 
 <div
 id="membroPerfil"
@@ -1394,10 +1447,6 @@ class="memberContent hidden">
 
 </div>
 
-
-<!-- =========================
-     CONTEÚDO: LINKS
-========================= -->
 
 <div
 id="membroLinks"
@@ -1494,10 +1543,6 @@ Os links da US METRALHA estarão disponíveis após a aprovação do seu cadastr
 </div>
 
 
-<!-- =========================
-     CONTEÚDO: REGRAS
-========================= -->
-
 <div
 id="membroRegras"
 class="memberContent hidden">
@@ -1533,10 +1578,6 @@ class="memberContent hidden">
 </div>
 
 
-<!-- =========================
-     CONTEÚDO: AVISOS
-========================= -->
-
 <div
 id="membroAvisos"
 class="memberContent hidden">
@@ -1562,7 +1603,7 @@ id="listaAvisosMembro">
 
 
 <!-- =========================
-     CONTEÚDO: AUSÊNCIA
+     AUSÊNCIA
 ========================= -->
 
 <div
@@ -1623,7 +1664,8 @@ placeholder="Explique o motivo da ausência..."
 
 <button
 class="action goldBtn"
-type="submit">
+type="submit"
+id="btnAusencia">
 
 📤 REGISTRAR AUSÊNCIA
 
@@ -1711,10 +1753,6 @@ class="erro">
 🛡️ US METRALHA — ADM
 </h2>
 
-
-<!-- =========================
-     CRIAR AVISOS
-========================= -->
 
 <div class="adminAvisoCard">
 
@@ -2353,10 +2391,6 @@ dadosMembro
 );
 
 
-/* =========================
-   APPS SCRIPT / CADASTRO
-========================= */
-
 try{
 
 await fetch(
@@ -2398,8 +2432,6 @@ data:dataAtual
 })
 
 }
-
-);
 
 }catch(e){
 
@@ -2691,8 +2723,6 @@ $("linksNaoAprovado")
 }
 
 
-/* Abre links inicialmente */
-
 abrirMembroAba("links");
 
 }
@@ -2764,15 +2794,27 @@ $("ausMotivo")
 .trim();
 
 
+const resultado=
+$("resultadoAusencia");
+
+
+/* Limpa mensagens anteriores */
+
+resultado.innerHTML="";
+
+resultado.className="";
+
+
 if(
 !inicio||
 !retorno||
 !motivo
 ){
 
-alert(
-"Preencha todos os campos."
-);
+resultado.className="erro";
+
+resultado.textContent=
+"⚠️ Preencha todos os campos.";
 
 return;
 
@@ -2781,9 +2823,10 @@ return;
 
 if(retorno<inicio){
 
-alert(
-"⚠️ A data de retorno não pode ser anterior à data de início."
-);
+resultado.className="erro";
+
+resultado.textContent=
+"⚠️ A data de retorno não pode ser anterior à data de início.";
 
 return;
 
@@ -2791,20 +2834,21 @@ return;
 
 
 const botao=
-event.submitter;
+$("btnAusencia");
 
-if(botao){
 
 botao.disabled=true;
 
 botao.textContent=
-"📤 REGISTRANDO...";
-
-}
+"📤 ENVIANDO...";
 
 
 try{
 
+
+/* =========================
+   SALVAR AUSÊNCIA NO FIREBASE
+========================= */
 
 const novo=
 push(
@@ -2851,7 +2895,121 @@ ausencia
 );
 
 
-6
+/* =========================
+   ENVIAR PARA APPS SCRIPT / DISCORD
+========================= */
+
+try{
+
+await fetch(
+
+APPS_SCRIPT_URL,
+
+{
+
+method:"POST",
+
+mode:"no-cors",
+
+body:JSON.stringify({
+
+tipo:"ausencia",
+
+id:novo.key,
+
+uid:membroAtual.uid,
+
+nick:membroAtual.nick,
+
+pix:membroAtual.pix,
+
+inicio:inicio,
+
+retorno:retorno,
+
+motivo:motivo,
+
+status:"Pendente",
+
+data:ausencia.data
+
+})
+
+}
+
+}catch(e){
+
+/*
+   IMPORTANTE:
+   Se o Firebase salvou a ausência,
+   o registro foi realizado com sucesso.
+   Um problema no Apps Script/Discord
+   não cancela o registro salvo.
+*/
+
+console.error(
+"Erro Apps Script / Discord ausência:",
+e
+);
+
+}
+
+
+/* =========================
+   MENSAGEM DE SUCESSO
+========================= */
+
+resultado.className=
+"resultadoSucesso";
+
+resultado.innerHTML=
+
+"<span class='setaSucesso'>➜</span>"+
+
+"<span class='textoSucesso'>"+
+"<strong>Ausência enviada com sucesso!</strong>"+
+"<small>A administração recebeu seu registro.</small>"+
+"</span>";
+
+
+/* Limpa o formulário */
+
+$("formAusencia")
+.reset();
+
+
+/* Volta o botão ao normal */
+
+botao.disabled=false;
+
+botao.textContent=
+"📤 REGISTRAR AUSÊNCIA";
+
+
+}catch(erro){
+
+console.error(
+"ERRO AO REGISTRAR AUSÊNCIA:",
+erro
+);
+
+
+resultado.className=
+"erro";
+
+resultado.textContent=
+"❌ Não foi possível registrar a ausência. Tente novamente.";
+
+
+botao.disabled=false;
+
+botao.textContent=
+"📤 REGISTRAR AUSÊNCIA";
+
+}
+
+}
+);
 
 
 /* =========================
@@ -3082,32 +3240,31 @@ function(snapshot){
 ========================= */
 
 $("btnCriarAviso")
-.onclick =
+.onclick=
 async function(){
 
-const titulo =
+const titulo=
 $("avisoTitulo")
 .value
 .trim();
 
 
-const mensagem =
+const mensagem=
 $("avisoMensagem")
 .value
 .trim();
 
 
-const resultado =
+const resultado=
 $("resultadoAvisoADM");
 
 
-resultado.textContent = "";
-resultado.className = "erro";
+resultado.textContent="";
 
 
-if(!titulo || !mensagem){
+if(!titulo||!mensagem){
 
-resultado.textContent =
+resultado.textContent=
 "⚠️ Preencha o título e a mensagem.";
 
 return;
@@ -3115,41 +3272,38 @@ return;
 }
 
 
-const botao =
+const botao=
 $("btnCriarAviso");
 
 
-botao.disabled = true;
+botao.disabled=true;
 
-botao.textContent =
+botao.textContent=
 "📢 PUBLICANDO...";
 
 
 try{
 
-/* =========================
-   SALVAR AVISO NO FIREBASE
-========================= */
 
-const novo =
+const novo=
 push(
 ref(db,"avisos")
 );
 
 
-const aviso = {
+const aviso={
 
-id: novo.key,
+id:novo.key,
 
-titulo: titulo,
+titulo:titulo,
 
-mensagem: mensagem,
+mensagem:mensagem,
 
 data:
 new Date()
 .toLocaleString("pt-BR"),
 
-autor: "Admin"
+autor:"Admin"
 
 };
 
@@ -3160,40 +3314,35 @@ aviso
 );
 
 
-/* =========================
-   SUCESSO
-========================= */
+resultado.className=
+"green";
 
-$("avisoTitulo").value = "";
 
-$("avisoMensagem").value = "";
-
-resultado.className = "green";
-
-resultado.textContent =
+resultado.textContent=
 "✅ Aviso publicado com sucesso!";
+
+
+$("avisoTitulo").value="";
+$("avisoMensagem").value="";
 
 
 }catch(erro){
 
-console.error(
-"ERRO AO PUBLICAR AVISO:",
-erro
-);
+console.error(erro);
 
 
-resultado.className =
+resultado.className=
 "erro";
 
 
-resultado.textContent =
+resultado.textContent=
 "❌ Não foi possível publicar o aviso.";
 
 }finally{
 
-botao.disabled = false;
+botao.disabled=false;
 
-botao.textContent =
+botao.textContent=
 "📢 PUBLICAR AVISO";
 
 }
@@ -3911,4 +4060,4 @@ abrir("inicio");
 </script>
 
 </body>
-   </html>
+</html>
