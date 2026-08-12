@@ -858,20 +858,39 @@ let membroAtual=null;
 
 /* MENU */
 
-window.abrir=function(id){
+function abrir(id){
 
 document
 .querySelectorAll("main section")
-.forEach(s=>s.classList.add("hidden"));
+.forEach(function(section){
 
-$(id).classList.remove("hidden");
+section.classList.add("hidden");
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
 });
 
-};
+const tela=document.getElementById(id);
+
+if(!tela){
+
+console.error("Tela não encontrada:",id);
+
+return;
+
+}
+
+tela.classList.remove("hidden");
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+window.abrir=abrir;
 
 
 /* CÓDIGO */
