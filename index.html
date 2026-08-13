@@ -837,11 +837,13 @@ font-size:24px;
 
 </head>
 
+
 <body>
 
 <main>
 
-   <!-- =========================
+
+<!-- =========================
      INÍCIO
 ========================= -->
 
@@ -869,6 +871,7 @@ US METRALHA
 
 <button
 class="menuBtn cadastro"
+type="button"
 onclick="abrir('cadastro')">
 
 📝 CADASTRO
@@ -882,6 +885,7 @@ Faça seu cadastro na família
 
 <button
 class="menuBtn logar"
+type="button"
 onclick="abrir('loginMembro')">
 
 🔐 LOGAR
@@ -895,6 +899,7 @@ Acesse sua Área do Membro
 
 <button
 class="menuBtn admin"
+type="button"
 onclick="abrir('loginADM')">
 
 🛡️ ADMINS
@@ -918,6 +923,7 @@ onclick="abrir('loginADM')">
 
 <button
 class="back"
+type="button"
 onclick="abrir('inicio')">
 
 ← Voltar
@@ -934,9 +940,7 @@ Preencha seus dados com atenção. Após o cadastro, o sistema irá gerar automa
 
 <form id="formCadastro">
 
-<label>
-🎮 Nick
-</label>
+<label>🎮 Nick</label>
 
 <input
 id="cadNick"
@@ -946,10 +950,7 @@ autocomplete="off"
 placeholder="Digite seu Nick"
 >
 
-
-<label>
-📱 SMS
-</label>
+<label>📱 SMS</label>
 
 <input
 id="cadSms"
@@ -959,10 +960,7 @@ autocomplete="off"
 placeholder="Digite seu SMS"
 >
 
-
-<label>
-💰 Pix
-</label>
+<label>💰 Pix</label>
 
 <input
 id="cadPix"
@@ -971,7 +969,6 @@ required
 autocomplete="off"
 placeholder="Digite seu número Pix"
 >
-
 
 <label>
 📲 WhatsApp
@@ -985,42 +982,23 @@ autocomplete="off"
 placeholder="Digite seu WhatsApp"
 >
 
+<label>🎮 Qual período costuma jogar?</label>
 
-<label>
-🎮 Qual período costuma jogar?
-</label>
+<select id="cadPeriodo" required>
 
-<select
-id="cadPeriodo"
-required
->
+<option value="">Selecione uma opção</option>
 
-<option value="">
-Selecione uma opção
-</option>
+<option value="Manhã">🌅 Manhã</option>
 
-<option value="Manhã">
-🌅 Manhã
-</option>
+<option value="Tarde">☀️ Tarde</option>
 
-<option value="Tarde">
-☀️ Tarde
-</option>
+<option value="Noite">🌙 Noite</option>
 
-<option value="Noite">
-🌙 Noite
-</option>
-
-<option value="Varia">
-🔄 Varia
-</option>
+<option value="Varia">🔄 Varia</option>
 
 </select>
 
-
-<label>
-🎯 Qual é o seu principal objetivo no jogo?
-</label>
+<label>🎯 Qual é o seu principal objetivo no jogo?</label>
 
 <textarea
 id="cadObjetivo"
@@ -1028,17 +1006,13 @@ required
 placeholder="Conte um pouco sobre o que você busca no jogo..."
 ></textarea>
 
-
-<label>
-👥 O que faz uma família ser boa para você?
-</label>
+<label>👥 O que faz uma família ser boa para você?</label>
 
 <textarea
 id="cadFamiliaBoa"
 required
 placeholder="Conte o que você valoriza em uma família..."
 ></textarea>
-
 
 <div class="aviso">
 
@@ -1066,7 +1040,6 @@ placeholder="Conte o que você valoriza em uma família..."
 
 </div>
 
-
 <label class="aceite">
 
 <input
@@ -1082,7 +1055,6 @@ Declaro que estou de acordo com as condições para fazer parte da US METRALHA.
 
 </label>
 
-
 <button
 class="action goldBtn"
 type="submit"
@@ -1092,11 +1064,7 @@ id="btnCadastro">
 
 </button>
 
-
-<div
-id="erroCadastro"
-class="erro">
-</div>
+<div id="erroCadastro" class="erro"></div>
 
 </form>
 
@@ -1121,12 +1089,8 @@ Seu cadastro foi criado com sucesso!
 🔐 Seu código de acesso:
 </div>
 
-<div
-id="codigoTela"
-class="codigo">
-
+<div id="codigoTela" class="codigo">
 --------
-
 </div>
 
 <p class="cinza">
@@ -1136,6 +1100,7 @@ Ele será usado junto com o seu Pix para entrar na Área do Membro.
 
 <button
 class="action blueBtn"
+type="button"
 onclick="abrir('loginMembro')">
 
 🔐 IR PARA LOGIN
@@ -1153,6 +1118,7 @@ onclick="abrir('loginMembro')">
 
 <button
 class="back"
+type="button"
 onclick="abrir('inicio')">
 
 ← Voltar
@@ -1167,9 +1133,7 @@ onclick="abrir('inicio')">
 Entre utilizando o mesmo Pix informado no cadastro e o código recebido.
 </p>
 
-<label>
-💰 Pix cadastrado
-</label>
+<label>💰 Pix cadastrado</label>
 
 <input
 id="loginPix"
@@ -1178,9 +1142,7 @@ placeholder="Digite o mesmo Pix usado no cadastro"
 autocomplete="off"
 >
 
-<label>
-🔑 Código de acesso
-</label>
+<label>🔑 Código de acesso</label>
 
 <input
 id="loginCodigo"
@@ -1191,16 +1153,14 @@ autocomplete="off"
 
 <button
 class="action blueBtn"
+type="button"
 id="btnLoginMembro">
 
 🚀 ENTRAR
 
 </button>
 
-<div
-id="erroMembro"
-class="erro">
-</div>
+<div id="erroMembro" class="erro"></div>
 
 </section>
 
@@ -1221,6 +1181,7 @@ class="erro">
 
 <button
 class="memberMenuBtn"
+type="button"
 onclick="toggleMemberMenu()"
 aria-label="Menu">
 
@@ -1228,11 +1189,10 @@ aria-label="Menu">
 
 </button>
 
-<div
-id="memberMenu"
-class="memberMenu hidden">
+<div id="memberMenu" class="memberMenu hidden">
 
 <button
+type="button"
 onclick="abrirMembroAba('perfil');fecharMemberMenu()">
 
 👤 Meu Perfil
@@ -1240,6 +1200,7 @@ onclick="abrirMembroAba('perfil');fecharMemberMenu()">
 </button>
 
 <button
+type="button"
 onclick="abrirMembroAba('ausencia');fecharMemberMenu()">
 
 💤 Modo Ausência
@@ -1247,6 +1208,7 @@ onclick="abrirMembroAba('ausencia');fecharMemberMenu()">
 </button>
 
 <button
+type="button"
 class="menuDanger"
 onclick="sairMembro();fecharMemberMenu()">
 
@@ -1281,10 +1243,7 @@ onclick="sairMembro();fecharMemberMenu()">
 
 <strong>📊 Status:</strong>
 
-<span
-id="mStatus"
-class="status">
-</span>
+<span id="mStatus" class="status"></span>
 
 </div>
 
@@ -1294,6 +1253,7 @@ class="status">
 <button
 id="tabLinks"
 class="memberTab active"
+type="button"
 onclick="abrirMembroAba('links')">
 
 🔗 Links da US Metralha
@@ -1303,6 +1263,7 @@ onclick="abrirMembroAba('links')">
 <button
 id="tabRegras"
 class="memberTab"
+type="button"
 onclick="abrirMembroAba('regras')">
 
 📜 Regras
@@ -1312,6 +1273,7 @@ onclick="abrirMembroAba('regras')">
 <button
 id="tabAvisos"
 class="memberTab"
+type="button"
 onclick="abrirMembroAba('avisos')">
 
 📢 Avisos Admin
@@ -1323,9 +1285,7 @@ onclick="abrirMembroAba('avisos')">
 
 <!-- PERFIL -->
 
-<div
-id="membroPerfil"
-class="memberContent hidden">
+<div id="membroPerfil" class="memberContent hidden">
 
 <div class="card">
 
@@ -1339,9 +1299,7 @@ class="memberContent hidden">
 
 <b>🎮 PERÍODO DE JOGO</b>
 
-<span id="mPeriodo">
-—
-</span>
+<span id="mPeriodo">—</span>
 
 </div>
 
@@ -1349,9 +1307,7 @@ class="memberContent hidden">
 
 <b>🎯 OBJETIVO NO JOGO</b>
 
-<span id="mObjetivo">
-—
-</span>
+<span id="mObjetivo">—</span>
 
 </div>
 
@@ -1363,9 +1319,7 @@ class="memberContent hidden">
 👥 O que faz uma família ser boa para você?
 </strong>
 
-<p id="mFamiliaBoa">
-—
-</p>
+<p id="mFamiliaBoa">—</p>
 
 </div>
 
@@ -1376,13 +1330,9 @@ class="memberContent hidden">
 
 <!-- LINKS -->
 
-<div
-id="membroLinks"
-class="memberContent">
+<div id="membroLinks" class="memberContent">
 
-<div
-id="linksAprovado"
-class="hidden">
+<div id="linksAprovado" class="hidden">
 
 <div class="card">
 
@@ -1394,9 +1344,7 @@ class="hidden">
 
 <div class="memberBox">
 
-<b>
-💬 DISCORD DA FAMÍLIA
-</b>
+<b>💬 DISCORD DA FAMÍLIA</b>
 
 <a
 id="discordLink"
@@ -1411,9 +1359,7 @@ target="_blank">
 
 <div class="memberBox">
 
-<b>
-📱 GRUPO WHATSAPP
-</b>
+<b>📱 GRUPO WHATSAPP</b>
 
 <a
 id="grupoLink"
@@ -1428,9 +1374,7 @@ target="_blank">
 
 <div class="memberBox">
 
-<b>
-🏆 MEMORIAL DA FAMÍLIA
-</b>
+<b>🏆 MEMORIAL DA FAMÍLIA</b>
 
 <a
 href="https://discord.com/channels/1099040187251699785/1443982745373249638"
@@ -1449,9 +1393,7 @@ target="_blank">
 </div>
 
 
-<div
-id="linksNaoAprovado"
-class="card">
+<div id="linksNaoAprovado" class="card">
 
 <h3 class="gold">
 🔒 LINKS DA FAMÍLIA
@@ -1470,9 +1412,7 @@ Os links da US METRALHA estarão disponíveis após a aprovação do seu cadastr
 
 <!-- REGRAS -->
 
-<div
-id="membroRegras"
-class="memberContent hidden">
+<div id="membroRegras" class="memberContent hidden">
 
 <div class="card">
 
@@ -1507,9 +1447,7 @@ class="memberContent hidden">
 
 <!-- AVISOS -->
 
-<div
-id="membroAvisos"
-class="memberContent hidden">
+<div id="membroAvisos" class="memberContent hidden">
 
 <div class="card">
 
@@ -1517,8 +1455,7 @@ class="memberContent hidden">
 📢 AVISOS DA ADMINISTRAÇÃO
 </h3>
 
-<div
-id="listaAvisosMembro">
+<div id="listaAvisosMembro">
 
 <div class="loading">
 ⏳ Carregando avisos...
@@ -1533,12 +1470,9 @@ id="listaAvisosMembro">
 
 <!-- AUSÊNCIA -->
 
-<div
-id="membroAusencia"
-class="memberContent hidden">
+<div id="membroAusencia" class="memberContent hidden">
 
-<div
-id="areaAusencia">
+<div id="areaAusencia">
 
 <div class="card">
 
@@ -1555,9 +1489,7 @@ Avise a administração através deste formulário.
 
 <form id="formAusencia">
 
-<label>
-📅 Data de início
-</label>
+<label>📅 Data de início</label>
 
 <input
 id="ausInicio"
@@ -1565,9 +1497,7 @@ type="date"
 required
 >
 
-<label>
-📅 Data de retorno
-</label>
+<label>📅 Data de retorno</label>
 
 <input
 id="ausRetorno"
@@ -1575,9 +1505,7 @@ type="date"
 required
 >
 
-<label>
-📝 Motivo
-</label>
+<label>📝 Motivo</label>
 
 <textarea
 id="ausMotivo"
@@ -1595,9 +1523,7 @@ type="submit">
 
 </form>
 
-<div
-id="resultadoAusencia">
-</div>
+<div id="resultadoAusencia"></div>
 
 </div>
 
@@ -1616,6 +1542,7 @@ id="resultadoAusencia">
 
 <button
 class="back"
+type="button"
 onclick="abrir('inicio')">
 
 ← Voltar
@@ -1626,9 +1553,7 @@ onclick="abrir('inicio')">
 🛡️ ÁREA DOS ADMINS
 </h2>
 
-<label>
-📧 E-mail
-</label>
+<label>📧 E-mail</label>
 
 <input
 id="emailADM"
@@ -1637,9 +1562,7 @@ value="usmetralhaadmins@gmail.com"
 readonly
 >
 
-<label>
-🔑 Senha
-</label>
+<label>🔑 Senha</label>
 
 <input
 id="senhaADM"
@@ -1649,16 +1572,14 @@ autocomplete="current-password"
 
 <button
 class="action redBtn"
+type="button"
 id="entrarADM">
 
 🔐 ENTRAR
 
 </button>
 
-<div
-id="erroADM"
-class="erro">
-</div>
+<div id="erroADM" class="erro"></div>
 
 </section>
 
@@ -1673,9 +1594,6 @@ class="erro">
 🛡️ US METRALHA — ADM
 </h2>
 
-
-<!-- CRIAR AVISOS -->
-
 <div class="adminAvisoCard">
 
 <h3>
@@ -1686,9 +1604,7 @@ class="erro">
 Publique um aviso para aparecer na Área do Membro.
 </p>
 
-<label>
-📌 Título do aviso
-</label>
+<label>📌 Título do aviso</label>
 
 <input
 id="avisoTitulo"
@@ -1696,9 +1612,7 @@ type="text"
 placeholder="Ex: Aviso importante"
 >
 
-<label>
-📝 Mensagem
-</label>
+<label>📝 Mensagem</label>
 
 <textarea
 id="avisoMensagem"
@@ -1707,19 +1621,16 @@ placeholder="Digite o aviso que será mostrado aos membros..."
 
 <button
 class="action goldBtn"
+type="button"
 id="btnCriarAviso">
 
 📢 PUBLICAR AVISO
 
 </button>
 
-<div
-id="resultadoAvisoADM"
-class="erro">
-</div>
+<div id="resultadoAvisoADM" class="erro"></div>
 
 </div>
-
 
 <h3>
 🔎 Pesquisar membro
@@ -1731,7 +1642,6 @@ type="search"
 placeholder="Digite Nick, Pix ou SMS..."
 >
 
-
 <h3>
 📋 Formulários
 </h3>
@@ -1740,6 +1650,7 @@ placeholder="Digite Nick, Pix ou SMS..."
 
 <button
 id="btnTodos"
+type="button"
 onclick="mudarFiltro('Todos')">
 
 👥 TODOS
@@ -1748,6 +1659,7 @@ onclick="mudarFiltro('Todos')">
 
 <button
 id="btnPendente"
+type="button"
 onclick="mudarFiltro('Pendente')">
 
 ⏳ PENDENTES
@@ -1756,6 +1668,7 @@ onclick="mudarFiltro('Pendente')">
 
 <button
 id="btnAprovado"
+type="button"
 onclick="mudarFiltro('Aprovado')">
 
 ✅ APROVADOS
@@ -1764,6 +1677,7 @@ onclick="mudarFiltro('Aprovado')">
 
 <button
 id="btnRecusado"
+type="button"
 onclick="mudarFiltro('Recusado')">
 
 ❌ RECUSADOS
@@ -1772,6 +1686,7 @@ onclick="mudarFiltro('Recusado')">
 
 <button
 id="btnLixeira"
+type="button"
 onclick="mudarFiltro('Lixeira')">
 
 🗑️ LIXEIRA
@@ -1779,7 +1694,6 @@ onclick="mudarFiltro('Lixeira')">
 </button>
 
 </div>
-
 
 <div id="lista">
 
@@ -1792,7 +1706,8 @@ onclick="mudarFiltro('Lixeira')">
 
 <button
 class="action redBtn"
-id="sairADM">
+id="sairADM"
+type="button">
 
 🚪 SAIR
 
@@ -1800,22 +1715,25 @@ id="sairADM">
 
 </section>
 
+
 </main>
+
 
 <script type="module">
 
-   /* =========================
+
+/* =========================
    FIREBASE
 ========================= */
 
-import{
+import {
 initializeApp
 }
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
-import{
+import {
 getDatabase,
 ref,
 push,
@@ -1829,7 +1747,7 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
 
-import{
+import {
 getAuth,
 signInWithEmailAndPassword,
 createUserWithEmailAndPassword,
@@ -1839,7 +1757,7 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-const firebaseConfig={
+const firebaseConfig = {
 
 apiKey:
 "AIzaSyDy8falIrYlTDdZlOU3C3v_gfb-pXTknIc",
@@ -1865,37 +1783,89 @@ appId:
 };
 
 
-const app=
+const app =
 initializeApp(firebaseConfig);
 
-const db=
+const db =
 getDatabase(app);
 
-const auth=
+const auth =
 getAuth(app);
 
 
-const $=
-id=>document.getElementById(id);
+const $ =
+id => document.getElementById(id);
 
 
-let dados={};
+let dados = {};
 
-let filtro="Todos";
+let filtro = "Todos";
 
-let membroAtual=null;
+let membroAtual = null;
 
-let avisosListenerIniciado=false;
+let avisosListenerIniciado = false;
 
-let admListenerIniciado=false;
+let admListenerIniciado = false;
 
 
 /* =========================
    URL APPS SCRIPT
 ========================= */
 
-const APPS_SCRIPT_URL=
+const APPS_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbzKazu54SJEe5YRGWGXbFELl0Bdzs7urU2szFCb5oW5A6AcsupoSdc1p4ffAA9uIaiGog/exec";
+
+
+/* =========================
+   ENVIO APPS SCRIPT
+   ENVIO IMEDIATO
+========================= */
+
+function enviarAppsScript(dadosEnvio){
+
+try{
+
+const corpo =
+JSON.stringify(dadosEnvio);
+
+
+/*
+   keepalive mantém o envio
+   mesmo quando a página muda
+*/
+
+fetch(
+APPS_SCRIPT_URL,
+{
+method:"POST",
+mode:"no-cors",
+headers:{
+"Content-Type":
+"text/plain;charset=utf-8"
+},
+body:corpo,
+keepalive:true
+})
+.catch(function(erro){
+
+console.error(
+"Erro no envio para Apps Script:",
+erro
+);
+
+});
+
+
+}catch(erro){
+
+console.error(
+"Erro ao preparar envio:",
+erro
+);
+
+}
+
+}
 
 
 /* =========================
@@ -1913,7 +1883,7 @@ section.classList.add("hidden");
 });
 
 
-const tela=
+const tela =
 document.getElementById(id);
 
 
@@ -1943,14 +1913,14 @@ behavior:"smooth"
 }
 
 
-window.abrir=abrir;
+window.abrir = abrir;
 
 
 /* =========================
    MENU MEMBRO
 ========================= */
 
-window.toggleMemberMenu=
+window.toggleMemberMenu =
 function(){
 
 $("memberMenu")
@@ -1960,7 +1930,7 @@ $("memberMenu")
 };
 
 
-window.fecharMemberMenu=
+window.fecharMemberMenu =
 function(){
 
 $("memberMenu")
@@ -1974,10 +1944,10 @@ $("memberMenu")
    ABAS MEMBRO
 ========================= */
 
-window.abrirMembroAba=
+window.abrirMembroAba =
 function(aba){
 
-const conteudos={
+const conteudos = {
 
 perfil:"membroPerfil",
 
@@ -2020,7 +1990,7 @@ btn.classList.remove("active");
 });
 
 
-const botoes={
+const botoes = {
 
 links:"tabLinks",
 
@@ -2031,7 +2001,10 @@ avisos:"tabAvisos"
 };
 
 
-if(botoes[aba]&&$(botoes[aba])){
+if(
+botoes[aba] &&
+$(botoes[aba])
+){
 
 $(botoes[aba])
 .classList
@@ -2048,10 +2021,10 @@ $(botoes[aba])
 
 function gerarCodigo(){
 
-const chars=
+const chars =
 "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
-let codigo="";
+let codigo = "";
 
 
 for(
@@ -2060,10 +2033,11 @@ i<8;
 i++
 ){
 
-codigo+=
+codigo +=
 chars[
 Math.floor(
-Math.random()*chars.length
+Math.random() *
+chars.length
 )
 ];
 
@@ -2081,13 +2055,13 @@ return codigo;
 
 function emailInternoPix(pix){
 
-const texto=
+const texto =
 String(pix)
 .trim()
 .toLowerCase();
 
 
-const base64=
+const base64 =
 btoa(
 unescape(
 encodeURIComponent(texto)
@@ -2095,14 +2069,20 @@ encodeURIComponent(texto)
 );
 
 
-const seguro=
+const seguro =
 base64
-.replace(/[^a-zA-Z0-9]/g,"")
+.replace(
+/[^a-zA-Z0-9]/g,
+""
+)
 .substring(0,40);
 
 
-return "pix"+seguro+
-"@usmetralha.com";
+return (
+"pix" +
+seguro +
+"@usmetralha.com"
+);
 
 }
 
@@ -2119,70 +2099,70 @@ async function(event){
 event.preventDefault();
 
 
-const nick=
+const nick =
 $("cadNick")
 .value
 .trim();
 
 
-const sms=
+const sms =
 $("cadSms")
 .value
 .trim();
 
 
-const pix=
+const pix =
 $("cadPix")
 .value
 .trim();
 
 
-const whatsapp=
+const whatsapp =
 $("cadWhatsapp")
 .value
 .trim();
 
 
-const periodo=
+const periodo =
 $("cadPeriodo")
 .value
 .trim();
 
 
-const objetivo=
+const objetivo =
 $("cadObjetivo")
 .value
 .trim();
 
 
-const familiaBoa=
+const familiaBoa =
 $("cadFamiliaBoa")
 .value
 .trim();
 
 
-const aceite=
+const aceite =
 $("aceiteRegras")
 .checked;
 
 
-const erroCadastro=
+const erroCadastro =
 $("erroCadastro");
 
 
-erroCadastro.textContent="";
+erroCadastro.textContent = "";
 
 
 if(
-!nick||
-!sms||
-!pix||
-!periodo||
-!objetivo||
+!nick ||
+!sms ||
+!pix ||
+!periodo ||
+!objetivo ||
 !familiaBoa
 ){
 
-erroCadastro.textContent=
+erroCadastro.textContent =
 "⚠️ Preencha todos os campos obrigatórios.";
 
 return;
@@ -2192,7 +2172,7 @@ return;
 
 if(!aceite){
 
-erroCadastro.textContent=
+erroCadastro.textContent =
 "⚠️ Você precisa aceitar as regras da família.";
 
 return;
@@ -2200,28 +2180,28 @@ return;
 }
 
 
-const botao=
+const botao =
 $("btnCadastro");
 
 
-botao.disabled=true;
+botao.disabled = true;
 
-botao.textContent=
+botao.textContent =
 "🚀 CRIANDO CADASTRO...";
 
 
-const codigo=
+const codigo =
 gerarCodigo();
 
 
-const email=
+const email =
 emailInternoPix(pix);
 
 
 try{
 
 
-const cred=
+const cred =
 await createUserWithEmailAndPassword(
 
 auth,
@@ -2233,22 +2213,22 @@ codigo
 );
 
 
-const uid=
+const uid =
 cred.user.uid;
 
 
-const novo=
+const novo =
 push(
 ref(db,"formularios")
 );
 
 
-const dataAtual=
+const dataAtual =
 new Date()
 .toLocaleString("pt-BR");
 
 
-const dadosMembro={
+const dadosMembro = {
 
 uid:uid,
 
@@ -2282,50 +2262,25 @@ idCadastro:novo.key
 
 
 await set(
-
 novo,
-
 dadosMembro
-
 );
 
 
 await set(
-
 ref(
 db,
 "membros/"+uid
 ),
-
 dadosMembro
-
 );
 
 
 /* =========================
-   APPS SCRIPT / CADASTRO
-   ENVIO IMEDIATO
+   ENVIO CADASTRO DISCORD
 ========================= */
 
-try{
-
-fetch(
-
-APPS_SCRIPT_URL,
-
-{
-
-method:"POST",
-
-mode:"no-cors",
-
-keepalive:true,
-
-headers:{
-"Content-Type":"text/plain;charset=utf-8"
-},
-
-body:JSON.stringify({
+enviarAppsScript({
 
 tipo:"cadastro",
 
@@ -2353,43 +2308,22 @@ status:"Pendente",
 
 data:dataAtual
 
-})
-
-);
-
-}catch(e){
-
-console.error(
-"Erro Discord cadastro:",
-e
-);
-
-}
-
-
-/*
-   Pequena pausa para garantir que
-   o navegador iniciou o envio antes
-   de trocar de tela.
-*/
-
-await new Promise(
-resolve=>setTimeout(resolve,300)
-);
+});
 
 
 await signOut(auth);
 
 
 $("codigoTela")
-.textContent=
+.textContent =
 codigo;
 
 
-$("formCadastro").reset();
+$("formCadastro")
+.reset();
 
 
-erroCadastro.textContent="";
+erroCadastro.textContent = "";
 
 
 abrir("codigoGerado");
@@ -2404,46 +2338,54 @@ erro
 
 
 if(
-erro.code==="auth/email-already-in-use"
+erro.code ===
+"auth/email-already-in-use"
 ){
 
-erroCadastro.textContent=
+erroCadastro.textContent =
 "⚠️ Esse Pix já possui um cadastro.";
 
 }else if(
-erro.code==="auth/invalid-email"
+erro.code ===
+"auth/invalid-email"
 ){
 
-erroCadastro.textContent=
+erroCadastro.textContent =
 "⚠️ O identificador informado não pôde ser processado.";
 
 }else if(
-erro.code==="auth/operation-not-allowed"
+erro.code ===
+"auth/operation-not-allowed"
 ){
 
-erroCadastro.textContent=
+erroCadastro.textContent =
 "⚠️ O login por e-mail/senha está desativado no Firebase.";
 
 }else if(
-erro.code==="auth/weak-password"
+erro.code ===
+"auth/weak-password"
 ){
 
-erroCadastro.textContent=
+erroCadastro.textContent =
 "⚠️ Erro na geração do código de acesso.";
 
 }else{
 
-erroCadastro.textContent=
-"⚠️ Erro Firebase: "+
-(erro.code||erro.message||"erro desconhecido");
+erroCadastro.textContent =
+"⚠️ Erro Firebase: " +
+(
+erro.code ||
+erro.message ||
+"erro desconhecido"
+);
 
 }
 
 }finally{
 
-botao.disabled=false;
+botao.disabled = false;
 
-botao.textContent=
+botao.textContent =
 "🚀 CRIAR CADASTRO";
 
 }
@@ -2457,29 +2399,29 @@ botao.textContent=
 ========================= */
 
 $("btnLoginMembro")
-.onclick=
+.onclick =
 async function(){
 
-const pix=
+const pix =
 $("loginPix")
 .value
 .trim();
 
 
-const codigo=
+const codigo =
 $("loginCodigo")
 .value
 .trim();
 
 
 $("erroMembro")
-.textContent="";
+.textContent = "";
 
 
-if(!pix||!codigo){
+if(!pix || !codigo){
 
 $("erroMembro")
-.textContent=
+.textContent =
 "⚠️ Digite o Pix e o código de acesso.";
 
 return;
@@ -2487,24 +2429,24 @@ return;
 }
 
 
-const botao=
+const botao =
 $("btnLoginMembro");
 
 
-botao.disabled=true;
+botao.disabled = true;
 
-botao.textContent=
+botao.textContent =
 "🔐 ENTRANDO...";
 
 
 try{
 
 
-const email=
+const email =
 emailInternoPix(pix);
 
 
-const cred=
+const cred =
 await signInWithEmailAndPassword(
 
 auth,
@@ -2516,11 +2458,11 @@ codigo
 );
 
 
-const uid=
+const uid =
 cred.user.uid;
 
 
-const snap=
+const snap =
 await get(
 
 ref(
@@ -2540,7 +2482,7 @@ throw new Error(
 }
 
 
-membroAtual={
+membroAtual = {
 
 ...snap.val(),
 
@@ -2553,9 +2495,7 @@ mostrarMembro();
 
 iniciarAvisosMembro();
 
-abrir(
-"areaMembro"
-);
+abrir("areaMembro");
 
 
 }catch(erro){
@@ -2564,14 +2504,14 @@ console.error(erro);
 
 
 $("erroMembro")
-.textContent=
+.textContent =
 "❌ Pix ou código incorreto.";
 
 }finally{
 
-botao.disabled=false;
+botao.disabled = false;
 
-botao.textContent=
+botao.textContent =
 "🚀 ENTRAR";
 
 }
@@ -2585,48 +2525,52 @@ botao.textContent=
 
 function mostrarMembro(){
 
-const m=
+const m =
 membroAtual;
 
 
 $("mNick")
-.textContent=
-m.nick||"";
+.textContent =
+m.nick || "";
 
 
 $("mPix")
-.textContent=
-m.pix||"";
+.textContent =
+m.pix || "";
 
 
 $("mPeriodo")
-.textContent=
-m.periodo||"Não informado";
+.textContent =
+m.periodo ||
+"Não informado";
 
 
 $("mObjetivo")
-.textContent=
-m.objetivo||"Não informado";
+.textContent =
+m.objetivo ||
+"Não informado";
 
 
 $("mFamiliaBoa")
-.textContent=
-m.familiaBoa||"Não informado";
+.textContent =
+m.familiaBoa ||
+"Não informado";
 
 
-const status=
+const status =
 $("mStatus");
 
 
-status.textContent=
-m.status||"Pendente";
+status.textContent =
+m.status ||
+"Pendente";
 
 
 if(
-m.status==="Aprovado"
+m.status === "Aprovado"
 ){
 
-status.className=
+status.className =
 "status green";
 
 
@@ -2639,10 +2583,9 @@ $("linksNaoAprovado")
 .classList
 .add("hidden");
 
-
 }else{
 
-status.className=
+status.className =
 "status";
 
 
@@ -2657,6 +2600,8 @@ $("linksNaoAprovado")
 
 }
 
+
+/* Abre links inicialmente */
 
 abrirMembroAba("links");
 
@@ -2679,7 +2624,8 @@ console.error(e);
 
 }
 
-membroAtual=null;
+
+membroAtual = null;
 
 fecharMemberMenu();
 
@@ -2688,7 +2634,7 @@ abrir("inicio");
 }
 
 
-window.sairMembro=
+window.sairMembro =
 sairMembro;
 
 
@@ -2715,23 +2661,25 @@ return;
 }
 
 
-const inicio=
-$("ausInicio").value;
+const inicio =
+$("ausInicio")
+.value;
 
 
-const retorno=
-$("ausRetorno").value;
+const retorno =
+$("ausRetorno")
+.value;
 
 
-const motivo=
+const motivo =
 $("ausMotivo")
 .value
 .trim();
 
 
 if(
-!inicio||
-!retorno||
+!inicio ||
+!retorno ||
 !motivo
 ){
 
@@ -2744,7 +2692,7 @@ return;
 }
 
 
-if(retorno<inicio){
+if(retorno < inicio){
 
 alert(
 "⚠️ A data de retorno não pode ser anterior à data de início."
@@ -2755,14 +2703,15 @@ return;
 }
 
 
-const botao=
+const botao =
 event.submitter;
+
 
 if(botao){
 
-botao.disabled=true;
+botao.disabled = true;
 
-botao.textContent=
+botao.textContent =
 "📤 REGISTRANDO...";
 
 }
@@ -2771,7 +2720,7 @@ botao.textContent=
 try{
 
 
-const novo=
+const novo =
 push(
 
 ref(
@@ -2782,7 +2731,7 @@ db,
 );
 
 
-const ausencia={
+const ausencia = {
 
 id:novo.key,
 
@@ -2808,37 +2757,16 @@ status:"Pendente"
 
 
 await set(
-
 novo,
-
 ausencia
-
 );
 
 
 /* =========================
-   APPS SCRIPT / AUSÊNCIA
+   ENVIO AUSÊNCIA DISCORD
 ========================= */
 
-try{
-
-await fetch(
-
-APPS_SCRIPT_URL,
-
-{
-
-method:"POST",
-
-mode:"no-cors",
-
-keepalive:true,
-
-headers:{
-"Content-Type":"text/plain;charset=utf-8"
-},
-
-body:JSON.stringify({
+enviarAppsScript({
 
 tipo:"ausencia",
 
@@ -2860,25 +2788,13 @@ status:"Pendente",
 
 data:ausencia.data
 
-})
-
-}
-
-}catch(e){
-
-console.error(
-"Erro Discord ausência:",
-e
-);
-
-}
+});
 
 
 $("resultadoAusencia")
-.innerHTML=
-
-"<p class='green'>"+
-"✅ Ausência registrada com sucesso!"+
+.innerHTML =
+"<p class='green'>" +
+"✅ Ausência registrada com sucesso!" +
 "</p>";
 
 
@@ -2898,9 +2814,9 @@ alert(
 
 if(botao){
 
-botao.disabled=false;
+botao.disabled = false;
 
-botao.textContent=
+botao.textContent =
 "📤 REGISTRAR AUSÊNCIA";
 
 }
@@ -2920,7 +2836,8 @@ function iniciarAvisosMembro(){
 if(avisosListenerIniciado)
 return;
 
-avisosListenerIniciado=true;
+
+avisosListenerIniciado = true;
 
 
 onValue(
@@ -2932,11 +2849,11 @@ db,
 
 function(snapshot){
 
-const dadosAvisos=
-snapshot.val()||{};
+const dadosAvisos =
+snapshot.val() || {};
 
 
-const lista=
+const lista =
 Object.entries(dadosAvisos)
 .reverse();
 
@@ -2944,10 +2861,9 @@ Object.entries(dadosAvisos)
 if(!lista.length){
 
 $("listaAvisosMembro")
-.innerHTML=
-
-"<p class='cinza'>"+
-"📭 Nenhum aviso da administração no momento."+
+.innerHTML =
+"<p class='cinza'>" +
+"📭 Nenhum aviso da administração no momento." +
 "</p>";
 
 return;
@@ -2956,7 +2872,8 @@ return;
 
 
 $("listaAvisosMembro")
-.innerHTML=
+.innerHTML =
+
 lista
 .map(function([id,aviso]){
 
@@ -2965,16 +2882,16 @@ return `
 <article class="avisoAdmin">
 
 <h4>
-📢 ${esc(aviso.titulo||"Aviso da Administração")}
+📢 ${esc(aviso.titulo || "Aviso da Administração")}
 </h4>
 
 <p>
-${esc(aviso.mensagem||"")}
+${esc(aviso.mensagem || "")}
 </p>
 
 <div class="avisoData">
 
-📅 ${esc(aviso.data||"")}
+📅 ${esc(aviso.data || "")}
 
 </div>
 
@@ -2997,32 +2914,32 @@ ${esc(aviso.mensagem||"")}
 ========================= */
 
 $("entrarADM")
-.onclick=
+.onclick =
 async function(){
 
-const email=
+const email =
 $("emailADM")
 .value
 .trim();
 
 
-const senha=
+const senha =
 $("senhaADM")
 .value;
 
 
-const botao=
+const botao =
 $("entrarADM");
 
 
 $("erroADM")
-.textContent="";
+.textContent = "";
 
 
 if(!senha){
 
 $("erroADM")
-.textContent=
+.textContent =
 "⚠️ Digite a senha.";
 
 return;
@@ -3030,9 +2947,9 @@ return;
 }
 
 
-botao.disabled=true;
+botao.disabled = true;
 
-botao.textContent=
+botao.textContent =
 "🔐 ENTRANDO...";
 
 
@@ -3052,7 +2969,6 @@ senha
 
 abrir("painel");
 
-
 iniciarADM();
 
 iniciarAvisosADM();
@@ -3064,14 +2980,14 @@ console.error(erro);
 
 
 $("erroADM")
-.textContent=
+.textContent =
 "❌ E-mail ou senha incorretos.";
 
 }finally{
 
-botao.disabled=false;
+botao.disabled = false;
 
-botao.textContent=
+botao.textContent =
 "🔐 ENTRAR";
 
 }
@@ -3088,7 +3004,8 @@ function iniciarADM(){
 if(admListenerIniciado)
 return;
 
-admListenerIniciado=true;
+
+admListenerIniciado = true;
 
 
 onValue(
@@ -3100,8 +3017,8 @@ db,
 
 function(snapshot){
 
-dados=
-snapshot.val()||{};
+dados =
+snapshot.val() || {};
 
 mostrar();
 
@@ -3127,6 +3044,10 @@ db,
 
 function(snapshot){
 
+console.log(
+"Avisos ADM sincronizados."
+);
+
 }
 
 );
@@ -3139,31 +3060,31 @@ function(snapshot){
 ========================= */
 
 $("btnCriarAviso")
-.onclick=
+.onclick =
 async function(){
 
-const titulo=
+const titulo =
 $("avisoTitulo")
 .value
 .trim();
 
 
-const mensagem=
+const mensagem =
 $("avisoMensagem")
 .value
 .trim();
 
 
-const resultado=
+const resultado =
 $("resultadoAvisoADM");
 
 
-resultado.textContent="";
+resultado.textContent = "";
 
 
-if(!titulo||!mensagem){
+if(!titulo || !mensagem){
 
-resultado.textContent=
+resultado.textContent =
 "⚠️ Preencha o título e a mensagem.";
 
 return;
@@ -3171,26 +3092,26 @@ return;
 }
 
 
-const botao=
+const botao =
 $("btnCriarAviso");
 
 
-botao.disabled=true;
+botao.disabled = true;
 
-botao.textContent=
+botao.textContent =
 "📢 PUBLICANDO...";
 
 
 try{
 
 
-const novo=
+const novo =
 push(
 ref(db,"avisos")
 );
 
 
-const aviso={
+const aviso = {
 
 id:novo.key,
 
@@ -3213,16 +3134,17 @@ aviso
 );
 
 
-resultado.className=
+resultado.className =
 "green";
 
 
-resultado.textContent=
+resultado.textContent =
 "✅ Aviso publicado com sucesso!";
 
 
-$("avisoTitulo").value="";
-$("avisoMensagem").value="";
+$("avisoTitulo").value = "";
+
+$("avisoMensagem").value = "";
 
 
 }catch(erro){
@@ -3230,18 +3152,18 @@ $("avisoMensagem").value="";
 console.error(erro);
 
 
-resultado.className=
+resultado.className =
 "erro";
 
 
-resultado.textContent=
+resultado.textContent =
 "❌ Não foi possível publicar o aviso.";
 
 }finally{
 
-botao.disabled=false;
+botao.disabled = false;
 
-botao.textContent=
+botao.textContent =
 "📢 PUBLICAR AVISO";
 
 }
@@ -3268,10 +3190,10 @@ mostrar();
    FILTRO
 ========================= */
 
-window.mudarFiltro=
+window.mudarFiltro =
 function(novo){
 
-filtro=novo;
+filtro = novo;
 
 mostrar();
 
@@ -3284,35 +3206,35 @@ mostrar();
 
 function mostrar(){
 
-let lista=
+let lista =
 Object.entries(dados);
 
 
-const termo=
+const termo =
 $("pesquisa")
 .value
 .toLowerCase()
 .trim();
 
 
-lista=
+lista =
 lista.filter(
 function([id,m]){
 
 
 if(
-filtro==="Lixeira"
+filtro === "Lixeira"
 ){
 
 if(
-m.lixeira!==true
+m.lixeira !== true
 )
 return false;
 
 }else{
 
 if(
-m.lixeira===true
+m.lixeira === true
 )
 return false;
 
@@ -3321,11 +3243,11 @@ return false;
 
 if(
 
-filtro!=="Todos"&&
+filtro !== "Todos" &&
 
-filtro!=="Lixeira"&&
+filtro !== "Lixeira" &&
 
-m.status!==filtro
+m.status !== filtro
 
 ){
 
@@ -3335,35 +3257,35 @@ return false;
 
 
 if(
-termo===""
+termo === ""
 )
 return true;
 
 
-const texto=
+const texto =
 
 String(
-m.nick||""
-).toLowerCase()+" "+
+m.nick || ""
+).toLowerCase() + " " +
 
 String(
-m.pix||""
-).toLowerCase()+" "+
+m.pix || ""
+).toLowerCase() + " " +
 
 String(
-m.sms||""
-).toLowerCase()+" "+
+m.sms || ""
+).toLowerCase() + " " +
 
 String(
-m.periodo||""
-).toLowerCase()+" "+
+m.periodo || ""
+).toLowerCase() + " " +
 
 String(
-m.objetivo||""
-).toLowerCase()+" "+
+m.objetivo || ""
+).toLowerCase() + " " +
 
 String(
-m.familiaBoa||""
+m.familiaBoa || ""
 ).toLowerCase();
 
 
@@ -3388,7 +3310,7 @@ b.classList.remove(
 );
 
 
-const botoes={
+const botoes = {
 
 Todos:"btnTodos",
 
@@ -3419,10 +3341,9 @@ if(
 ){
 
 $("lista")
-.innerHTML=
-
-"<p class='cinza' style='text-align:center'>"+
-"📭 Nenhum formulário encontrado."+
+.innerHTML =
+"<p class='cinza' style='text-align:center'>" +
+"📭 Nenhum formulário encontrado." +
 "</p>";
 
 return;
@@ -3431,10 +3352,9 @@ return;
 
 
 $("lista")
-.innerHTML=
+.innerHTML =
 
 lista
-
 .map(
 function([id,m]){
 
@@ -3445,7 +3365,6 @@ m
 
 }
 )
-
 .join("");
 
 }
@@ -3457,50 +3376,69 @@ m
 
 function card(id,m){
 
-let botoes="";
+let botoes = "";
 
 
 if(
-m.lixeira===true
+m.lixeira === true
 ){
 
-botoes=
+botoes =
 
-"<button onclick=\"restaurar('"+id+"')\">"+
-"♻️ RESTAURAR"+
-"</button>"+
+"<button onclick=\"restaurar('" +
+id +
+"')\">" +
 
-"<button onclick=\"apagar('"+id+"')\">"+
-"🗑️ EXCLUIR DEFINITIVAMENTE"+
+"♻️ RESTAURAR" +
+
+"</button>" +
+
+"<button onclick=\"apagar('" +
+id +
+"')\">" +
+
+"🗑️ EXCLUIR DEFINITIVAMENTE" +
+
 "</button>";
 
 }else{
 
-botoes=
+botoes =
 
-"<button onclick=\"aprovar('"+id+"')\">"+
-"✅ APROVAR"+
-"</button>"+
+"<button onclick=\"aprovar('" +
+id +
+"')\">" +
 
-"<button onclick=\"recusar('"+id+"')\">"+
-"❌ RECUSAR"+
-"</button>"+
+"✅ APROVAR" +
 
-"<button onclick=\"mandarLixeira('"+id+"')\">"+
-"🗑️ LIXEIRA"+
+"</button>" +
+
+"<button onclick=\"recusar('" +
+id +
+"')\">" +
+
+"❌ RECUSAR" +
+
+"</button>" +
+
+"<button onclick=\"mandarLixeira('" +
+id +
+"')\">" +
+
+"🗑️ LIXEIRA" +
+
 "</button>";
 
 }
 
 
-return`
+return `
 
 <article class="membro">
 
 <h3 class="gold">
 🎮 ${esc(m.nick)}
 </h3>
-
 
 <p>
 
@@ -3515,43 +3453,45 @@ ${esc(m.sms)}
 <br><br>
 
 <b>📲 WhatsApp:</b>
-${esc(m.whatsapp||"Não informado")}
+${esc(m.whatsapp || "Não informado")}
 
 </p>
 
-
 <div class="info">
 
-<b>🎮 Período que costuma jogar:</b>
+<b>
+🎮 Período que costuma jogar:
+</b>
 
 <br>
 
-${esc(m.periodo||"Não informado")}
+${esc(m.periodo || "Não informado")}
 
 </div>
-
 
 <div class="info">
 
-<b>🎯 Principal objetivo no jogo:</b>
+<b>
+🎯 Principal objetivo no jogo:
+</b>
 
 <br><br>
 
-${esc(m.objetivo||"Não informado")}
+${esc(m.objetivo || "Não informado")}
 
 </div>
-
 
 <div class="info">
 
-<b>👥 O que faz uma família ser boa para você:</b>
+<b>
+👥 O que faz uma família ser boa para você:
+</b>
 
 <br><br>
 
-${esc(m.familiaBoa||"Não informado")}
+${esc(m.familiaBoa || "Não informado")}
 
 </div>
-
 
 <p>
 
@@ -3560,19 +3500,17 @@ ${esc(m.status)}
 
 </p>
 
-
 <p>
 
 <b>🔑 Código:</b>
 
 <span class="gold">
 
-${esc(m.codigo||"—")}
+${esc(m.codigo || "—")}
 
 </span>
 
 </p>
-
 
 <p class="cinza">
 
@@ -3580,7 +3518,6 @@ ${esc(m.codigo||"—")}
 ${esc(m.data)}
 
 </p>
-
 
 ${botoes}
 
@@ -3595,10 +3532,10 @@ ${botoes}
    APROVAR
 ========================= */
 
-window.aprovar=
+window.aprovar =
 async function(id){
 
-const m=
+const m =
 dados[id];
 
 
@@ -3621,7 +3558,7 @@ lixeira:false
 
 
 if(
-m&&m.uid
+m && m.uid
 ){
 
 await update(
@@ -3644,7 +3581,7 @@ lixeira:false
 }
 
 
-filtro="Aprovado";
+filtro = "Aprovado";
 
 mostrar();
 
@@ -3655,10 +3592,10 @@ mostrar();
    RECUSAR
 ========================= */
 
-window.recusar=
+window.recusar =
 async function(id){
 
-const m=
+const m =
 dados[id];
 
 
@@ -3681,7 +3618,7 @@ lixeira:false
 
 
 if(
-m&&m.uid
+m && m.uid
 ){
 
 await update(
@@ -3704,7 +3641,7 @@ lixeira:false
 }
 
 
-filtro="Recusado";
+filtro = "Recusado";
 
 mostrar();
 
@@ -3715,7 +3652,7 @@ mostrar();
    LIXEIRA
 ========================= */
 
-window.mandarLixeira=
+window.mandarLixeira =
 async function(id){
 
 await update(
@@ -3734,7 +3671,7 @@ lixeira:true
 );
 
 
-filtro="Lixeira";
+filtro = "Lixeira";
 
 mostrar();
 
@@ -3745,10 +3682,10 @@ mostrar();
    RESTAURAR
 ========================= */
 
-window.restaurar=
+window.restaurar =
 async function(id){
 
-const m=
+const m =
 dados[id];
 
 
@@ -3771,7 +3708,7 @@ status:"Pendente"
 
 
 if(
-m&&m.uid
+m && m.uid
 ){
 
 await update(
@@ -3794,7 +3731,7 @@ status:"Pendente"
 }
 
 
-filtro="Pendente";
+filtro = "Pendente";
 
 mostrar();
 
@@ -3805,7 +3742,7 @@ mostrar();
    APAGAR
 ========================= */
 
-window.apagar=
+window.apagar =
 async function(id){
 
 if(
@@ -3816,7 +3753,7 @@ if(
 return;
 
 
-const m=
+const m =
 dados[id];
 
 
@@ -3831,7 +3768,7 @@ db,
 
 
 if(
-m&&m.uid
+m && m.uid
 ){
 
 await remove(
@@ -3846,7 +3783,7 @@ db,
 }
 
 
-filtro="Lixeira";
+filtro = "Lixeira";
 
 mostrar();
 
@@ -3860,7 +3797,7 @@ mostrar();
 function esc(x){
 
 return String(
-x||""
+x || ""
 )
 
 .replaceAll(
@@ -3895,11 +3832,11 @@ x||""
    LINKS
 ========================= */
 
-$("discordLink").href=
+$("discordLink").href =
 "https://discord.gg/ZVPvStnpzQ";
 
 
-$("grupoLink").href=
+$("grupoLink").href =
 "https://chat.whatsapp.com/Lu67rpkKyAo2zA0WoN4pMa";
 
 
@@ -3908,12 +3845,12 @@ $("grupoLink").href=
 ========================= */
 
 $("sairADM")
-.onclick=
+.onclick =
 async function(){
 
 await signOut(auth);
 
-admListenerIniciado=false;
+admListenerIniciado = false;
 
 abrir("inicio");
 
@@ -3928,17 +3865,19 @@ document.addEventListener(
 "click",
 function(event){
 
-const menu=
+const menu =
 $("memberMenu");
 
-const botao=
-document.querySelector(".memberMenuBtn");
+const botao =
+document.querySelector(
+".memberMenuBtn"
+);
 
 
 if(
-menu&&
-!menu.classList.contains("hidden")&&
-!menu.contains(event.target)&&
+menu &&
+!menu.classList.contains("hidden") &&
+!menu.contains(event.target) &&
 !botao.contains(event.target)
 ){
 
@@ -3956,8 +3895,8 @@ menu.classList.add("hidden");
 
 abrir("inicio");
 
-</script>
 
+</script>
 </body>
 
 </html>
