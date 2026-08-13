@@ -837,13 +837,11 @@ font-size:24px;
 
 </head>
 
-
 <body>
 
 <main>
 
-
-<!-- =========================
+   <!-- =========================
      INÍCIO
 ========================= -->
 
@@ -1213,9 +1211,6 @@ class="erro">
 
 <section id="areaMembro" class="card hidden">
 
-
-<!-- CABEÇALHO -->
-
 <div class="memberHeader">
 
 <h2 class="gold">
@@ -1233,7 +1228,6 @@ aria-label="Menu">
 
 </button>
 
-
 <div
 id="memberMenu"
 class="memberMenu hidden">
@@ -1245,14 +1239,12 @@ onclick="abrirMembroAba('perfil');fecharMemberMenu()">
 
 </button>
 
-
 <button
 onclick="abrirMembroAba('ausencia');fecharMemberMenu()">
 
 💤 Modo Ausência
 
 </button>
-
 
 <button
 class="menuDanger"
@@ -1268,8 +1260,6 @@ onclick="sairMembro();fecharMemberMenu()">
 
 </div>
 
-
-<!-- STATUS RESUMIDO -->
 
 <div class="info">
 
@@ -1299,12 +1289,7 @@ class="status">
 </div>
 
 
-<!-- =========================
-     ABAS PRINCIPAIS
-========================= -->
-
 <div class="memberFrontTabs">
-
 
 <button
 id="tabLinks"
@@ -1315,7 +1300,6 @@ onclick="abrirMembroAba('links')">
 
 </button>
 
-
 <button
 id="tabRegras"
 class="memberTab"
@@ -1324,7 +1308,6 @@ onclick="abrirMembroAba('regras')">
 📜 Regras
 
 </button>
-
 
 <button
 id="tabAvisos"
@@ -1338,9 +1321,7 @@ onclick="abrirMembroAba('avisos')">
 </div>
 
 
-<!-- =========================
-     CONTEÚDO: PERFIL
-========================= -->
+<!-- PERFIL -->
 
 <div
 id="membroPerfil"
@@ -1364,7 +1345,6 @@ class="memberContent hidden">
 
 </div>
 
-
 <div class="memberBox">
 
 <b>🎯 OBJETIVO NO JOGO</b>
@@ -1376,7 +1356,6 @@ class="memberContent hidden">
 </div>
 
 </div>
-
 
 <div class="info">
 
@@ -1395,9 +1374,7 @@ class="memberContent hidden">
 </div>
 
 
-<!-- =========================
-     CONTEÚDO: LINKS
-========================= -->
+<!-- LINKS -->
 
 <div
 id="membroLinks"
@@ -1414,7 +1391,6 @@ class="hidden">
 </h3>
 
 <div class="memberGrid">
-
 
 <div class="memberBox">
 
@@ -1433,7 +1409,6 @@ target="_blank">
 
 </div>
 
-
 <div class="memberBox">
 
 <b>
@@ -1450,7 +1425,6 @@ target="_blank">
 </a>
 
 </div>
-
 
 <div class="memberBox">
 
@@ -1494,9 +1468,7 @@ Os links da US METRALHA estarão disponíveis após a aprovação do seu cadastr
 </div>
 
 
-<!-- =========================
-     CONTEÚDO: REGRAS
-========================= -->
+<!-- REGRAS -->
 
 <div
 id="membroRegras"
@@ -1533,9 +1505,7 @@ class="memberContent hidden">
 </div>
 
 
-<!-- =========================
-     CONTEÚDO: AVISOS
-========================= -->
+<!-- AVISOS -->
 
 <div
 id="membroAvisos"
@@ -1561,9 +1531,7 @@ id="listaAvisosMembro">
 </div>
 
 
-<!-- =========================
-     CONTEÚDO: AUSÊNCIA
-========================= -->
+<!-- AUSÊNCIA -->
 
 <div
 id="membroAusencia"
@@ -1585,7 +1553,6 @@ Avise a administração através deste formulário.
 
 </p>
 
-
 <form id="formAusencia">
 
 <label>
@@ -1598,7 +1565,6 @@ type="date"
 required
 >
 
-
 <label>
 📅 Data de retorno
 </label>
@@ -1608,7 +1574,6 @@ id="ausRetorno"
 type="date"
 required
 >
-
 
 <label>
 📝 Motivo
@@ -1620,7 +1585,6 @@ required
 placeholder="Explique o motivo da ausência..."
 ></textarea>
 
-
 <button
 class="action goldBtn"
 type="submit">
@@ -1631,7 +1595,6 @@ type="submit">
 
 </form>
 
-
 <div
 id="resultadoAusencia">
 </div>
@@ -1641,7 +1604,6 @@ id="resultadoAusencia">
 </div>
 
 </div>
-
 
 </section>
 
@@ -1712,9 +1674,7 @@ class="erro">
 </h2>
 
 
-<!-- =========================
-     CRIAR AVISOS
-========================= -->
+<!-- CRIAR AVISOS -->
 
 <div class="adminAvisoCard">
 
@@ -1726,7 +1686,6 @@ class="erro">
 Publique um aviso para aparecer na Área do Membro.
 </p>
 
-
 <label>
 📌 Título do aviso
 </label>
@@ -1737,7 +1696,6 @@ type="text"
 placeholder="Ex: Aviso importante"
 >
 
-
 <label>
 📝 Mensagem
 </label>
@@ -1747,7 +1705,6 @@ id="avisoMensagem"
 placeholder="Digite o aviso que será mostrado aos membros..."
 ></textarea>
 
-
 <button
 class="action goldBtn"
 id="btnCriarAviso">
@@ -1755,7 +1712,6 @@ id="btnCriarAviso">
 📢 PUBLICAR AVISO
 
 </button>
-
 
 <div
 id="resultadoAvisoADM"
@@ -1780,8 +1736,7 @@ placeholder="Digite Nick, Pix ou SMS..."
 📋 Formulários
 </h3>
 
-
-   <div class="grid">
+<div class="grid">
 
 <button
 id="btnTodos"
@@ -1791,7 +1746,6 @@ onclick="mudarFiltro('Todos')">
 
 </button>
 
-
 <button
 id="btnPendente"
 onclick="mudarFiltro('Pendente')">
@@ -1799,7 +1753,6 @@ onclick="mudarFiltro('Pendente')">
 ⏳ PENDENTES
 
 </button>
-
 
 <button
 id="btnAprovado"
@@ -1809,7 +1762,6 @@ onclick="mudarFiltro('Aprovado')">
 
 </button>
 
-
 <button
 id="btnRecusado"
 onclick="mudarFiltro('Recusado')">
@@ -1817,7 +1769,6 @@ onclick="mudarFiltro('Recusado')">
 ❌ RECUSADOS
 
 </button>
-
 
 <button
 id="btnLixeira"
@@ -1849,14 +1800,11 @@ id="sairADM">
 
 </section>
 
-
 </main>
-
 
 <script type="module">
 
-
-/* =========================
+   /* =========================
    FIREBASE
 ========================= */
 
@@ -2356,11 +2304,12 @@ dadosMembro
 
 /* =========================
    APPS SCRIPT / CADASTRO
+   ENVIO IMEDIATO
 ========================= */
 
 try{
 
-await fetch(
+fetch(
 
 APPS_SCRIPT_URL,
 
@@ -2370,11 +2319,19 @@ method:"POST",
 
 mode:"no-cors",
 
+keepalive:true,
+
+headers:{
+"Content-Type":"text/plain;charset=utf-8"
+},
+
 body:JSON.stringify({
 
 tipo:"cadastro",
 
 id:novo.key,
+
+uid:uid,
 
 nick:nick,
 
@@ -2398,8 +2355,6 @@ data:dataAtual
 
 })
 
-}
-
 );
 
 }catch(e){
@@ -2410,6 +2365,17 @@ e
 );
 
 }
+
+
+/*
+   Pequena pausa para garantir que
+   o navegador iniciou o envio antes
+   de trocar de tela.
+*/
+
+await new Promise(
+resolve=>setTimeout(resolve,300)
+);
 
 
 await signOut(auth);
@@ -2692,8 +2658,6 @@ $("linksNaoAprovado")
 }
 
 
-/* Abre links inicialmente */
-
 abrirMembroAba("links");
 
 }
@@ -2868,6 +2832,12 @@ method:"POST",
 
 mode:"no-cors",
 
+keepalive:true,
+
+headers:{
+"Content-Type":"text/plain;charset=utf-8"
+},
+
 body:JSON.stringify({
 
 tipo:"ausencia",
@@ -2894,8 +2864,6 @@ data:ausencia.data
 
 }
 
-);
-
 }catch(e){
 
 console.error(
@@ -2907,7 +2875,7 @@ e
 
 
 $("resultadoAusencia")
-innerHTML=
+.innerHTML=
 
 "<p class='green'>"+
 "✅ Ausência registrada com sucesso!"+
@@ -3991,4 +3959,5 @@ abrir("inicio");
 </script>
 
 </body>
-   </html>
+
+</html>
