@@ -1,0 +1,4498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>US METRALHA</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+background:#050505;
+color:#fff;
+font-family:Arial,Helvetica,sans-serif;
+min-height:100vh;
+}
+
+button,
+input,
+textarea,
+select{
+font:inherit;
+}
+
+button{
+cursor:pointer;
+}
+
+.hidden{
+display:none!important;
+}
+
+main{
+max-width:1150px;
+margin:auto;
+padding:20px;
+}
+
+
+/* =========================
+   CAPA
+========================= */
+
+.hero{
+min-height:calc(100vh - 40px);
+border:1px solid #555;
+border-radius:24px;
+overflow:hidden;
+position:relative;
+
+background:
+linear-gradient(
+90deg,
+rgba(0,0,0,.88),
+rgba(0,0,0,.35),
+rgba(0,0,0,.78)
+),
+url("capa.png") center/cover no-repeat;
+
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+padding:40px;
+
+box-shadow:
+0 20px 70px rgba(0,0,0,.8);
+}
+
+.hero:after{
+content:"";
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,.05),
+transparent 45%,
+rgba(0,0,0,.85)
+);
+
+pointer-events:none;
+}
+
+.hero>*{
+position:relative;
+z-index:2;
+}
+
+.logoTop{
+font-size:24px;
+font-weight:900;
+letter-spacing:3px;
+text-shadow:0 2px 10px #000;
+}
+
+.logoTop span{
+color:#ffc400;
+}
+
+.welcome{
+margin-top:40px;
+max-width:700px;
+}
+
+.welcome h1{
+font-size:clamp(42px,7vw,82px);
+line-height:.94;
+margin:0;
+font-weight:900;
+letter-spacing:-3px;
+color:rgba(255,255,255,.86);
+
+text-shadow:
+0 3px 8px #000,
+0 0 25px #000;
+}
+
+.welcome p{
+font-size:16px;
+font-weight:bold;
+letter-spacing:4px;
+color:#ddd;
+
+text-shadow:
+0 2px 7px #000;
+}
+
+.buttons{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+max-width:1050px;
+width:100%;
+}
+
+.menuBtn{
+min-height:115px;
+border-radius:16px;
+
+background:rgba(5,5,5,.78);
+
+border:1px solid #555;
+color:#fff;
+font-weight:900;
+font-size:21px;
+
+transition:
+transform .2s,
+background .2s,
+border-color .2s;
+
+backdrop-filter:blur(7px);
+}
+
+.menuBtn:hover{
+transform:translateY(-4px);
+background:rgba(20,20,20,.9);
+}
+
+.menuBtn small{
+display:block;
+font-size:12px;
+margin-top:8px;
+color:#999;
+font-weight:normal;
+}
+
+.cadastro{
+border-color:#ffc400;
+color:#ffc400;
+}
+
+.logar{
+border-color:#168cff;
+color:#168cff;
+}
+
+.admin{
+border-color:#d33;
+color:#ff5555;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+background:rgba(9,9,9,.96);
+border:1px solid #333;
+border-radius:18px;
+padding:28px;
+margin-bottom:20px;
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.55);
+}
+
+.card h2{
+margin-top:0;
+font-size:30px;
+}
+
+.gold{
+color:#ffc400;
+}
+
+.blue{
+color:#168cff;
+}
+
+.red{
+color:#ff5555;
+}
+
+.green{
+color:#20e878;
+}
+
+.cinza{
+color:#999;
+}
+
+
+/* =========================
+   FORMULÁRIOS
+========================= */
+
+label{
+display:block;
+font-weight:bold;
+margin-top:16px;
+color:#ddd;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:15px;
+margin-top:7px;
+
+background:#050505;
+color:#fff;
+
+border:1px solid #444;
+border-radius:10px;
+outline:none;
+
+transition:.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+border-color:#ffc400;
+
+box-shadow:
+0 0 0 2px rgba(255,196,0,.08);
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+select{
+appearance:auto;
+}
+
+
+/* =========================
+   AVISO
+========================= */
+
+.aviso{
+background:rgba(80,0,0,.25);
+border:1px solid #6d0000;
+
+padding:18px;
+border-radius:12px;
+
+margin:22px 0;
+line-height:1.5;
+}
+
+
+/* =========================
+   ACEITE
+========================= */
+
+.aceite{
+display:flex;
+align-items:flex-start;
+gap:12px;
+
+margin-top:18px;
+padding:15px;
+
+background:#111;
+border:1px solid #333;
+border-radius:10px;
+
+cursor:pointer;
+}
+
+.aceite input{
+width:20px;
+height:20px;
+margin:2px 0 0 0;
+
+accent-color:#ffc400;
+flex-shrink:0;
+}
+
+.aceite span{
+font-size:14px;
+line-height:1.4;
+color:#ddd;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.action{
+width:100%;
+padding:15px;
+
+border:0;
+border-radius:10px;
+
+font-weight:900;
+margin-top:18px;
+
+transition:.2s;
+}
+
+.action:hover{
+filter:brightness(1.08);
+transform:translateY(-1px);
+}
+
+.action:disabled{
+opacity:.6;
+cursor:not-allowed;
+transform:none;
+}
+
+.goldBtn{
+background:#ffc400;
+color:#000;
+}
+
+.blueBtn{
+background:#168cff;
+color:#fff;
+}
+
+.redBtn{
+background:#a90000;
+color:#fff;
+}
+
+.back{
+background:#151515;
+color:#fff;
+
+border:1px solid #444;
+
+padding:12px 18px;
+border-radius:9px;
+
+margin-bottom:15px;
+}
+
+
+/* =========================
+   CÓDIGO
+========================= */
+
+.codigo{
+font-size:32px;
+font-weight:900;
+
+letter-spacing:7px;
+text-align:center;
+
+padding:22px;
+
+background:#111;
+border:2px solid #ffc400;
+border-radius:14px;
+
+color:#ffc400;
+margin:20px 0;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.info{
+background:#111;
+padding:15px;
+
+border-radius:10px;
+margin:10px 0;
+
+line-height:1.5;
+}
+
+
+/* =========================
+   ÁREA MEMBRO
+========================= */
+
+.memberHeader{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+margin-bottom:15px;
+}
+
+.memberHeader h2{
+margin:0;
+}
+
+.memberMenuWrap{
+position:relative;
+}
+
+.memberMenuBtn{
+width:46px;
+height:46px;
+
+border-radius:12px;
+
+border:1px solid #444;
+background:#111;
+
+color:#fff;
+
+font-size:26px;
+font-weight:bold;
+
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.memberMenuBtn:hover{
+background:#1b1b1b;
+border-color:#ffc400;
+}
+
+.memberMenu{
+position:absolute;
+right:0;
+top:55px;
+
+width:210px;
+
+background:#111;
+border:1px solid #444;
+
+border-radius:13px;
+
+padding:8px;
+
+z-index:100;
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.75);
+}
+
+.memberMenu button{
+width:100%;
+
+padding:12px;
+
+border:0;
+
+border-radius:9px;
+
+background:transparent;
+color:#fff;
+
+text-align:left;
+
+font-weight:bold;
+}
+
+.memberMenu button:hover{
+background:#222;
+}
+
+.memberMenu .menuDanger{
+color:#ff5555;
+}
+
+.memberGrid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.memberBox{
+background:#111;
+border:1px solid #333;
+
+padding:17px;
+border-radius:12px;
+}
+
+.memberBox b{
+display:block;
+color:#999;
+font-size:12px;
+margin-bottom:8px;
+}
+
+.memberBox a{
+color:#ffc400;
+text-decoration:none;
+font-weight:bold;
+}
+
+.memberBox a:hover{
+text-decoration:underline;
+}
+
+.memberBox span{
+line-height:1.5;
+}
+
+.perfilTitulo{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.status{
+display:inline-block;
+
+padding:8px 15px;
+
+border-radius:20px;
+
+font-weight:bold;
+
+background:#333;
+
+margin:8px 0;
+}
+
+
+/* =========================
+   BANIDOS — ADM
+   IMPORTANTE: NÃO BLOQUEIA CADASTRO
+========================= */
+
+let banidosDados = {};
+let banidosListenerIniciado = false;
+
+function normalizarBanido(valor){
+return String(valor || "")
+.trim()
+.toLowerCase();
+}
+
+function carregarBanidos(){
+if(banidosListenerIniciado) return;
+
+banidosListenerIniciado = true;
+
+const caminho = ref(db,"banidos");
+
+onValue(caminho,function(snapshot){
+banidosDados = snapshot.val() || {};
+mostrarBanidos();
+mostrar();
+});
+}
+
+function obterBanimentosCompativeis(m){
+const nick = normalizarBanido(m.nick);
+const pix = normalizarBanido(m.pix);
+const sms = normalizarBanido(m.sms);
+
+return Object.entries(banidosDados).filter(function([,b]){
+const bNick = normalizarBanido(b.nick);
+const bPix = normalizarBanido(b.pix);
+const bSms = normalizarBanido(b.sms);
+
+return (nick && bNick && nick === bNick) ||
+       (pix && bPix && pix === bPix) ||
+       (sms && bSms && sms === bSms);
+});
+}
+
+function mostrarBanidos(){
+const lista = Object.entries(banidosDados);
+
+if($("contadorBanidos")){
+$("contadorBanidos").textContent = String(lista.length);
+}
+
+if(!$("listaBanidos")) return;
+
+if(!lista.length){
+$("listaBanidos").innerHTML =
+"<div class='loading'>🚫 Nenhuma pessoa registrada como banida.</div>";
+return;
+}
+
+$("listaBanidos").innerHTML = lista.map(function([id,b]){
+return `
+<div class="banidoItem">
+<h4>🚫 ${esc(b.nick || "Nick não informado")}</h4>
+<div><b>💰 Pix:</b> ${esc(b.pix || "Não informado")}</div>
+<div><b>📱 SMS:</b> ${esc(b.sms || "Não informado")}</div>
+<div class="banidoMotivo"><b>📝 Motivo:</b><br>${esc(b.motivo || "Não informado")}</div>
+<div class="cinza" style="margin-top:8px">📅 Registrado: ${esc(b.data || "Não informado")}</div>
+<button type="button" class="banidoExcluir" onclick="excluirBanido('${id}')">🗑️ EXCLUIR REGISTRO</button>
+</div>`;
+}).join("");
+}
+
+$("btnSalvarBanido").onclick = async function(){
+const nick = $("banNick").value.trim();
+const pix = $("banPix").value.trim();
+const sms = $("banSms").value.trim();
+const motivo = $("banMotivo").value.trim();
+const resultado = $("resultadoBanido");
+
+resultado.className = "erro";
+resultado.textContent = "";
+
+if(!nick && !pix && !sms){
+resultado.textContent = "⚠️ Informe pelo menos Nick, Pix ou SMS.";
+return;
+}
+
+if(!motivo){
+resultado.textContent = "⚠️ Informe o motivo do banimento.";
+return;
+}
+
+const botao = $("btnSalvarBanido");
+botao.disabled = true;
+botao.textContent = "🚫 REGISTRANDO...";
+
+try{
+const novo = push(ref(db,"banidos"));
+await set(novo,{
+id:novo.key,
+nick:nick,
+pix:pix,
+sms:sms,
+motivo:motivo,
+data:new Date().toLocaleString("pt-BR")
+});
+
+$("banNick").value = "";
+$("banPix").value = "";
+$("banSms").value = "";
+$("banMotivo").value = "";
+resultado.className = "green";
+resultado.textContent = "✅ Banimento registrado.";
+mostrarBanidos();
+mostrar();
+}catch(erro){
+console.error(erro);
+resultado.className = "erro";
+resultado.textContent = "❌ Não foi possível registrar o banimento.";
+}finally{
+botao.disabled = false;
+botao.textContent = "🚫 REGISTRAR BANIMENTO";
+}
+};
+
+window.excluirBanido = async function(id){
+if(!confirm("Excluir este registro de banimento?")) return;
+await remove(ref(db,"banidos/"+id));
+mostrarBanidos();
+mostrar();
+};
+
+/* =========================
+   ABAS MEMBRO
+========================= */
+
+.memberFrontTabs{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+
+margin:20px 0;
+}
+
+.memberTab{
+padding:15px 10px;
+
+border-radius:12px;
+
+border:1px solid #444;
+
+background:#111;
+color:#fff;
+
+font-weight:900;
+
+transition:.2s;
+}
+
+.memberTab:hover{
+transform:translateY(-2px);
+border-color:#ffc400;
+}
+
+.memberTab.active{
+border-color:#ffc400;
+color:#ffc400;
+background:#151515;
+}
+
+.memberContent{
+margin-top:10px;
+}
+
+
+/* =========================
+   AVISOS
+========================= */
+
+.avisoAdmin{
+background:#111;
+
+border:1px solid #444;
+
+border-left:4px solid #ffc400;
+
+border-radius:12px;
+
+padding:18px;
+
+margin:12px 0;
+}
+
+.avisoAdmin h4{
+margin:0 0 8px 0;
+color:#ffc400;
+}
+
+.avisoAdmin p{
+line-height:1.5;
+margin:8px 0;
+}
+
+.avisoData{
+font-size:12px;
+color:#777;
+}
+
+
+/* =========================
+   ADM
+========================= */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:8px;
+}
+
+.grid button{
+padding:13px;
+
+border:1px solid #444;
+background:#111;
+color:#fff;
+
+border-radius:9px;
+font-weight:bold;
+
+transition:.2s;
+}
+
+.grid button:hover{
+background:#1a1a1a;
+}
+
+.membro{
+background:#111;
+
+border:1px solid #333;
+border-radius:12px;
+
+padding:18px;
+margin:12px 0;
+}
+
+.membro button{
+border:0;
+border-radius:8px;
+
+padding:10px;
+margin:4px;
+
+background:#222;
+color:#fff;
+}
+
+.membro button:hover{
+background:#333;
+}
+
+.ativo{
+border:2px solid #ffc400!important;
+color:#ffc400!important;
+}
+
+.erro{
+color:#ff5555;
+text-align:center;
+margin-top:12px;
+}
+
+.loading{
+text-align:center;
+padding:20px;
+color:#999;
+}
+
+
+/* =========================
+   AVISO ADM CARD
+========================= */
+
+.adminAvisoCard{
+border:1px solid #333;
+background:#111;
+
+padding:20px;
+
+border-radius:14px;
+
+margin-top:20px;
+}
+
+.adminAvisoCard h3{
+margin-top:0;
+color:#ffc400;
+}
+
+
+
+/* =========================
+   NOVO VISUAL — ADM
+========================= */
+
+.adminPanel{
+background:
+linear-gradient(145deg,rgba(12,12,14,.98),rgba(5,5,8,.98));
+border:1px solid #272d38;
+box-shadow:0 20px 65px rgba(0,0,0,.65),0 0 35px rgba(22,140,255,.06);
+}
+
+.adminHeader{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+padding-bottom:18px;
+border-bottom:1px solid #222b38;
+}
+
+.adminHeader h2{
+margin:4px 0 4px;
+}
+
+.adminKicker{
+font-size:11px;
+letter-spacing:2px;
+font-weight:900;
+color:#168cff;
+}
+
+.adminSubtitle{
+margin:0;
+}
+
+.adminMenuWrap{
+position:relative;
+flex-shrink:0;
+}
+
+.adminMenuBtn{
+width:48px;height:48px;border-radius:13px;
+border:1px solid #344050;background:#0b0d11;color:#fff;
+font-size:30px;font-weight:900;line-height:1;
+}
+
+.adminMenuBtn:hover{
+border-color:#168cff;background:#101722;
+}
+
+.adminMenu{
+position:absolute;right:0;top:58px;width:230px;
+z-index:500;padding:8px;
+background:#0a0c10;border:1px solid #2e3948;
+border-radius:14px;
+box-shadow:0 20px 55px rgba(0,0,0,.85),0 0 20px rgba(22,140,255,.08);
+}
+
+.adminMenu button{
+width:100%;padding:13px 14px;border:0;border-radius:9px;
+background:transparent;color:#fff;text-align:left;font-weight:900;
+}
+
+.adminMenu button:hover{background:#141a22;}
+.adminMenu .menuDanger{color:#ff5b67;}
+
+.adminMenuLine{height:1px;background:#202833;margin:7px 4px;}
+
+.adminIdentity{
+display:grid;grid-template-columns:1fr 280px;gap:15px;
+align-items:center;margin:18px 0;padding:16px;
+background:linear-gradient(90deg,rgba(168,0,0,.12),rgba(22,140,255,.08));
+border:1px solid #303947;border-radius:14px;
+}
+
+.adminIdentity strong{display:block;color:#fff;margin-bottom:4px;}
+.adminIdentity span{display:block;color:#7f8a98;font-size:12px;}
+.adminIdentity input{margin:0;border-color:#3a4554;background:#07090c;}
+.adminIdentity input:focus{border-color:#168cff;box-shadow:0 0 0 2px rgba(22,140,255,.1);}
+
+.adminSectionTitle{
+display:flex;align-items:center;justify-content:space-between;
+margin:8px 0 14px;padding:3px 0;
+}
+
+.adminSectionTitle>div{display:flex;align-items:center;gap:12px;}
+.adminSectionTitle h3{margin:0;color:#fff;}
+.adminSectionTitle p{margin:3px 0 0;color:#77818f;font-size:12px;}
+
+.adminIcon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.blueIcon{background:rgba(22,140,255,.12);border:1px solid rgba(22,140,255,.35);}
+.redIcon{background:rgba(220,30,45,.12);border:1px solid rgba(220,30,45,.35);}
+
+.adminTools{padding:14px;border:1px solid #242d38;border-radius:13px;background:#090b0f;}
+.adminTools label{margin:0;}
+.adminFilters{margin:12px 0 18px;}
+.adminFilters button{border-color:#2d3744!important;}
+.adminFilters button:hover{border-color:#168cff!important;color:#fff;}
+.adminFilters .ativo{border-color:#168cff!important;color:#168cff!important;background:#0d1722!important;}
+
+.adminFicha{border-color:#283342;background:linear-gradient(145deg,#0d0f13,#090b0f);overflow:hidden;}
+.adminFicha:hover{border-color:#364558;}
+.adminFicha.fichaAssumida{border-left:3px solid #168cff;}
+
+.fichaTop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+.fichaTop h3{margin:0 0 4px;}
+.fichaId{font-size:10px;color:#596574;}
+.statusBadge{padding:7px 10px;border-radius:20px;font-size:11px;font-weight:900;white-space:nowrap;}
+.statusPendente{background:rgba(255,196,0,.1);color:#ffc400;border:1px solid rgba(255,196,0,.25);}
+.statusAprovado{background:rgba(32,232,120,.1);color:#20e878;border:1px solid rgba(32,232,120,.25);}
+.statusRecusado{background:rgba(255,70,80,.1);color:#ff5b67;border:1px solid rgba(255,70,80,.25);}
+
+.atendimentoBox{margin:13px 0;padding:12px;border-radius:10px;background:#080a0e;border:1px solid #202a35;display:flex;justify-content:space-between;gap:10px;}
+.atendimentoBox b{color:#cbd3dd;}
+.atendimentoBox .assumido{color:#168cff;font-weight:900;}
+
+.fichaActions{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.fichaActions button{margin:0!important;}
+.fichaActions .btnAssumir{background:#126cc7;border:1px solid #168cff;}
+.fichaActions .btnAssumir:hover{background:#168cff;}
+.fichaActions .btnAssumida{background:#101a26;border:1px solid #168cff;color:#168cff;cursor:not-allowed;opacity:1;}
+
+.recusaBox{margin:12px 0;padding:12px;border-left:3px solid #ff5b67;background:rgba(255,70,80,.07);border-radius:8px;color:#ddd;line-height:1.5;}
+
+.adminAvisoCard{border-color:#3a2730;background:linear-gradient(145deg,#110d10,#0b0b0e);margin-top:0;}
+.adminAvisoCard h3{color:#ff5b67;}
+
+/* =========================
+   VISUAL MODERNO — ÁREAS INTERNAS
+   (A CAPA .hero NÃO É ALTERADA)
+========================= */
+
+body{
+background:
+radial-gradient(circle at 8% 15%,rgba(190,0,35,.20),transparent 28%),
+radial-gradient(circle at 92% 18%,rgba(0,105,255,.20),transparent 30%),
+radial-gradient(circle at 50% 90%,rgba(170,0,35,.14),transparent 34%),
+linear-gradient(135deg,#05070d 0%,#07101e 48%,#10070d 100%);
+}
+
+#cadastro.card,
+#loginMembro.card,
+#loginADM.card,
+#membro.card,
+#painel.adminPanel{
+background:
+linear-gradient(145deg,rgba(7,14,27,.96),rgba(19,6,13,.96));
+border-color:rgba(45,130,255,.30);
+box-shadow:0 22px 70px rgba(0,0,0,.60),0 0 45px rgba(20,110,255,.08),0 0 35px rgba(220,20,50,.05);
+}
+
+#cadastro.card:before,
+#loginMembro.card:before,
+#loginADM.card:before,
+#membro.card:before,
+#painel.adminPanel:before{
+content:"";
+display:block;
+height:3px;
+margin:-28px -28px 24px;
+border-radius:18px 18px 0 0;
+background:linear-gradient(90deg,#e51b3e,#168cff,#e51b3e);
+}
+
+.card input,
+.card textarea,
+.card select{
+background:rgba(3,8,16,.78);
+border-color:#263a55;
+box-shadow:inset 0 0 18px rgba(0,0,0,.20);
+}
+
+.card input:focus,
+.card textarea:focus,
+.card select:focus{
+border-color:#168cff;
+box-shadow:0 0 0 2px rgba(22,140,255,.12),0 0 22px rgba(22,140,255,.08);
+}
+
+.card .action,
+.card .grid button,
+.fichaActions button{
+background:linear-gradient(135deg,#102f58,#0d5fba);
+border:1px solid #168cff;
+box-shadow:0 7px 22px rgba(0,80,190,.18);
+transition:transform .18s,box-shadow .18s,filter .18s;
+}
+
+.card .action:hover,
+.card .grid button:hover,
+.fichaActions button:hover{
+transform:translateY(-2px);
+filter:brightness(1.12);
+box-shadow:0 10px 28px rgba(0,90,220,.28);
+}
+
+.card .redBtn,
+.fichaActions button:nth-child(3){
+background:linear-gradient(135deg,#5d101b,#c51e38);
+border-color:#ff4c63;
+}
+
+.adminTools,
+.adminAvisoCard,
+.atendimentoBox,
+.membro,
+.info{
+background:linear-gradient(145deg,rgba(7,17,32,.82),rgba(25,7,15,.78));
+border-color:rgba(54,105,155,.34);
+}
+
+.adminFicha{
+background:linear-gradient(145deg,rgba(8,19,35,.96),rgba(24,7,14,.95));
+border-color:#243b58;
+}
+
+.adminFicha:hover{
+border-color:#168cff;
+box-shadow:0 12px 35px rgba(0,80,180,.14);
+}
+
+.adminMenu{
+background:linear-gradient(145deg,#080e18,#16090e);
+border-color:#304b6b;
+}
+
+.adminMenu button:hover{
+background:linear-gradient(90deg,rgba(22,140,255,.15),rgba(220,30,55,.10));
+}
+
+/* BANIDOS */
+
+.banIcon{
+background:rgba(220,30,55,.12);
+border:1px solid rgba(255,70,80,.35);
+}
+
+.banidosForm{
+padding:18px;
+border:1px solid #382631;
+border-radius:15px;
+background:linear-gradient(145deg,rgba(30,8,15,.72),rgba(6,15,28,.76));
+box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+.banidosFormGrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+}
+
+.banidosFormGrid>div{
+min-width:0;
+}
+
+.banidosListaHeader{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:20px 0 10px;
+padding:12px 14px;
+border:1px solid #283c55;
+border-radius:12px;
+background:linear-gradient(90deg,rgba(22,140,255,.10),rgba(220,30,55,.10));
+}
+
+#contadorBanidos{
+min-width:30px;
+height:30px;
+padding:6px 9px;
+text-align:center;
+border-radius:20px;
+font-weight:900;
+color:#fff;
+background:linear-gradient(135deg,#bd1634,#1678d8);
+}
+
+.banidoItem{
+padding:16px;
+margin:10px 0;
+border:1px solid #49303a;
+border-left:3px solid #ff4059;
+border-radius:13px;
+background:linear-gradient(145deg,rgba(26,8,14,.88),rgba(6,15,28,.90));
+}
+
+.banidoItem h4{
+margin:0 0 8px;
+color:#ff6173;
+}
+
+.banidoMotivo{
+margin-top:10px;
+padding:10px;
+border-radius:9px;
+background:rgba(255,50,70,.07);
+color:#e5e8ec;
+line-height:1.5;
+}
+
+.banidoItem .banidoExcluir{
+margin-top:10px;
+background:linear-gradient(135deg,#4b0b17,#a91932);
+border:1px solid #ff4059;
+}
+
+.alertaBanido{
+margin:12px 0;
+padding:14px;
+border:1px solid #ff4059;
+border-left:4px solid #ff4059;
+border-radius:11px;
+background:linear-gradient(90deg,rgba(180,10,35,.16),rgba(10,18,30,.70));
+box-shadow:0 0 22px rgba(220,20,50,.08);
+}
+
+.alertaBanido strong{color:#ff5b70;}
+
+@media(max-width:700px){
+.banidosFormGrid{grid-template-columns:1fr;}
+#cadastro.card:before,
+#loginMembro.card:before,
+#loginADM.card:before,
+#membro.card:before,
+#painel.adminPanel:before{margin:-18px -18px 18px;}
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+.adminIdentity{grid-template-columns:1fr;}
+
+main{
+padding:10px;
+}
+
+.hero{
+min-height:calc(100vh - 20px);
+padding:24px 15px;
+border-radius:18px;
+}
+
+.logoTop{
+font-size:18px;
+}
+
+.welcome{
+margin-top:30px;
+}
+
+.welcome h1{
+font-size:48px;
+letter-spacing:-2px;
+}
+
+.welcome p{
+font-size:11px;
+letter-spacing:1.5px;
+}
+
+.buttons{
+grid-template-columns:1fr;
+gap:10px;
+}
+
+.menuBtn{
+min-height:76px;
+font-size:19px;
+}
+
+.card{
+padding:18px;
+}
+
+.memberGrid{
+grid-template-columns:1fr;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.codigo{
+font-size:25px;
+letter-spacing:4px;
+}
+
+.memberFrontTabs{
+grid-template-columns:1fr;
+}
+
+.memberHeader{
+align-items:flex-start;
+}
+
+.memberMenu{
+right:0;
+}
+
+.adminHeader{align-items:flex-start;}
+.adminIdentity{grid-template-columns:1fr;}
+.adminMenu{right:0;}
+.fichaTop{flex-direction:column;}
+.atendimentoBox{flex-direction:column;}
+.fichaActions button{width:100%;}
+
+}
+
+
+/* =========================
+   PEQUENO AJUSTE MOBILE
+========================= */
+
+@media(max-width:420px){
+
+.memberFrontTabs{
+grid-template-columns:1fr;
+}
+
+.memberTab{
+padding:12px;
+}
+
+.memberHeader h2{
+font-size:24px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<main>
+
+
+<!-- =========================
+     INÍCIO
+========================= -->
+
+<section id="inicio" class="hero">
+
+<div class="logoTop">
+<span>US METRALHA</span>
+</div>
+
+<div class="welcome">
+
+<h1>
+BEM VINDO(A)<br>
+AO SITE<br>
+US METRALHA
+</h1>
+
+<p>
+🤝 UNIÃO • RESPEITO • LEALDADE
+</p>
+
+</div>
+
+<div class="buttons">
+
+<button
+class="menuBtn cadastro"
+type="button"
+onclick="abrir('cadastro')">
+
+📝 CADASTRO
+
+<small>
+Faça seu cadastro na família
+</small>
+
+</button>
+
+
+<button
+class="menuBtn logar"
+type="button"
+onclick="abrir('loginMembro')">
+
+🔐 LOGAR
+
+<small>
+Acesse sua Área do Membro
+</small>
+
+</button>
+
+
+<button
+class="menuBtn admin"
+type="button"
+onclick="abrir('loginADM')">
+
+🛡️ ADMINS
+
+<small>
+Área exclusiva da administração
+</small>
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CADASTRO
+========================= -->
+
+<section id="cadastro" class="card hidden">
+
+<button
+class="back"
+type="button"
+onclick="abrir('inicio')">
+
+← Voltar
+
+</button>
+
+<h2 class="gold">
+📝 CADASTRO USMETRALHA
+</h2>
+
+<p class="cinza">
+Preencha seus dados com atenção. Após o cadastro, o sistema irá gerar automaticamente seu código de acesso.
+</p>
+
+<form id="formCadastro">
+
+<label>🎮 Nick</label>
+
+<input
+id="cadNick"
+type="text"
+required
+autocomplete="off"
+placeholder="Digite seu Nick"
+>
+
+<label>📱 SMS</label>
+
+<input
+id="cadSms"
+type="text"
+required
+autocomplete="off"
+placeholder="Digite seu SMS"
+>
+
+<label>💰 Pix</label>
+
+<input
+id="cadPix"
+type="text"
+required
+autocomplete="off"
+placeholder="Digite seu número Pix"
+>
+
+<label>
+📲 WhatsApp
+<span class="cinza">(opcional)</span>
+</label>
+
+<input
+id="cadWhatsapp"
+type="text"
+autocomplete="off"
+placeholder="Digite seu WhatsApp"
+>
+
+<label>🎮 Qual período costuma jogar?</label>
+
+<select id="cadPeriodo" required>
+
+<option value="">Selecione uma opção</option>
+
+<option value="Manhã">🌅 Manhã</option>
+
+<option value="Tarde">☀️ Tarde</option>
+
+<option value="Noite">🌙 Noite</option>
+
+<option value="Varia">🔄 Varia</option>
+
+</select>
+
+<label>🎯 Qual é o seu principal objetivo no jogo?</label>
+
+<textarea
+id="cadObjetivo"
+required
+placeholder="Conte um pouco sobre o que você busca no jogo..."
+></textarea>
+
+<label>👥 O que faz uma família ser boa para você?</label>
+
+<textarea
+id="cadFamiliaBoa"
+required
+placeholder="Conte o que você valoriza em uma família..."
+></textarea>
+
+<div class="aviso">
+
+<strong>📜 REGRAS DA FAMILIA</strong>
+
+<br><br>
+
+🚫 5 dias seguidos OFF, sem justificativa, resultam na remoção da família.
+
+<br><br>
+
+🏴‍☠️ Somos uma Família criminosa, com restrições a funções cop.
+
+<br><br>
+
+❌ (COP) Proibido intervir roubos e consertar portas!
+
+<br><br>
+
+✅ (COP) Permitido realizar atividades que não quebre as regras principais.
+
+<br><br>
+
+💛 Faça parte da maior e mais poderosa Família criminosa do Brasil Play Shox!
+
+</div>
+
+<label class="aceite">
+
+<input
+id="aceiteRegras"
+type="checkbox"
+required
+>
+
+<span>
+Li e estou ciente das regras da família.
+Declaro que estou de acordo com as condições para fazer parte da USMETRALHA.
+</span>
+
+</label>
+
+<button
+class="action goldBtn"
+type="submit"
+id="btnCadastro">
+
+🚀 CRIAR CADASTRO
+
+</button>
+
+<div id="erroCadastro" class="erro"></div>
+
+</form>
+
+</section>
+
+
+<!-- =========================
+     CÓDIGO GERADO
+========================= -->
+
+<section id="codigoGerado" class="card hidden">
+
+<h2 class="green">
+✅ CADASTRO CRIADO
+</h2>
+
+<p>
+Seu cadastro foi criado com sucesso!
+</p>
+
+<div class="info">
+🔐 Seu código de acesso:
+</div>
+
+<div id="codigoTela" class="codigo">
+--------
+</div>
+
+<p class="cinza">
+⚠️ Guarde esse código.
+Ele será usado junto com o seu Pix para entrar na Área do Membro.
+</p>
+
+<button
+class="action blueBtn"
+type="button"
+onclick="abrir('loginMembro')">
+
+🔐 IR PARA LOGIN
+
+</button>
+
+</section>
+
+
+<!-- =========================
+     LOGIN MEMBRO
+========================= -->
+
+<section id="loginMembro" class="card hidden">
+
+<button
+class="back"
+type="button"
+onclick="abrir('inicio')">
+
+← Voltar
+
+</button>
+
+<h2 class="blue">
+🔐 ÁREA DO MEMBRO
+</h2>
+
+<p class="cinza">
+Entre utilizando o mesmo Pix informado no cadastro e o código recebido.
+</p>
+
+<label>💰 Pix cadastrado</label>
+
+<input
+id="loginPix"
+type="text"
+placeholder="Digite o mesmo Pix usado no cadastro"
+autocomplete="off"
+>
+
+<label>🔑 Código de acesso</label>
+
+<input
+id="loginCodigo"
+type="text"
+placeholder="Digite seu código"
+autocomplete="off"
+>
+
+<button
+class="action blueBtn"
+type="button"
+id="btnLoginMembro">
+
+🚀 ENTRAR
+
+</button>
+
+<div id="erroMembro" class="erro"></div>
+
+</section>
+
+
+<!-- =========================
+     ÁREA MEMBRO
+========================= -->
+
+<section id="areaMembro" class="card hidden">
+
+<div class="memberHeader">
+
+<h2 class="gold">
+👤 ÁREA DO MEMBRO
+</h2>
+
+<div class="memberMenuWrap">
+
+<button
+class="memberMenuBtn"
+type="button"
+onclick="toggleMemberMenu()"
+aria-label="Menu">
+
+⋮
+
+</button>
+
+<div id="memberMenu" class="memberMenu hidden">
+
+<button
+type="button"
+onclick="abrirMembroAba('perfil');fecharMemberMenu()">
+
+👤 Meu Perfil
+
+</button>
+
+<button
+type="button"
+onclick="abrirMembroAba('ausencia');fecharMemberMenu()">
+
+💤 Modo Ausência
+
+</button>
+
+<button
+type="button"
+class="menuDanger"
+onclick="sairMembro();fecharMemberMenu()">
+
+🚪 Sair da conta
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="info">
+
+<strong>🎮 Nick:</strong>
+<span id="mNick"></span>
+
+</div>
+
+
+<div class="info">
+
+<strong>💰 Pix:</strong>
+<span id="mPix"></span>
+
+</div>
+
+
+<div>
+
+<strong>📊 Status:</strong>
+
+<span id="mStatus" class="status"></span>
+
+</div>
+
+
+<div class="memberFrontTabs">
+
+<button
+id="tabLinks"
+class="memberTab active"
+type="button"
+onclick="abrirMembroAba('links')">
+
+🔗 Links da US Metralha
+
+</button>
+
+<button
+id="tabRegras"
+class="memberTab"
+type="button"
+onclick="abrirMembroAba('regras')">
+
+📜 Regras
+
+</button>
+
+<button
+id="tabAvisos"
+class="memberTab"
+type="button"
+onclick="abrirMembroAba('avisos')">
+
+📢 Avisos Admin
+
+</button>
+
+</div>
+
+
+<!-- PERFIL -->
+
+<div id="membroPerfil" class="memberContent hidden">
+
+<div class="card">
+
+<h3 class="gold">
+🎮 PERFIL DO MEMBRO
+</h3>
+
+<div class="memberGrid">
+
+<div class="memberBox">
+
+<b>🎮 PERÍODO DE JOGO</b>
+
+<span id="mPeriodo">—</span>
+
+</div>
+
+<div class="memberBox">
+
+<b>🎯 OBJETIVO NO JOGO</b>
+
+<span id="mObjetivo">—</span>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<strong>
+👥 O que faz uma família ser boa para você?
+</strong>
+
+<p id="mFamiliaBoa">—</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- LINKS -->
+
+<div id="membroLinks" class="memberContent">
+
+<div id="linksAprovado" class="hidden">
+
+<div class="card">
+
+<h3 class="gold">
+🔗 LINKS DA US METRALHA
+</h3>
+
+<div class="memberGrid">
+
+<div class="memberBox">
+
+<b>💬 DISCORD DA FAMÍLIA</b>
+
+<a
+id="discordLink"
+href="https://discord.gg/ZVPvStnpzQ"
+target="_blank">
+
+🚀 Entrar no Discord
+
+</a>
+
+</div>
+
+<div class="memberBox">
+
+<b>📱 GRUPO WHATSAPP</b>
+
+<a
+id="grupoLink"
+href="https://chat.whatsapp.com/Lu67rpkKyAo2zA0WoN4pMa"
+target="_blank">
+
+📲 Entrar no Grupo
+
+</a>
+
+</div>
+
+<div class="memberBox">
+
+<b>🏆 MEMORIAL DA FAMÍLIA</b>
+
+<a
+href="https://discord.com/channels/1099040187251699785/1443982745373249638"
+target="_blank">
+
+🏆 Ver Memorial
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="linksNaoAprovado" class="card">
+
+<h3 class="gold">
+🔒 LINKS DA FAMÍLIA
+</h3>
+
+<p class="cinza">
+
+Os links da US METRALHA estarão disponíveis após a aprovação do seu cadastro pela administração.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- REGRAS -->
+
+<div id="membroRegras" class="memberContent hidden">
+
+<div class="card">
+
+<h3 class="gold">
+📜 REGRAS DA FAMÍLIA
+</h3>
+
+<p>
+🚫 5 dias seguidos OFF, sem justificativa, resultam na remoção da família.
+</p>
+
+<p>
+🤝 Respeito entre todos os membros.
+</p>
+
+<p>
+🔥 Mantenha atividade e compromisso com a família.
+</p>
+
+<p>
+🛡️ Siga as orientações da administração.
+</p>
+
+<p>
+💛 Faça parte da família com respeito, lealdade e vontade de evoluir.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- AVISOS -->
+
+<div id="membroAvisos" class="memberContent hidden">
+
+<div class="card">
+
+<h3 class="gold">
+📢 AVISOS DA ADMINISTRAÇÃO
+</h3>
+
+<div id="listaAvisosMembro">
+
+<div class="loading">
+⏳ Carregando avisos...
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- AUSÊNCIA -->
+
+<div id="membroAusencia" class="memberContent hidden">
+
+<div id="areaAusencia">
+
+<div class="card">
+
+<h3 class="gold">
+💤 INFORMAR AUSÊNCIA
+</h3>
+
+<p class="cinza">
+
+Vai ficar alguns dias sem jogar?
+Avise a administração através deste formulário.
+
+</p>
+
+<form id="formAusencia">
+
+<label>📅 Data de início</label>
+
+<input
+id="ausInicio"
+type="date"
+required
+>
+
+<label>📅 Data de retorno</label>
+
+<input
+id="ausRetorno"
+type="date"
+required
+>
+
+<label>📝 Motivo</label>
+
+<textarea
+id="ausMotivo"
+required
+placeholder="Explique o motivo da ausência..."
+></textarea>
+
+<button
+class="action goldBtn"
+type="submit">
+
+📤 REGISTRAR AUSÊNCIA
+
+</button>
+
+</form>
+
+<div id="resultadoAusencia"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     LOGIN ADM
+========================= -->
+
+<section id="loginADM" class="card hidden">
+
+<button
+class="back"
+type="button"
+onclick="abrir('inicio')">
+
+← Voltar
+
+</button>
+
+<h2 class="red">
+🛡️ ÁREA DOS ADMINS
+</h2>
+
+<label>📧 E-mail</label>
+
+<input
+id="emailADM"
+type="email"
+value="usmetralhaadmins@gmail.com"
+readonly
+>
+
+<label>🔑 Senha</label>
+
+<input
+id="senhaADM"
+type="password"
+autocomplete="current-password"
+>
+
+<button
+class="action redBtn"
+type="button"
+id="entrarADM">
+
+🔐 ENTRAR
+
+</button>
+
+<div id="erroADM" class="erro"></div>
+
+</section>
+
+
+<!-- =========================
+     PAINEL ADM
+========================= -->
+
+<section id="painel" class="card hidden adminPanel">
+
+<header class="adminHeader">
+
+<div>
+<div class="adminKicker">PAINEL DE CONTROLE</div>
+<h2 class="red">🛡️ US METRALHA — ADM</h2>
+<p class="cinza adminSubtitle">Gerencie formulários e avisos da família.</p>
+</div>
+
+<div class="adminMenuWrap">
+<button
+class="adminMenuBtn"
+type="button"
+onclick="toggleAdminMenu()"
+aria-label="Abrir menu da administração">
+⋮
+</button>
+
+<div id="adminMenu" class="adminMenu hidden">
+<button type="button" onclick="abrirAdminAba('formularios')">📋 Formulários</button>
+<button type="button" onclick="abrirAdminAba('avisos')">📢 Avisos</button>
+<button type="button" onclick="abrirAdminAba('banidos')">🚫 Banidos</button>
+<div class="adminMenuLine"></div>
+<button type="button" class="menuDanger" id="sairADM">🚪 Sair</button>
+</div>
+</div>
+
+</header>
+
+<div class="adminIdentity">
+<div>
+<strong>👤 Atendido pelo ADM</strong>
+<span>Digite seu nome uma vez. Ele será usado quando você assumir uma ficha.</span>
+</div>
+<input
+id="nomeADM"
+type="text"
+autocomplete="off"
+placeholder="Ex.: João ADM">
+</div>
+
+<div id="adminFormularios">
+
+<div class="adminSectionTitle">
+<div>
+<span class="adminIcon blueIcon">📋</span>
+<div>
+<h3>Formulários recebidos</h3>
+<p>Assuma uma ficha antes de aprovar ou recusar.</p>
+</div>
+</div>
+</div>
+
+<div class="adminTools">
+<label>🔎 Pesquisar membro</label>
+<input
+id="pesquisa"
+type="search"
+placeholder="Digite Nick, Pix ou SMS...">
+</div>
+
+<div class="grid adminFilters">
+<button id="btnTodos" type="button" onclick="mudarFiltro('Todos')">👥 TODOS</button>
+<button id="btnPendente" type="button" onclick="mudarFiltro('Pendente')">⏳ PENDENTES</button>
+<button id="btnAprovado" type="button" onclick="mudarFiltro('Aprovado')">✅ APROVADOS</button>
+<button id="btnRecusado" type="button" onclick="mudarFiltro('Recusado')">❌ RECUSADOS</button>
+<button id="btnLixeira" type="button" onclick="mudarFiltro('Lixeira')">🗑️ LIXEIRA</button>
+</div>
+
+<div id="lista">
+<div class="loading">⏳ Nenhum formulário carregado.</div>
+</div>
+
+</div>
+
+<div id="adminAvisos" class="hidden">
+
+<div class="adminSectionTitle">
+<div>
+<span class="adminIcon redIcon">📢</span>
+<div>
+<h3>Central de avisos</h3>
+<p>Publique avisos que aparecerão na Área do Membro.</p>
+</div>
+</div>
+</div>
+
+<div class="adminAvisoCard">
+<label>📌 Título do aviso</label>
+<input id="avisoTitulo" type="text" placeholder="Ex.: Aviso importante">
+
+<label>📝 Mensagem</label>
+<textarea id="avisoMensagem" placeholder="Digite o aviso que será mostrado aos membros..."></textarea>
+
+<button class="action redBtn" type="button" id="btnCriarAviso">📢 PUBLICAR AVISO</button>
+<div id="resultadoAvisoADM" class="erro"></div>
+</div>
+
+</div>
+
+<div id="adminBanidos" class="hidden">
+
+<div class="adminSectionTitle">
+<div>
+<span class="adminIcon banIcon">🚫</span>
+<div>
+<h3>Cadastro de banidos</h3>
+<p>Use Nick, Pix ou SMS para identificar uma ficha já registrada.</p>
+</div>
+</div>
+</div>
+
+<div class="banidosForm">
+<div class="banidosFormGrid">
+<div>
+<label>🎮 Nick</label>
+<input id="banNick" type="text" autocomplete="off" placeholder="Nick da pessoa banida">
+</div>
+<div>
+<label>💰 Pix</label>
+<input id="banPix" type="text" autocomplete="off" placeholder="Pix da pessoa banida">
+</div>
+<div>
+<label>📱 SMS</label>
+<input id="banSms" type="text" autocomplete="off" placeholder="SMS da pessoa banida">
+</div>
+</div>
+
+<label>📝 Motivo do banimento</label>
+<textarea id="banMotivo" placeholder="Informe o motivo do banimento..."></textarea>
+
+<button class="action redBtn" type="button" id="btnSalvarBanido">🚫 REGISTRAR BANIMENTO</button>
+<div id="resultadoBanido" class="erro"></div>
+</div>
+
+<div class="banidosListaHeader">
+<strong>🚫 Pessoas registradas como banidas</strong>
+<span id="contadorBanidos">0</span>
+</div>
+
+<div id="listaBanidos">
+<div class="loading">⏳ Nenhum banido carregado.</div>
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<script type="module">
+
+
+/* =========================
+   FIREBASE
+========================= */
+
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+getDatabase,
+ref,
+push,
+set,
+onValue,
+update,
+remove,
+get,
+runTransaction
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
+
+import {
+getAuth,
+signInWithEmailAndPassword,
+createUserWithEmailAndPassword,
+signOut
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+const firebaseConfig = {
+
+apiKey:
+"AIzaSyDy8falIrYlTDdZlOU3C3v_gfb-pXTknIc",
+
+authDomain:
+"us-metralha.firebaseapp.com",
+
+databaseURL:
+"https://us-metralha-default-rtdb.firebaseio.com/",
+
+projectId:
+"us-metralha",
+
+storageBucket:
+"us-metralha.firebasestorage.app",
+
+messagingSenderId:
+"992552847534",
+
+appId:
+"1:992552847534:web:6be21b8924b9399959453f"
+
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getDatabase(app);
+
+const auth =
+getAuth(app);
+
+
+const $ =
+id => document.getElementById(id);
+
+
+let dados = {};
+
+let filtro = "Todos";
+
+let membroAtual = null;
+
+let avisosListenerIniciado = false;
+
+let admListenerIniciado = false;
+
+
+/* =========================
+   URL APPS SCRIPT
+========================= */
+
+const APPS_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbzKazu54SJEe5YRGWGXbFELl0Bdzs7urU2szFCb5oW5A6AcsupoSdc1p4ffAA9uIaiGog/exec";
+
+
+/* =========================
+   ENVIO APPS SCRIPT
+   ENVIO IMEDIATO
+========================= */
+
+function enviarAppsScript(dadosEnvio){
+
+try{
+
+const corpo =
+JSON.stringify(dadosEnvio);
+
+
+/*
+   keepalive mantém o envio
+   mesmo quando a página muda
+*/
+
+fetch(
+APPS_SCRIPT_URL,
+{
+method:"POST",
+mode:"no-cors",
+headers:{
+"Content-Type":
+"text/plain;charset=utf-8"
+},
+body:corpo,
+keepalive:true
+})
+.catch(function(erro){
+
+console.error(
+"Erro no envio para Apps Script:",
+erro
+);
+
+});
+
+
+}catch(erro){
+
+console.error(
+"Erro ao preparar envio:",
+erro
+);
+
+}
+
+}
+
+
+/* =========================
+   MENU PRINCIPAL
+========================= */
+
+function abrir(id){
+
+document
+.querySelectorAll("main section")
+.forEach(function(section){
+
+section.classList.add("hidden");
+
+});
+
+
+const tela =
+document.getElementById(id);
+
+
+if(!tela){
+
+console.error(
+"Tela não encontrada:",
+id
+);
+
+return;
+
+}
+
+
+tela.classList.remove("hidden");
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+window.abrir = abrir;
+
+
+/* =========================
+   MENU MEMBRO
+========================= */
+
+window.toggleMemberMenu =
+function(){
+
+$("memberMenu")
+.classList
+.toggle("hidden");
+
+};
+
+
+window.fecharMemberMenu =
+function(){
+
+$("memberMenu")
+.classList
+.add("hidden");
+
+};
+
+/* =========================
+   MENU ADM
+========================= */
+
+window.toggleAdminMenu =
+function(){
+
+const menu = $("adminMenu");
+if(menu){
+menu.classList.toggle("hidden");
+}
+
+};
+
+window.fecharAdminMenu =
+function(){
+
+const menu = $("adminMenu");
+if(menu){
+menu.classList.add("hidden");
+}
+
+};
+
+window.abrirAdminAba =
+function(aba){
+
+const formularios = $("adminFormularios");
+const avisos = $("adminAvisos");
+const banidos = $("adminBanidos");
+
+if(formularios) formularios.classList.add("hidden");
+if(avisos) avisos.classList.add("hidden");
+if(banidos) banidos.classList.add("hidden");
+
+if(aba === "formularios" && formularios){
+formularios.classList.remove("hidden");
+}
+
+if(aba === "avisos" && avisos){
+avisos.classList.remove("hidden");
+}
+
+if(aba === "banidos" && banidos){
+banidos.classList.remove("hidden");
+carregarBanidos();
+}
+
+fecharAdminMenu();
+window.scrollTo({top:0,behavior:"smooth"});
+
+};
+
+
+/* =========================
+   ABAS MEMBRO
+========================= */
+
+window.abrirMembroAba =
+function(aba){
+
+const conteudos = {
+
+perfil:"membroPerfil",
+
+links:"membroLinks",
+
+regras:"membroRegras",
+
+avisos:"membroAvisos",
+
+ausencia:"membroAusencia"
+
+};
+
+
+Object.values(conteudos)
+.forEach(function(id){
+
+$(id)
+.classList
+.add("hidden");
+
+});
+
+
+if(conteudos[aba]){
+
+$(conteudos[aba])
+.classList
+.remove("hidden");
+
+}
+
+
+document
+.querySelectorAll(".memberTab")
+.forEach(function(btn){
+
+btn.classList.remove("active");
+
+});
+
+
+const botoes = {
+
+links:"tabLinks",
+
+regras:"tabRegras",
+
+avisos:"tabAvisos"
+
+};
+
+
+if(
+botoes[aba] &&
+$(botoes[aba])
+){
+
+$(botoes[aba])
+.classList
+.add("active");
+
+}
+
+};
+
+
+/* =========================
+   GERAR CÓDIGO
+========================= */
+
+function gerarCodigo(){
+
+const chars =
+"ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+let codigo = "";
+
+
+for(
+let i=0;
+i<8;
+i++
+){
+
+codigo +=
+chars[
+Math.floor(
+Math.random() *
+chars.length
+)
+];
+
+}
+
+
+return codigo;
+
+}
+
+
+/* =========================
+   PIX → E-MAIL INTERNO
+========================= */
+
+function emailInternoPix(pix){
+
+const texto =
+String(pix)
+.trim()
+.toLowerCase();
+
+
+const base64 =
+btoa(
+unescape(
+encodeURIComponent(texto)
+)
+);
+
+
+const seguro =
+base64
+.replace(
+/[^a-zA-Z0-9]/g,
+""
+)
+.substring(0,40);
+
+
+return (
+"pix" +
+seguro +
+"@usmetralha.com"
+);
+
+}
+
+
+/* =========================
+   CADASTRO
+========================= */
+
+$("formCadastro")
+.addEventListener(
+"submit",
+async function(event){
+
+event.preventDefault();
+
+
+const nick =
+$("cadNick")
+.value
+.trim();
+
+
+const sms =
+$("cadSms")
+.value
+.trim();
+
+
+const pix =
+$("cadPix")
+.value
+.trim();
+
+
+const whatsapp =
+$("cadWhatsapp")
+.value
+.trim();
+
+
+const periodo =
+$("cadPeriodo")
+.value
+.trim();
+
+
+const objetivo =
+$("cadObjetivo")
+.value
+.trim();
+
+
+const familiaBoa =
+$("cadFamiliaBoa")
+.value
+.trim();
+
+
+const aceite =
+$("aceiteRegras")
+.checked;
+
+
+const erroCadastro =
+$("erroCadastro");
+
+
+erroCadastro.textContent = "";
+
+
+if(
+!nick ||
+!sms ||
+!pix ||
+!periodo ||
+!objetivo ||
+!familiaBoa
+){
+
+erroCadastro.textContent =
+"⚠️ Preencha todos os campos obrigatórios.";
+
+return;
+
+}
+
+
+if(!aceite){
+
+erroCadastro.textContent =
+"⚠️ Você precisa aceitar as regras da família.";
+
+return;
+
+}
+
+
+const botao =
+$("btnCadastro");
+
+
+botao.disabled = true;
+
+botao.textContent =
+"🚀 CRIANDO CADASTRO...";
+
+
+const codigo =
+gerarCodigo();
+
+
+const email =
+emailInternoPix(pix);
+
+
+try{
+
+
+const cred =
+await createUserWithEmailAndPassword(
+
+auth,
+
+email,
+
+codigo
+
+);
+
+
+const uid =
+cred.user.uid;
+
+
+const novo =
+push(
+ref(db,"formularios")
+);
+
+
+const dataAtual =
+new Date()
+.toLocaleString("pt-BR");
+
+
+const dadosMembro = {
+
+uid:uid,
+
+nick:nick,
+
+sms:sms,
+
+pix:pix,
+
+whatsapp:whatsapp,
+
+periodo:periodo,
+
+objetivo:objetivo,
+
+familiaBoa:familiaBoa,
+
+codigo:codigo,
+
+status:"Pendente",
+
+lixeira:false,
+
+aceitouRegras:true,
+
+data:dataAtual,
+
+idCadastro:novo.key
+
+};
+
+
+await set(
+novo,
+dadosMembro
+);
+
+
+await set(
+ref(
+db,
+"membros/"+uid
+),
+dadosMembro
+);
+
+
+/* =========================
+   ENVIO CADASTRO DISCORD
+========================= */
+
+enviarAppsScript({
+
+tipo:"cadastro",
+
+id:novo.key,
+
+uid:uid,
+
+nick:nick,
+
+pix:pix,
+
+sms:sms,
+
+whatsapp:whatsapp,
+
+periodo:periodo,
+
+objetivo:objetivo,
+
+familiaBoa:familiaBoa,
+
+codigo:codigo,
+
+status:"Pendente",
+
+assumidoPor:"",
+assumidoEm:"",
+
+data:dataAtual
+
+});
+
+
+await signOut(auth);
+
+
+$("codigoTela")
+.textContent =
+codigo;
+
+
+$("formCadastro")
+.reset();
+
+
+erroCadastro.textContent = "";
+
+
+abrir("codigoGerado");
+
+
+}catch(erro){
+
+console.error(
+"ERRO COMPLETO NO CADASTRO:",
+erro
+);
+
+
+if(
+erro.code ===
+"auth/email-already-in-use"
+){
+
+erroCadastro.textContent =
+"⚠️ Esse Pix já possui um cadastro.";
+
+}else if(
+erro.code ===
+"auth/invalid-email"
+){
+
+erroCadastro.textContent =
+"⚠️ O identificador informado não pôde ser processado.";
+
+}else if(
+erro.code ===
+"auth/operation-not-allowed"
+){
+
+erroCadastro.textContent =
+"⚠️ O login por e-mail/senha está desativado no Firebase.";
+
+}else if(
+erro.code ===
+"auth/weak-password"
+){
+
+erroCadastro.textContent =
+"⚠️ Erro na geração do código de acesso.";
+
+}else{
+
+erroCadastro.textContent =
+"⚠️ Erro Firebase: " +
+(
+erro.code ||
+erro.message ||
+"erro desconhecido"
+);
+
+}
+
+}finally{
+
+botao.disabled = false;
+
+botao.textContent =
+"🚀 CRIAR CADASTRO";
+
+}
+
+}
+);
+
+
+/* =========================
+   LOGIN MEMBRO
+========================= */
+
+$("btnLoginMembro")
+.onclick =
+async function(){
+
+const pix =
+$("loginPix")
+.value
+.trim();
+
+
+const codigo =
+$("loginCodigo")
+.value
+.trim();
+
+
+$("erroMembro")
+.textContent = "";
+
+
+if(!pix || !codigo){
+
+$("erroMembro")
+.textContent =
+"⚠️ Digite o Pix e o código de acesso.";
+
+return;
+
+}
+
+
+const botao =
+$("btnLoginMembro");
+
+
+botao.disabled = true;
+
+botao.textContent =
+"🔐 ENTRANDO...";
+
+
+try{
+
+
+const email =
+emailInternoPix(pix);
+
+
+const cred =
+await signInWithEmailAndPassword(
+
+auth,
+
+email,
+
+codigo
+
+);
+
+
+const uid =
+cred.user.uid;
+
+
+const snap =
+await get(
+
+ref(
+db,
+"membros/"+uid
+)
+
+);
+
+
+if(!snap.exists()){
+
+throw new Error(
+"Cadastro não encontrado."
+);
+
+}
+
+
+membroAtual = {
+
+...snap.val(),
+
+uid:uid
+
+};
+
+
+mostrarMembro();
+
+iniciarAvisosMembro();
+
+abrir("areaMembro");
+
+
+}catch(erro){
+
+console.error(erro);
+
+
+$("erroMembro")
+.textContent =
+"❌ Pix ou código incorreto.";
+
+}finally{
+
+botao.disabled = false;
+
+botao.textContent =
+"🚀 ENTRAR";
+
+}
+
+};
+
+
+/* =========================
+   MOSTRAR MEMBRO
+========================= */
+
+function mostrarMembro(){
+
+const m =
+membroAtual;
+
+
+$("mNick")
+.textContent =
+m.nick || "";
+
+
+$("mPix")
+.textContent =
+m.pix || "";
+
+
+$("mPeriodo")
+.textContent =
+m.periodo ||
+"Não informado";
+
+
+$("mObjetivo")
+.textContent =
+m.objetivo ||
+"Não informado";
+
+
+$("mFamiliaBoa")
+.textContent =
+m.familiaBoa ||
+"Não informado";
+
+
+const status =
+$("mStatus");
+
+
+status.textContent =
+m.status ||
+"Pendente";
+
+
+if(
+m.status === "Aprovado"
+){
+
+status.className =
+"status green";
+
+
+$("linksAprovado")
+.classList
+.remove("hidden");
+
+
+$("linksNaoAprovado")
+.classList
+.add("hidden");
+
+}else{
+
+status.className =
+"status";
+
+
+$("linksAprovado")
+.classList
+.add("hidden");
+
+
+$("linksNaoAprovado")
+.classList
+.remove("hidden");
+
+}
+
+
+/* Abre links inicialmente */
+
+abrirMembroAba("links");
+
+}
+
+
+/* =========================
+   SAIR MEMBRO
+========================= */
+
+async function sairMembro(){
+
+try{
+
+await signOut(auth);
+
+}catch(e){
+
+console.error(e);
+
+}
+
+
+membroAtual = null;
+
+fecharMemberMenu();
+
+abrir("inicio");
+
+}
+
+
+window.sairMembro =
+sairMembro;
+
+
+/* =========================
+   AUSÊNCIA
+========================= */
+
+$("formAusencia")
+.addEventListener(
+"submit",
+async function(event){
+
+event.preventDefault();
+
+
+if(!membroAtual){
+
+alert(
+"Faça login novamente."
+);
+
+return;
+
+}
+
+
+const inicio =
+$("ausInicio")
+.value;
+
+
+const retorno =
+$("ausRetorno")
+.value;
+
+
+const motivo =
+$("ausMotivo")
+.value
+.trim();
+
+
+if(
+!inicio ||
+!retorno ||
+!motivo
+){
+
+alert(
+"Preencha todos os campos."
+);
+
+return;
+
+}
+
+
+if(retorno < inicio){
+
+alert(
+"⚠️ A data de retorno não pode ser anterior à data de início."
+);
+
+return;
+
+}
+
+
+const botao =
+event.submitter;
+
+
+if(botao){
+
+botao.disabled = true;
+
+botao.textContent =
+"📤 REGISTRANDO...";
+
+}
+
+
+try{
+
+
+const novo =
+push(
+
+ref(
+db,
+"ausencias/"+membroAtual.uid
+)
+
+);
+
+
+const ausencia = {
+
+id:novo.key,
+
+uid:membroAtual.uid,
+
+nick:membroAtual.nick,
+
+pix:membroAtual.pix,
+
+inicio:inicio,
+
+retorno:retorno,
+
+motivo:motivo,
+
+data:
+new Date()
+.toLocaleString("pt-BR"),
+
+status:"Pendente"
+
+};
+
+
+await set(
+novo,
+ausencia
+);
+
+
+/* =========================
+   ENVIO AUSÊNCIA DISCORD
+========================= */
+
+enviarAppsScript({
+
+tipo:"ausencia",
+
+id:novo.key,
+
+uid:membroAtual.uid,
+
+nick:membroAtual.nick,
+
+pix:membroAtual.pix,
+
+inicio:inicio,
+
+retorno:retorno,
+
+motivo:motivo,
+
+status:"Pendente",
+
+data:ausencia.data
+
+});
+
+
+$("resultadoAusencia")
+.innerHTML =
+"<p class='green'>" +
+"✅ Ausência registrada com sucesso!" +
+"</p>";
+
+
+$("formAusencia")
+.reset();
+
+
+}catch(erro){
+
+console.error(erro);
+
+alert(
+"❌ Não foi possível registrar a ausência."
+);
+
+}finally{
+
+if(botao){
+
+botao.disabled = false;
+
+botao.textContent =
+"📤 REGISTRAR AUSÊNCIA";
+
+}
+
+}
+
+}
+);
+
+
+/* =========================
+   AVISOS — MEMBRO
+========================= */
+
+function iniciarAvisosMembro(){
+
+if(avisosListenerIniciado)
+return;
+
+
+avisosListenerIniciado = true;
+
+
+onValue(
+
+ref(
+db,
+"avisos"
+),
+
+function(snapshot){
+
+const dadosAvisos =
+snapshot.val() || {};
+
+
+const lista =
+Object.entries(dadosAvisos)
+.reverse();
+
+
+if(!lista.length){
+
+$("listaAvisosMembro")
+.innerHTML =
+"<p class='cinza'>" +
+"📭 Nenhum aviso da administração no momento." +
+"</p>";
+
+return;
+
+}
+
+
+$("listaAvisosMembro")
+.innerHTML =
+
+lista
+.map(function([id,aviso]){
+
+return `
+
+<article class="avisoAdmin">
+
+<h4>
+📢 ${esc(aviso.titulo || "Aviso da Administração")}
+</h4>
+
+<p>
+${esc(aviso.mensagem || "")}
+</p>
+
+<div class="avisoData">
+
+📅 ${esc(aviso.data || "")}
+
+</div>
+
+</article>
+
+`;
+
+})
+.join("");
+
+}
+
+);
+
+}
+
+
+/* =========================
+   LOGIN ADM
+========================= */
+
+$("entrarADM")
+.onclick =
+async function(){
+
+const email =
+$("emailADM")
+.value
+.trim();
+
+
+const senha =
+$("senhaADM")
+.value;
+
+
+const botao =
+$("entrarADM");
+
+
+$("erroADM")
+.textContent = "";
+
+
+if(!senha){
+
+$("erroADM")
+.textContent =
+"⚠️ Digite a senha.";
+
+return;
+
+}
+
+
+botao.disabled = true;
+
+botao.textContent =
+"🔐 ENTRANDO...";
+
+
+try{
+
+
+await signInWithEmailAndPassword(
+
+auth,
+
+email,
+
+senha
+
+);
+
+
+abrir("painel");
+abrirAdminAba("formularios");
+iniciarADM();
+
+iniciarAvisosADM();
+
+
+}catch(erro){
+
+console.error(erro);
+
+
+$("erroADM")
+.textContent =
+"❌ E-mail ou senha incorretos.";
+
+}finally{
+
+botao.disabled = false;
+
+botao.textContent =
+"🔐 ENTRAR";
+
+}
+
+};
+
+
+/* =========================
+   ADM
+========================= */
+
+function iniciarADM(){
+
+if(window.admUnsubscribe){
+
+window.admUnsubscribe();
+
+window.admUnsubscribe = null;
+
+}
+
+admListenerIniciado = true;
+
+const formulariosRef =
+ref(
+ db,
+ "formularios"
+);
+
+window.admUnsubscribe =
+onValue(
+
+formulariosRef,
+
+function(snapshot){
+
+if(snapshot.exists()){
+
+ dados = snapshot.val();
+
+}else{
+
+ dados = {};
+
+}
+
+mostrar();
+
+},
+
+function(erro){
+
+console.error(
+ "Erro ao carregar formulários:",
+ erro
+);
+
+const lista = $("lista");
+
+if(lista){
+
+ lista.innerHTML =
+ "<p class='cinza' style='text-align:center'>" +
+ "❌ Erro ao carregar formulários." +
+ "</p>";
+
+}
+
+}
+
+);
+
+}
+
+
+/* =========================
+   AVISOS — ADM
+========================= */
+
+function iniciarAvisosADM(){
+
+onValue(
+
+ref(
+db,
+"avisos"
+),
+
+function(snapshot){
+
+console.log(
+"Avisos ADM sincronizados."
+);
+
+}
+
+);
+
+}
+
+
+/* =========================
+   CRIAR AVISO
+========================= */
+
+$("btnCriarAviso")
+.onclick =
+async function(){
+
+const titulo =
+$("avisoTitulo")
+.value
+.trim();
+
+
+const mensagem =
+$("avisoMensagem")
+.value
+.trim();
+
+
+const resultado =
+$("resultadoAvisoADM");
+
+
+resultado.textContent = "";
+
+
+if(!titulo || !mensagem){
+
+resultado.textContent =
+"⚠️ Preencha o título e a mensagem.";
+
+return;
+
+}
+
+
+const botao =
+$("btnCriarAviso");
+
+
+botao.disabled = true;
+
+botao.textContent =
+"📢 PUBLICANDO...";
+
+
+try{
+
+
+const novo =
+push(
+ref(db,"avisos")
+);
+
+
+const aviso = {
+
+id:novo.key,
+
+titulo:titulo,
+
+mensagem:mensagem,
+
+data:
+new Date()
+.toLocaleString("pt-BR"),
+
+autor:"Admin"
+
+};
+
+
+await set(
+novo,
+aviso
+);
+
+
+resultado.className =
+"green";
+
+
+resultado.textContent =
+"✅ Aviso publicado com sucesso!";
+
+
+$("avisoTitulo").value = "";
+
+$("avisoMensagem").value = "";
+
+
+}catch(erro){
+
+console.error(erro);
+
+
+resultado.className =
+"erro";
+
+
+resultado.textContent =
+"❌ Não foi possível publicar o aviso.";
+
+}finally{
+
+botao.disabled = false;
+
+botao.textContent =
+"📢 PUBLICAR AVISO";
+
+}
+
+};
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+$("pesquisa")
+.addEventListener(
+"input",
+function(){
+
+mostrar();
+
+}
+);
+
+
+/* =========================
+   FILTRO
+========================= */
+
+window.mudarFiltro =
+function(novo){
+
+filtro = novo;
+
+mostrar();
+
+};
+
+
+/* =========================
+   MOSTRAR
+========================= */
+
+function mostrar(){
+
+let lista =
+Object.entries(dados);
+
+
+const termo =
+$("pesquisa")
+.value
+.toLowerCase()
+.trim();
+
+
+lista =
+lista.filter(
+function([id,m]){
+
+
+if(
+filtro === "Lixeira"
+){
+
+if(
+m.lixeira !== true
+)
+return false;
+
+}else{
+
+if(
+m.lixeira === true
+)
+return false;
+
+}
+
+
+if(
+
+filtro !== "Todos" &&
+
+filtro !== "Lixeira" &&
+
+m.status !== filtro
+
+){
+
+return false;
+
+}
+
+
+if(
+termo === ""
+)
+return true;
+
+
+const texto =
+
+String(
+m.nick || ""
+).toLowerCase() + " " +
+
+String(
+m.pix || ""
+).toLowerCase() + " " +
+
+String(
+m.sms || ""
+).toLowerCase() + " " +
+
+String(
+m.periodo || ""
+).toLowerCase() + " " +
+
+String(
+m.objetivo || ""
+).toLowerCase() + " " +
+
+String(
+m.familiaBoa || ""
+).toLowerCase();
+
+
+return texto.includes(
+termo
+);
+
+}
+);
+
+
+document
+.querySelectorAll(".grid button")
+.forEach(
+function(b){
+
+b.classList.remove(
+"ativo"
+);
+
+}
+);
+
+
+const botoes = {
+
+Todos:"btnTodos",
+
+Pendente:"btnPendente",
+
+Aprovado:"btnAprovado",
+
+Recusado:"btnRecusado",
+
+Lixeira:"btnLixeira"
+
+};
+
+
+if(
+$(botoes[filtro])
+){
+
+$(botoes[filtro])
+.classList
+.add("ativo");
+
+}
+
+
+if(
+!lista.length
+){
+
+$("lista")
+.innerHTML =
+"<p class='cinza' style='text-align:center'>" +
+"📭 Nenhum formulário encontrado." +
+"</p>";
+
+return;
+
+}
+
+
+$("lista")
+.innerHTML =
+
+lista
+.map(
+function([id,m]){
+
+return card(
+id,
+m
+);
+
+}
+)
+.join("");
+
+}
+
+
+/* =========================
+   CARD ADM
+========================= */
+
+function card(id,m){
+
+let botoes = "";
+
+const assumidoPor =
+String(m.assumidoPor || "").trim();
+
+if(m.lixeira === true){
+
+ botoes =
+ "<button onclick=\"restaurar('"+id+"')\">♻️ RESTAURAR</button>" +
+ "<button onclick=\"apagar('"+id+"')\">🗑️ EXCLUIR DEFINITIVAMENTE</button>";
+
+}else{
+
+ const botaoAssumir = assumidoPor
+ ? "<button class=\"btnAssumida\" disabled>✓ ASSUMIDA POR "+esc(assumidoPor)+"</button>"
+ : "<button class=\"btnAssumir\" onclick=\"assumirFicha('"+id+"')\">👤 ASSUMIR FICHA</button>";
+
+ botoes =
+ botaoAssumir +
+ "<button onclick=\"aprovar('"+id+"')\">✅ APROVAR</button>" +
+ "<button onclick=\"recusar('"+id+"')\">❌ RECUSAR</button>" +
+ "<button onclick=\"mandarLixeira('"+id+"')\">🗑️ LIXEIRA</button>";
+
+}
+
+return `
+
+<article class="membro adminFicha ${assumidoPor ? "fichaAssumida" : ""}">
+
+<div class="fichaTop">
+<div>
+<h3 class="gold">🎮 ${esc(m.nick)}</h3>
+<span class="fichaId">Ficha: ${esc(id)}</span>
+</div>
+<div class="statusBadge ${m.status === "Aprovado" ? "statusAprovado" : m.status === "Recusado" ? "statusRecusado" : "statusPendente"}">${esc(m.status || "Pendente")}</div>
+</div>
+
+<div class="atendimentoBox">
+<b>👤 Atendido pelo ADM:</b>
+<span class="${assumidoPor ? "assumido" : "cinza"}">${assumidoPor ? esc(assumidoPor) : "Não assumido"}</span>
+</div>
+
+${obterBanimentosCompativeis(m).length ? `
+<div class="alertaBanido">
+<strong>🚫 ATENÇÃO: ESTA FICHA POSSUI CORRESPONDÊNCIA COM UM BANIDO</strong>
+${obterBanimentosCompativeis(m).map(function([,b]){return `<div style="margin-top:8px"><b>Motivo:</b> ${esc(b.motivo || "Não informado")}</div>`;}).join("")}
+</div>` : ""}
+
+<p>
+<b>💰 Pix:</b> ${esc(m.pix)}
+<br><br>
+<b>📱 SMS:</b> ${esc(m.sms)}
+<br><br>
+<b>📲 WhatsApp:</b> ${esc(m.whatsapp || "Não informado")}
+</p>
+
+<div class="info"><b>🎮 Período que costuma jogar:</b><br>${esc(m.periodo || "Não informado")}</div>
+<div class="info"><b>🎯 Principal objetivo no jogo:</b><br><br>${esc(m.objetivo || "Não informado")}</div>
+<div class="info"><b>👥 O que faz uma família ser boa para você:</b><br><br>${esc(m.familiaBoa || "Não informado")}</div>
+
+<p><b>🔑 Código:</b> <span class="gold">${esc(m.codigo || "—")}</span></p>
+
+${m.motivoRecusa ? `<div class="recusaBox"><b>❌ Motivo da recusa:</b><br>${esc(m.motivoRecusa)}</div>` : ""}
+
+<p class="cinza">📅 Enviado: ${esc(m.data)}</p>
+
+<div class="fichaActions">${botoes}</div>
+
+</article>
+`;
+
+}
+
+
+/* =========================
+   APROVAR
+========================= */
+
+/* =========================
+   ASSUMIR FICHA — APENAS 1 VEZ
+========================= */
+
+window.assumirFicha =
+async function(id){
+
+const nome = $("nomeADM").value.trim();
+
+if(!nome){
+alert("⚠️ Digite seu nome de ADM antes de assumir uma ficha.");
+$("nomeADM").focus();
+return;
+}
+
+const caminho = ref(db,"formularios/"+id);
+
+try{
+
+const resultado = await runTransaction(caminho,function(atual){
+
+if(!atual) return atual;
+
+if(atual.assumidoPor) return;
+
+return {
+...atual,
+assumidoPor:nome,
+assumidoEm:new Date().toLocaleString("pt-BR")
+};
+
+});
+
+if(!resultado.committed){
+alert("⚠️ Esta ficha já foi assumida por outro ADM.");
+mostrar();
+return;
+}
+
+const ficha = resultado.snapshot.val();
+
+/* Envia imediatamente para o Apps Script/Discord.
+   O Apps Script deve atualizar a mensagem original da ficha
+   usando o id da ficha e o nome assumidoPor. */
+enviarAppsScript({
+
+tipo:"ficha_assumida",
+id:id,
+uid:ficha.uid || "",
+nick:ficha.nick || "",
+pix:ficha.pix || "",
+sms:ficha.sms || "",
+whatsapp:ficha.whatsapp || "",
+periodo:ficha.periodo || "",
+objetivo:ficha.objetivo || "",
+familiaBoa:ficha.familiaBoa || "",
+assumidoPor:nome,
+assumidoEm:ficha.assumidoEm || "",
+codigo:ficha.codigo || "",
+status:ficha.status || "Pendente",
+data:ficha.data || ""
+
+});
+
+mostrar();
+
+}catch(erro){
+console.error("Erro ao assumir ficha:",erro);
+alert("❌ Não foi possível assumir a ficha. Tente novamente.");
+}
+
+};
+
+
+/* =========================
+   APROVAR
+========================= */
+
+window.aprovar =
+async function(id){
+
+const m =
+dados[id];
+
+
+await update(
+
+ref(
+db,
+"formularios/"+id
+),
+
+{
+
+status:"Aprovado",
+
+lixeira:false
+
+}
+
+);
+
+
+if(
+m && m.uid
+){
+
+await update(
+
+ref(
+db,
+"membros/"+m.uid
+),
+
+{
+
+status:"Aprovado",
+
+lixeira:false
+
+}
+
+);
+
+}
+
+
+filtro = "Aprovado";
+
+mostrar();
+
+};
+
+
+/* =========================
+   RECUSAR
+========================= */
+
+window.recusar =
+async function(id){
+
+const m = dados[id];
+
+if(!m) return;
+
+const motivo = prompt("❌ Informe o motivo da recusa:");
+
+if(motivo === null) return;
+
+const motivoLimpo = motivo.trim();
+
+if(!motivoLimpo){
+alert("⚠️ O motivo da recusa é obrigatório.");
+return;
+}
+
+await update(
+ref(db,"formularios/"+id),
+{status:"Recusado",lixeira:false,motivoRecusa:motivoLimpo}
+);
+
+if(m.uid){
+await update(
+ref(db,"membros/"+m.uid),
+{status:"Recusado",lixeira:false,motivoRecusa:motivoLimpo}
+);
+}
+
+/* Mantém o ADM que assumiu e informa a recusa ao Discord. */
+enviarAppsScript({
+
+tipo:"recusa",
+id:id,
+uid:m.uid || "",
+nick:m.nick || "",
+pix:m.pix || "",
+sms:m.sms || "",
+assumidoPor:m.assumidoPor || "",
+motivo:motivoLimpo,
+status:"Recusado",
+data:m.data || ""
+
+});
+
+filtro = "Recusado";
+mostrar();
+
+};
+
+/* =========================
+   LIXEIRA
+========================= */
+
+window.mandarLixeira =
+async function(id){
+
+await update(
+
+ref(
+db,
+"formularios/"+id
+),
+
+{
+
+lixeira:true
+
+}
+
+);
+
+
+filtro = "Lixeira";
+
+mostrar();
+
+};
+
+
+/* =========================
+   RESTAURAR
+========================= */
+
+window.restaurar =
+async function(id){
+
+const m =
+dados[id];
+
+
+await update(
+
+ref(
+db,
+"formularios/"+id
+),
+
+{
+
+lixeira:false,
+
+status:"Pendente"
+
+}
+
+);
+
+
+if(
+m && m.uid
+){
+
+await update(
+
+ref(
+db,
+"membros/"+m.uid
+),
+
+{
+
+lixeira:false,
+
+status:"Pendente"
+
+}
+
+);
+
+}
+
+
+filtro = "Pendente";
+
+mostrar();
+
+};
+
+
+/* =========================
+   APAGAR
+========================= */
+
+window.apagar =
+async function(id){
+
+if(
+!confirm(
+"⚠️ Excluir definitivamente?"
+)
+)
+return;
+
+
+const m =
+dados[id];
+
+
+await remove(
+
+ref(
+db,
+"formularios/"+id
+)
+
+);
+
+
+if(
+m && m.uid
+){
+
+await remove(
+
+ref(
+db,
+"membros/"+m.uid
+)
+
+);
+
+}
+
+
+filtro = "Lixeira";
+
+mostrar();
+
+};
+
+
+/* =========================
+   SEGURANÇA
+========================= */
+
+function esc(x){
+
+return String(
+x || ""
+)
+
+.replaceAll(
+"&",
+"&amp;"
+)
+
+.replaceAll(
+"<",
+"&lt;"
+)
+
+.replaceAll(
+">",
+"&gt;"
+)
+
+.replaceAll(
+'"',
+"&quot;"
+)
+
+.replaceAll(
+"'",
+"&#039;"
+);
+
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+$("discordLink").href =
+"https://discord.gg/ZVPvStnpzQ";
+
+
+$("grupoLink").href =
+"https://chat.whatsapp.com/Lu67rpkKyAo2zA0WoN4pMa";
+
+
+/* =========================
+   SAIR ADM
+========================= */
+
+$("nomeADM").value = sessionStorage.getItem("usmetralha_nome_adm") || "";
+
+$("nomeADM").addEventListener("input",function(){
+const nome=this.value.trim();
+if(nome){
+sessionStorage.setItem("usmetralha_nome_adm",nome);
+}else{
+sessionStorage.removeItem("usmetralha_nome_adm");
+}
+});
+
+$("sairADM")
+.onclick =
+async function(){
+
+await signOut(auth);
+
+admListenerIniciado = false;
+sessionStorage.removeItem("usmetralha_nome_adm");
+
+fecharAdminMenu();
+abrir("inicio");
+
+};
+
+
+/* =========================
+   FECHAR MENU AO CLICAR FORA
+========================= */
+
+document.addEventListener(
+"click",
+function(event){
+
+const memberMenu = $("memberMenu");
+const memberBotao = document.querySelector(".memberMenuBtn");
+
+if(
+memberMenu &&
+!memberMenu.classList.contains("hidden") &&
+memberBotao &&
+!memberMenu.contains(event.target) &&
+!memberBotao.contains(event.target)
+){
+memberMenu.classList.add("hidden");
+}
+
+const adminMenu = $("adminMenu");
+const adminBotao = document.querySelector(".adminMenuBtn");
+
+if(
+adminMenu &&
+!adminMenu.classList.contains("hidden") &&
+adminBotao &&
+!adminMenu.contains(event.target) &&
+!adminBotao.contains(event.target)
+){
+adminMenu.classList.add("hidden");
+}
+
+}
+);
+
+
+/* =========================
+   ESTADO INICIAL
+========================= */
+
+abrir("inicio");
+
+
+</script>
+</body>
+
+</html>
